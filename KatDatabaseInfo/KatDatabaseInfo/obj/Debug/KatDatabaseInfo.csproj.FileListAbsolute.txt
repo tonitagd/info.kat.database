@@ -1,1 +1,9 @@
 D:\repository\info.kat.database\KatDatabaseInfo\KatDatabaseInfo\bin\Debug\KatDatabaseInfo.exe.config
+D:\repository\info.kat.database\KatDatabaseInfo\KatDatabaseInfo\obj\Debug\KatDatabaseInfo.csprojResolveAssemblyReference.cache
+D:\repository\info.kat.database\KatDatabaseInfo\KatDatabaseInfo\obj\Debug\KatDatabaseInfo.Properties.Resources.resources
+D:\repository\info.kat.database\KatDatabaseInfo\KatDatabaseInfo\obj\Debug\KatDatabaseInfo.csproj.GenerateResource.Cache
+D:\repository\info.kat.database\KatDatabaseInfo\KatDatabaseInfo\bin\Debug\KatDatabaseInfo.exe
+D:\repository\info.kat.database\KatDatabaseInfo\KatDatabaseInfo\bin\Debug\KatDatabaseInfo.pdb
+D:\repository\info.kat.database\KatDatabaseInfo\KatDatabaseInfo\obj\Debug\KatDatabaseInfo.MainForm.resources
+D:\repository\info.kat.database\KatDatabaseInfo\KatDatabaseInfo\obj\Debug\KatDatabaseInfo.exe
+D:\repository\info.kat.database\KatDatabaseInfo\KatDatabaseInfo\obj\Debug\KatDatabaseInfo.pdb

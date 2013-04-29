@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E1850E80-0B76-4E74-BE0C-AB2C05475E35}</ProjectGuid>
+    <ProjectGuid>{ECFAF576-143F-452E-88AD-B8C0A3E38339}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>KatDatabaseInfo</RootNamespace>

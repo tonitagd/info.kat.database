@@ -60,29 +60,29 @@
             this.lblIdentityNumber = new System.Windows.Forms.Label();
             this.tabPageF = new System.Windows.Forms.TabPage();
             this.gbFine = new System.Windows.Forms.GroupBox();
+            this.txtBoxFineId = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtBoxOffenderDLN = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnAddFine = new System.Windows.Forms.Button();
+            this.txtBoxReason = new System.Windows.Forms.TextBox();
+            this.txtBoxPoliceman = new System.Windows.Forms.TextBox();
+            this.txtBoxDate = new System.Windows.Forms.TextBox();
+            this.lblReason = new System.Windows.Forms.Label();
+            this.cbPaid = new System.Windows.Forms.ComboBox();
+            this.lblPaid = new System.Windows.Forms.Label();
+            this.lblPoliceman = new System.Windows.Forms.Label();
+            this.lblDate = new System.Windows.Forms.Label();
+            this.cbType = new System.Windows.Forms.ComboBox();
+            this.lblType = new System.Windows.Forms.Label();
             this.bcFineIds = new System.Windows.Forms.ComboBox();
             this.lblFineId = new System.Windows.Forms.Label();
             this.tabPageV = new System.Windows.Forms.TabPage();
+            this.gbCarData = new System.Windows.Forms.GroupBox();
+            this.cbRegistryNumber = new System.Windows.Forms.ComboBox();
+            this.lblRegNumber = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cbType = new System.Windows.Forms.ComboBox();
-            this.lblType = new System.Windows.Forms.Label();
-            this.lblDate = new System.Windows.Forms.Label();
-            this.lblPoliceman = new System.Windows.Forms.Label();
-            this.cbPaid = new System.Windows.Forms.ComboBox();
-            this.lblPaid = new System.Windows.Forms.Label();
-            this.lblReason = new System.Windows.Forms.Label();
-            this.txtBoxDate = new System.Windows.Forms.TextBox();
-            this.txtBoxPoliceman = new System.Windows.Forms.TextBox();
-            this.txtBoxReason = new System.Windows.Forms.TextBox();
-            this.btnAddFine = new System.Windows.Forms.Button();
-            this.txtBoxOffenderDLN = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtBoxFineId = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblRegNumber = new System.Windows.Forms.Label();
-            this.cbRegistryNumber = new System.Windows.Forms.ComboBox();
-            this.gbCarData = new System.Windows.Forms.GroupBox();
             this.tabControl.SuspendLayout();
             this.tabPagePI.SuspendLayout();
             this.gbImage.SuspendLayout();
@@ -492,6 +492,147 @@
             this.gbFine.TabStop = false;
             this.gbFine.Text = "Fine Data";
             // 
+            // txtBoxFineId
+            // 
+            this.txtBoxFineId.Location = new System.Drawing.Point(148, 154);
+            this.txtBoxFineId.Name = "txtBoxFineId";
+            this.txtBoxFineId.Size = new System.Drawing.Size(237, 20);
+            this.txtBoxFineId.TabIndex = 19;
+            this.txtBoxFineId.Visible = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(32, 155);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(57, 16);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Fine ID";
+            this.label2.Visible = false;
+            // 
+            // txtBoxOffenderDLN
+            // 
+            this.txtBoxOffenderDLN.Location = new System.Drawing.Point(148, 129);
+            this.txtBoxOffenderDLN.Name = "txtBoxOffenderDLN";
+            this.txtBoxOffenderDLN.Size = new System.Drawing.Size(237, 20);
+            this.txtBoxOffenderDLN.TabIndex = 17;
+            this.txtBoxOffenderDLN.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(32, 130);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(101, 16);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Offender DLN";
+            this.label1.Visible = false;
+            // 
+            // btnAddFine
+            // 
+            this.btnAddFine.Location = new System.Drawing.Point(609, 369);
+            this.btnAddFine.Name = "btnAddFine";
+            this.btnAddFine.Size = new System.Drawing.Size(184, 31);
+            this.btnAddFine.TabIndex = 15;
+            this.btnAddFine.Text = "Add Fine";
+            this.btnAddFine.UseVisualStyleBackColor = true;
+            // 
+            // txtBoxReason
+            // 
+            this.txtBoxReason.Location = new System.Drawing.Point(148, 202);
+            this.txtBoxReason.Multiline = true;
+            this.txtBoxReason.Name = "txtBoxReason";
+            this.txtBoxReason.Size = new System.Drawing.Size(579, 161);
+            this.txtBoxReason.TabIndex = 14;
+            // 
+            // txtBoxPoliceman
+            // 
+            this.txtBoxPoliceman.Location = new System.Drawing.Point(148, 79);
+            this.txtBoxPoliceman.Name = "txtBoxPoliceman";
+            this.txtBoxPoliceman.Size = new System.Drawing.Size(237, 20);
+            this.txtBoxPoliceman.TabIndex = 13;
+            // 
+            // txtBoxDate
+            // 
+            this.txtBoxDate.Location = new System.Drawing.Point(148, 54);
+            this.txtBoxDate.Name = "txtBoxDate";
+            this.txtBoxDate.Size = new System.Drawing.Size(122, 20);
+            this.txtBoxDate.TabIndex = 12;
+            // 
+            // lblReason
+            // 
+            this.lblReason.AutoSize = true;
+            this.lblReason.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblReason.Location = new System.Drawing.Point(32, 203);
+            this.lblReason.Name = "lblReason";
+            this.lblReason.Size = new System.Drawing.Size(62, 16);
+            this.lblReason.TabIndex = 10;
+            this.lblReason.Text = "Reason";
+            // 
+            // cbPaid
+            // 
+            this.cbPaid.FormattingEnabled = true;
+            this.cbPaid.Items.AddRange(new object[] {
+            "No",
+            "Yes"});
+            this.cbPaid.Location = new System.Drawing.Point(148, 104);
+            this.cbPaid.Name = "cbPaid";
+            this.cbPaid.Size = new System.Drawing.Size(121, 21);
+            this.cbPaid.TabIndex = 9;
+            // 
+            // lblPaid
+            // 
+            this.lblPaid.AutoSize = true;
+            this.lblPaid.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblPaid.Location = new System.Drawing.Point(32, 105);
+            this.lblPaid.Name = "lblPaid";
+            this.lblPaid.Size = new System.Drawing.Size(40, 16);
+            this.lblPaid.TabIndex = 8;
+            this.lblPaid.Text = "Paid";
+            // 
+            // lblPoliceman
+            // 
+            this.lblPoliceman.AutoSize = true;
+            this.lblPoliceman.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblPoliceman.Location = new System.Drawing.Point(32, 80);
+            this.lblPoliceman.Name = "lblPoliceman";
+            this.lblPoliceman.Size = new System.Drawing.Size(81, 16);
+            this.lblPoliceman.TabIndex = 6;
+            this.lblPoliceman.Text = "Policeman";
+            // 
+            // lblDate
+            // 
+            this.lblDate.AutoSize = true;
+            this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblDate.Location = new System.Drawing.Point(32, 55);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(41, 16);
+            this.lblDate.TabIndex = 4;
+            this.lblDate.Text = "Date";
+            // 
+            // cbType
+            // 
+            this.cbType.FormattingEnabled = true;
+            this.cbType.Items.AddRange(new object[] {
+            "Ticket",
+            "Act"});
+            this.cbType.Location = new System.Drawing.Point(148, 29);
+            this.cbType.Name = "cbType";
+            this.cbType.Size = new System.Drawing.Size(121, 21);
+            this.cbType.TabIndex = 3;
+            // 
+            // lblType
+            // 
+            this.lblType.AutoSize = true;
+            this.lblType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblType.Location = new System.Drawing.Point(32, 30);
+            this.lblType.Name = "lblType";
+            this.lblType.Size = new System.Drawing.Size(44, 16);
+            this.lblType.TabIndex = 2;
+            this.lblType.Text = "Type";
+            // 
             // bcFineIds
             // 
             this.bcFineIds.FormattingEnabled = true;
@@ -522,6 +663,33 @@
             this.tabPageV.Text = "Vehicles";
             this.tabPageV.UseVisualStyleBackColor = true;
             // 
+            // gbCarData
+            // 
+            this.gbCarData.Location = new System.Drawing.Point(43, 59);
+            this.gbCarData.Name = "gbCarData";
+            this.gbCarData.Size = new System.Drawing.Size(747, 385);
+            this.gbCarData.TabIndex = 2;
+            this.gbCarData.TabStop = false;
+            this.gbCarData.Text = "groupBox1";
+            // 
+            // cbRegistryNumber
+            // 
+            this.cbRegistryNumber.FormattingEnabled = true;
+            this.cbRegistryNumber.Location = new System.Drawing.Point(179, 19);
+            this.cbRegistryNumber.Name = "cbRegistryNumber";
+            this.cbRegistryNumber.Size = new System.Drawing.Size(129, 21);
+            this.cbRegistryNumber.TabIndex = 1;
+            // 
+            // lblRegNumber
+            // 
+            this.lblRegNumber.AutoSize = true;
+            this.lblRegNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblRegNumber.Location = new System.Drawing.Point(31, 20);
+            this.lblRegNumber.Name = "lblRegNumber";
+            this.lblRegNumber.Size = new System.Drawing.Size(124, 16);
+            this.lblRegNumber.TabIndex = 0;
+            this.lblRegNumber.Text = "Registry Number";
+            // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -537,174 +705,7 @@
             this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
             this.loginToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.loginToolStripMenuItem.Text = "Login";
-            // 
-            // cbType
-            // 
-            this.cbType.FormattingEnabled = true;
-            this.cbType.Items.AddRange(new object[] {
-            "Ticket",
-            "Act"});
-            this.cbType.Location = new System.Drawing.Point(148, 29);
-            this.cbType.Name = "cbType";
-            this.cbType.Size = new System.Drawing.Size(121, 21);
-            this.cbType.TabIndex = 3;
-            // 
-            // lblType
-            // 
-            this.lblType.AutoSize = true;
-            this.lblType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lblType.Location = new System.Drawing.Point(32, 30);
-            this.lblType.Name = "lblType";
-            this.lblType.Size = new System.Drawing.Size(44, 16);
-            this.lblType.TabIndex = 2;
-            this.lblType.Text = "Type";
-            // 
-            // lblDate
-            // 
-            this.lblDate.AutoSize = true;
-            this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lblDate.Location = new System.Drawing.Point(32, 55);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(41, 16);
-            this.lblDate.TabIndex = 4;
-            this.lblDate.Text = "Date";
-            // 
-            // lblPoliceman
-            // 
-            this.lblPoliceman.AutoSize = true;
-            this.lblPoliceman.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lblPoliceman.Location = new System.Drawing.Point(32, 80);
-            this.lblPoliceman.Name = "lblPoliceman";
-            this.lblPoliceman.Size = new System.Drawing.Size(81, 16);
-            this.lblPoliceman.TabIndex = 6;
-            this.lblPoliceman.Text = "Policeman";
-            // 
-            // cbPaid
-            // 
-            this.cbPaid.FormattingEnabled = true;
-            this.cbPaid.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
-            this.cbPaid.Location = new System.Drawing.Point(148, 104);
-            this.cbPaid.Name = "cbPaid";
-            this.cbPaid.Size = new System.Drawing.Size(121, 21);
-            this.cbPaid.TabIndex = 9;
-            // 
-            // lblPaid
-            // 
-            this.lblPaid.AutoSize = true;
-            this.lblPaid.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lblPaid.Location = new System.Drawing.Point(32, 105);
-            this.lblPaid.Name = "lblPaid";
-            this.lblPaid.Size = new System.Drawing.Size(40, 16);
-            this.lblPaid.TabIndex = 8;
-            this.lblPaid.Text = "Paid";
-            // 
-            // lblReason
-            // 
-            this.lblReason.AutoSize = true;
-            this.lblReason.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lblReason.Location = new System.Drawing.Point(32, 203);
-            this.lblReason.Name = "lblReason";
-            this.lblReason.Size = new System.Drawing.Size(62, 16);
-            this.lblReason.TabIndex = 10;
-            this.lblReason.Text = "Reason";
-            // 
-            // txtBoxDate
-            // 
-            this.txtBoxDate.Location = new System.Drawing.Point(148, 54);
-            this.txtBoxDate.Name = "txtBoxDate";
-            this.txtBoxDate.Size = new System.Drawing.Size(122, 20);
-            this.txtBoxDate.TabIndex = 12;
-            // 
-            // txtBoxPoliceman
-            // 
-            this.txtBoxPoliceman.Location = new System.Drawing.Point(148, 79);
-            this.txtBoxPoliceman.Name = "txtBoxPoliceman";
-            this.txtBoxPoliceman.Size = new System.Drawing.Size(237, 20);
-            this.txtBoxPoliceman.TabIndex = 13;
-            // 
-            // txtBoxReason
-            // 
-            this.txtBoxReason.Location = new System.Drawing.Point(148, 202);
-            this.txtBoxReason.Multiline = true;
-            this.txtBoxReason.Name = "txtBoxReason";
-            this.txtBoxReason.Size = new System.Drawing.Size(579, 161);
-            this.txtBoxReason.TabIndex = 14;
-            // 
-            // btnAddFine
-            // 
-            this.btnAddFine.Location = new System.Drawing.Point(609, 369);
-            this.btnAddFine.Name = "btnAddFine";
-            this.btnAddFine.Size = new System.Drawing.Size(184, 31);
-            this.btnAddFine.TabIndex = 15;
-            this.btnAddFine.Text = "Add Fine";
-            this.btnAddFine.UseVisualStyleBackColor = true;
-            // 
-            // txtBoxOffenderDLN
-            // 
-            this.txtBoxOffenderDLN.Location = new System.Drawing.Point(148, 129);
-            this.txtBoxOffenderDLN.Name = "txtBoxOffenderDLN";
-            this.txtBoxOffenderDLN.Size = new System.Drawing.Size(237, 20);
-            this.txtBoxOffenderDLN.TabIndex = 17;
-            this.txtBoxOffenderDLN.Visible = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(32, 130);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 16);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "Offender DLN";
-            this.label1.Visible = false;
-            // 
-            // txtBoxFineId
-            // 
-            this.txtBoxFineId.Location = new System.Drawing.Point(148, 154);
-            this.txtBoxFineId.Name = "txtBoxFineId";
-            this.txtBoxFineId.Size = new System.Drawing.Size(237, 20);
-            this.txtBoxFineId.TabIndex = 19;
-            this.txtBoxFineId.Visible = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(32, 155);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 16);
-            this.label2.TabIndex = 18;
-            this.label2.Text = "Fine ID";
-            this.label2.Visible = false;
-            // 
-            // lblRegNumber
-            // 
-            this.lblRegNumber.AutoSize = true;
-            this.lblRegNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lblRegNumber.Location = new System.Drawing.Point(31, 20);
-            this.lblRegNumber.Name = "lblRegNumber";
-            this.lblRegNumber.Size = new System.Drawing.Size(124, 16);
-            this.lblRegNumber.TabIndex = 0;
-            this.lblRegNumber.Text = "Registry Number";
-            // 
-            // cbRegistryNumber
-            // 
-            this.cbRegistryNumber.FormattingEnabled = true;
-            this.cbRegistryNumber.Location = new System.Drawing.Point(179, 19);
-            this.cbRegistryNumber.Name = "cbRegistryNumber";
-            this.cbRegistryNumber.Size = new System.Drawing.Size(129, 21);
-            this.cbRegistryNumber.TabIndex = 1;
-            // 
-            // gbCarData
-            // 
-            this.gbCarData.Location = new System.Drawing.Point(43, 59);
-            this.gbCarData.Name = "gbCarData";
-            this.gbCarData.Size = new System.Drawing.Size(747, 385);
-            this.gbCarData.TabIndex = 2;
-            this.gbCarData.TabStop = false;
-            this.gbCarData.Text = "groupBox1";
+            this.loginToolStripMenuItem.Click += new System.EventHandler(this.loginToolStripMenuItem_Click);
             // 
             // MainForm
             // 

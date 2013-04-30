@@ -79,7 +79,8 @@
             this.lblFineId = new System.Windows.Forms.Label();
             this.tabPageV = new System.Windows.Forms.TabPage();
             this.gbCarData = new System.Windows.Forms.GroupBox();
-
+<<<<<<< HEAD
+=======
             this.button1 = new System.Windows.Forms.Button();
             this.txtBoxOwnerDLN = new System.Windows.Forms.TextBox();
             this.txtBoxRegNumber = new System.Windows.Forms.TextBox();
@@ -103,11 +104,15 @@
             this.lblBrand = new System.Windows.Forms.Label();
             this.lblEngine = new System.Windows.Forms.Label();
             this.lblFrameNumber = new System.Windows.Forms.Label();
+>>>>>>> support methods for login/logout
             this.cbRegistryNumber = new System.Windows.Forms.ComboBox();
             this.lblRegNumber = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+<<<<<<< HEAD
+=======
             this.btnAddDriver = new System.Windows.Forms.Button();
+>>>>>>> support methods for login/logout
             this.tabControl.SuspendLayout();
             this.tabPageDI.SuspendLayout();
             this.gbImage.SuspendLayout();
@@ -523,8 +528,10 @@
             // 
             this.txtBoxFineId.Location = new System.Drawing.Point(148, 154);
             this.txtBoxFineId.Name = "txtBoxFineId";
-
+<<<<<<< HEAD
+=======
             this.txtBoxFineId.ReadOnly = true;
+>>>>>>> support methods for login/logout
             this.txtBoxFineId.Size = new System.Drawing.Size(237, 20);
             this.txtBoxFineId.TabIndex = 19;
             this.txtBoxFineId.Visible = false;
@@ -544,7 +551,10 @@
             // 
             this.txtBoxOffenderDLN.Location = new System.Drawing.Point(148, 129);
             this.txtBoxOffenderDLN.Name = "txtBoxOffenderDLN";
+<<<<<<< HEAD
+=======
             this.txtBoxOffenderDLN.ReadOnly = true;
+>>>>>>> support methods for login/logout
             this.txtBoxOffenderDLN.Size = new System.Drawing.Size(237, 20);
             this.txtBoxOffenderDLN.TabIndex = 17;
             this.txtBoxOffenderDLN.Visible = false;
@@ -574,7 +584,10 @@
             this.txtBoxReason.Location = new System.Drawing.Point(148, 202);
             this.txtBoxReason.Multiline = true;
             this.txtBoxReason.Name = "txtBoxReason";
+<<<<<<< HEAD
+=======
             this.txtBoxReason.ReadOnly = true;
+>>>>>>> support methods for login/logout
             this.txtBoxReason.Size = new System.Drawing.Size(579, 161);
             this.txtBoxReason.TabIndex = 14;
             // 
@@ -582,7 +595,10 @@
             // 
             this.txtBoxPoliceman.Location = new System.Drawing.Point(148, 79);
             this.txtBoxPoliceman.Name = "txtBoxPoliceman";
+<<<<<<< HEAD
+=======
             this.txtBoxPoliceman.ReadOnly = true;
+>>>>>>> support methods for login/logout
             this.txtBoxPoliceman.Size = new System.Drawing.Size(237, 20);
             this.txtBoxPoliceman.TabIndex = 13;
             // 
@@ -590,7 +606,10 @@
             // 
             this.txtBoxDate.Location = new System.Drawing.Point(148, 54);
             this.txtBoxDate.Name = "txtBoxDate";
+<<<<<<< HEAD
+=======
             this.txtBoxDate.ReadOnly = true;
+>>>>>>> support methods for login/logout
             this.txtBoxDate.Size = new System.Drawing.Size(122, 20);
             this.txtBoxDate.TabIndex = 12;
             // 
@@ -648,7 +667,10 @@
             // 
             // cbType
             // 
+<<<<<<< HEAD
+=======
             this.cbType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+>>>>>>> support methods for login/logout
             this.cbType.FormattingEnabled = true;
             this.cbType.Items.AddRange(new object[] {
             "Ticket",
@@ -670,7 +692,10 @@
             // 
             // bcFineIds
             // 
+<<<<<<< HEAD
+=======
             this.bcFineIds.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+>>>>>>> support methods for login/logout
             this.bcFineIds.FormattingEnabled = true;
             this.bcFineIds.Location = new System.Drawing.Point(109, 22);
             this.bcFineIds.Name = "bcFineIds";
@@ -701,6 +726,7 @@
             // 
             // gbCarData
             // 
+<<<<<<< HEAD
             this.gbCarData.Location = new System.Drawing.Point(43, 59);
             this.gbCarData.Name = "gbCarData";
             this.gbCarData.Size = new System.Drawing.Size(747, 385);
@@ -710,6 +736,7 @@
             // 
             // cbRegistryNumber
             // 
+=======
             this.gbCarData.Controls.Add(this.button1);
             this.gbCarData.Controls.Add(this.txtBoxOwnerDLN);
             this.gbCarData.Controls.Add(this.txtBoxRegNumber);
@@ -948,6 +975,7 @@
             // cbRegistryNumber
             // 
             this.cbRegistryNumber.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+>>>>>>> support methods for login/logout
             this.cbRegistryNumber.FormattingEnabled = true;
             this.cbRegistryNumber.Location = new System.Drawing.Point(179, 19);
             this.cbRegistryNumber.Name = "cbRegistryNumber";
@@ -979,7 +1007,9 @@
             this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
             this.loginToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.loginToolStripMenuItem.Text = "Login";
+<<<<<<< HEAD
             this.loginToolStripMenuItem.Click += new System.EventHandler(this.loginToolStripMenuItem_Click);
+=======
             // 
             // btnAddDriver
             // 
@@ -989,6 +1019,7 @@
             this.btnAddDriver.TabIndex = 15;
             this.btnAddDriver.Text = "AddDriver";
             this.btnAddDriver.UseVisualStyleBackColor = true;
+>>>>>>> support methods for login/logout
             // 
             // MainForm
             // 

@@ -21,3 +21,4 @@ D:\Personal data\TU\III Kurs\II semestyr\PS\repository\info.kat.database\KatData
 D:\Personal data\TU\III Kurs\II semestyr\PS\repository\info.kat.database\KatDatabaseInfo\KatDatabaseInfo\obj\Debug\KatDatabaseInfo.MainForm.resources
 D:\Personal data\TU\III Kurs\II semestyr\PS\repository\info.kat.database\KatDatabaseInfo\KatDatabaseInfo\obj\Debug\KatDatabaseInfo.csproj.GenerateResource.Cache
 D:\Personal data\TU\III Kurs\II semestyr\PS\repository\info.kat.database\KatDatabaseInfo\KatDatabaseInfo\obj\Debug\KatDatabaseInfo.View.LoginForm.resources
+D:\repository\info.kat.database\KatDatabaseInfo\KatDatabaseInfo\obj\Debug\KatDatabaseInfo.View.LoginForm.resources

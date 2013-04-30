@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.tabControl = new System.Windows.Forms.TabControl();
-            this.tabPagePI = new System.Windows.Forms.TabPage();
+            this.tabPageDI = new System.Windows.Forms.TabPage();
             this.gbImage = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gbLicense = new System.Windows.Forms.GroupBox();
             this.cbCategories = new System.Windows.Forms.CheckedListBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbPointsLeft = new System.Windows.Forms.ComboBox();
             this.lblLicenseId = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtBoxLicenseId = new System.Windows.Forms.TextBox();
             this.lblCatecories = new System.Windows.Forms.Label();
             this.lblPoints = new System.Windows.Forms.Label();
             this.gbPerfonalData = new System.Windows.Forms.GroupBox();
@@ -45,13 +45,13 @@
             this.blbAddress = new System.Windows.Forms.Label();
             this.txtBoxCity = new System.Windows.Forms.TextBox();
             this.lblCity = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtBoxCountry = new System.Windows.Forms.TextBox();
             this.lbCountry = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.txtBoxName = new System.Windows.Forms.TextBox();
             this.lblGender = new System.Windows.Forms.Label();
             this.lblMiddleName = new System.Windows.Forms.Label();
-            this.txtBoxDirthDate = new System.Windows.Forms.TextBox();
+            this.txtBoxBirthDate = new System.Windows.Forms.TextBox();
             this.txtBoxMiddleName = new System.Windows.Forms.TextBox();
             this.lblBirthDate = new System.Windows.Forms.Label();
             this.lblLastName = new System.Windows.Forms.Label();
@@ -79,12 +79,42 @@
             this.lblFineId = new System.Windows.Forms.Label();
             this.tabPageV = new System.Windows.Forms.TabPage();
             this.gbCarData = new System.Windows.Forms.GroupBox();
+<<<<<<< HEAD
+=======
+            this.button1 = new System.Windows.Forms.Button();
+            this.txtBoxOwnerDLN = new System.Windows.Forms.TextBox();
+            this.txtBoxRegNumber = new System.Windows.Forms.TextBox();
+            this.txtBoxRegDate = new System.Windows.Forms.TextBox();
+            this.txtBoxColor = new System.Windows.Forms.TextBox();
+            this.txtBoxWeight = new System.Windows.Forms.TextBox();
+            this.txtBoxSeats = new System.Windows.Forms.TextBox();
+            this.txtBoxType = new System.Windows.Forms.TextBox();
+            this.txtBoxModel = new System.Windows.Forms.TextBox();
+            this.txtBoxBrand = new System.Windows.Forms.TextBox();
+            this.txtBoxEngineNumber = new System.Windows.Forms.TextBox();
+            this.txtBoxFrameNumber = new System.Windows.Forms.TextBox();
+            this.lblOwnerDLN = new System.Windows.Forms.Label();
+            this.lblRegNumberForAdd = new System.Windows.Forms.Label();
+            this.lblRegistryDate = new System.Windows.Forms.Label();
+            this.lblColor = new System.Windows.Forms.Label();
+            this.lblWeight = new System.Windows.Forms.Label();
+            this.lblSeats = new System.Windows.Forms.Label();
+            this.lblTypeVehicle = new System.Windows.Forms.Label();
+            this.lblModel = new System.Windows.Forms.Label();
+            this.lblBrand = new System.Windows.Forms.Label();
+            this.lblEngine = new System.Windows.Forms.Label();
+            this.lblFrameNumber = new System.Windows.Forms.Label();
+>>>>>>> support methods for login/logout
             this.cbRegistryNumber = new System.Windows.Forms.ComboBox();
             this.lblRegNumber = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+<<<<<<< HEAD
+=======
+            this.btnAddDriver = new System.Windows.Forms.Button();
+>>>>>>> support methods for login/logout
             this.tabControl.SuspendLayout();
-            this.tabPagePI.SuspendLayout();
+            this.tabPageDI.SuspendLayout();
             this.gbImage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gbLicense.SuspendLayout();
@@ -92,12 +122,13 @@
             this.tabPageF.SuspendLayout();
             this.gbFine.SuspendLayout();
             this.tabPageV.SuspendLayout();
+            this.gbCarData.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
             // 
-            this.tabControl.Controls.Add(this.tabPagePI);
+            this.tabControl.Controls.Add(this.tabPageDI);
             this.tabControl.Controls.Add(this.tabPageF);
             this.tabControl.Controls.Add(this.tabPageV);
             this.tabControl.Location = new System.Drawing.Point(3, 37);
@@ -106,18 +137,19 @@
             this.tabControl.Size = new System.Drawing.Size(855, 511);
             this.tabControl.TabIndex = 0;
             // 
-            // tabPagePI
+            // tabPageDI
             // 
-            this.tabPagePI.Controls.Add(this.gbImage);
-            this.tabPagePI.Controls.Add(this.gbLicense);
-            this.tabPagePI.Controls.Add(this.gbPerfonalData);
-            this.tabPagePI.Location = new System.Drawing.Point(4, 22);
-            this.tabPagePI.Name = "tabPagePI";
-            this.tabPagePI.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagePI.Size = new System.Drawing.Size(847, 485);
-            this.tabPagePI.TabIndex = 0;
-            this.tabPagePI.Text = "Personal Info";
-            this.tabPagePI.UseVisualStyleBackColor = true;
+            this.tabPageDI.Controls.Add(this.btnAddDriver);
+            this.tabPageDI.Controls.Add(this.gbImage);
+            this.tabPageDI.Controls.Add(this.gbLicense);
+            this.tabPageDI.Controls.Add(this.gbPerfonalData);
+            this.tabPageDI.Location = new System.Drawing.Point(4, 22);
+            this.tabPageDI.Name = "tabPageDI";
+            this.tabPageDI.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageDI.Size = new System.Drawing.Size(847, 485);
+            this.tabPageDI.TabIndex = 0;
+            this.tabPageDI.Text = "Driver Info";
+            this.tabPageDI.UseVisualStyleBackColor = true;
             // 
             // gbImage
             // 
@@ -140,9 +172,9 @@
             // gbLicense
             // 
             this.gbLicense.Controls.Add(this.cbCategories);
-            this.gbLicense.Controls.Add(this.comboBox1);
+            this.gbLicense.Controls.Add(this.cbPointsLeft);
             this.gbLicense.Controls.Add(this.lblLicenseId);
-            this.gbLicense.Controls.Add(this.textBox2);
+            this.gbLicense.Controls.Add(this.txtBoxLicenseId);
             this.gbLicense.Controls.Add(this.lblCatecories);
             this.gbLicense.Controls.Add(this.lblPoints);
             this.gbLicense.Location = new System.Drawing.Point(6, 332);
@@ -176,10 +208,10 @@
             this.cbCategories.Size = new System.Drawing.Size(298, 90);
             this.cbCategories.TabIndex = 12;
             // 
-            // comboBox1
+            // cbPointsLeft
             // 
-            this.comboBox1.Enabled = false;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbPointsLeft.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbPointsLeft.Items.AddRange(new object[] {
             "1",
             "2",
             "3",
@@ -219,10 +251,10 @@
             "37",
             "38",
             "39"});
-            this.comboBox1.Location = new System.Drawing.Point(131, 75);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(82, 21);
-            this.comboBox1.TabIndex = 11;
+            this.cbPointsLeft.Location = new System.Drawing.Point(131, 75);
+            this.cbPointsLeft.Name = "cbPointsLeft";
+            this.cbPointsLeft.Size = new System.Drawing.Size(82, 21);
+            this.cbPointsLeft.TabIndex = 11;
             // 
             // lblLicenseId
             // 
@@ -234,13 +266,13 @@
             this.lblLicenseId.TabIndex = 6;
             this.lblLicenseId.Text = "License ID";
             // 
-            // textBox2
+            // txtBoxLicenseId
             // 
-            this.textBox2.Location = new System.Drawing.Point(131, 47);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(167, 20);
-            this.textBox2.TabIndex = 7;
+            this.txtBoxLicenseId.Location = new System.Drawing.Point(131, 47);
+            this.txtBoxLicenseId.Name = "txtBoxLicenseId";
+            this.txtBoxLicenseId.ReadOnly = true;
+            this.txtBoxLicenseId.Size = new System.Drawing.Size(167, 20);
+            this.txtBoxLicenseId.TabIndex = 7;
             // 
             // lblCatecories
             // 
@@ -269,13 +301,13 @@
             this.gbPerfonalData.Controls.Add(this.blbAddress);
             this.gbPerfonalData.Controls.Add(this.txtBoxCity);
             this.gbPerfonalData.Controls.Add(this.lblCity);
-            this.gbPerfonalData.Controls.Add(this.textBox1);
+            this.gbPerfonalData.Controls.Add(this.txtBoxCountry);
             this.gbPerfonalData.Controls.Add(this.lbCountry);
             this.gbPerfonalData.Controls.Add(this.lblName);
             this.gbPerfonalData.Controls.Add(this.txtBoxName);
             this.gbPerfonalData.Controls.Add(this.lblGender);
             this.gbPerfonalData.Controls.Add(this.lblMiddleName);
-            this.gbPerfonalData.Controls.Add(this.txtBoxDirthDate);
+            this.gbPerfonalData.Controls.Add(this.txtBoxBirthDate);
             this.gbPerfonalData.Controls.Add(this.txtBoxMiddleName);
             this.gbPerfonalData.Controls.Add(this.lblBirthDate);
             this.gbPerfonalData.Controls.Add(this.lblLastName);
@@ -291,7 +323,7 @@
             // 
             // cbGender
             // 
-            this.cbGender.Enabled = false;
+            this.cbGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbGender.FormattingEnabled = true;
             this.cbGender.Items.AddRange(new object[] {
             "Male",
@@ -337,13 +369,13 @@
             this.lblCity.TabIndex = 14;
             this.lblCity.Text = "City";
             // 
-            // textBox1
+            // txtBoxCountry
             // 
-            this.textBox1.Location = new System.Drawing.Point(127, 206);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(329, 20);
-            this.textBox1.TabIndex = 13;
+            this.txtBoxCountry.Location = new System.Drawing.Point(127, 206);
+            this.txtBoxCountry.Name = "txtBoxCountry";
+            this.txtBoxCountry.ReadOnly = true;
+            this.txtBoxCountry.Size = new System.Drawing.Size(329, 20);
+            this.txtBoxCountry.TabIndex = 13;
             // 
             // lbCountry
             // 
@@ -393,13 +425,13 @@
             this.lblMiddleName.TabIndex = 2;
             this.lblMiddleName.Text = "Middle Name";
             // 
-            // txtBoxDirthDate
+            // txtBoxBirthDate
             // 
-            this.txtBoxDirthDate.Location = new System.Drawing.Point(127, 135);
-            this.txtBoxDirthDate.Name = "txtBoxDirthDate";
-            this.txtBoxDirthDate.ReadOnly = true;
-            this.txtBoxDirthDate.Size = new System.Drawing.Size(206, 20);
-            this.txtBoxDirthDate.TabIndex = 9;
+            this.txtBoxBirthDate.Location = new System.Drawing.Point(127, 135);
+            this.txtBoxBirthDate.Name = "txtBoxBirthDate";
+            this.txtBoxBirthDate.ReadOnly = true;
+            this.txtBoxBirthDate.Size = new System.Drawing.Size(206, 20);
+            this.txtBoxBirthDate.TabIndex = 9;
             // 
             // txtBoxMiddleName
             // 
@@ -496,6 +528,10 @@
             // 
             this.txtBoxFineId.Location = new System.Drawing.Point(148, 154);
             this.txtBoxFineId.Name = "txtBoxFineId";
+<<<<<<< HEAD
+=======
+            this.txtBoxFineId.ReadOnly = true;
+>>>>>>> support methods for login/logout
             this.txtBoxFineId.Size = new System.Drawing.Size(237, 20);
             this.txtBoxFineId.TabIndex = 19;
             this.txtBoxFineId.Visible = false;
@@ -515,6 +551,10 @@
             // 
             this.txtBoxOffenderDLN.Location = new System.Drawing.Point(148, 129);
             this.txtBoxOffenderDLN.Name = "txtBoxOffenderDLN";
+<<<<<<< HEAD
+=======
+            this.txtBoxOffenderDLN.ReadOnly = true;
+>>>>>>> support methods for login/logout
             this.txtBoxOffenderDLN.Size = new System.Drawing.Size(237, 20);
             this.txtBoxOffenderDLN.TabIndex = 17;
             this.txtBoxOffenderDLN.Visible = false;
@@ -544,6 +584,10 @@
             this.txtBoxReason.Location = new System.Drawing.Point(148, 202);
             this.txtBoxReason.Multiline = true;
             this.txtBoxReason.Name = "txtBoxReason";
+<<<<<<< HEAD
+=======
+            this.txtBoxReason.ReadOnly = true;
+>>>>>>> support methods for login/logout
             this.txtBoxReason.Size = new System.Drawing.Size(579, 161);
             this.txtBoxReason.TabIndex = 14;
             // 
@@ -551,6 +595,10 @@
             // 
             this.txtBoxPoliceman.Location = new System.Drawing.Point(148, 79);
             this.txtBoxPoliceman.Name = "txtBoxPoliceman";
+<<<<<<< HEAD
+=======
+            this.txtBoxPoliceman.ReadOnly = true;
+>>>>>>> support methods for login/logout
             this.txtBoxPoliceman.Size = new System.Drawing.Size(237, 20);
             this.txtBoxPoliceman.TabIndex = 13;
             // 
@@ -558,6 +606,10 @@
             // 
             this.txtBoxDate.Location = new System.Drawing.Point(148, 54);
             this.txtBoxDate.Name = "txtBoxDate";
+<<<<<<< HEAD
+=======
+            this.txtBoxDate.ReadOnly = true;
+>>>>>>> support methods for login/logout
             this.txtBoxDate.Size = new System.Drawing.Size(122, 20);
             this.txtBoxDate.TabIndex = 12;
             // 
@@ -573,6 +625,7 @@
             // 
             // cbPaid
             // 
+            this.cbPaid.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPaid.FormattingEnabled = true;
             this.cbPaid.Items.AddRange(new object[] {
             "No",
@@ -614,6 +667,10 @@
             // 
             // cbType
             // 
+<<<<<<< HEAD
+=======
+            this.cbType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+>>>>>>> support methods for login/logout
             this.cbType.FormattingEnabled = true;
             this.cbType.Items.AddRange(new object[] {
             "Ticket",
@@ -635,6 +692,10 @@
             // 
             // bcFineIds
             // 
+<<<<<<< HEAD
+=======
+            this.bcFineIds.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+>>>>>>> support methods for login/logout
             this.bcFineIds.FormattingEnabled = true;
             this.bcFineIds.Location = new System.Drawing.Point(109, 22);
             this.bcFineIds.Name = "bcFineIds";
@@ -665,6 +726,7 @@
             // 
             // gbCarData
             // 
+<<<<<<< HEAD
             this.gbCarData.Location = new System.Drawing.Point(43, 59);
             this.gbCarData.Name = "gbCarData";
             this.gbCarData.Size = new System.Drawing.Size(747, 385);
@@ -674,6 +736,246 @@
             // 
             // cbRegistryNumber
             // 
+=======
+            this.gbCarData.Controls.Add(this.button1);
+            this.gbCarData.Controls.Add(this.txtBoxOwnerDLN);
+            this.gbCarData.Controls.Add(this.txtBoxRegNumber);
+            this.gbCarData.Controls.Add(this.txtBoxRegDate);
+            this.gbCarData.Controls.Add(this.txtBoxColor);
+            this.gbCarData.Controls.Add(this.txtBoxWeight);
+            this.gbCarData.Controls.Add(this.txtBoxSeats);
+            this.gbCarData.Controls.Add(this.txtBoxType);
+            this.gbCarData.Controls.Add(this.txtBoxModel);
+            this.gbCarData.Controls.Add(this.txtBoxBrand);
+            this.gbCarData.Controls.Add(this.txtBoxEngineNumber);
+            this.gbCarData.Controls.Add(this.txtBoxFrameNumber);
+            this.gbCarData.Controls.Add(this.lblOwnerDLN);
+            this.gbCarData.Controls.Add(this.lblRegNumberForAdd);
+            this.gbCarData.Controls.Add(this.lblRegistryDate);
+            this.gbCarData.Controls.Add(this.lblColor);
+            this.gbCarData.Controls.Add(this.lblWeight);
+            this.gbCarData.Controls.Add(this.lblSeats);
+            this.gbCarData.Controls.Add(this.lblTypeVehicle);
+            this.gbCarData.Controls.Add(this.lblModel);
+            this.gbCarData.Controls.Add(this.lblBrand);
+            this.gbCarData.Controls.Add(this.lblEngine);
+            this.gbCarData.Controls.Add(this.lblFrameNumber);
+            this.gbCarData.Location = new System.Drawing.Point(43, 59);
+            this.gbCarData.Name = "gbCarData";
+            this.gbCarData.Size = new System.Drawing.Size(775, 409);
+            this.gbCarData.TabIndex = 2;
+            this.gbCarData.TabStop = false;
+            this.gbCarData.Text = "Vehicle Data";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(556, 362);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(184, 31);
+            this.button1.TabIndex = 32;
+            this.button1.Text = "Add Vehicle";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // txtBoxOwnerDLN
+            // 
+            this.txtBoxOwnerDLN.Location = new System.Drawing.Point(371, 231);
+            this.txtBoxOwnerDLN.Name = "txtBoxOwnerDLN";
+            this.txtBoxOwnerDLN.Size = new System.Drawing.Size(270, 20);
+            this.txtBoxOwnerDLN.TabIndex = 31;
+            // 
+            // txtBoxRegNumber
+            // 
+            this.txtBoxRegNumber.Location = new System.Drawing.Point(556, 170);
+            this.txtBoxRegNumber.Name = "txtBoxRegNumber";
+            this.txtBoxRegNumber.Size = new System.Drawing.Size(161, 20);
+            this.txtBoxRegNumber.TabIndex = 30;
+            // 
+            // txtBoxRegDate
+            // 
+            this.txtBoxRegDate.Location = new System.Drawing.Point(556, 140);
+            this.txtBoxRegDate.Name = "txtBoxRegDate";
+            this.txtBoxRegDate.ReadOnly = true;
+            this.txtBoxRegDate.Size = new System.Drawing.Size(161, 20);
+            this.txtBoxRegDate.TabIndex = 29;
+            // 
+            // txtBoxColor
+            // 
+            this.txtBoxColor.Location = new System.Drawing.Point(556, 110);
+            this.txtBoxColor.Name = "txtBoxColor";
+            this.txtBoxColor.ReadOnly = true;
+            this.txtBoxColor.Size = new System.Drawing.Size(161, 20);
+            this.txtBoxColor.TabIndex = 28;
+            // 
+            // txtBoxWeight
+            // 
+            this.txtBoxWeight.Location = new System.Drawing.Point(556, 80);
+            this.txtBoxWeight.Name = "txtBoxWeight";
+            this.txtBoxWeight.ReadOnly = true;
+            this.txtBoxWeight.Size = new System.Drawing.Size(161, 20);
+            this.txtBoxWeight.TabIndex = 27;
+            // 
+            // txtBoxSeats
+            // 
+            this.txtBoxSeats.Location = new System.Drawing.Point(556, 50);
+            this.txtBoxSeats.Name = "txtBoxSeats";
+            this.txtBoxSeats.ReadOnly = true;
+            this.txtBoxSeats.Size = new System.Drawing.Size(161, 20);
+            this.txtBoxSeats.TabIndex = 26;
+            // 
+            // txtBoxType
+            // 
+            this.txtBoxType.Location = new System.Drawing.Point(153, 170);
+            this.txtBoxType.Name = "txtBoxType";
+            this.txtBoxType.ReadOnly = true;
+            this.txtBoxType.Size = new System.Drawing.Size(161, 20);
+            this.txtBoxType.TabIndex = 25;
+            // 
+            // txtBoxModel
+            // 
+            this.txtBoxModel.Location = new System.Drawing.Point(153, 140);
+            this.txtBoxModel.Name = "txtBoxModel";
+            this.txtBoxModel.ReadOnly = true;
+            this.txtBoxModel.Size = new System.Drawing.Size(161, 20);
+            this.txtBoxModel.TabIndex = 24;
+            // 
+            // txtBoxBrand
+            // 
+            this.txtBoxBrand.Location = new System.Drawing.Point(153, 110);
+            this.txtBoxBrand.Name = "txtBoxBrand";
+            this.txtBoxBrand.ReadOnly = true;
+            this.txtBoxBrand.Size = new System.Drawing.Size(161, 20);
+            this.txtBoxBrand.TabIndex = 23;
+            // 
+            // txtBoxEngineNumber
+            // 
+            this.txtBoxEngineNumber.Location = new System.Drawing.Point(153, 80);
+            this.txtBoxEngineNumber.Name = "txtBoxEngineNumber";
+            this.txtBoxEngineNumber.ReadOnly = true;
+            this.txtBoxEngineNumber.Size = new System.Drawing.Size(161, 20);
+            this.txtBoxEngineNumber.TabIndex = 22;
+            // 
+            // txtBoxFrameNumber
+            // 
+            this.txtBoxFrameNumber.Location = new System.Drawing.Point(153, 50);
+            this.txtBoxFrameNumber.Name = "txtBoxFrameNumber";
+            this.txtBoxFrameNumber.ReadOnly = true;
+            this.txtBoxFrameNumber.Size = new System.Drawing.Size(161, 20);
+            this.txtBoxFrameNumber.TabIndex = 21;
+            // 
+            // lblOwnerDLN
+            // 
+            this.lblOwnerDLN.AutoSize = true;
+            this.lblOwnerDLN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblOwnerDLN.Location = new System.Drawing.Point(108, 232);
+            this.lblOwnerDLN.Name = "lblOwnerDLN";
+            this.lblOwnerDLN.Size = new System.Drawing.Size(220, 16);
+            this.lblOwnerDLN.TabIndex = 20;
+            this.lblOwnerDLN.Text = "Owner Driving License Number";
+            // 
+            // lblRegNumberForAdd
+            // 
+            this.lblRegNumberForAdd.AutoSize = true;
+            this.lblRegNumberForAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblRegNumberForAdd.Location = new System.Drawing.Point(421, 170);
+            this.lblRegNumberForAdd.Name = "lblRegNumberForAdd";
+            this.lblRegNumberForAdd.Size = new System.Drawing.Size(124, 16);
+            this.lblRegNumberForAdd.TabIndex = 19;
+            this.lblRegNumberForAdd.Text = "Registry Number";
+            // 
+            // lblRegistryDate
+            // 
+            this.lblRegistryDate.AutoSize = true;
+            this.lblRegistryDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblRegistryDate.Location = new System.Drawing.Point(421, 140);
+            this.lblRegistryDate.Name = "lblRegistryDate";
+            this.lblRegistryDate.Size = new System.Drawing.Size(103, 16);
+            this.lblRegistryDate.TabIndex = 18;
+            this.lblRegistryDate.Text = "Registry Date";
+            // 
+            // lblColor
+            // 
+            this.lblColor.AutoSize = true;
+            this.lblColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblColor.Location = new System.Drawing.Point(421, 110);
+            this.lblColor.Name = "lblColor";
+            this.lblColor.Size = new System.Drawing.Size(45, 16);
+            this.lblColor.TabIndex = 16;
+            this.lblColor.Text = "Color";
+            // 
+            // lblWeight
+            // 
+            this.lblWeight.AutoSize = true;
+            this.lblWeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblWeight.Location = new System.Drawing.Point(421, 80);
+            this.lblWeight.Name = "lblWeight";
+            this.lblWeight.Size = new System.Drawing.Size(56, 16);
+            this.lblWeight.TabIndex = 14;
+            this.lblWeight.Text = "Weight";
+            // 
+            // lblSeats
+            // 
+            this.lblSeats.AutoSize = true;
+            this.lblSeats.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblSeats.Location = new System.Drawing.Point(421, 50);
+            this.lblSeats.Name = "lblSeats";
+            this.lblSeats.Size = new System.Drawing.Size(48, 16);
+            this.lblSeats.TabIndex = 12;
+            this.lblSeats.Text = "Seats";
+            // 
+            // lblTypeVehicle
+            // 
+            this.lblTypeVehicle.AutoSize = true;
+            this.lblTypeVehicle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblTypeVehicle.Location = new System.Drawing.Point(37, 170);
+            this.lblTypeVehicle.Name = "lblTypeVehicle";
+            this.lblTypeVehicle.Size = new System.Drawing.Size(44, 16);
+            this.lblTypeVehicle.TabIndex = 10;
+            this.lblTypeVehicle.Text = "Type";
+            // 
+            // lblModel
+            // 
+            this.lblModel.AutoSize = true;
+            this.lblModel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblModel.Location = new System.Drawing.Point(37, 140);
+            this.lblModel.Name = "lblModel";
+            this.lblModel.Size = new System.Drawing.Size(51, 16);
+            this.lblModel.TabIndex = 8;
+            this.lblModel.Text = "Model";
+            // 
+            // lblBrand
+            // 
+            this.lblBrand.AutoSize = true;
+            this.lblBrand.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblBrand.Location = new System.Drawing.Point(37, 110);
+            this.lblBrand.Name = "lblBrand";
+            this.lblBrand.Size = new System.Drawing.Size(49, 16);
+            this.lblBrand.TabIndex = 6;
+            this.lblBrand.Text = "Brand";
+            // 
+            // lblEngine
+            // 
+            this.lblEngine.AutoSize = true;
+            this.lblEngine.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblEngine.Location = new System.Drawing.Point(37, 80);
+            this.lblEngine.Name = "lblEngine";
+            this.lblEngine.Size = new System.Drawing.Size(114, 16);
+            this.lblEngine.TabIndex = 4;
+            this.lblEngine.Text = "Engine Number";
+            // 
+            // lblFrameNumber
+            // 
+            this.lblFrameNumber.AutoSize = true;
+            this.lblFrameNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblFrameNumber.Location = new System.Drawing.Point(37, 50);
+            this.lblFrameNumber.Name = "lblFrameNumber";
+            this.lblFrameNumber.Size = new System.Drawing.Size(110, 16);
+            this.lblFrameNumber.TabIndex = 2;
+            this.lblFrameNumber.Text = "Frame Number";
+            // 
+            // cbRegistryNumber
+            // 
+            this.cbRegistryNumber.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+>>>>>>> support methods for login/logout
             this.cbRegistryNumber.FormattingEnabled = true;
             this.cbRegistryNumber.Location = new System.Drawing.Point(179, 19);
             this.cbRegistryNumber.Name = "cbRegistryNumber";
@@ -705,7 +1007,19 @@
             this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
             this.loginToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.loginToolStripMenuItem.Text = "Login";
+<<<<<<< HEAD
             this.loginToolStripMenuItem.Click += new System.EventHandler(this.loginToolStripMenuItem_Click);
+=======
+            // 
+            // btnAddDriver
+            // 
+            this.btnAddDriver.Location = new System.Drawing.Point(701, 459);
+            this.btnAddDriver.Name = "btnAddDriver";
+            this.btnAddDriver.Size = new System.Drawing.Size(128, 23);
+            this.btnAddDriver.TabIndex = 15;
+            this.btnAddDriver.Text = "AddDriver";
+            this.btnAddDriver.UseVisualStyleBackColor = true;
+>>>>>>> support methods for login/logout
             // 
             // MainForm
             // 
@@ -717,7 +1031,7 @@
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.tabControl.ResumeLayout(false);
-            this.tabPagePI.ResumeLayout(false);
+            this.tabPageDI.ResumeLayout(false);
             this.gbImage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gbLicense.ResumeLayout(false);
@@ -730,6 +1044,8 @@
             this.gbFine.PerformLayout();
             this.tabPageV.ResumeLayout(false);
             this.tabPageV.PerformLayout();
+            this.gbCarData.ResumeLayout(false);
+            this.gbCarData.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -740,14 +1056,14 @@
         #endregion
 
         private System.Windows.Forms.TabControl tabControl;
-        private System.Windows.Forms.TabPage tabPagePI;
+        private System.Windows.Forms.TabPage tabPageDI;
         private System.Windows.Forms.TabPage tabPageF;
         private System.Windows.Forms.TabPage tabPageV;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem loginToolStripMenuItem;
         private System.Windows.Forms.GroupBox gbPerfonalData;
         public System.Windows.Forms.Label lblGender;
-        private System.Windows.Forms.TextBox txtBoxDirthDate;
+        private System.Windows.Forms.TextBox txtBoxBirthDate;
         public System.Windows.Forms.Label lblBirthDate;
         private System.Windows.Forms.TextBox txtBoxId;
         public System.Windows.Forms.Label lblIdentityNumber;
@@ -761,16 +1077,15 @@
         public System.Windows.Forms.Label blbAddress;
         private System.Windows.Forms.TextBox txtBoxCity;
         public System.Windows.Forms.Label lblCity;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBoxCountry;
         public System.Windows.Forms.Label lbCountry;
         private System.Windows.Forms.GroupBox gbLicense;
         private System.Windows.Forms.CheckedListBox cbCategories;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbPointsLeft;
         public System.Windows.Forms.Label lblLicenseId;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtBoxLicenseId;
         public System.Windows.Forms.Label lblCatecories;
         public System.Windows.Forms.Label lblPoints;
-        private System.Windows.Forms.ComboBox cbGender;
         private System.Windows.Forms.GroupBox gbImage;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox gbFine;
@@ -794,6 +1109,31 @@
         private System.Windows.Forms.GroupBox gbCarData;
         private System.Windows.Forms.ComboBox cbRegistryNumber;
         private System.Windows.Forms.Label lblRegNumber;
+        private System.Windows.Forms.TextBox txtBoxOwnerDLN;
+        private System.Windows.Forms.TextBox txtBoxRegNumber;
+        private System.Windows.Forms.TextBox txtBoxRegDate;
+        private System.Windows.Forms.TextBox txtBoxColor;
+        private System.Windows.Forms.TextBox txtBoxWeight;
+        private System.Windows.Forms.TextBox txtBoxSeats;
+        private System.Windows.Forms.TextBox txtBoxType;
+        private System.Windows.Forms.TextBox txtBoxModel;
+        private System.Windows.Forms.TextBox txtBoxBrand;
+        private System.Windows.Forms.TextBox txtBoxEngineNumber;
+        private System.Windows.Forms.TextBox txtBoxFrameNumber;
+        private System.Windows.Forms.Label lblOwnerDLN;
+        private System.Windows.Forms.Label lblRegNumberForAdd;
+        private System.Windows.Forms.Label lblRegistryDate;
+        private System.Windows.Forms.Label lblColor;
+        private System.Windows.Forms.Label lblWeight;
+        private System.Windows.Forms.Label lblSeats;
+        private System.Windows.Forms.Label lblTypeVehicle;
+        private System.Windows.Forms.Label lblModel;
+        private System.Windows.Forms.Label lblBrand;
+        private System.Windows.Forms.Label lblEngine;
+        private System.Windows.Forms.Label lblFrameNumber;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox cbGender;
+        private System.Windows.Forms.Button btnAddDriver;
     }
 }
 

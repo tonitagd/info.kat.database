@@ -15,9 +15,6 @@ using KatDatabaseInfo.Logic;
  
 namespace KatDatabaseInfo
 {
-  
- //komentar
-  
     public partial class MainForm : Form
     {
         public UserStatus userStatus { get; private set; }
@@ -32,13 +29,13 @@ namespace KatDatabaseInfo
         private void SetEditable(bool editable){
 
             //Info page
-
             txtBoxName.ReadOnly = editable;
             txtBoxMiddleName.ReadOnly = editable;
             txtBoxLastName.ReadOnly = editable;
 
             txtBoxId.ReadOnly = editable;
             txtBoxBirthDate.ReadOnly = editable;
+
             //gender
             cbGender.IsAccessible = !editable;
 
@@ -277,6 +274,39 @@ namespace KatDatabaseInfo
                     break;
             }
 
+        }
+
+        private void btnAddDriver_Click(object sender, EventArgs e)
+        {
+            ClearAllControls();
+            UserData.addDriver(createDriver());
+        }
+
+  
+        private Driver createDriver()
+        {
+            Driver driver = new Driver();
+
+          /*  //Info page
+            driver.FirstName = txtBoxName.Text;
+            driver.MiddleName = txtBoxMiddleName.Text;
+            driver.LastName = txtBoxLastName.Text;
+
+            driver.IdNumber = txtBoxId.Text;
+            driver.BirthDate = txtBoxBirthDate.Text;
+            driver.Gender = cbGender.SelectedItem.ToString();
+
+            //Address
+            driver.Country = txtBoxCountry.Text;
+            driver.City = txtBoxCity.Text;
+            driver.Address = txtBoxAddress.Text;
+
+            //Driving license
+            driver.DrivingLicenseNumber = txtBoxLicenseId.Text;
+            driver.DrivingPointsLeft = cbPointsLeft.SelectedItem.ToString();
+            //driver.DrivingCategories = cbCategories.Text; */
+            return driver;
+            
         }
 
     }

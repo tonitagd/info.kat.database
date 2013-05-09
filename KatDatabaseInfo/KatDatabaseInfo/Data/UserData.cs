@@ -46,5 +46,40 @@ namespace KatDatabaseInfo.Data
             }
             return null;
         }
+
+        public static bool addDriver(Driver driver)
+        {
+           /* SqlConnection conn = new SqlConnection(@"Data Source=.\SQLEXPRESS;AttachDbFilename=Database.mdf;Integrated Security=True; User Instance=True");
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("AddNewStudent", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@fName",
+                obj.FirstName));
+                cmd.Parameters.Add(new SqlParameter("@sName",
+                obj.SecondName));
+                cmd.Parameters.Add(new SqlParameter("@lName",
+                obj.LastName));
+                cmd.Parameters.Add(new SqlParameter("@faculty",
+                obj.Faculty));
+                cmd.Parameters.Add(new SqlParameter("@specialty", "sdf"));
+                cmd.Parameters.Add(new SqlParameter("@fak",
+                obj.FakNumber));
+                cmd.Parameters.Add(new SqlParameter("@OKS", obj.OKS));
+                cmd.Parameters.Add(new SqlParameter("@StudentStat",
+                obj.StudentStatus));
+                cmd.Parameters.Add(new SqlParameter("@Course",
+                obj.Course));
+                cmd.Parameters.Add(new SqlParameter("@Porok", obj.Stream));
+                cmd.Parameters.Add(new SqlParameter("@Group", obj.Group));
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                return false;
+            }*/
+            return true;
+        }
     }
 }

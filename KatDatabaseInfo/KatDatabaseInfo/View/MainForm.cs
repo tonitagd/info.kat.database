@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using KatDatabaseInfo.View;
 using KatDatabaseInfo.Data;
+using KatDatabaseInfo.Logic;
 
 // I love silly comments
  
@@ -172,11 +173,11 @@ namespace KatDatabaseInfo
 
             if (UserStatus.CITIZEN.Equals(userStatus))
             {
-        //        showDriverInfo(DriverValidation.IsThereDriver(logForm.user));
+                showDriverInfo(DriverValidation.IsThereDriver(logForm.user));
             }
             else if (UserStatus.ADMIN.Equals(userStatus))
             {
-       //         showAdminInfo(DriverValidation.IsThereDriver(logForm.user));
+                showAdminInfo(DriverValidation.IsThereDriver(logForm.user));
             }
         }
 

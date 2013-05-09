@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using KatDatabaseInfo.Data;
 
 namespace KatDatabaseInfo.Logic
 {
@@ -19,7 +20,7 @@ namespace KatDatabaseInfo.Logic
             errText = string.Empty;
         }
 
-        private bool isEmtpy(string inputText)
+        private bool isEmpty(string inputText)
         {
             if (inputText == string.Empty)
             {
@@ -37,5 +38,36 @@ namespace KatDatabaseInfo.Logic
             return false;
         }
 
+        public bool ValidateUserInput(out User user)
+        {
+            user = null;
+            if (isEmpty(_username))
+            {
+                errText = "Invalid username! It should not be an empty value";
+                return false;
+            }
+
+            if (isEmpty(_password))
+            {
+                errText = "Invalid password! It should not be an empty value";
+                return false;
+            }
+
+            if (isShorterThan(_password, 6))
+            {
+                errText = "Invalid password! It must be longer than 6 symbols";
+                return false;
+            }
+            
+            User queryResult = UserData.IsUserPassCorrect(_username, _password);
+
+            if (queryResult == null)
+            {
+                errText += "Wrong username or password! Try again";
+                return false;
+            }
+            user = queryResult;
+            return true;
+        }
     }
 }

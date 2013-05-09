@@ -8,14 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using KatDatabaseInfo.View;
+using KatDatabaseInfo.Data;
 
 namespace KatDatabaseInfo
 {
     public partial class MainForm : Form
     {
+        public UserStatus userStatus { get; private set; }
+
         public MainForm()
         {
             InitializeComponent();
+            userStatus = UserStatus.ANONYMOUS;
+            SetStatusToAllControls(false);
         }
 
         private void SetEditable(bool editable){
@@ -129,16 +134,49 @@ namespace KatDatabaseInfo
 
         private void Login()
         {
-            LoginForm loginForm = new LoginForm();
-            if (loginForm.ShowDialog() == DialogResult.OK)
+            LoginForm logForm = new LoginForm();
+            logForm.ShowDialog();
+            if (logForm.DialogResult == DialogResult.OK)
             {
+                SetUserStatus(logForm.user.Role_);
                 SetStatusToAllControls(true);
+                ShowUserInfo(logForm);
+
+                loginToolStripMenuItem.Text = "Logout";
             }
-            loginToolStripMenuItem.Text = "Logout";
+        }
+
+        private void SetUserStatus(short? role)
+        {
+            switch (role)
+            {
+                case null:
+                    userStatus = UserStatus.ANONYMOUS;
+                    break; 
+                case 1:
+                    userStatus = UserStatus.CITIZEN;
+                    break;            
+                case 2:
+                    userStatus = UserStatus.ADMIN;
+                    break;
+            }
+        }
+
+        private void ShowUserInfo(LoginForm logForm)
+        {
+            //if (UserStatus.CITIZEN.Equals(userStatus))
+            //{
+            //    showStudentInfo(StudentValidation.IsThereStudent(logForm.user));
+            //}
+            //else if (UserStatus.ADMIN.Equals(userStatus))
+            //{
+            //    showAdminInfo(StudentValidation.IsThereStudent(logForm.user));
+            //}
         }
 
         private void Logout()
         {
+            SetUserStatus(null);
             SetStatusToAllControls(false);
             ClearAllControls();
             loginToolStripMenuItem.Text = "Login";
@@ -146,7 +184,21 @@ namespace KatDatabaseInfo
 
         private void loginToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Login();
+            switch (userStatus)
+            {
+                case UserStatus.ANONYMOUS:
+                    Login();
+                    break;
+                case UserStatus.CITIZEN:
+                    Logout();
+                    break;
+                case UserStatus.ADMIN:
+                    Logout();
+                    break;
+                default:
+                    break;
+            }
+
         }
 
     }

@@ -49,6 +49,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -64,7 +65,28 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DatabaseDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Data\DriversDataClasses.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DriversDataClasses.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Data\FinesDataClasses.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FinesDataClasses.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Data\UserData.cs" />
+    <Compile Include="Data\UsersDataClasses.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UsersDataClasses.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Data\UserStatus.cs" />
+    <Compile Include="Data\VehicleDataClasses.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VehicleDataClasses.dbml</DependentUpon>
+    </Compile>
     <Compile Include="KatDatabaseInfo.cs" />
     <Compile Include="Logic\LoginValidation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -80,6 +102,23 @@
     <Compile Include="View\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <None Include="Data\DriversDataClasses.dbml.layout">
+      <DependentUpon>DriversDataClasses.dbml</DependentUpon>
+    </None>
+    <None Include="Data\FinesDataClasses.dbml.layout">
+      <DependentUpon>FinesDataClasses.dbml</DependentUpon>
+    </None>
+    <None Include="Data\UsersDataClasses.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>UsersDataClasses.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Data\VehicleDataClasses.dbml.layout">
+      <DependentUpon>VehicleDataClasses.dbml</DependentUpon>
+    </None>
+    <None Include="Data\UsersDataClasses.dbml.layout">
+      <DependentUpon>UsersDataClasses.dbml</DependentUpon>
+    </None>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -106,6 +145,21 @@
     <None Include="Data\DatabaseDataSet.xss">
       <DependentUpon>DatabaseDataSet.xsd</DependentUpon>
     </None>
+    <None Include="Data\DriversDataClasses.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DriversDataClasses.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Data\FinesDataClasses.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>FinesDataClasses.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Data\VehicleDataClasses.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>VehicleDataClasses.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -128,7 +182,9 @@
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
       <Visible>False</Visible>

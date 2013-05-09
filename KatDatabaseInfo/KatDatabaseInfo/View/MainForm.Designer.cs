@@ -30,8 +30,8 @@
         {
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageDI = new System.Windows.Forms.TabPage();
+            this.btnAddDriver = new System.Windows.Forms.Button();
             this.gbImage = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gbLicense = new System.Windows.Forms.GroupBox();
             this.cbCategories = new System.Windows.Forms.CheckedListBox();
             this.cbPointsLeft = new System.Windows.Forms.ComboBox();
@@ -79,7 +79,6 @@
             this.lblFineId = new System.Windows.Forms.Label();
             this.tabPageV = new System.Windows.Forms.TabPage();
             this.gbCarData = new System.Windows.Forms.GroupBox();
-
             this.button1 = new System.Windows.Forms.Button();
             this.txtBoxOwnerDLN = new System.Windows.Forms.TextBox();
             this.txtBoxRegNumber = new System.Windows.Forms.TextBox();
@@ -107,11 +106,12 @@
             this.lblRegNumber = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnAddDriver = new System.Windows.Forms.Button();
+            this.txtBoxSearch = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl.SuspendLayout();
             this.tabPageDI.SuspendLayout();
             this.gbImage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gbLicense.SuspendLayout();
             this.gbPerfonalData.SuspendLayout();
             this.tabPageF.SuspendLayout();
@@ -119,6 +119,7 @@
             this.tabPageV.SuspendLayout();
             this.gbCarData.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -134,6 +135,8 @@
             // 
             // tabPageDI
             // 
+            this.tabPageDI.Controls.Add(this.txtBoxSearch);
+            this.tabPageDI.Controls.Add(this.btnSearch);
             this.tabPageDI.Controls.Add(this.btnAddDriver);
             this.tabPageDI.Controls.Add(this.gbImage);
             this.tabPageDI.Controls.Add(this.gbLicense);
@@ -146,6 +149,15 @@
             this.tabPageDI.Text = "Driver Info";
             this.tabPageDI.UseVisualStyleBackColor = true;
             // 
+            // btnAddDriver
+            // 
+            this.btnAddDriver.Location = new System.Drawing.Point(701, 459);
+            this.btnAddDriver.Name = "btnAddDriver";
+            this.btnAddDriver.Size = new System.Drawing.Size(128, 23);
+            this.btnAddDriver.TabIndex = 15;
+            this.btnAddDriver.Text = "Add Driver";
+            this.btnAddDriver.UseVisualStyleBackColor = true;
+            // 
             // gbImage
             // 
             this.gbImage.Controls.Add(this.pictureBox1);
@@ -155,14 +167,6 @@
             this.gbImage.TabIndex = 14;
             this.gbImage.TabStop = false;
             this.gbImage.Text = "Image";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(18, 19);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(248, 281);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // gbLicense
             // 
@@ -309,7 +313,7 @@
             this.gbPerfonalData.Controls.Add(this.txtBoxId);
             this.gbPerfonalData.Controls.Add(this.txtBoxLastName);
             this.gbPerfonalData.Controls.Add(this.lblIdentityNumber);
-            this.gbPerfonalData.Location = new System.Drawing.Point(344, 17);
+            this.gbPerfonalData.Location = new System.Drawing.Point(344, 29);
             this.gbPerfonalData.Name = "gbPerfonalData";
             this.gbPerfonalData.Size = new System.Drawing.Size(476, 306);
             this.gbPerfonalData.TabIndex = 12;
@@ -517,13 +521,12 @@
             this.gbFine.Size = new System.Drawing.Size(793, 406);
             this.gbFine.TabIndex = 2;
             this.gbFine.TabStop = false;
-            this.gbFine.Text = "Fine Data";
+            this.gbFine.Text = "Fine\'s Data";
             // 
             // txtBoxFineId
             // 
             this.txtBoxFineId.Location = new System.Drawing.Point(148, 154);
             this.txtBoxFineId.Name = "txtBoxFineId";
-
             this.txtBoxFineId.ReadOnly = true;
             this.txtBoxFineId.Size = new System.Drawing.Size(237, 20);
             this.txtBoxFineId.TabIndex = 19;
@@ -701,15 +704,6 @@
             // 
             // gbCarData
             // 
-            this.gbCarData.Location = new System.Drawing.Point(43, 59);
-            this.gbCarData.Name = "gbCarData";
-            this.gbCarData.Size = new System.Drawing.Size(747, 385);
-            this.gbCarData.TabIndex = 2;
-            this.gbCarData.TabStop = false;
-            this.gbCarData.Text = "groupBox1";
-            // 
-            // cbRegistryNumber
-            // 
             this.gbCarData.Controls.Add(this.button1);
             this.gbCarData.Controls.Add(this.txtBoxOwnerDLN);
             this.gbCarData.Controls.Add(this.txtBoxRegNumber);
@@ -738,7 +732,7 @@
             this.gbCarData.Size = new System.Drawing.Size(775, 409);
             this.gbCarData.TabIndex = 2;
             this.gbCarData.TabStop = false;
-            this.gbCarData.Text = "Vehicle Data";
+            this.gbCarData.Text = "Vehicle\'s Data";
             // 
             // button1
             // 
@@ -981,14 +975,30 @@
             this.loginToolStripMenuItem.Text = "Login";
             this.loginToolStripMenuItem.Click += new System.EventHandler(this.loginToolStripMenuItem_Click);
             // 
-            // btnAddDriver
+            // txtBoxSearch
             // 
-            this.btnAddDriver.Location = new System.Drawing.Point(701, 459);
-            this.btnAddDriver.Name = "btnAddDriver";
-            this.btnAddDriver.Size = new System.Drawing.Size(128, 23);
-            this.btnAddDriver.TabIndex = 15;
-            this.btnAddDriver.Text = "AddDriver";
-            this.btnAddDriver.UseVisualStyleBackColor = true;
+            this.txtBoxSearch.Location = new System.Drawing.Point(633, 8);
+            this.txtBoxSearch.Name = "txtBoxSearch";
+            this.txtBoxSearch.Size = new System.Drawing.Size(147, 20);
+            this.txtBoxSearch.TabIndex = 17;
+            this.txtBoxSearch.Text = "Enter a driver\'s license ID";
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Image = global::KatDatabaseInfo.Properties.Resources.GUID_53E97D02_F6B9_4203_88CE_96738398E101_web;
+            this.btnSearch.Location = new System.Drawing.Point(792, 2);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(30, 30);
+            this.btnSearch.TabIndex = 16;
+            this.btnSearch.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(18, 19);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(248, 281);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // MainForm
             // 
@@ -1001,8 +1011,8 @@
             this.Text = "MainForm";
             this.tabControl.ResumeLayout(false);
             this.tabPageDI.ResumeLayout(false);
+            this.tabPageDI.PerformLayout();
             this.gbImage.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gbLicense.ResumeLayout(false);
             this.gbLicense.PerformLayout();
             this.gbPerfonalData.ResumeLayout(false);
@@ -1017,6 +1027,7 @@
             this.gbCarData.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1103,6 +1114,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox cbGender;
         private System.Windows.Forms.Button btnAddDriver;
+        private System.Windows.Forms.TextBox txtBoxSearch;
+        private System.Windows.Forms.Button btnSearch;
     }
 }
 

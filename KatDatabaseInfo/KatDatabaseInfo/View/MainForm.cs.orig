@@ -169,14 +169,23 @@ namespace KatDatabaseInfo
 
         private void ShowUserInfo(LoginForm logForm)
         {
-
+<<<<<<< HEAD
+            //if (UserStatus.CITIZEN.Equals(userStatus))
+            //{
+            //    showStudentInfo(StudentValidation.IsThereStudent(logForm.user));
+            //}
+            //else if (UserStatus.ADMIN.Equals(userStatus))
+            //{
+            //    showAdminInfo(StudentValidation.IsThereStudent(logForm.user));
+            //}
+=======
             if (UserStatus.CITIZEN.Equals(userStatus))
             {
-        //        showDriverInfo(DriverValidation.IsThereDriver(logForm.user));
+                showDriverInfo(DriverValidation.IsThereDriver(logForm.user));
             }
             else if (UserStatus.ADMIN.Equals(userStatus))
             {
-       //         showAdminInfo(DriverValidation.IsThereDriver(logForm.user));
+                showAdminInfo(DriverValidation.IsThereDriver(logForm.user));
             }
         }
 
@@ -249,6 +258,7 @@ namespace KatDatabaseInfo
         private void showAdminInfo(Driver driver)
         {
             throw new NotImplementedException();
+>>>>>>> asdasdsa
         }
 
         private void Logout()

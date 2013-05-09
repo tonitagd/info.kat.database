@@ -92,7 +92,7 @@ namespace KatDatabaseInfo.Data
 		
 		private string _BirthDate;
 		
-		private string _Gender;
+		private int _Gender;
 		
 		private string _Address;
 		
@@ -122,7 +122,7 @@ namespace KatDatabaseInfo.Data
     partial void OnIdNumberChanged();
     partial void OnBirthDateChanging(string value);
     partial void OnBirthDateChanged();
-    partial void OnGenderChanging(string value);
+    partial void OnGenderChanging(int value);
     partial void OnGenderChanged();
     partial void OnAddressChanging(string value);
     partial void OnAddressChanged();
@@ -263,8 +263,8 @@ namespace KatDatabaseInfo.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Gender", DbType="NChar(10) NOT NULL", CanBeNull=false)]
-		public string Gender
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Gender", DbType="Int NOT NULL")]
+		public int Gender
 		{
 			get
 			{

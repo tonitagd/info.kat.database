@@ -43,13 +43,13 @@ namespace KatDatabaseInfo.Logic
             user = null;
             if (isEmpty(_username))
             {
-                errText = "Invalid username! It should not be an empty value";
+                errText = "Invalid username! It cannot be an empty value.";
                 return false;
             }
 
             if (isEmpty(_password))
             {
-                errText = "Invalid password! It should not be an empty value";
+                errText = "Invalid password! It cannot be an empty value.";
                 return false;
             }
 

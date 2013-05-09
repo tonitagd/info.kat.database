@@ -17,7 +17,6 @@ namespace KatDatabaseInfo.Data
 
         private static User _IsUserPassCorrect(string username, string password)
         {
-           // UsersDataClassesDataContext
             UsersDataClassesDataContext userDataContext = new UsersDataClassesDataContext();
             User[] queryResult = (from users in userDataContext.GetTable<User>()
                                where (users.Username == username) &&

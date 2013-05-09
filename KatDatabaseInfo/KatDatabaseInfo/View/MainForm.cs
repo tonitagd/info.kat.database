@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using KatDatabaseInfo.View;
 using KatDatabaseInfo.Data;
 
+// I love silly comments
+ 
 namespace KatDatabaseInfo
 {
   

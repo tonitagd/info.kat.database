@@ -12,6 +12,9 @@ using KatDatabaseInfo.Data;
 
 namespace KatDatabaseInfo
 {
+  
+ //komentar
+  
     public partial class MainForm : Form
     {
         public UserStatus userStatus { get; private set; }

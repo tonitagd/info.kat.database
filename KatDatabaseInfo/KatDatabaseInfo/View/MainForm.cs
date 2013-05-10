@@ -246,7 +246,7 @@ namespace KatDatabaseInfo
         
         private void showAdminInfo(Driver driver)
         {
-            throw new NotImplementedException();
+            SetEditable(false);
         }
 
         private void Logout()
@@ -278,23 +278,28 @@ namespace KatDatabaseInfo
 
         private void btnAddDriver_Click(object sender, EventArgs e)
         {
-            ClearAllControls();
-            UserData.addDriver(createDriver());
+           // ClearAllControls();
+            try
+            {
+                UserData.addDriver(createDriver());
+            }
+            catch(Exception exc)
+            {
+                MessageBox.Show("Failed adding driver." + exc.Message);
+            }
         }
 
-  
         private Driver createDriver()
         {
             Driver driver = new Driver();
-
-          /*  //Info page
+            //Info page
             driver.FirstName = txtBoxName.Text;
             driver.MiddleName = txtBoxMiddleName.Text;
             driver.LastName = txtBoxLastName.Text;
 
             driver.IdNumber = txtBoxId.Text;
             driver.BirthDate = txtBoxBirthDate.Text;
-            driver.Gender = cbGender.SelectedItem.ToString();
+            driver.Gender = (short)cbGender.SelectedIndex;
 
             //Address
             driver.Country = txtBoxCountry.Text;
@@ -303,11 +308,15 @@ namespace KatDatabaseInfo
 
             //Driving license
             driver.DrivingLicenseNumber = txtBoxLicenseId.Text;
-            driver.DrivingPointsLeft = cbPointsLeft.SelectedItem.ToString();
-            //driver.DrivingCategories = cbCategories.Text; */
+            driver.DrivingPointsLeft = (short)cbPointsLeft.SelectedIndex;
+            driver.DrivingCategories = cbCategories.CheckedItems.ToString();
             return driver;
-            
         }
+
+        //private string GetDrivingCategories()
+        //{
+        //    return  ;
+        //}
 
     }
 }

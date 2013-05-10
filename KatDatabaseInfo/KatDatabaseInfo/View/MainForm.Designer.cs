@@ -1,4 +1,5 @@
-﻿namespace KatDatabaseInfo
+﻿using KatDatabaseInfo.View;
+namespace KatDatabaseInfo
 {
     partial class MainForm
     {
@@ -43,6 +44,10 @@
             this.lblCatecories = new System.Windows.Forms.Label();
             this.lblPoints = new System.Windows.Forms.Label();
             this.gbPerfonalData = new System.Windows.Forms.GroupBox();
+            this.lblPassword = new System.Windows.Forms.Label();
+            this.txtBoxPassword = new System.Windows.Forms.TextBox();
+            this.lblUserName = new System.Windows.Forms.Label();
+            this.txtBoxUserName = new System.Windows.Forms.TextBox();
             this.cbGender = new System.Windows.Forms.ComboBox();
             this.txtBoxAddress = new System.Windows.Forms.TextBox();
             this.blbAddress = new System.Windows.Forms.Label();
@@ -66,7 +71,7 @@
             this.txtBoxFineId = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtBoxOffenderDLN = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblOffenderDLN = new System.Windows.Forms.Label();
             this.btnAddFine = new System.Windows.Forms.Button();
             this.txtBoxReason = new System.Windows.Forms.TextBox();
             this.txtBoxPoliceman = new System.Windows.Forms.TextBox();
@@ -78,11 +83,11 @@
             this.lblDate = new System.Windows.Forms.Label();
             this.cbType = new System.Windows.Forms.ComboBox();
             this.lblType = new System.Windows.Forms.Label();
-            this.bcFineIds = new System.Windows.Forms.ComboBox();
+            this.cbFineIds = new System.Windows.Forms.ComboBox();
             this.lblFineId = new System.Windows.Forms.Label();
             this.tabPageV = new System.Windows.Forms.TabPage();
             this.gbCarData = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAddVehicle = new System.Windows.Forms.Button();
             this.txtBoxOwnerDLN = new System.Windows.Forms.TextBox();
             this.txtBoxRegNumber = new System.Windows.Forms.TextBox();
             this.txtBoxRegDate = new System.Windows.Forms.TextBox();
@@ -321,6 +326,10 @@
             // 
             // gbPerfonalData
             // 
+            this.gbPerfonalData.Controls.Add(this.lblPassword);
+            this.gbPerfonalData.Controls.Add(this.txtBoxPassword);
+            this.gbPerfonalData.Controls.Add(this.lblUserName);
+            this.gbPerfonalData.Controls.Add(this.txtBoxUserName);
             this.gbPerfonalData.Controls.Add(this.cbGender);
             this.gbPerfonalData.Controls.Add(this.txtBoxAddress);
             this.gbPerfonalData.Controls.Add(this.blbAddress);
@@ -341,10 +350,46 @@
             this.gbPerfonalData.Controls.Add(this.lblIdentityNumber);
             this.gbPerfonalData.Location = new System.Drawing.Point(344, 29);
             this.gbPerfonalData.Name = "gbPerfonalData";
-            this.gbPerfonalData.Size = new System.Drawing.Size(476, 306);
+            this.gbPerfonalData.Size = new System.Drawing.Size(497, 306);
             this.gbPerfonalData.TabIndex = 12;
             this.gbPerfonalData.TabStop = false;
             this.gbPerfonalData.Text = "Personal Data";
+            // 
+            // lblPassword
+            // 
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassword.Location = new System.Drawing.Point(299, 110);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(76, 16);
+            this.lblPassword.TabIndex = 21;
+            this.lblPassword.Text = "Password";
+            // 
+            // txtBoxPassword
+            // 
+            this.txtBoxPassword.Location = new System.Drawing.Point(387, 110);
+            this.txtBoxPassword.Name = "txtBoxPassword";
+            this.txtBoxPassword.ReadOnly = true;
+            this.txtBoxPassword.Size = new System.Drawing.Size(94, 20);
+            this.txtBoxPassword.TabIndex = 22;
+            // 
+            // lblUserName
+            // 
+            this.lblUserName.AutoSize = true;
+            this.lblUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserName.Location = new System.Drawing.Point(299, 85);
+            this.lblUserName.Name = "lblUserName";
+            this.lblUserName.Size = new System.Drawing.Size(79, 16);
+            this.lblUserName.TabIndex = 19;
+            this.lblUserName.Text = "Username";
+            // 
+            // txtBoxUserName
+            // 
+            this.txtBoxUserName.Location = new System.Drawing.Point(387, 85);
+            this.txtBoxUserName.Name = "txtBoxUserName";
+            this.txtBoxUserName.ReadOnly = true;
+            this.txtBoxUserName.Size = new System.Drawing.Size(94, 20);
+            this.txtBoxUserName.TabIndex = 20;
             // 
             // cbGender
             // 
@@ -427,7 +472,7 @@
             this.txtBoxName.Location = new System.Drawing.Point(127, 35);
             this.txtBoxName.Name = "txtBoxName";
             this.txtBoxName.ReadOnly = true;
-            this.txtBoxName.Size = new System.Drawing.Size(206, 20);
+            this.txtBoxName.Size = new System.Drawing.Size(149, 20);
             this.txtBoxName.TabIndex = 1;
             // 
             // lblGender
@@ -455,7 +500,7 @@
             this.txtBoxBirthDate.Location = new System.Drawing.Point(127, 135);
             this.txtBoxBirthDate.Name = "txtBoxBirthDate";
             this.txtBoxBirthDate.ReadOnly = true;
-            this.txtBoxBirthDate.Size = new System.Drawing.Size(206, 20);
+            this.txtBoxBirthDate.Size = new System.Drawing.Size(149, 20);
             this.txtBoxBirthDate.TabIndex = 9;
             // 
             // txtBoxMiddleName
@@ -463,7 +508,7 @@
             this.txtBoxMiddleName.Location = new System.Drawing.Point(127, 60);
             this.txtBoxMiddleName.Name = "txtBoxMiddleName";
             this.txtBoxMiddleName.ReadOnly = true;
-            this.txtBoxMiddleName.Size = new System.Drawing.Size(206, 20);
+            this.txtBoxMiddleName.Size = new System.Drawing.Size(149, 20);
             this.txtBoxMiddleName.TabIndex = 3;
             // 
             // lblBirthDate
@@ -491,7 +536,7 @@
             this.txtBoxId.Location = new System.Drawing.Point(127, 110);
             this.txtBoxId.Name = "txtBoxId";
             this.txtBoxId.ReadOnly = true;
-            this.txtBoxId.Size = new System.Drawing.Size(206, 20);
+            this.txtBoxId.Size = new System.Drawing.Size(149, 20);
             this.txtBoxId.TabIndex = 7;
             // 
             // txtBoxLastName
@@ -499,7 +544,7 @@
             this.txtBoxLastName.Location = new System.Drawing.Point(127, 85);
             this.txtBoxLastName.Name = "txtBoxLastName";
             this.txtBoxLastName.ReadOnly = true;
-            this.txtBoxLastName.Size = new System.Drawing.Size(206, 20);
+            this.txtBoxLastName.Size = new System.Drawing.Size(149, 20);
             this.txtBoxLastName.TabIndex = 5;
             // 
             // lblIdentityNumber
@@ -515,7 +560,7 @@
             // tabPageF
             // 
             this.tabPageF.Controls.Add(this.gbFine);
-            this.tabPageF.Controls.Add(this.bcFineIds);
+            this.tabPageF.Controls.Add(this.cbFineIds);
             this.tabPageF.Controls.Add(this.lblFineId);
             this.tabPageF.Location = new System.Drawing.Point(4, 22);
             this.tabPageF.Name = "tabPageF";
@@ -530,7 +575,7 @@
             this.gbFine.Controls.Add(this.txtBoxFineId);
             this.gbFine.Controls.Add(this.label2);
             this.gbFine.Controls.Add(this.txtBoxOffenderDLN);
-            this.gbFine.Controls.Add(this.label1);
+            this.gbFine.Controls.Add(this.lblOffenderDLN);
             this.gbFine.Controls.Add(this.btnAddFine);
             this.gbFine.Controls.Add(this.txtBoxReason);
             this.gbFine.Controls.Add(this.txtBoxPoliceman);
@@ -578,16 +623,16 @@
             this.txtBoxOffenderDLN.TabIndex = 17;
             this.txtBoxOffenderDLN.Visible = false;
             // 
-            // label1
+            // lblOffenderDLN
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(32, 130);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 16);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "Offender DLN";
-            this.label1.Visible = false;
+            this.lblOffenderDLN.AutoSize = true;
+            this.lblOffenderDLN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblOffenderDLN.Location = new System.Drawing.Point(32, 130);
+            this.lblOffenderDLN.Name = "lblOffenderDLN";
+            this.lblOffenderDLN.Size = new System.Drawing.Size(101, 16);
+            this.lblOffenderDLN.TabIndex = 16;
+            this.lblOffenderDLN.Text = "Offender DLN";
+            this.lblOffenderDLN.Visible = false;
             // 
             // btnAddFine
             // 
@@ -697,14 +742,16 @@
             this.lblType.TabIndex = 2;
             this.lblType.Text = "Type";
             // 
-            // bcFineIds
+            // cbFineIds
             // 
-            this.bcFineIds.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.bcFineIds.FormattingEnabled = true;
-            this.bcFineIds.Location = new System.Drawing.Point(109, 22);
-            this.bcFineIds.Name = "bcFineIds";
-            this.bcFineIds.Size = new System.Drawing.Size(121, 21);
-            this.bcFineIds.TabIndex = 1;
+            this.cbFineIds.DisplayMember = "SerialNumber";
+            this.cbFineIds.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbFineIds.FormattingEnabled = true;
+            this.cbFineIds.Location = new System.Drawing.Point(109, 22);
+            this.cbFineIds.Name = "cbFineIds";
+            this.cbFineIds.Size = new System.Drawing.Size(121, 21);
+            this.cbFineIds.TabIndex = 1;
+            this.cbFineIds.ValueMember = "SerialNumber";
             // 
             // lblFineId
             // 
@@ -730,7 +777,7 @@
             // 
             // gbCarData
             // 
-            this.gbCarData.Controls.Add(this.button1);
+            this.gbCarData.Controls.Add(this.btnAddVehicle);
             this.gbCarData.Controls.Add(this.txtBoxOwnerDLN);
             this.gbCarData.Controls.Add(this.txtBoxRegNumber);
             this.gbCarData.Controls.Add(this.txtBoxRegDate);
@@ -760,14 +807,14 @@
             this.gbCarData.TabStop = false;
             this.gbCarData.Text = "Vehicle\'s Data";
             // 
-            // button1
+            // btnAddVehicle
             // 
-            this.button1.Location = new System.Drawing.Point(556, 362);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(184, 31);
-            this.button1.TabIndex = 32;
-            this.button1.Text = "Add Vehicle";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAddVehicle.Location = new System.Drawing.Point(556, 362);
+            this.btnAddVehicle.Name = "btnAddVehicle";
+            this.btnAddVehicle.Size = new System.Drawing.Size(184, 31);
+            this.btnAddVehicle.TabIndex = 32;
+            this.btnAddVehicle.Text = "Add Vehicle";
+            this.btnAddVehicle.UseVisualStyleBackColor = true;
             // 
             // txtBoxOwnerDLN
             // 
@@ -967,12 +1014,14 @@
             // 
             // cbRegistryNumber
             // 
+            this.cbRegistryNumber.DisplayMember = "RegistryNumber";
             this.cbRegistryNumber.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbRegistryNumber.FormattingEnabled = true;
             this.cbRegistryNumber.Location = new System.Drawing.Point(179, 19);
             this.cbRegistryNumber.Name = "cbRegistryNumber";
             this.cbRegistryNumber.Size = new System.Drawing.Size(129, 21);
             this.cbRegistryNumber.TabIndex = 1;
+            this.cbRegistryNumber.ValueMember = "RegistryNumber";
             // 
             // lblRegNumber
             // 
@@ -1070,7 +1119,6 @@
         private System.Windows.Forms.GroupBox gbImage;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox gbFine;
-        private System.Windows.Forms.ComboBox bcFineIds;
         private System.Windows.Forms.Label lblFineId;
         private System.Windows.Forms.TextBox txtBoxReason;
         private System.Windows.Forms.TextBox txtBoxPoliceman;
@@ -1085,7 +1133,7 @@
         private System.Windows.Forms.TextBox txtBoxFineId;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtBoxOffenderDLN;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblOffenderDLN;
         private System.Windows.Forms.Button btnAddFine;
         private System.Windows.Forms.GroupBox gbCarData;
         private System.Windows.Forms.ComboBox cbRegistryNumber;
@@ -1112,11 +1160,17 @@
         private System.Windows.Forms.Label lblBrand;
         private System.Windows.Forms.Label lblEngine;
         private System.Windows.Forms.Label lblFrameNumber;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAddVehicle;
         private System.Windows.Forms.ComboBox cbGender;
         private System.Windows.Forms.Button btnAddDriver;
         private System.Windows.Forms.TextBox txtBoxSearch;
         private System.Windows.Forms.Button btnSearch;
+        public System.Windows.Forms.Label lblPassword;
+        private System.Windows.Forms.TextBox txtBoxPassword;
+        public System.Windows.Forms.Label lblUserName;
+        private System.Windows.Forms.TextBox txtBoxUserName;
+        private System.Windows.Forms.ComboBox cbFineIds;
+       
     }
 }
 

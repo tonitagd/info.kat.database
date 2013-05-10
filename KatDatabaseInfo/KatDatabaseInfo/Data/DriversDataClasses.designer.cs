@@ -72,6 +72,13 @@ namespace KatDatabaseInfo.Data
 				return this.GetTable<Driver>();
 			}
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.AddNewDriver")]
+		public int AddNewDriver([global::System.Data.Linq.Mapping.ParameterAttribute(Name="FirstName", DbType="NVarChar(50)")] string firstName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MiddleName", DbType="NVarChar(50)")] string middleName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="LastName", DbType="NVarChar(50)")] string lastName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdNumber", DbType="NChar(10)")] string idNumber, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="BirthDate", DbType="NVarChar(50)")] string birthDate, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Gender", DbType="SmallInt")] System.Nullable<short> gender, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Address", DbType="NVarChar(50)")] string address, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Country", DbType="NVarChar(50)")] string country, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="City", DbType="NVarChar(50)")] string city, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DrivingLicenseNumber", DbType="NChar(10)")] string drivingLicenseNumber, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DrivingCategories", DbType="NVarChar(50)")] string drivingCategories, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DrivingPointsLeft", DbType="SmallInt")] System.Nullable<short> drivingPointsLeft)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), firstName, middleName, lastName, idNumber, birthDate, gender, address, country, city, drivingLicenseNumber, drivingCategories, drivingPointsLeft);
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Drivers")]

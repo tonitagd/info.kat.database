@@ -47,11 +47,10 @@ namespace KatDatabaseInfo.Data
             return null;
         }
 
-       /* public static bool addDriver(Driver driver)
+      /*public static void addDriver(Driver driver)
         {
-            SqlConnection conn = new SqlConnection(@"Data Source=.\SQLEXPRESS;AttachDbFilename=D:\Personal data\TU\III Kurs\II semestyr\PS\repository\info.kat.database\KatDatabaseInfo\KatDatabaseInfo\Data\Database.mdf;Integrated Security=True; User Instance=True");
-            try
-            {
+            SqlConnection conn = new SqlConnection(@"Data Source=.\SQLEXPRESS;AttachDbFilename=D:\repository\info.kat.database\KatDatabaseInfo\KatDatabaseInfo\Database.mdf;Integrated Security=True; User Instance=True");
+
                 conn.Open();
                 SqlCommand cmd = new SqlCommand("AddNewDriver", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -75,43 +74,13 @@ namespace KatDatabaseInfo.Data
                 cmd.Parameters.Add(new SqlParameter("@DrivingCategories", driver.DrivingCategories));
                 cmd.Parameters.Add(new SqlParameter("@DrivingPointsLeft", driver.DrivingPointsLeft));
                 cmd.ExecuteNonQuery();
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-            return true;
+
         }*/
-        public static void addDriver(Driver driver)
-        {
-
-                SqlConnection conn = new SqlConnection(@"Data Source=.\SQLEXPRESS;AttachDbFilename=D:\Personal data\TU\III Kurs\II semestyr\PS\repository\info.kat.database\KatDatabaseInfo\KatDatabaseInfo\Data\Database.mdf;Integrated Security=True; User Instance=True");
-                string insertCommand = "INSERT INTO dbo.Drivers(FirstName, MiddleName, LastName, IdNumber, BirthDate, Gender, Address, Country, City, DrivingLicenseNumber, DrivingCategories, DrivingPointsLeft) VALUES(@FirstName, @MiddleName, @LastName, @IdNumber, @BirthDate, @Gender, @Address, @Country, @City, @DrivingLicenseNumber, @DrivingCategories, @DrivingPointsLeft)";
-
-                SqlCommand cmd = new SqlCommand(insertCommand, conn);
-                conn.Open();
-
-                cmd.Parameters.AddWithValue("@FirstName", driver.FirstName);
-                cmd.Parameters.AddWithValue("@MiddleName",
-                driver.MiddleName);
-                cmd.Parameters.AddWithValue("@LastName",
-                driver.LastName);
-                cmd.Parameters.AddWithValue("@IdNumber",
-                driver.IdNumber);
-                cmd.Parameters.AddWithValue("@BirthDate", driver.BirthDate);
-                cmd.Parameters.AddWithValue("@Gender",
-                driver.Gender);
-                cmd.Parameters.AddWithValue("@Address", driver.Address);
-                cmd.Parameters.AddWithValue("@Country",
-                driver.Country);
-                cmd.Parameters.AddWithValue("@City",
-                driver.City);
-                cmd.Parameters.AddWithValue("@DrivingLicenseNumber", driver.DrivingLicenseNumber);
-                cmd.Parameters.AddWithValue("@DrivingCategories", driver.DrivingCategories);
-                cmd.Parameters.AddWithValue("@DrivingPointsLeft", driver.DrivingPointsLeft);
-   
-                cmd.ExecuteNonQuery();
-            
-        }
+     public static void addDriver(Driver driver)
+       {
+           DriversDataClassesDataContext dc = new DriversDataClassesDataContext();
+           dc.AddNewDriver(driver.FirstName,driver.MiddleName,driver.LastName,driver.IdNumber,driver.BirthDate,driver.Gender,driver.Address,driver.Country,driver.City,driver.DrivingLicenseNumber,driver.DrivingCategories,driver.DrivingPointsLeft);
+           dc.SubmitChanges();
+        } 
     }
 }

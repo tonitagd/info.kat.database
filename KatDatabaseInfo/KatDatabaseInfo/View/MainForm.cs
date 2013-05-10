@@ -299,7 +299,7 @@ namespace KatDatabaseInfo
 
             driver.IdNumber = txtBoxId.Text;
             driver.BirthDate = txtBoxBirthDate.Text;
-            driver.Gender = (short)cbGender.SelectedIndex;
+            driver.Gender = Convert.ToInt16(cbGender.SelectedIndex);
 
             //Address
             driver.Country = txtBoxCountry.Text;
@@ -308,7 +308,7 @@ namespace KatDatabaseInfo
 
             //Driving license
             driver.DrivingLicenseNumber = txtBoxLicenseId.Text;
-            driver.DrivingPointsLeft = (short)cbPointsLeft.SelectedIndex;
+            driver.DrivingPointsLeft = Convert.ToInt16(cbPointsLeft.SelectedIndex);
             driver.DrivingCategories = cbCategories.CheckedItems.ToString();
             return driver;
         }

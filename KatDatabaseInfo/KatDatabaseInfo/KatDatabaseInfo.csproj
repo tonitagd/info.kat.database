@@ -183,7 +183,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
-    <None Include="View\GUID-53E97D02-F6B9-4203-88CE-96738398E101-web.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />

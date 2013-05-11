@@ -59,15 +59,5 @@ namespace KatDatabaseInfo.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap GUID_53E97D02_F6B9_4203_88CE_96738398E101_web {
-            get {
-                object obj = ResourceManager.GetObject("GUID-53E97D02-F6B9-4203-88CE-96738398E101-web", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }

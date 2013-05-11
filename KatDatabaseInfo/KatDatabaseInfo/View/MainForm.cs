@@ -59,24 +59,24 @@ namespace KatDatabaseInfo
             {
                 SetUserStatus(logForm.user.Role_);
                 SetStatusToAllControls(true);
-                ShowUserInfo(logForm);
+                ShowUserInfo(UserData.GetDriverByLicenseID(logForm.user.DrivingLicenseN));
 
                 loginToolStripMenuItem.Text = "Logout";
             }
         }
 
-        private void ShowUserInfo(LoginForm logForm)
+        private void ShowUserInfo(Driver driver)
         {
 
             if (UserStatus.CITIZEN.Equals(userStatus))
             {
-                showDriverInfo(DriverValidation.IsThereDriver(logForm.user));
+                showDriverInfo(driver);
                 SetEditable(false);
                 SetVisibilityToAdminButtons(false);
             }
             else if (UserStatus.ADMIN.Equals(userStatus))
             {
-                showAdminInfo(DriverValidation.IsThereDriver(logForm.user));
+                showAdminInfo(driver);
                 SetVisibilityToAdminButtons(true);
             }
         }
@@ -169,7 +169,7 @@ namespace KatDatabaseInfo
             txtBoxLicenseId.ReadOnly = !editable;
             cbPointsLeft.Enabled = editable;
 
-            cbCategories.CheckOnClick = editable; //Chech on click doesn't work
+            cbCategories.Enabled = editable; //Chech on click doesn't work
 
             //Fines page
 
@@ -209,6 +209,8 @@ namespace KatDatabaseInfo
             btnAddDriver.Visible = visible;
             lblOwnerDLN.Visible = visible;
             txtBoxOwnerDLN.Visible = visible;
+            lblRole.Visible = visible;
+            cbRole.Visible = visible;
         }
 
         private void showAdminInfo(Driver driver)
@@ -238,7 +240,7 @@ namespace KatDatabaseInfo
             txtBoxLicenseId.Text = "";
             cbPointsLeft.Text = "";
 
-            cbCategories.Text = "";
+            cbCategories.SelectedValue = "";
 
             //Fines page
 
@@ -330,23 +332,43 @@ namespace KatDatabaseInfo
             //Driving license
             driver.DrivingLicenseNumber = txtBoxLicenseId.Text;
             driver.DrivingPointsLeft = Convert.ToInt16(cbPointsLeft.SelectedIndex);
-            driver.DrivingCategories = cbCategories.CheckedItems.ToString();
+            driver.DrivingCategories = GetCategories();
             return driver;
+        }
+
+        private string GetCategories()
+        {
+            string categories = "";
+            ListBox.SelectedObjectCollection lb = cbCategories.SelectedItems;
+
+            for (int i = 0; i < lb.Count; i++)
+            {
+                categories += lb[i];
+            }
+            return categories;
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'databaseDataSet.Vehicle' table. You can move, or remove it, as needed.
+            
             this.vehicleTableAdapter.Fill(this.databaseDataSet.Vehicle);
-            // TODO: This line of code loads data into the 'databaseDataSet.Fines' table. You can move, or remove it, as needed.
             this.finesTableAdapter.Fill(this.databaseDataSet.Fines);
-            // TODO: This line of code loads data into the 'databaseDataSet.Drivers' table. You can move, or remove it, as needed.
             this.driversTableAdapter.Fill(this.databaseDataSet.Drivers);
 
         }
 
-       
-
-       
+        private void cbSearchDriver_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string id = cbSearchDriver.SelectedValue.ToString();
+            Driver driver = UserData.GetDriverByLicenseID(id);
+            showDriverInfo(driver);
+            short? role = UserData.GetUserRoleByLicenseID(id);
+            if (role == null)
+            {
+                cbRole.SelectedIndex = 2;
+                return;
+            }
+            cbRole.SelectedIndex = (int)role-1;
+        }
     }
 }

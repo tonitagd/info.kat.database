@@ -1,4 +1,4 @@
-﻿using KatDatabaseInfo.View;
+﻿
 namespace KatDatabaseInfo
 {
     partial class MainForm
@@ -168,6 +168,7 @@ namespace KatDatabaseInfo
             // cbCategories
             // 
             this.cbCategories.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cbCategories.CheckOnClick = true;
             this.cbCategories.FormattingEnabled = true;
             this.cbCategories.Items.AddRange(new object[] {
             "A",
@@ -192,14 +193,15 @@ namespace KatDatabaseInfo
             // cbSearchDriver
             // 
             this.cbSearchDriver.DataSource = this.driversBindingSource;
-            this.cbSearchDriver.DisplayMember = "IdNumber";
+            this.cbSearchDriver.DisplayMember = "DrivingLicenseNumber";
             this.cbSearchDriver.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSearchDriver.FormattingEnabled = true;
             this.cbSearchDriver.Location = new System.Drawing.Point(701, 6);
             this.cbSearchDriver.Name = "cbSearchDriver";
             this.cbSearchDriver.Size = new System.Drawing.Size(140, 21);
             this.cbSearchDriver.TabIndex = 17;
-            this.cbSearchDriver.ValueMember = "IdNumber";
+            this.cbSearchDriver.ValueMember = "DrivingLicenseNumber";
+            this.cbSearchDriver.SelectedIndexChanged += new System.EventHandler(this.cbSearchDriver_SelectedIndexChanged);
             // 
             // driversBindingSource
             // 
@@ -215,11 +217,11 @@ namespace KatDatabaseInfo
             // 
             this.lblSearchDriver.AutoSize = true;
             this.lblSearchDriver.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lblSearchDriver.Location = new System.Drawing.Point(564, 7);
+            this.lblSearchDriver.Location = new System.Drawing.Point(480, 7);
             this.lblSearchDriver.Name = "lblSearchDriver";
-            this.lblSearchDriver.Size = new System.Drawing.Size(117, 16);
+            this.lblSearchDriver.Size = new System.Drawing.Size(214, 16);
             this.lblSearchDriver.TabIndex = 16;
-            this.lblSearchDriver.Text = "Select Driver ID";
+            this.lblSearchDriver.Text = "Select Driver License Number";
             // 
             // btnAddDriver
             // 
@@ -271,7 +273,8 @@ namespace KatDatabaseInfo
             this.cbRole.FormattingEnabled = true;
             this.cbRole.Items.AddRange(new object[] {
             "CITIZEN",
-            "ADMIN"});
+            "ADMIN",
+            ""});
             this.cbRole.Location = new System.Drawing.Point(132, 87);
             this.cbRole.Name = "cbRole";
             this.cbRole.Size = new System.Drawing.Size(90, 21);

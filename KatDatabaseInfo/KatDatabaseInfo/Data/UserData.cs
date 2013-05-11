@@ -47,6 +47,19 @@ namespace KatDatabaseInfo.Data
             return null;
         }
 
+        public static short? GetUserRoleByLicenseID(string licenseID)
+        {
+            UsersDataClassesDataContext userDataContext = new UsersDataClassesDataContext();
+            var queryResult = (from users in userDataContext.GetTable<User>()
+                               where (users.DrivingLicenseN == licenseID)
+                               select users).ToArray<User>();
+            if (queryResult.Count<User>() > 0)
+            {
+                return queryResult.ElementAt<User>(0).Role_;
+            }
+            return null;
+        }
+
       /*public static void addDriver(Driver driver)
         {
             SqlConnection conn = new SqlConnection(@"Data Source=.\SQLEXPRESS;AttachDbFilename=D:\repository\info.kat.database\KatDatabaseInfo\KatDatabaseInfo\Database.mdf;Integrated Security=True; User Instance=True");

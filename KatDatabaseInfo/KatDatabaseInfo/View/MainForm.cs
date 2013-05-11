@@ -372,8 +372,6 @@ namespace KatDatabaseInfo
             }
             cbRole.SelectedIndex = (int)role-1;
         }
-<<<<<<< HEAD
-=======
 
         private User CreateUser()
         {
@@ -384,7 +382,6 @@ namespace KatDatabaseInfo
             user.Role_ = Convert.ToInt16(cbRole.SelectedIndex + 1);
             return user;
         }
->>>>>>> raboti
     }
 }
 

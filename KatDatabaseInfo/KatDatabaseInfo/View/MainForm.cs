@@ -159,7 +159,7 @@ namespace KatDatabaseInfo
             txtBoxBirthDate.ReadOnly = !editable;
 
             //gender
-            cbGender.IsAccessible = editable;
+            cbGender.Enabled = editable;
 
 
             txtBoxCountry.ReadOnly = !editable;
@@ -167,18 +167,18 @@ namespace KatDatabaseInfo
             txtBoxAddress.ReadOnly = !editable;
 
             txtBoxLicenseId.ReadOnly = !editable;
-            cbPointsLeft.IsAccessible = editable;
+            cbPointsLeft.Enabled = editable;
 
-            cbCategories.CheckOnClick = editable;
+            cbCategories.CheckOnClick = editable; //Chech on click doesn't work
 
             //Fines page
 
             //type
-            cbType.IsAccessible = editable;
+            cbType.Enabled = editable;
             txtBoxDate.ReadOnly = !editable;
             txtBoxPoliceman.ReadOnly = !editable;
             //paid
-            cbPaid.IsAccessible = editable;
+            cbPaid.Enabled = editable;
             txtBoxOffenderDLN.ReadOnly = !editable;
             txtBoxFineId.ReadOnly = !editable;
             txtBoxReason.ReadOnly = !editable;
@@ -191,6 +191,7 @@ namespace KatDatabaseInfo
             txtBoxModel.ReadOnly = !editable;
             txtBoxType.ReadOnly = !editable;
 
+            txtBoxSeats.ReadOnly = !editable;
             txtBoxWeight.ReadOnly = !editable;
             txtBoxColor.ReadOnly = !editable;
             txtBoxRegDate.ReadOnly = !editable;
@@ -201,15 +202,13 @@ namespace KatDatabaseInfo
 
         private void SetVisibilityToAdminButtons(bool visible)
         {
-            btnSearch.Visible = visible;
-            txtBoxSearch.Visible = visible;
-            btnAddDriver.Visible = visible;
+            lblSearchDriver.Visible = visible;
+            cbSearchDriver.Visible = visible;
             btnAddFine.Visible = visible;
             btnAddVehicle.Visible = visible;
-            lblUserName.Visible = visible;
-            lblPassword.Visible = visible;
-            txtBoxUserName.Visible = visible;
-            txtBoxPassword.Visible = visible;
+            btnAddDriver.Visible = visible;
+            lblOwnerDLN.Visible = visible;
+            txtBoxOwnerDLN.Visible = visible;
         }
 
         private void showAdminInfo(Driver driver)
@@ -331,6 +330,17 @@ namespace KatDatabaseInfo
             driver.DrivingPointsLeft = Convert.ToInt16(cbPointsLeft.SelectedIndex);
             driver.DrivingCategories = cbCategories.CheckedItems.ToString();
             return driver;
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'databaseDataSet.Vehicle' table. You can move, or remove it, as needed.
+            this.vehicleTableAdapter.Fill(this.databaseDataSet.Vehicle);
+            // TODO: This line of code loads data into the 'databaseDataSet.Fines' table. You can move, or remove it, as needed.
+            this.finesTableAdapter.Fill(this.databaseDataSet.Fines);
+            // TODO: This line of code loads data into the 'databaseDataSet.Drivers' table. You can move, or remove it, as needed.
+            this.driversTableAdapter.Fill(this.databaseDataSet.Drivers);
+
         }
 
        

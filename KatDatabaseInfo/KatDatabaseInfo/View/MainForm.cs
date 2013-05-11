@@ -25,6 +25,7 @@ namespace KatDatabaseInfo
             SetUserStatus(null);
             SetStatusToAllControls(false);
             SetVisibilityToAdminButtons(false);
+            SetEditable(false);
         }
 
         private void SetUserStatus(short? role)
@@ -276,6 +277,7 @@ namespace KatDatabaseInfo
             SetStatusToAllControls(false);
             SetVisibilityToAdminButtons(false);
             ClearAllControls();
+            SetEditable(false);
             loginToolStripMenuItem.Text = "Login";
         }
 
@@ -304,7 +306,7 @@ namespace KatDatabaseInfo
             {
                 Driver driver = createDriver();
                 UserData.addDriver(driver);
-                UserData.CreateUsernameAndPassword(driver);
+                UserData.CreateUsernameAndPassword(CreateUser());
             }
             catch(Exception exc)
             {
@@ -370,5 +372,19 @@ namespace KatDatabaseInfo
             }
             cbRole.SelectedIndex = (int)role-1;
         }
+<<<<<<< HEAD
+=======
+
+        private User CreateUser()
+        {
+            User user = new User();
+            user.Username = txtBoxId.Text;
+            user.Password = txtBoxLicenseId.Text;
+            user.DrivingLicenseN = txtBoxLicenseId.Text;
+            user.Role_ = Convert.ToInt16(cbRole.SelectedIndex + 1);
+            return user;
+        }
+>>>>>>> raboti
     }
 }
+

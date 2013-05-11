@@ -22,3 +22,15 @@ D:\Personal data\TU\III Kurs\II semestyr\PS\repository\info.kat.database\KatData
 D:\Personal data\TU\III Kurs\II semestyr\PS\repository\info.kat.database\KatDatabaseInfo\KatDatabaseInfo\bin\Debug\Database_log.ldf
 D:\repository\info.kat.database\KatDatabaseInfo\KatDatabaseInfo\bin\Debug\Database.mdf
 D:\repository\info.kat.database\KatDatabaseInfo\KatDatabaseInfo\bin\Debug\Database_log.ldf
+C:\Users\Tonita\Desktop\mosh\info.kat.database\KatDatabaseInfo\KatDatabaseInfo\bin\Debug\KatDatabaseInfo.exe.config
+C:\Users\Tonita\Desktop\mosh\info.kat.database\KatDatabaseInfo\KatDatabaseInfo\obj\Debug\KatDatabaseInfo.exe
+C:\Users\Tonita\Desktop\mosh\info.kat.database\KatDatabaseInfo\KatDatabaseInfo\obj\Debug\KatDatabaseInfo.pdb
+C:\Users\Tonita\Desktop\mosh\info.kat.database\KatDatabaseInfo\KatDatabaseInfo\obj\Debug\KatDatabaseInfo.csprojResolveAssemblyReference.cache
+C:\Users\Tonita\Desktop\mosh\info.kat.database\KatDatabaseInfo\KatDatabaseInfo\obj\Debug\KatDatabaseInfo.Properties.Resources.resources
+C:\Users\Tonita\Desktop\mosh\info.kat.database\KatDatabaseInfo\KatDatabaseInfo\obj\Debug\KatDatabaseInfo.View.LoginForm.resources
+C:\Users\Tonita\Desktop\mosh\info.kat.database\KatDatabaseInfo\KatDatabaseInfo\obj\Debug\KatDatabaseInfo.MainForm.resources
+C:\Users\Tonita\Desktop\mosh\info.kat.database\KatDatabaseInfo\KatDatabaseInfo\obj\Debug\KatDatabaseInfo.csproj.GenerateResource.Cache
+C:\Users\Tonita\Desktop\mosh\info.kat.database\KatDatabaseInfo\KatDatabaseInfo\bin\Debug\Database.mdf
+C:\Users\Tonita\Desktop\mosh\info.kat.database\KatDatabaseInfo\KatDatabaseInfo\bin\Debug\Database_log.ldf
+C:\Users\Tonita\Desktop\mosh\info.kat.database\KatDatabaseInfo\KatDatabaseInfo\bin\Debug\KatDatabaseInfo.exe
+C:\Users\Tonita\Desktop\mosh\info.kat.database\KatDatabaseInfo\KatDatabaseInfo\bin\Debug\KatDatabaseInfo.pdb

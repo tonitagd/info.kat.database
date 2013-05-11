@@ -72,6 +72,13 @@ namespace KatDatabaseInfo.Data
 				return this.GetTable<User>();
 			}
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CreateUsernameAndPassword")]
+		public int CreateUsernameAndPassword([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Username", DbType="NVarChar(50)")] string username, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Password", DbType="NVarChar(50)")] string password, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DrivingLicenseN", DbType="NVarChar(50)")] string drivingLicenseN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Role", DbType="SmallInt")] System.Nullable<short> role)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), username, password, drivingLicenseN, role);
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Users")]

@@ -1217,7 +1217,7 @@ namespace KatDatabaseInfo
         private System.Windows.Forms.ComboBox cbRole;
         private System.Windows.Forms.TextBox txtBoxBirthDate;
         public System.Windows.Forms.Label lblBirthDate;
-       
+
     }
 }
 

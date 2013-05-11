@@ -8,8 +8,8 @@
   <Shapes>
     <Shape ID="DesignTable:Drivers" ZOrder="4" X="70" Y="88" Height="324" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="24" OldDataTableHeight="0" SplitterPosition="254" />
     <Shape ID="DesignTable:Vehicle" ZOrder="3" X="404" Y="365" Height="305" Width="186" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
-    <Shape ID="DesignTable:Fines" ZOrder="2" X="445" Y="120" Height="229" Width="174" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="178" />
-    <Shape ID="DesignTable:Users" ZOrder="1" X="161" Y="499" Height="172" Width="176" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
+    <Shape ID="DesignTable:Users" ZOrder="2" X="161" Y="499" Height="172" Width="176" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
+    <Shape ID="DesignTable:Fines" ZOrder="1" X="705" Y="143" Height="248" Width="174" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="197" />
   </Shapes>
   <Connectors />
 </DiagramLayout>

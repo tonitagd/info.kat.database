@@ -96,6 +96,8 @@ namespace KatDatabaseInfo.Data
 		
 		private string _Reason;
 		
+		private System.Nullable<decimal> _Amount;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -116,6 +118,8 @@ namespace KatDatabaseInfo.Data
     partial void OnPaidChanged();
     partial void OnReasonChanging(string value);
     partial void OnReasonChanged();
+    partial void OnAmountChanging(System.Nullable<decimal> value);
+    partial void OnAmountChanged();
     #endregion
 		
 		public Fine()
@@ -279,6 +283,26 @@ namespace KatDatabaseInfo.Data
 					this._Reason = value;
 					this.SendPropertyChanged("Reason");
 					this.OnReasonChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Amount", DbType="Money")]
+		public System.Nullable<decimal> Amount
+		{
+			get
+			{
+				return this._Amount;
+			}
+			set
+			{
+				if ((this._Amount != value))
+				{
+					this.OnAmountChanging(value);
+					this.SendPropertyChanging();
+					this._Amount = value;
+					this.SendPropertyChanged("Amount");
+					this.OnAmountChanged();
 				}
 			}
 		}

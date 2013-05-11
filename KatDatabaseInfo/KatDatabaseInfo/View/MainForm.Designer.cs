@@ -120,6 +120,10 @@ namespace KatDatabaseInfo
             this.driversTableAdapter = new DatabaseDataSetTableAdapters.DriversTableAdapter();
             this.finesTableAdapter = new DatabaseDataSetTableAdapters.FinesTableAdapter();
             this.vehicleTableAdapter = new DatabaseDataSetTableAdapters.VehicleTableAdapter();
+            this.txtBoxPrice = new System.Windows.Forms.TextBox();
+            this.lblPrice = new System.Windows.Forms.Label();
+            this.btnDell = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabPageDI.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.driversBindingSource)).BeginInit();
@@ -150,6 +154,8 @@ namespace KatDatabaseInfo
             // 
             // tabPageDI
             // 
+            this.tabPageDI.Controls.Add(this.btnUpdate);
+            this.tabPageDI.Controls.Add(this.btnDell);
             this.tabPageDI.Controls.Add(this.cbCategories);
             this.tabPageDI.Controls.Add(this.cbSearchDriver);
             this.tabPageDI.Controls.Add(this.lblSearchDriver);
@@ -225,7 +231,7 @@ namespace KatDatabaseInfo
             // 
             // btnAddDriver
             // 
-            this.btnAddDriver.Location = new System.Drawing.Point(701, 459);
+            this.btnAddDriver.Location = new System.Drawing.Point(700, 459);
             this.btnAddDriver.Name = "btnAddDriver";
             this.btnAddDriver.Size = new System.Drawing.Size(128, 23);
             this.btnAddDriver.TabIndex = 15;
@@ -585,6 +591,8 @@ namespace KatDatabaseInfo
             // 
             // gbFine
             // 
+            this.gbFine.Controls.Add(this.txtBoxPrice);
+            this.gbFine.Controls.Add(this.lblPrice);
             this.gbFine.Controls.Add(this.txtBoxFineId);
             this.gbFine.Controls.Add(this.label2);
             this.gbFine.Controls.Add(this.txtBoxOffenderDLN);
@@ -609,7 +617,7 @@ namespace KatDatabaseInfo
             // 
             // txtBoxFineId
             // 
-            this.txtBoxFineId.Location = new System.Drawing.Point(148, 154);
+            this.txtBoxFineId.Location = new System.Drawing.Point(148, 179);
             this.txtBoxFineId.Name = "txtBoxFineId";
             this.txtBoxFineId.ReadOnly = true;
             this.txtBoxFineId.Size = new System.Drawing.Size(237, 20);
@@ -620,7 +628,7 @@ namespace KatDatabaseInfo
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(32, 155);
+            this.label2.Location = new System.Drawing.Point(32, 180);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 16);
             this.label2.TabIndex = 18;
@@ -629,7 +637,7 @@ namespace KatDatabaseInfo
             // 
             // txtBoxOffenderDLN
             // 
-            this.txtBoxOffenderDLN.Location = new System.Drawing.Point(148, 129);
+            this.txtBoxOffenderDLN.Location = new System.Drawing.Point(148, 154);
             this.txtBoxOffenderDLN.Name = "txtBoxOffenderDLN";
             this.txtBoxOffenderDLN.ReadOnly = true;
             this.txtBoxOffenderDLN.Size = new System.Drawing.Size(237, 20);
@@ -640,7 +648,7 @@ namespace KatDatabaseInfo
             // 
             this.lblOffenderDLN.AutoSize = true;
             this.lblOffenderDLN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lblOffenderDLN.Location = new System.Drawing.Point(32, 130);
+            this.lblOffenderDLN.Location = new System.Drawing.Point(32, 155);
             this.lblOffenderDLN.Name = "lblOffenderDLN";
             this.lblOffenderDLN.Size = new System.Drawing.Size(101, 16);
             this.lblOffenderDLN.TabIndex = 16;
@@ -658,11 +666,11 @@ namespace KatDatabaseInfo
             // 
             // txtBoxReason
             // 
-            this.txtBoxReason.Location = new System.Drawing.Point(148, 202);
+            this.txtBoxReason.Location = new System.Drawing.Point(148, 231);
             this.txtBoxReason.Multiline = true;
             this.txtBoxReason.Name = "txtBoxReason";
             this.txtBoxReason.ReadOnly = true;
-            this.txtBoxReason.Size = new System.Drawing.Size(579, 161);
+            this.txtBoxReason.Size = new System.Drawing.Size(579, 127);
             this.txtBoxReason.TabIndex = 14;
             // 
             // txtBoxPoliceman
@@ -685,7 +693,7 @@ namespace KatDatabaseInfo
             // 
             this.lblReason.AutoSize = true;
             this.lblReason.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lblReason.Location = new System.Drawing.Point(32, 203);
+            this.lblReason.Location = new System.Drawing.Point(32, 232);
             this.lblReason.Name = "lblReason";
             this.lblReason.Size = new System.Drawing.Size(62, 16);
             this.lblReason.TabIndex = 10;
@@ -1087,6 +1095,44 @@ namespace KatDatabaseInfo
             // 
             this.vehicleTableAdapter.ClearBeforeFill = true;
             // 
+            // txtBoxPrice
+            // 
+            this.txtBoxPrice.Location = new System.Drawing.Point(148, 129);
+            this.txtBoxPrice.Name = "txtBoxPrice";
+            this.txtBoxPrice.ReadOnly = true;
+            this.txtBoxPrice.Size = new System.Drawing.Size(237, 20);
+            this.txtBoxPrice.TabIndex = 21;
+            this.txtBoxPrice.Visible = false;
+            // 
+            // lblPrice
+            // 
+            this.lblPrice.AutoSize = true;
+            this.lblPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblPrice.Location = new System.Drawing.Point(32, 130);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(59, 16);
+            this.lblPrice.TabIndex = 20;
+            this.lblPrice.Text = "Amount";
+            this.lblPrice.Visible = false;
+            // 
+            // btnDell
+            // 
+            this.btnDell.Location = new System.Drawing.Point(400, 459);
+            this.btnDell.Name = "btnDell";
+            this.btnDell.Size = new System.Drawing.Size(128, 23);
+            this.btnDell.TabIndex = 18;
+            this.btnDell.Text = "Delete Driver";
+            this.btnDell.UseVisualStyleBackColor = true;
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(550, 459);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(128, 23);
+            this.btnUpdate.TabIndex = 19;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1217,6 +1263,10 @@ namespace KatDatabaseInfo
         private System.Windows.Forms.ComboBox cbRole;
         private System.Windows.Forms.TextBox txtBoxBirthDate;
         public System.Windows.Forms.Label lblBirthDate;
+        private System.Windows.Forms.TextBox txtBoxPrice;
+        private System.Windows.Forms.Label lblPrice;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnDell;
 
     }
 }

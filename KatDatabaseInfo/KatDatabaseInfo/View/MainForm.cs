@@ -212,6 +212,10 @@ namespace KatDatabaseInfo
             txtBoxOwnerDLN.Visible = visible;
             lblRole.Visible = visible;
             cbRole.Visible = visible;
+            btnDell.Visible = visible;
+            btnUpdate.Visible = visible;
+            lblRole.Visible = visible;
+            cbRole.Visible = visible;
         }
 
         private void showAdminInfo(Driver driver)
@@ -307,6 +311,7 @@ namespace KatDatabaseInfo
                 Driver driver = createDriver();
                 UserData.addDriver(driver);
                 UserData.CreateUsernameAndPassword(CreateUser());
+                MessageBox.Show("Adding driver " + driver.FirstName + " " + driver.LastName + " successful.");
             }
             catch(Exception exc)
             {

@@ -102,7 +102,7 @@ namespace KatDatabaseInfo.Data
 		
 		private string _RegistryDate;
 		
-		private string _OwnerLicenseNumber;
+		private string _DrivingLicenseNumber;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -130,8 +130,8 @@ namespace KatDatabaseInfo.Data
     partial void OnColorChanged();
     partial void OnRegistryDateChanging(string value);
     partial void OnRegistryDateChanged();
-    partial void OnOwnerLicenseNumberChanging(string value);
-    partial void OnOwnerLicenseNumberChanged();
+    partial void OnDrivingLicenseNumberChanging(string value);
+    partial void OnDrivingLicenseNumberChanged();
     #endregion
 		
 		public Vehicle()
@@ -359,22 +359,22 @@ namespace KatDatabaseInfo.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OwnerLicenseNumber", DbType="NChar(10) NOT NULL", CanBeNull=false)]
-		public string OwnerLicenseNumber
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DrivingLicenseNumber", DbType="NChar(10) NOT NULL", CanBeNull=false)]
+		public string DrivingLicenseNumber
 		{
 			get
 			{
-				return this._OwnerLicenseNumber;
+				return this._DrivingLicenseNumber;
 			}
 			set
 			{
-				if ((this._OwnerLicenseNumber != value))
+				if ((this._DrivingLicenseNumber != value))
 				{
-					this.OnOwnerLicenseNumberChanging(value);
+					this.OnDrivingLicenseNumberChanging(value);
 					this.SendPropertyChanging();
-					this._OwnerLicenseNumber = value;
-					this.SendPropertyChanged("OwnerLicenseNumber");
-					this.OnOwnerLicenseNumberChanged();
+					this._DrivingLicenseNumber = value;
+					this.SendPropertyChanged("DrivingLicenseNumber");
+					this.OnDrivingLicenseNumberChanged();
 				}
 			}
 		}

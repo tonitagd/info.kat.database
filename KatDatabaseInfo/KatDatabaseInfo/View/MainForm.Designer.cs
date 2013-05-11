@@ -32,6 +32,9 @@ namespace KatDatabaseInfo
             this.components = new System.ComponentModel.Container();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageDI = new System.Windows.Forms.TabPage();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnDell = new System.Windows.Forms.Button();
             this.cbCategories = new System.Windows.Forms.CheckedListBox();
             this.cbSearchDriver = new System.Windows.Forms.ComboBox();
             this.driversBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -69,6 +72,8 @@ namespace KatDatabaseInfo
             this.lblIdentityNumber = new System.Windows.Forms.Label();
             this.tabPageF = new System.Windows.Forms.TabPage();
             this.gbFine = new System.Windows.Forms.GroupBox();
+            this.txtBoxPrice = new System.Windows.Forms.TextBox();
+            this.lblPrice = new System.Windows.Forms.Label();
             this.txtBoxFineId = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtBoxOffenderDLN = new System.Windows.Forms.TextBox();
@@ -120,10 +125,6 @@ namespace KatDatabaseInfo
             this.driversTableAdapter = new DatabaseDataSetTableAdapters.DriversTableAdapter();
             this.finesTableAdapter = new DatabaseDataSetTableAdapters.FinesTableAdapter();
             this.vehicleTableAdapter = new DatabaseDataSetTableAdapters.VehicleTableAdapter();
-            this.txtBoxPrice = new System.Windows.Forms.TextBox();
-            this.lblPrice = new System.Windows.Forms.Label();
-            this.btnDell = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabPageDI.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.driversBindingSource)).BeginInit();
@@ -154,6 +155,7 @@ namespace KatDatabaseInfo
             // 
             // tabPageDI
             // 
+            this.tabPageDI.Controls.Add(this.btnClear);
             this.tabPageDI.Controls.Add(this.btnUpdate);
             this.tabPageDI.Controls.Add(this.btnDell);
             this.tabPageDI.Controls.Add(this.cbCategories);
@@ -170,6 +172,35 @@ namespace KatDatabaseInfo
             this.tabPageDI.TabIndex = 0;
             this.tabPageDI.Text = "Driver Info";
             this.tabPageDI.UseVisualStyleBackColor = true;
+            // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(250, 459);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(128, 23);
+            this.btnClear.TabIndex = 20;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(550, 459);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(128, 23);
+            this.btnUpdate.TabIndex = 19;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            // 
+            // btnDell
+            // 
+            this.btnDell.Location = new System.Drawing.Point(400, 459);
+            this.btnDell.Name = "btnDell";
+            this.btnDell.Size = new System.Drawing.Size(128, 23);
+            this.btnDell.TabIndex = 18;
+            this.btnDell.Text = "Delete Driver";
+            this.btnDell.UseVisualStyleBackColor = true;
+            this.btnDell.Click += new System.EventHandler(this.btnDell_Click);
             // 
             // cbCategories
             // 
@@ -614,6 +645,26 @@ namespace KatDatabaseInfo
             this.gbFine.TabIndex = 2;
             this.gbFine.TabStop = false;
             this.gbFine.Text = "Fine\'s Data";
+            // 
+            // txtBoxPrice
+            // 
+            this.txtBoxPrice.Location = new System.Drawing.Point(148, 129);
+            this.txtBoxPrice.Name = "txtBoxPrice";
+            this.txtBoxPrice.ReadOnly = true;
+            this.txtBoxPrice.Size = new System.Drawing.Size(237, 20);
+            this.txtBoxPrice.TabIndex = 21;
+            this.txtBoxPrice.Visible = false;
+            // 
+            // lblPrice
+            // 
+            this.lblPrice.AutoSize = true;
+            this.lblPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblPrice.Location = new System.Drawing.Point(32, 130);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(59, 16);
+            this.lblPrice.TabIndex = 20;
+            this.lblPrice.Text = "Amount";
+            this.lblPrice.Visible = false;
             // 
             // txtBoxFineId
             // 
@@ -1095,44 +1146,6 @@ namespace KatDatabaseInfo
             // 
             this.vehicleTableAdapter.ClearBeforeFill = true;
             // 
-            // txtBoxPrice
-            // 
-            this.txtBoxPrice.Location = new System.Drawing.Point(148, 129);
-            this.txtBoxPrice.Name = "txtBoxPrice";
-            this.txtBoxPrice.ReadOnly = true;
-            this.txtBoxPrice.Size = new System.Drawing.Size(237, 20);
-            this.txtBoxPrice.TabIndex = 21;
-            this.txtBoxPrice.Visible = false;
-            // 
-            // lblPrice
-            // 
-            this.lblPrice.AutoSize = true;
-            this.lblPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lblPrice.Location = new System.Drawing.Point(32, 130);
-            this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(59, 16);
-            this.lblPrice.TabIndex = 20;
-            this.lblPrice.Text = "Amount";
-            this.lblPrice.Visible = false;
-            // 
-            // btnDell
-            // 
-            this.btnDell.Location = new System.Drawing.Point(400, 459);
-            this.btnDell.Name = "btnDell";
-            this.btnDell.Size = new System.Drawing.Size(128, 23);
-            this.btnDell.TabIndex = 18;
-            this.btnDell.Text = "Delete Driver";
-            this.btnDell.UseVisualStyleBackColor = true;
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Location = new System.Drawing.Point(550, 459);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(128, 23);
-            this.btnUpdate.TabIndex = 19;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1267,6 +1280,7 @@ namespace KatDatabaseInfo
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDell;
+        private System.Windows.Forms.Button btnClear;
 
     }
 }

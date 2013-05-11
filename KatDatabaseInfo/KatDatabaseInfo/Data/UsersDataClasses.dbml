@@ -5,14 +5,14 @@
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Username" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Password" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="DrivingLicenseN" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="DrivingLicenseNumber" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="[Role ]" Member="Role_" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.CreateUsernameAndPassword" Method="CreateUsernameAndPassword">
     <Parameter Name="Username" Parameter="username" Type="System.String" DbType="NVarChar(50)" />
     <Parameter Name="Password" Parameter="password" Type="System.String" DbType="NVarChar(50)" />
-    <Parameter Name="DrivingLicenseN" Parameter="drivingLicenseN" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DrivingLicenseNumber" Parameter="drivingLicenseNumber" Type="System.String" DbType="NVarChar(50)" />
     <Parameter Name="Role" Parameter="role" Type="System.Int16" DbType="SmallInt" />
     <Return Type="System.Int32" />
   </Function>

@@ -26,11 +26,11 @@ namespace KatDatabaseInfo {
         
         private DriversDataTable tableDrivers;
         
-        private VehicleDataTable tableVehicle;
+        private FinesDataTable tableFines;
         
         private UsersDataTable tableUsers;
         
-        private FinesDataTable tableFines;
+        private VehicleDataTable tableVehicle;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -63,14 +63,14 @@ namespace KatDatabaseInfo {
                 if ((ds.Tables["Drivers"] != null)) {
                     base.Tables.Add(new DriversDataTable(ds.Tables["Drivers"]));
                 }
-                if ((ds.Tables["Vehicle"] != null)) {
-                    base.Tables.Add(new VehicleDataTable(ds.Tables["Vehicle"]));
+                if ((ds.Tables["Fines"] != null)) {
+                    base.Tables.Add(new FinesDataTable(ds.Tables["Fines"]));
                 }
                 if ((ds.Tables["Users"] != null)) {
                     base.Tables.Add(new UsersDataTable(ds.Tables["Users"]));
                 }
-                if ((ds.Tables["Fines"] != null)) {
-                    base.Tables.Add(new FinesDataTable(ds.Tables["Fines"]));
+                if ((ds.Tables["Vehicle"] != null)) {
+                    base.Tables.Add(new VehicleDataTable(ds.Tables["Vehicle"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -104,9 +104,9 @@ namespace KatDatabaseInfo {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public VehicleDataTable Vehicle {
+        public FinesDataTable Fines {
             get {
-                return this.tableVehicle;
+                return this.tableFines;
             }
         }
         
@@ -124,9 +124,9 @@ namespace KatDatabaseInfo {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public FinesDataTable Fines {
+        public VehicleDataTable Vehicle {
             get {
-                return this.tableFines;
+                return this.tableVehicle;
             }
         }
         
@@ -200,14 +200,14 @@ namespace KatDatabaseInfo {
                 if ((ds.Tables["Drivers"] != null)) {
                     base.Tables.Add(new DriversDataTable(ds.Tables["Drivers"]));
                 }
-                if ((ds.Tables["Vehicle"] != null)) {
-                    base.Tables.Add(new VehicleDataTable(ds.Tables["Vehicle"]));
+                if ((ds.Tables["Fines"] != null)) {
+                    base.Tables.Add(new FinesDataTable(ds.Tables["Fines"]));
                 }
                 if ((ds.Tables["Users"] != null)) {
                     base.Tables.Add(new UsersDataTable(ds.Tables["Users"]));
                 }
-                if ((ds.Tables["Fines"] != null)) {
-                    base.Tables.Add(new FinesDataTable(ds.Tables["Fines"]));
+                if ((ds.Tables["Vehicle"] != null)) {
+                    base.Tables.Add(new VehicleDataTable(ds.Tables["Vehicle"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -248,10 +248,10 @@ namespace KatDatabaseInfo {
                     this.tableDrivers.InitVars();
                 }
             }
-            this.tableVehicle = ((VehicleDataTable)(base.Tables["Vehicle"]));
+            this.tableFines = ((FinesDataTable)(base.Tables["Fines"]));
             if ((initTable == true)) {
-                if ((this.tableVehicle != null)) {
-                    this.tableVehicle.InitVars();
+                if ((this.tableFines != null)) {
+                    this.tableFines.InitVars();
                 }
             }
             this.tableUsers = ((UsersDataTable)(base.Tables["Users"]));
@@ -260,10 +260,10 @@ namespace KatDatabaseInfo {
                     this.tableUsers.InitVars();
                 }
             }
-            this.tableFines = ((FinesDataTable)(base.Tables["Fines"]));
+            this.tableVehicle = ((VehicleDataTable)(base.Tables["Vehicle"]));
             if ((initTable == true)) {
-                if ((this.tableFines != null)) {
-                    this.tableFines.InitVars();
+                if ((this.tableVehicle != null)) {
+                    this.tableVehicle.InitVars();
                 }
             }
         }
@@ -278,12 +278,12 @@ namespace KatDatabaseInfo {
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableDrivers = new DriversDataTable();
             base.Tables.Add(this.tableDrivers);
-            this.tableVehicle = new VehicleDataTable();
-            base.Tables.Add(this.tableVehicle);
-            this.tableUsers = new UsersDataTable();
-            base.Tables.Add(this.tableUsers);
             this.tableFines = new FinesDataTable();
             base.Tables.Add(this.tableFines);
+            this.tableUsers = new UsersDataTable();
+            base.Tables.Add(this.tableUsers);
+            this.tableVehicle = new VehicleDataTable();
+            base.Tables.Add(this.tableVehicle);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -294,7 +294,7 @@ namespace KatDatabaseInfo {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeVehicle() {
+        private bool ShouldSerializeFines() {
             return false;
         }
         
@@ -306,7 +306,7 @@ namespace KatDatabaseInfo {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeFines() {
+        private bool ShouldSerializeVehicle() {
             return false;
         }
         
@@ -369,13 +369,13 @@ namespace KatDatabaseInfo {
         public delegate void DriversRowChangeEventHandler(object sender, DriversRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void VehicleRowChangeEventHandler(object sender, VehicleRowChangeEvent e);
+        public delegate void FinesRowChangeEventHandler(object sender, FinesRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void UsersRowChangeEventHandler(object sender, UsersRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void FinesRowChangeEventHandler(object sender, FinesRowChangeEvent e);
+        public delegate void VehicleRowChangeEventHandler(object sender, VehicleRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -834,36 +834,30 @@ namespace KatDatabaseInfo {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class VehicleDataTable : global::System.Data.TypedTableBase<VehicleRow> {
+        public partial class FinesDataTable : global::System.Data.TypedTableBase<FinesRow> {
             
             private global::System.Data.DataColumn columnId;
             
-            private global::System.Data.DataColumn columnRegistryNumber;
-            
-            private global::System.Data.DataColumn columnFrameNumber;
-            
-            private global::System.Data.DataColumn columnEngineNumber;
-            
-            private global::System.Data.DataColumn columnBrand;
-            
-            private global::System.Data.DataColumn columnModel;
-            
             private global::System.Data.DataColumn columnType;
             
-            private global::System.Data.DataColumn columnSeats;
+            private global::System.Data.DataColumn columnSerialNumber;
             
-            private global::System.Data.DataColumn columnWeight;
+            private global::System.Data.DataColumn columnDate;
             
-            private global::System.Data.DataColumn columnColor;
+            private global::System.Data.DataColumn columnPoliceman;
             
-            private global::System.Data.DataColumn columnRegistryDate;
+            private global::System.Data.DataColumn columnDrivingLicenseNumber;
             
-            private global::System.Data.DataColumn columnOwnerLicenseNumber;
+            private global::System.Data.DataColumn columnPaid;
+            
+            private global::System.Data.DataColumn columnReason;
+            
+            private global::System.Data.DataColumn columnAmount;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public VehicleDataTable() {
-                this.TableName = "Vehicle";
+            public FinesDataTable() {
+                this.TableName = "Fines";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -871,7 +865,7 @@ namespace KatDatabaseInfo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal VehicleDataTable(global::System.Data.DataTable table) {
+            internal FinesDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -888,7 +882,7 @@ namespace KatDatabaseInfo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected VehicleDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected FinesDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -903,46 +897,6 @@ namespace KatDatabaseInfo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn RegistryNumberColumn {
-                get {
-                    return this.columnRegistryNumber;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn FrameNumberColumn {
-                get {
-                    return this.columnFrameNumber;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn EngineNumberColumn {
-                get {
-                    return this.columnEngineNumber;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn BrandColumn {
-                get {
-                    return this.columnBrand;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ModelColumn {
-                get {
-                    return this.columnModel;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn TypeColumn {
                 get {
                     return this.columnType;
@@ -951,41 +905,57 @@ namespace KatDatabaseInfo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn SeatsColumn {
+            public global::System.Data.DataColumn SerialNumberColumn {
                 get {
-                    return this.columnSeats;
+                    return this.columnSerialNumber;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn WeightColumn {
+            public global::System.Data.DataColumn DateColumn {
                 get {
-                    return this.columnWeight;
+                    return this.columnDate;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ColorColumn {
+            public global::System.Data.DataColumn PolicemanColumn {
                 get {
-                    return this.columnColor;
+                    return this.columnPoliceman;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn RegistryDateColumn {
+            public global::System.Data.DataColumn DrivingLicenseNumberColumn {
                 get {
-                    return this.columnRegistryDate;
+                    return this.columnDrivingLicenseNumber;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn OwnerLicenseNumberColumn {
+            public global::System.Data.DataColumn PaidColumn {
                 get {
-                    return this.columnOwnerLicenseNumber;
+                    return this.columnPaid;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ReasonColumn {
+                get {
+                    return this.columnReason;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn AmountColumn {
+                get {
+                    return this.columnAmount;
                 }
             }
             
@@ -1000,63 +970,60 @@ namespace KatDatabaseInfo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public VehicleRow this[int index] {
+            public FinesRow this[int index] {
                 get {
-                    return ((VehicleRow)(this.Rows[index]));
+                    return ((FinesRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event VehicleRowChangeEventHandler VehicleRowChanging;
+            public event FinesRowChangeEventHandler FinesRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event VehicleRowChangeEventHandler VehicleRowChanged;
+            public event FinesRowChangeEventHandler FinesRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event VehicleRowChangeEventHandler VehicleRowDeleting;
+            public event FinesRowChangeEventHandler FinesRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event VehicleRowChangeEventHandler VehicleRowDeleted;
+            public event FinesRowChangeEventHandler FinesRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddVehicleRow(VehicleRow row) {
+            public void AddFinesRow(FinesRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public VehicleRow AddVehicleRow(string RegistryNumber, string FrameNumber, string EngineNumber, string Brand, string Model, string Type, short Seats, int Weight, string Color, string RegistryDate, string OwnerLicenseNumber) {
-                VehicleRow rowVehicleRow = ((VehicleRow)(this.NewRow()));
+            public FinesRow AddFinesRow(string Type, string SerialNumber, string Date, string Policeman, string DrivingLicenseNumber, byte Paid, string Reason, decimal Amount) {
+                FinesRow rowFinesRow = ((FinesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        RegistryNumber,
-                        FrameNumber,
-                        EngineNumber,
-                        Brand,
-                        Model,
                         Type,
-                        Seats,
-                        Weight,
-                        Color,
-                        RegistryDate,
-                        OwnerLicenseNumber};
-                rowVehicleRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowVehicleRow);
-                return rowVehicleRow;
+                        SerialNumber,
+                        Date,
+                        Policeman,
+                        DrivingLicenseNumber,
+                        Paid,
+                        Reason,
+                        Amount};
+                rowFinesRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowFinesRow);
+                return rowFinesRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public VehicleRow FindById(int Id) {
-                return ((VehicleRow)(this.Rows.Find(new object[] {
+            public FinesRow FindById(int Id) {
+                return ((FinesRow)(this.Rows.Find(new object[] {
                             Id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                VehicleDataTable cln = ((VehicleDataTable)(base.Clone()));
+                FinesDataTable cln = ((FinesDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -1064,24 +1031,21 @@ namespace KatDatabaseInfo {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new VehicleDataTable();
+                return new FinesDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnId = base.Columns["Id"];
-                this.columnRegistryNumber = base.Columns["RegistryNumber"];
-                this.columnFrameNumber = base.Columns["FrameNumber"];
-                this.columnEngineNumber = base.Columns["EngineNumber"];
-                this.columnBrand = base.Columns["Brand"];
-                this.columnModel = base.Columns["Model"];
                 this.columnType = base.Columns["Type"];
-                this.columnSeats = base.Columns["Seats"];
-                this.columnWeight = base.Columns["Weight"];
-                this.columnColor = base.Columns["Color"];
-                this.columnRegistryDate = base.Columns["RegistryDate"];
-                this.columnOwnerLicenseNumber = base.Columns["OwnerLicenseNumber"];
+                this.columnSerialNumber = base.Columns["SerialNumber"];
+                this.columnDate = base.Columns["Date"];
+                this.columnPoliceman = base.Columns["Policeman"];
+                this.columnDrivingLicenseNumber = base.Columns["DrivingLicenseNumber"];
+                this.columnPaid = base.Columns["Paid"];
+                this.columnReason = base.Columns["Reason"];
+                this.columnAmount = base.Columns["Amount"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1089,28 +1053,22 @@ namespace KatDatabaseInfo {
             private void InitClass() {
                 this.columnId = new global::System.Data.DataColumn("Id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnId);
-                this.columnRegistryNumber = new global::System.Data.DataColumn("RegistryNumber", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnRegistryNumber);
-                this.columnFrameNumber = new global::System.Data.DataColumn("FrameNumber", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFrameNumber);
-                this.columnEngineNumber = new global::System.Data.DataColumn("EngineNumber", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEngineNumber);
-                this.columnBrand = new global::System.Data.DataColumn("Brand", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBrand);
-                this.columnModel = new global::System.Data.DataColumn("Model", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnModel);
                 this.columnType = new global::System.Data.DataColumn("Type", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnType);
-                this.columnSeats = new global::System.Data.DataColumn("Seats", typeof(short), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSeats);
-                this.columnWeight = new global::System.Data.DataColumn("Weight", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnWeight);
-                this.columnColor = new global::System.Data.DataColumn("Color", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnColor);
-                this.columnRegistryDate = new global::System.Data.DataColumn("RegistryDate", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnRegistryDate);
-                this.columnOwnerLicenseNumber = new global::System.Data.DataColumn("OwnerLicenseNumber", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnOwnerLicenseNumber);
+                this.columnSerialNumber = new global::System.Data.DataColumn("SerialNumber", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSerialNumber);
+                this.columnDate = new global::System.Data.DataColumn("Date", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDate);
+                this.columnPoliceman = new global::System.Data.DataColumn("Policeman", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPoliceman);
+                this.columnDrivingLicenseNumber = new global::System.Data.DataColumn("DrivingLicenseNumber", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDrivingLicenseNumber);
+                this.columnPaid = new global::System.Data.DataColumn("Paid", typeof(byte), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPaid);
+                this.columnReason = new global::System.Data.DataColumn("Reason", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnReason);
+                this.columnAmount = new global::System.Data.DataColumn("Amount", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAmount);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -1119,52 +1077,44 @@ namespace KatDatabaseInfo {
                 this.columnId.AllowDBNull = false;
                 this.columnId.ReadOnly = true;
                 this.columnId.Unique = true;
-                this.columnRegistryNumber.AllowDBNull = false;
-                this.columnRegistryNumber.MaxLength = 10;
-                this.columnFrameNumber.AllowDBNull = false;
-                this.columnFrameNumber.MaxLength = 20;
-                this.columnEngineNumber.AllowDBNull = false;
-                this.columnEngineNumber.MaxLength = 10;
-                this.columnBrand.AllowDBNull = false;
-                this.columnBrand.MaxLength = 50;
-                this.columnModel.AllowDBNull = false;
-                this.columnModel.MaxLength = 50;
                 this.columnType.AllowDBNull = false;
                 this.columnType.MaxLength = 50;
-                this.columnSeats.AllowDBNull = false;
-                this.columnWeight.AllowDBNull = false;
-                this.columnColor.AllowDBNull = false;
-                this.columnColor.MaxLength = 50;
-                this.columnRegistryDate.AllowDBNull = false;
-                this.columnRegistryDate.MaxLength = 50;
-                this.columnOwnerLicenseNumber.AllowDBNull = false;
-                this.columnOwnerLicenseNumber.MaxLength = 10;
+                this.columnSerialNumber.AllowDBNull = false;
+                this.columnSerialNumber.MaxLength = 50;
+                this.columnDate.AllowDBNull = false;
+                this.columnDate.MaxLength = 50;
+                this.columnPoliceman.AllowDBNull = false;
+                this.columnPoliceman.MaxLength = 50;
+                this.columnDrivingLicenseNumber.AllowDBNull = false;
+                this.columnDrivingLicenseNumber.MaxLength = 10;
+                this.columnPaid.AllowDBNull = false;
+                this.columnReason.MaxLength = 100;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public VehicleRow NewVehicleRow() {
-                return ((VehicleRow)(this.NewRow()));
+            public FinesRow NewFinesRow() {
+                return ((FinesRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new VehicleRow(builder);
+                return new FinesRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(VehicleRow);
+                return typeof(FinesRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.VehicleRowChanged != null)) {
-                    this.VehicleRowChanged(this, new VehicleRowChangeEvent(((VehicleRow)(e.Row)), e.Action));
+                if ((this.FinesRowChanged != null)) {
+                    this.FinesRowChanged(this, new FinesRowChangeEvent(((FinesRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1172,8 +1122,8 @@ namespace KatDatabaseInfo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.VehicleRowChanging != null)) {
-                    this.VehicleRowChanging(this, new VehicleRowChangeEvent(((VehicleRow)(e.Row)), e.Action));
+                if ((this.FinesRowChanging != null)) {
+                    this.FinesRowChanging(this, new FinesRowChangeEvent(((FinesRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1181,8 +1131,8 @@ namespace KatDatabaseInfo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.VehicleRowDeleted != null)) {
-                    this.VehicleRowDeleted(this, new VehicleRowChangeEvent(((VehicleRow)(e.Row)), e.Action));
+                if ((this.FinesRowDeleted != null)) {
+                    this.FinesRowDeleted(this, new FinesRowChangeEvent(((FinesRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1190,14 +1140,14 @@ namespace KatDatabaseInfo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.VehicleRowDeleting != null)) {
-                    this.VehicleRowDeleting(this, new VehicleRowChangeEvent(((VehicleRow)(e.Row)), e.Action));
+                if ((this.FinesRowDeleting != null)) {
+                    this.FinesRowDeleting(this, new FinesRowChangeEvent(((FinesRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveVehicleRow(VehicleRow row) {
+            public void RemoveFinesRow(FinesRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -1224,7 +1174,7 @@ namespace KatDatabaseInfo {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "VehicleDataTable";
+                attribute2.FixedValue = "FinesDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -1278,7 +1228,7 @@ namespace KatDatabaseInfo {
             
             private global::System.Data.DataColumn columnPassword;
             
-            private global::System.Data.DataColumn columnDrivingLicenseN;
+            private global::System.Data.DataColumn columnDrivingLicenseNumber;
             
             private global::System.Data.DataColumn columnRole_;
             
@@ -1341,9 +1291,9 @@ namespace KatDatabaseInfo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DrivingLicenseNColumn {
+            public global::System.Data.DataColumn DrivingLicenseNumberColumn {
                 get {
-                    return this.columnDrivingLicenseN;
+                    return this.columnDrivingLicenseNumber;
                 }
             }
             
@@ -1392,13 +1342,13 @@ namespace KatDatabaseInfo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public UsersRow AddUsersRow(string Username, string Password, string DrivingLicenseN, short Role_) {
+            public UsersRow AddUsersRow(string Username, string Password, string DrivingLicenseNumber, short Role_) {
                 UsersRow rowUsersRow = ((UsersRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Username,
                         Password,
-                        DrivingLicenseN,
+                        DrivingLicenseNumber,
                         Role_};
                 rowUsersRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowUsersRow);
@@ -1432,7 +1382,7 @@ namespace KatDatabaseInfo {
                 this.columnId = base.Columns["Id"];
                 this.columnUsername = base.Columns["Username"];
                 this.columnPassword = base.Columns["Password"];
-                this.columnDrivingLicenseN = base.Columns["DrivingLicenseN"];
+                this.columnDrivingLicenseNumber = base.Columns["DrivingLicenseNumber"];
                 this.columnRole_ = base.Columns["Role "];
             }
             
@@ -1445,8 +1395,8 @@ namespace KatDatabaseInfo {
                 base.Columns.Add(this.columnUsername);
                 this.columnPassword = new global::System.Data.DataColumn("Password", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPassword);
-                this.columnDrivingLicenseN = new global::System.Data.DataColumn("DrivingLicenseN", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDrivingLicenseN);
+                this.columnDrivingLicenseNumber = new global::System.Data.DataColumn("DrivingLicenseNumber", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDrivingLicenseNumber);
                 this.columnRole_ = new global::System.Data.DataColumn("Role ", typeof(short), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnRole_);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
@@ -1461,8 +1411,8 @@ namespace KatDatabaseInfo {
                 this.columnUsername.MaxLength = 50;
                 this.columnPassword.AllowDBNull = false;
                 this.columnPassword.MaxLength = 50;
-                this.columnDrivingLicenseN.AllowDBNull = false;
-                this.columnDrivingLicenseN.MaxLength = 10;
+                this.columnDrivingLicenseNumber.AllowDBNull = false;
+                this.columnDrivingLicenseNumber.MaxLength = 10;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1594,30 +1544,36 @@ namespace KatDatabaseInfo {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class FinesDataTable : global::System.Data.TypedTableBase<FinesRow> {
+        public partial class VehicleDataTable : global::System.Data.TypedTableBase<VehicleRow> {
             
             private global::System.Data.DataColumn columnId;
             
+            private global::System.Data.DataColumn columnRegistryNumber;
+            
+            private global::System.Data.DataColumn columnFrameNumber;
+            
+            private global::System.Data.DataColumn columnEngineNumber;
+            
+            private global::System.Data.DataColumn columnBrand;
+            
+            private global::System.Data.DataColumn columnModel;
+            
             private global::System.Data.DataColumn columnType;
             
-            private global::System.Data.DataColumn columnSerialNumber;
+            private global::System.Data.DataColumn columnSeats;
             
-            private global::System.Data.DataColumn columnDate;
+            private global::System.Data.DataColumn columnWeight;
             
-            private global::System.Data.DataColumn columnPoliceman;
+            private global::System.Data.DataColumn columnColor;
             
-            private global::System.Data.DataColumn columnOffenderDLN;
+            private global::System.Data.DataColumn columnRegistryDate;
             
-            private global::System.Data.DataColumn columnPaid;
-            
-            private global::System.Data.DataColumn columnReason;
-            
-            private global::System.Data.DataColumn columnAmount;
+            private global::System.Data.DataColumn columnDrivingLicenseNumber;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FinesDataTable() {
-                this.TableName = "Fines";
+            public VehicleDataTable() {
+                this.TableName = "Vehicle";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -1625,7 +1581,7 @@ namespace KatDatabaseInfo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal FinesDataTable(global::System.Data.DataTable table) {
+            internal VehicleDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -1642,7 +1598,7 @@ namespace KatDatabaseInfo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected FinesDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected VehicleDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -1657,6 +1613,46 @@ namespace KatDatabaseInfo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn RegistryNumberColumn {
+                get {
+                    return this.columnRegistryNumber;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn FrameNumberColumn {
+                get {
+                    return this.columnFrameNumber;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn EngineNumberColumn {
+                get {
+                    return this.columnEngineNumber;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn BrandColumn {
+                get {
+                    return this.columnBrand;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ModelColumn {
+                get {
+                    return this.columnModel;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn TypeColumn {
                 get {
                     return this.columnType;
@@ -1665,57 +1661,41 @@ namespace KatDatabaseInfo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn SerialNumberColumn {
+            public global::System.Data.DataColumn SeatsColumn {
                 get {
-                    return this.columnSerialNumber;
+                    return this.columnSeats;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DateColumn {
+            public global::System.Data.DataColumn WeightColumn {
                 get {
-                    return this.columnDate;
+                    return this.columnWeight;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn PolicemanColumn {
+            public global::System.Data.DataColumn ColorColumn {
                 get {
-                    return this.columnPoliceman;
+                    return this.columnColor;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn OffenderDLNColumn {
+            public global::System.Data.DataColumn RegistryDateColumn {
                 get {
-                    return this.columnOffenderDLN;
+                    return this.columnRegistryDate;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn PaidColumn {
+            public global::System.Data.DataColumn DrivingLicenseNumberColumn {
                 get {
-                    return this.columnPaid;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ReasonColumn {
-                get {
-                    return this.columnReason;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn AmountColumn {
-                get {
-                    return this.columnAmount;
+                    return this.columnDrivingLicenseNumber;
                 }
             }
             
@@ -1730,60 +1710,63 @@ namespace KatDatabaseInfo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FinesRow this[int index] {
+            public VehicleRow this[int index] {
                 get {
-                    return ((FinesRow)(this.Rows[index]));
+                    return ((VehicleRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event FinesRowChangeEventHandler FinesRowChanging;
+            public event VehicleRowChangeEventHandler VehicleRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event FinesRowChangeEventHandler FinesRowChanged;
+            public event VehicleRowChangeEventHandler VehicleRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event FinesRowChangeEventHandler FinesRowDeleting;
+            public event VehicleRowChangeEventHandler VehicleRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event FinesRowChangeEventHandler FinesRowDeleted;
+            public event VehicleRowChangeEventHandler VehicleRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddFinesRow(FinesRow row) {
+            public void AddVehicleRow(VehicleRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FinesRow AddFinesRow(string Type, string SerialNumber, string Date, string Policeman, string OffenderDLN, byte Paid, string Reason, decimal Amount) {
-                FinesRow rowFinesRow = ((FinesRow)(this.NewRow()));
+            public VehicleRow AddVehicleRow(string RegistryNumber, string FrameNumber, string EngineNumber, string Brand, string Model, string Type, short Seats, int Weight, string Color, string RegistryDate, string DrivingLicenseNumber) {
+                VehicleRow rowVehicleRow = ((VehicleRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
+                        RegistryNumber,
+                        FrameNumber,
+                        EngineNumber,
+                        Brand,
+                        Model,
                         Type,
-                        SerialNumber,
-                        Date,
-                        Policeman,
-                        OffenderDLN,
-                        Paid,
-                        Reason,
-                        Amount};
-                rowFinesRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowFinesRow);
-                return rowFinesRow;
+                        Seats,
+                        Weight,
+                        Color,
+                        RegistryDate,
+                        DrivingLicenseNumber};
+                rowVehicleRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowVehicleRow);
+                return rowVehicleRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FinesRow FindById(int Id) {
-                return ((FinesRow)(this.Rows.Find(new object[] {
+            public VehicleRow FindById(int Id) {
+                return ((VehicleRow)(this.Rows.Find(new object[] {
                             Id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                FinesDataTable cln = ((FinesDataTable)(base.Clone()));
+                VehicleDataTable cln = ((VehicleDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -1791,21 +1774,24 @@ namespace KatDatabaseInfo {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new FinesDataTable();
+                return new VehicleDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnId = base.Columns["Id"];
+                this.columnRegistryNumber = base.Columns["RegistryNumber"];
+                this.columnFrameNumber = base.Columns["FrameNumber"];
+                this.columnEngineNumber = base.Columns["EngineNumber"];
+                this.columnBrand = base.Columns["Brand"];
+                this.columnModel = base.Columns["Model"];
                 this.columnType = base.Columns["Type"];
-                this.columnSerialNumber = base.Columns["SerialNumber"];
-                this.columnDate = base.Columns["Date"];
-                this.columnPoliceman = base.Columns["Policeman"];
-                this.columnOffenderDLN = base.Columns["OffenderDLN"];
-                this.columnPaid = base.Columns["Paid"];
-                this.columnReason = base.Columns["Reason"];
-                this.columnAmount = base.Columns["Amount"];
+                this.columnSeats = base.Columns["Seats"];
+                this.columnWeight = base.Columns["Weight"];
+                this.columnColor = base.Columns["Color"];
+                this.columnRegistryDate = base.Columns["RegistryDate"];
+                this.columnDrivingLicenseNumber = base.Columns["DrivingLicenseNumber"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1813,22 +1799,28 @@ namespace KatDatabaseInfo {
             private void InitClass() {
                 this.columnId = new global::System.Data.DataColumn("Id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnId);
+                this.columnRegistryNumber = new global::System.Data.DataColumn("RegistryNumber", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRegistryNumber);
+                this.columnFrameNumber = new global::System.Data.DataColumn("FrameNumber", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFrameNumber);
+                this.columnEngineNumber = new global::System.Data.DataColumn("EngineNumber", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEngineNumber);
+                this.columnBrand = new global::System.Data.DataColumn("Brand", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBrand);
+                this.columnModel = new global::System.Data.DataColumn("Model", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnModel);
                 this.columnType = new global::System.Data.DataColumn("Type", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnType);
-                this.columnSerialNumber = new global::System.Data.DataColumn("SerialNumber", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSerialNumber);
-                this.columnDate = new global::System.Data.DataColumn("Date", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDate);
-                this.columnPoliceman = new global::System.Data.DataColumn("Policeman", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPoliceman);
-                this.columnOffenderDLN = new global::System.Data.DataColumn("OffenderDLN", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnOffenderDLN);
-                this.columnPaid = new global::System.Data.DataColumn("Paid", typeof(byte), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPaid);
-                this.columnReason = new global::System.Data.DataColumn("Reason", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnReason);
-                this.columnAmount = new global::System.Data.DataColumn("Amount", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAmount);
+                this.columnSeats = new global::System.Data.DataColumn("Seats", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSeats);
+                this.columnWeight = new global::System.Data.DataColumn("Weight", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnWeight);
+                this.columnColor = new global::System.Data.DataColumn("Color", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnColor);
+                this.columnRegistryDate = new global::System.Data.DataColumn("RegistryDate", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRegistryDate);
+                this.columnDrivingLicenseNumber = new global::System.Data.DataColumn("DrivingLicenseNumber", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDrivingLicenseNumber);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -1837,44 +1829,52 @@ namespace KatDatabaseInfo {
                 this.columnId.AllowDBNull = false;
                 this.columnId.ReadOnly = true;
                 this.columnId.Unique = true;
+                this.columnRegistryNumber.AllowDBNull = false;
+                this.columnRegistryNumber.MaxLength = 10;
+                this.columnFrameNumber.AllowDBNull = false;
+                this.columnFrameNumber.MaxLength = 20;
+                this.columnEngineNumber.AllowDBNull = false;
+                this.columnEngineNumber.MaxLength = 10;
+                this.columnBrand.AllowDBNull = false;
+                this.columnBrand.MaxLength = 50;
+                this.columnModel.AllowDBNull = false;
+                this.columnModel.MaxLength = 50;
                 this.columnType.AllowDBNull = false;
                 this.columnType.MaxLength = 50;
-                this.columnSerialNumber.AllowDBNull = false;
-                this.columnSerialNumber.MaxLength = 50;
-                this.columnDate.AllowDBNull = false;
-                this.columnDate.MaxLength = 50;
-                this.columnPoliceman.AllowDBNull = false;
-                this.columnPoliceman.MaxLength = 50;
-                this.columnOffenderDLN.AllowDBNull = false;
-                this.columnOffenderDLN.MaxLength = 10;
-                this.columnPaid.AllowDBNull = false;
-                this.columnReason.MaxLength = 100;
+                this.columnSeats.AllowDBNull = false;
+                this.columnWeight.AllowDBNull = false;
+                this.columnColor.AllowDBNull = false;
+                this.columnColor.MaxLength = 50;
+                this.columnRegistryDate.AllowDBNull = false;
+                this.columnRegistryDate.MaxLength = 50;
+                this.columnDrivingLicenseNumber.AllowDBNull = false;
+                this.columnDrivingLicenseNumber.MaxLength = 10;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FinesRow NewFinesRow() {
-                return ((FinesRow)(this.NewRow()));
+            public VehicleRow NewVehicleRow() {
+                return ((VehicleRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new FinesRow(builder);
+                return new VehicleRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(FinesRow);
+                return typeof(VehicleRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.FinesRowChanged != null)) {
-                    this.FinesRowChanged(this, new FinesRowChangeEvent(((FinesRow)(e.Row)), e.Action));
+                if ((this.VehicleRowChanged != null)) {
+                    this.VehicleRowChanged(this, new VehicleRowChangeEvent(((VehicleRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1882,8 +1882,8 @@ namespace KatDatabaseInfo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.FinesRowChanging != null)) {
-                    this.FinesRowChanging(this, new FinesRowChangeEvent(((FinesRow)(e.Row)), e.Action));
+                if ((this.VehicleRowChanging != null)) {
+                    this.VehicleRowChanging(this, new VehicleRowChangeEvent(((VehicleRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1891,8 +1891,8 @@ namespace KatDatabaseInfo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.FinesRowDeleted != null)) {
-                    this.FinesRowDeleted(this, new FinesRowChangeEvent(((FinesRow)(e.Row)), e.Action));
+                if ((this.VehicleRowDeleted != null)) {
+                    this.VehicleRowDeleted(this, new VehicleRowChangeEvent(((VehicleRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1900,14 +1900,14 @@ namespace KatDatabaseInfo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.FinesRowDeleting != null)) {
-                    this.FinesRowDeleting(this, new FinesRowChangeEvent(((FinesRow)(e.Row)), e.Action));
+                if ((this.VehicleRowDeleting != null)) {
+                    this.VehicleRowDeleting(this, new VehicleRowChangeEvent(((VehicleRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveFinesRow(FinesRow row) {
+            public void RemoveVehicleRow(VehicleRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -1934,7 +1934,7 @@ namespace KatDatabaseInfo {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "FinesDataTable";
+                attribute2.FixedValue = "VehicleDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -2136,6 +2136,241 @@ namespace KatDatabaseInfo {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
+        public partial class FinesRow : global::System.Data.DataRow {
+            
+            private FinesDataTable tableFines;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal FinesRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableFines = ((FinesDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int Id {
+                get {
+                    return ((int)(this[this.tableFines.IdColumn]));
+                }
+                set {
+                    this[this.tableFines.IdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Type {
+                get {
+                    return ((string)(this[this.tableFines.TypeColumn]));
+                }
+                set {
+                    this[this.tableFines.TypeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string SerialNumber {
+                get {
+                    return ((string)(this[this.tableFines.SerialNumberColumn]));
+                }
+                set {
+                    this[this.tableFines.SerialNumberColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Date {
+                get {
+                    return ((string)(this[this.tableFines.DateColumn]));
+                }
+                set {
+                    this[this.tableFines.DateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Policeman {
+                get {
+                    return ((string)(this[this.tableFines.PolicemanColumn]));
+                }
+                set {
+                    this[this.tableFines.PolicemanColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DrivingLicenseNumber {
+                get {
+                    return ((string)(this[this.tableFines.DrivingLicenseNumberColumn]));
+                }
+                set {
+                    this[this.tableFines.DrivingLicenseNumberColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public byte Paid {
+                get {
+                    return ((byte)(this[this.tableFines.PaidColumn]));
+                }
+                set {
+                    this[this.tableFines.PaidColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Reason {
+                get {
+                    try {
+                        return ((string)(this[this.tableFines.ReasonColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Reason\' in table \'Fines\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFines.ReasonColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal Amount {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableFines.AmountColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Amount\' in table \'Fines\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFines.AmountColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsReasonNull() {
+                return this.IsNull(this.tableFines.ReasonColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetReasonNull() {
+                this[this.tableFines.ReasonColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsAmountNull() {
+                return this.IsNull(this.tableFines.AmountColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetAmountNull() {
+                this[this.tableFines.AmountColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class UsersRow : global::System.Data.DataRow {
+            
+            private UsersDataTable tableUsers;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal UsersRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableUsers = ((UsersDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int Id {
+                get {
+                    return ((int)(this[this.tableUsers.IdColumn]));
+                }
+                set {
+                    this[this.tableUsers.IdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Username {
+                get {
+                    return ((string)(this[this.tableUsers.UsernameColumn]));
+                }
+                set {
+                    this[this.tableUsers.UsernameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Password {
+                get {
+                    return ((string)(this[this.tableUsers.PasswordColumn]));
+                }
+                set {
+                    this[this.tableUsers.PasswordColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DrivingLicenseNumber {
+                get {
+                    return ((string)(this[this.tableUsers.DrivingLicenseNumberColumn]));
+                }
+                set {
+                    this[this.tableUsers.DrivingLicenseNumberColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public short Role_ {
+                get {
+                    try {
+                        return ((short)(this[this.tableUsers.Role_Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Role \' in table \'Users\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableUsers.Role_Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsRole_Null() {
+                return this.IsNull(this.tableUsers.Role_Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetRole_Null() {
+                this[this.tableUsers.Role_Column] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
         public partial class VehicleRow : global::System.Data.DataRow {
             
             private VehicleDataTable tableVehicle;
@@ -2270,248 +2505,13 @@ namespace KatDatabaseInfo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string OwnerLicenseNumber {
+            public string DrivingLicenseNumber {
                 get {
-                    return ((string)(this[this.tableVehicle.OwnerLicenseNumberColumn]));
+                    return ((string)(this[this.tableVehicle.DrivingLicenseNumberColumn]));
                 }
                 set {
-                    this[this.tableVehicle.OwnerLicenseNumberColumn] = value;
+                    this[this.tableVehicle.DrivingLicenseNumberColumn] = value;
                 }
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class UsersRow : global::System.Data.DataRow {
-            
-            private UsersDataTable tableUsers;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal UsersRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableUsers = ((UsersDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int Id {
-                get {
-                    return ((int)(this[this.tableUsers.IdColumn]));
-                }
-                set {
-                    this[this.tableUsers.IdColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Username {
-                get {
-                    return ((string)(this[this.tableUsers.UsernameColumn]));
-                }
-                set {
-                    this[this.tableUsers.UsernameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Password {
-                get {
-                    return ((string)(this[this.tableUsers.PasswordColumn]));
-                }
-                set {
-                    this[this.tableUsers.PasswordColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string DrivingLicenseN {
-                get {
-                    return ((string)(this[this.tableUsers.DrivingLicenseNColumn]));
-                }
-                set {
-                    this[this.tableUsers.DrivingLicenseNColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public short Role_ {
-                get {
-                    try {
-                        return ((short)(this[this.tableUsers.Role_Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Role \' in table \'Users\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableUsers.Role_Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsRole_Null() {
-                return this.IsNull(this.tableUsers.Role_Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetRole_Null() {
-                this[this.tableUsers.Role_Column] = global::System.Convert.DBNull;
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class FinesRow : global::System.Data.DataRow {
-            
-            private FinesDataTable tableFines;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal FinesRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableFines = ((FinesDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int Id {
-                get {
-                    return ((int)(this[this.tableFines.IdColumn]));
-                }
-                set {
-                    this[this.tableFines.IdColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Type {
-                get {
-                    return ((string)(this[this.tableFines.TypeColumn]));
-                }
-                set {
-                    this[this.tableFines.TypeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string SerialNumber {
-                get {
-                    return ((string)(this[this.tableFines.SerialNumberColumn]));
-                }
-                set {
-                    this[this.tableFines.SerialNumberColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Date {
-                get {
-                    return ((string)(this[this.tableFines.DateColumn]));
-                }
-                set {
-                    this[this.tableFines.DateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Policeman {
-                get {
-                    return ((string)(this[this.tableFines.PolicemanColumn]));
-                }
-                set {
-                    this[this.tableFines.PolicemanColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string OffenderDLN {
-                get {
-                    return ((string)(this[this.tableFines.OffenderDLNColumn]));
-                }
-                set {
-                    this[this.tableFines.OffenderDLNColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public byte Paid {
-                get {
-                    return ((byte)(this[this.tableFines.PaidColumn]));
-                }
-                set {
-                    this[this.tableFines.PaidColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Reason {
-                get {
-                    try {
-                        return ((string)(this[this.tableFines.ReasonColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Reason\' in table \'Fines\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableFines.ReasonColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal Amount {
-                get {
-                    try {
-                        return ((decimal)(this[this.tableFines.AmountColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Amount\' in table \'Fines\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableFines.AmountColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsReasonNull() {
-                return this.IsNull(this.tableFines.ReasonColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetReasonNull() {
-                this[this.tableFines.ReasonColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsAmountNull() {
-                return this.IsNull(this.tableFines.AmountColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetAmountNull() {
-                this[this.tableFines.AmountColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2553,22 +2553,22 @@ namespace KatDatabaseInfo {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class VehicleRowChangeEvent : global::System.EventArgs {
+        public class FinesRowChangeEvent : global::System.EventArgs {
             
-            private VehicleRow eventRow;
+            private FinesRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public VehicleRowChangeEvent(VehicleRow row, global::System.Data.DataRowAction action) {
+            public FinesRowChangeEvent(FinesRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public VehicleRow Row {
+            public FinesRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -2621,22 +2621,22 @@ namespace KatDatabaseInfo {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class FinesRowChangeEvent : global::System.EventArgs {
+        public class VehicleRowChangeEvent : global::System.EventArgs {
             
-            private FinesRow eventRow;
+            private VehicleRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FinesRowChangeEvent(FinesRow row, global::System.Data.DataRowAction action) {
+            public VehicleRowChangeEvent(VehicleRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FinesRow Row {
+            public VehicleRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -3423,7 +3423,7 @@ SELECT Id, FirstName, MiddleName, LastName, IdNumber, BirthDate, Gender, Address
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class VehicleTableAdapter : global::System.ComponentModel.Component {
+    public partial class FinesTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -3437,7 +3437,7 @@ SELECT Id, FirstName, MiddleName, LastName, IdNumber, BirthDate, Gender, Address
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public VehicleTableAdapter() {
+        public FinesTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -3534,80 +3534,69 @@ SELECT Id, FirstName, MiddleName, LastName, IdNumber, BirthDate, Gender, Address
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Vehicle";
+            tableMapping.DataSetTable = "Fines";
             tableMapping.ColumnMappings.Add("Id", "Id");
-            tableMapping.ColumnMappings.Add("RegistryNumber", "RegistryNumber");
-            tableMapping.ColumnMappings.Add("FrameNumber", "FrameNumber");
-            tableMapping.ColumnMappings.Add("EngineNumber", "EngineNumber");
-            tableMapping.ColumnMappings.Add("Brand", "Brand");
-            tableMapping.ColumnMappings.Add("Model", "Model");
             tableMapping.ColumnMappings.Add("Type", "Type");
-            tableMapping.ColumnMappings.Add("Seats", "Seats");
-            tableMapping.ColumnMappings.Add("Weight", "Weight");
-            tableMapping.ColumnMappings.Add("Color", "Color");
-            tableMapping.ColumnMappings.Add("RegistryDate", "RegistryDate");
-            tableMapping.ColumnMappings.Add("OwnerLicenseNumber", "OwnerLicenseNumber");
+            tableMapping.ColumnMappings.Add("SerialNumber", "SerialNumber");
+            tableMapping.ColumnMappings.Add("Date", "Date");
+            tableMapping.ColumnMappings.Add("Policeman", "Policeman");
+            tableMapping.ColumnMappings.Add("DrivingLicenseNumber", "DrivingLicenseNumber");
+            tableMapping.ColumnMappings.Add("Paid", "Paid");
+            tableMapping.ColumnMappings.Add("Reason", "Reason");
+            tableMapping.ColumnMappings.Add("Amount", "Amount");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Vehicle] WHERE (([Id] = @Original_Id) AND ([RegistryNumber] = @Original_RegistryNumber) AND ([FrameNumber] = @Original_FrameNumber) AND ([EngineNumber] = @Original_EngineNumber) AND ([Brand] = @Original_Brand) AND ([Model] = @Original_Model) AND ([Type] = @Original_Type) AND ([Seats] = @Original_Seats) AND ([Weight] = @Original_Weight) AND ([Color] = @Original_Color) AND ([RegistryDate] = @Original_RegistryDate) AND ([OwnerLicenseNumber] = @Original_OwnerLicenseNumber))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Fines] WHERE (([Id] = @Original_Id) AND ([Type] = @Original_Type) AND ([SerialNumber] = @Original_SerialNumber) AND ([Date] = @Original_Date) AND ([Policeman] = @Original_Policeman) AND ([DrivingLicenseNumber] = @Original_DrivingLicenseNumber) AND ([Paid] = @Original_Paid) AND ((@IsNull_Reason = 1 AND [Reason] IS NULL) OR ([Reason] = @Original_Reason)) AND ((@IsNull_Amount = 1 AND [Amount] IS NULL) OR ([Amount] = @Original_Amount)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RegistryNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RegistryNumber", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FrameNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FrameNumber", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EngineNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EngineNumber", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Brand", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Model", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Model", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Type", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Seats", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Seats", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Weight", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Weight", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Color", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Color", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RegistryDate", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RegistryDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OwnerLicenseNumber", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OwnerLicenseNumber", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SerialNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SerialNumber", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Date", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Policeman", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Policeman", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DrivingLicenseNumber", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DrivingLicenseNumber", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Paid", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Paid", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Reason", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reason", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Reason", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reason", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Amount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Amount", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Vehicle] ([RegistryNumber], [FrameNumber], [EngineNumber], [Brand], [Model], [Type], [Seats], [Weight], [Color], [RegistryDate], [OwnerLicenseNumber]) VALUES (@RegistryNumber, @FrameNumber, @EngineNumber, @Brand, @Model, @Type, @Seats, @Weight, @Color, @RegistryDate, @OwnerLicenseNumber);
-SELECT Id, RegistryNumber, FrameNumber, EngineNumber, Brand, Model, Type, Seats, Weight, Color, RegistryDate, OwnerLicenseNumber FROM Vehicle WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Fines] ([Type], [SerialNumber], [Date], [Policeman], [DrivingLicenseNumber], [Paid], [Reason], [Amount]) VALUES (@Type, @SerialNumber, @Date, @Policeman, @DrivingLicenseNumber, @Paid, @Reason, @Amount);
+SELECT Id, Type, SerialNumber, Date, Policeman, DrivingLicenseNumber, Paid, Reason, Amount FROM Fines WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RegistryNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RegistryNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FrameNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FrameNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EngineNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EngineNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Brand", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Model", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Model", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Type", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Seats", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Seats", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Weight", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Weight", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Color", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Color", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RegistryDate", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RegistryDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OwnerLicenseNumber", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OwnerLicenseNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SerialNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SerialNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Policeman", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Policeman", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DrivingLicenseNumber", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DrivingLicenseNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Paid", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Paid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reason", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reason", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Amount", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Vehicle] SET [RegistryNumber] = @RegistryNumber, [FrameNumber] = @FrameNumber, [EngineNumber] = @EngineNumber, [Brand] = @Brand, [Model] = @Model, [Type] = @Type, [Seats] = @Seats, [Weight] = @Weight, [Color] = @Color, [RegistryDate] = @RegistryDate, [OwnerLicenseNumber] = @OwnerLicenseNumber WHERE (([Id] = @Original_Id) AND ([RegistryNumber] = @Original_RegistryNumber) AND ([FrameNumber] = @Original_FrameNumber) AND ([EngineNumber] = @Original_EngineNumber) AND ([Brand] = @Original_Brand) AND ([Model] = @Original_Model) AND ([Type] = @Original_Type) AND ([Seats] = @Original_Seats) AND ([Weight] = @Original_Weight) AND ([Color] = @Original_Color) AND ([RegistryDate] = @Original_RegistryDate) AND ([OwnerLicenseNumber] = @Original_OwnerLicenseNumber));
-SELECT Id, RegistryNumber, FrameNumber, EngineNumber, Brand, Model, Type, Seats, Weight, Color, RegistryDate, OwnerLicenseNumber FROM Vehicle WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Fines] SET [Type] = @Type, [SerialNumber] = @SerialNumber, [Date] = @Date, [Policeman] = @Policeman, [DrivingLicenseNumber] = @DrivingLicenseNumber, [Paid] = @Paid, [Reason] = @Reason, [Amount] = @Amount WHERE (([Id] = @Original_Id) AND ([Type] = @Original_Type) AND ([SerialNumber] = @Original_SerialNumber) AND ([Date] = @Original_Date) AND ([Policeman] = @Original_Policeman) AND ([DrivingLicenseNumber] = @Original_DrivingLicenseNumber) AND ([Paid] = @Original_Paid) AND ((@IsNull_Reason = 1 AND [Reason] IS NULL) OR ([Reason] = @Original_Reason)) AND ((@IsNull_Amount = 1 AND [Amount] IS NULL) OR ([Amount] = @Original_Amount)));
+SELECT Id, Type, SerialNumber, Date, Policeman, DrivingLicenseNumber, Paid, Reason, Amount FROM Fines WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RegistryNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RegistryNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FrameNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FrameNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EngineNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EngineNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Brand", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Model", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Model", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Type", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Seats", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Seats", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Weight", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Weight", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Color", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Color", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RegistryDate", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RegistryDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OwnerLicenseNumber", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OwnerLicenseNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SerialNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SerialNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Policeman", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Policeman", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DrivingLicenseNumber", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DrivingLicenseNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Paid", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Paid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reason", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reason", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Amount", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RegistryNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RegistryNumber", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FrameNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FrameNumber", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EngineNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EngineNumber", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Brand", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Model", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Model", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Type", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Seats", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Seats", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Weight", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Weight", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Color", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Color", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RegistryDate", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RegistryDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OwnerLicenseNumber", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OwnerLicenseNumber", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SerialNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SerialNumber", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Date", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Policeman", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Policeman", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DrivingLicenseNumber", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DrivingLicenseNumber", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Paid", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Paid", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Reason", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reason", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Reason", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reason", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Amount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Amount", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -3624,8 +3613,8 @@ SELECT Id, RegistryNumber, FrameNumber, EngineNumber, Brand, Model, Type, Seats,
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, RegistryNumber, FrameNumber, EngineNumber, Brand, Model, Type, Seats, " +
-                "Weight, Color, RegistryDate, OwnerLicenseNumber FROM dbo.Vehicle";
+            this._commandCollection[0].CommandText = "SELECT Id, Type, SerialNumber, Date, Policeman, DrivingLicenseNumber, Paid, Reaso" +
+                "n, Amount FROM dbo.Fines";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -3633,7 +3622,7 @@ SELECT Id, RegistryNumber, FrameNumber, EngineNumber, Brand, Model, Type, Seats,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DatabaseDataSet.VehicleDataTable dataTable) {
+        public virtual int Fill(DatabaseDataSet.FinesDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3646,9 +3635,9 @@ SELECT Id, RegistryNumber, FrameNumber, EngineNumber, Brand, Model, Type, Seats,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DatabaseDataSet.VehicleDataTable GetData() {
+        public virtual DatabaseDataSet.FinesDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DatabaseDataSet.VehicleDataTable dataTable = new DatabaseDataSet.VehicleDataTable();
+            DatabaseDataSet.FinesDataTable dataTable = new DatabaseDataSet.FinesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3656,7 +3645,7 @@ SELECT Id, RegistryNumber, FrameNumber, EngineNumber, Brand, Model, Type, Seats,
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DatabaseDataSet.VehicleDataTable dataTable) {
+        public virtual int Update(DatabaseDataSet.FinesDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -3664,7 +3653,7 @@ SELECT Id, RegistryNumber, FrameNumber, EngineNumber, Brand, Model, Type, Seats,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(DatabaseDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "Vehicle");
+            return this.Adapter.Update(dataSet, "Fines");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3686,63 +3675,54 @@ SELECT Id, RegistryNumber, FrameNumber, EngineNumber, Brand, Model, Type, Seats,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id, string Original_RegistryNumber, string Original_FrameNumber, string Original_EngineNumber, string Original_Brand, string Original_Model, string Original_Type, short Original_Seats, int Original_Weight, string Original_Color, string Original_RegistryDate, string Original_OwnerLicenseNumber) {
+        public virtual int Delete(int Original_Id, string Original_Type, string Original_SerialNumber, string Original_Date, string Original_Policeman, string Original_DrivingLicenseNumber, byte Original_Paid, string Original_Reason, global::System.Nullable<decimal> Original_Amount) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id));
-            if ((Original_RegistryNumber == null)) {
-                throw new global::System.ArgumentNullException("Original_RegistryNumber");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_RegistryNumber));
-            }
-            if ((Original_FrameNumber == null)) {
-                throw new global::System.ArgumentNullException("Original_FrameNumber");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_FrameNumber));
-            }
-            if ((Original_EngineNumber == null)) {
-                throw new global::System.ArgumentNullException("Original_EngineNumber");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_EngineNumber));
-            }
-            if ((Original_Brand == null)) {
-                throw new global::System.ArgumentNullException("Original_Brand");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Brand));
-            }
-            if ((Original_Model == null)) {
-                throw new global::System.ArgumentNullException("Original_Model");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_Model));
-            }
             if ((Original_Type == null)) {
                 throw new global::System.ArgumentNullException("Original_Type");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_Type));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Type));
             }
-            this.Adapter.DeleteCommand.Parameters[7].Value = ((short)(Original_Seats));
-            this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_Weight));
-            if ((Original_Color == null)) {
-                throw new global::System.ArgumentNullException("Original_Color");
+            if ((Original_SerialNumber == null)) {
+                throw new global::System.ArgumentNullException("Original_SerialNumber");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((string)(Original_Color));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_SerialNumber));
             }
-            if ((Original_RegistryDate == null)) {
-                throw new global::System.ArgumentNullException("Original_RegistryDate");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_RegistryDate));
-            }
-            if ((Original_OwnerLicenseNumber == null)) {
-                throw new global::System.ArgumentNullException("Original_OwnerLicenseNumber");
+            if ((Original_Date == null)) {
+                throw new global::System.ArgumentNullException("Original_Date");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((string)(Original_OwnerLicenseNumber));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_Date));
+            }
+            if ((Original_Policeman == null)) {
+                throw new global::System.ArgumentNullException("Original_Policeman");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Policeman));
+            }
+            if ((Original_DrivingLicenseNumber == null)) {
+                throw new global::System.ArgumentNullException("Original_DrivingLicenseNumber");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_DrivingLicenseNumber));
+            }
+            this.Adapter.DeleteCommand.Parameters[6].Value = ((byte)(Original_Paid));
+            if ((Original_Reason == null)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_Reason));
+            }
+            if ((Original_Amount.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((decimal)(Original_Amount.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3764,62 +3744,49 @@ SELECT Id, RegistryNumber, FrameNumber, EngineNumber, Brand, Model, Type, Seats,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string RegistryNumber, string FrameNumber, string EngineNumber, string Brand, string Model, string Type, short Seats, int Weight, string Color, string RegistryDate, string OwnerLicenseNumber) {
-            if ((RegistryNumber == null)) {
-                throw new global::System.ArgumentNullException("RegistryNumber");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(RegistryNumber));
-            }
-            if ((FrameNumber == null)) {
-                throw new global::System.ArgumentNullException("FrameNumber");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(FrameNumber));
-            }
-            if ((EngineNumber == null)) {
-                throw new global::System.ArgumentNullException("EngineNumber");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(EngineNumber));
-            }
-            if ((Brand == null)) {
-                throw new global::System.ArgumentNullException("Brand");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Brand));
-            }
-            if ((Model == null)) {
-                throw new global::System.ArgumentNullException("Model");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Model));
-            }
+        public virtual int Insert(string Type, string SerialNumber, string Date, string Policeman, string DrivingLicenseNumber, byte Paid, string Reason, global::System.Nullable<decimal> Amount) {
             if ((Type == null)) {
                 throw new global::System.ArgumentNullException("Type");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Type));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Type));
             }
-            this.Adapter.InsertCommand.Parameters[6].Value = ((short)(Seats));
-            this.Adapter.InsertCommand.Parameters[7].Value = ((int)(Weight));
-            if ((Color == null)) {
-                throw new global::System.ArgumentNullException("Color");
+            if ((SerialNumber == null)) {
+                throw new global::System.ArgumentNullException("SerialNumber");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(Color));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(SerialNumber));
             }
-            if ((RegistryDate == null)) {
-                throw new global::System.ArgumentNullException("RegistryDate");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(RegistryDate));
-            }
-            if ((OwnerLicenseNumber == null)) {
-                throw new global::System.ArgumentNullException("OwnerLicenseNumber");
+            if ((Date == null)) {
+                throw new global::System.ArgumentNullException("Date");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(OwnerLicenseNumber));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Date));
+            }
+            if ((Policeman == null)) {
+                throw new global::System.ArgumentNullException("Policeman");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Policeman));
+            }
+            if ((DrivingLicenseNumber == null)) {
+                throw new global::System.ArgumentNullException("DrivingLicenseNumber");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(DrivingLicenseNumber));
+            }
+            this.Adapter.InsertCommand.Parameters[5].Value = ((byte)(Paid));
+            if ((Reason == null)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Reason));
+            }
+            if ((Amount.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((decimal)(Amount.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3842,144 +3809,116 @@ SELECT Id, RegistryNumber, FrameNumber, EngineNumber, Brand, Model, Type, Seats,
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
-                    string RegistryNumber, 
-                    string FrameNumber, 
-                    string EngineNumber, 
-                    string Brand, 
-                    string Model, 
                     string Type, 
-                    short Seats, 
-                    int Weight, 
-                    string Color, 
-                    string RegistryDate, 
-                    string OwnerLicenseNumber, 
+                    string SerialNumber, 
+                    string Date, 
+                    string Policeman, 
+                    string DrivingLicenseNumber, 
+                    byte Paid, 
+                    string Reason, 
+                    global::System.Nullable<decimal> Amount, 
                     int Original_Id, 
-                    string Original_RegistryNumber, 
-                    string Original_FrameNumber, 
-                    string Original_EngineNumber, 
-                    string Original_Brand, 
-                    string Original_Model, 
                     string Original_Type, 
-                    short Original_Seats, 
-                    int Original_Weight, 
-                    string Original_Color, 
-                    string Original_RegistryDate, 
-                    string Original_OwnerLicenseNumber, 
+                    string Original_SerialNumber, 
+                    string Original_Date, 
+                    string Original_Policeman, 
+                    string Original_DrivingLicenseNumber, 
+                    byte Original_Paid, 
+                    string Original_Reason, 
+                    global::System.Nullable<decimal> Original_Amount, 
                     int Id) {
-            if ((RegistryNumber == null)) {
-                throw new global::System.ArgumentNullException("RegistryNumber");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(RegistryNumber));
-            }
-            if ((FrameNumber == null)) {
-                throw new global::System.ArgumentNullException("FrameNumber");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(FrameNumber));
-            }
-            if ((EngineNumber == null)) {
-                throw new global::System.ArgumentNullException("EngineNumber");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(EngineNumber));
-            }
-            if ((Brand == null)) {
-                throw new global::System.ArgumentNullException("Brand");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Brand));
-            }
-            if ((Model == null)) {
-                throw new global::System.ArgumentNullException("Model");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Model));
-            }
             if ((Type == null)) {
                 throw new global::System.ArgumentNullException("Type");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Type));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Type));
             }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((short)(Seats));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Weight));
-            if ((Color == null)) {
-                throw new global::System.ArgumentNullException("Color");
+            if ((SerialNumber == null)) {
+                throw new global::System.ArgumentNullException("SerialNumber");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Color));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(SerialNumber));
             }
-            if ((RegistryDate == null)) {
-                throw new global::System.ArgumentNullException("RegistryDate");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(RegistryDate));
-            }
-            if ((OwnerLicenseNumber == null)) {
-                throw new global::System.ArgumentNullException("OwnerLicenseNumber");
+            if ((Date == null)) {
+                throw new global::System.ArgumentNullException("Date");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(OwnerLicenseNumber));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Date));
             }
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_Id));
-            if ((Original_RegistryNumber == null)) {
-                throw new global::System.ArgumentNullException("Original_RegistryNumber");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_RegistryNumber));
-            }
-            if ((Original_FrameNumber == null)) {
-                throw new global::System.ArgumentNullException("Original_FrameNumber");
+            if ((Policeman == null)) {
+                throw new global::System.ArgumentNullException("Policeman");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_FrameNumber));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Policeman));
             }
-            if ((Original_EngineNumber == null)) {
-                throw new global::System.ArgumentNullException("Original_EngineNumber");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_EngineNumber));
-            }
-            if ((Original_Brand == null)) {
-                throw new global::System.ArgumentNullException("Original_Brand");
+            if ((DrivingLicenseNumber == null)) {
+                throw new global::System.ArgumentNullException("DrivingLicenseNumber");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_Brand));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(DrivingLicenseNumber));
             }
-            if ((Original_Model == null)) {
-                throw new global::System.ArgumentNullException("Original_Model");
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((byte)(Paid));
+            if ((Reason == null)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_Model));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Reason));
             }
+            if ((Amount.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((decimal)(Amount.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_Id));
             if ((Original_Type == null)) {
                 throw new global::System.ArgumentNullException("Original_Type");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_Type));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_Type));
             }
-            this.Adapter.UpdateCommand.Parameters[18].Value = ((short)(Original_Seats));
-            this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(Original_Weight));
-            if ((Original_Color == null)) {
-                throw new global::System.ArgumentNullException("Original_Color");
+            if ((Original_SerialNumber == null)) {
+                throw new global::System.ArgumentNullException("Original_SerialNumber");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_Color));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_SerialNumber));
             }
-            if ((Original_RegistryDate == null)) {
-                throw new global::System.ArgumentNullException("Original_RegistryDate");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_RegistryDate));
-            }
-            if ((Original_OwnerLicenseNumber == null)) {
-                throw new global::System.ArgumentNullException("Original_OwnerLicenseNumber");
+            if ((Original_Date == null)) {
+                throw new global::System.ArgumentNullException("Original_Date");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_OwnerLicenseNumber));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_Date));
             }
-            this.Adapter.UpdateCommand.Parameters[23].Value = ((int)(Id));
+            if ((Original_Policeman == null)) {
+                throw new global::System.ArgumentNullException("Original_Policeman");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_Policeman));
+            }
+            if ((Original_DrivingLicenseNumber == null)) {
+                throw new global::System.ArgumentNullException("Original_DrivingLicenseNumber");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_DrivingLicenseNumber));
+            }
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((byte)(Original_Paid));
+            if ((Original_Reason == null)) {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_Reason));
+            }
+            if ((Original_Amount.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((decimal)(Original_Amount.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4001,30 +3940,24 @@ SELECT Id, RegistryNumber, FrameNumber, EngineNumber, Brand, Model, Type, Seats,
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
-                    string RegistryNumber, 
-                    string FrameNumber, 
-                    string EngineNumber, 
-                    string Brand, 
-                    string Model, 
                     string Type, 
-                    short Seats, 
-                    int Weight, 
-                    string Color, 
-                    string RegistryDate, 
-                    string OwnerLicenseNumber, 
+                    string SerialNumber, 
+                    string Date, 
+                    string Policeman, 
+                    string DrivingLicenseNumber, 
+                    byte Paid, 
+                    string Reason, 
+                    global::System.Nullable<decimal> Amount, 
                     int Original_Id, 
-                    string Original_RegistryNumber, 
-                    string Original_FrameNumber, 
-                    string Original_EngineNumber, 
-                    string Original_Brand, 
-                    string Original_Model, 
                     string Original_Type, 
-                    short Original_Seats, 
-                    int Original_Weight, 
-                    string Original_Color, 
-                    string Original_RegistryDate, 
-                    string Original_OwnerLicenseNumber) {
-            return this.Update(RegistryNumber, FrameNumber, EngineNumber, Brand, Model, Type, Seats, Weight, Color, RegistryDate, OwnerLicenseNumber, Original_Id, Original_RegistryNumber, Original_FrameNumber, Original_EngineNumber, Original_Brand, Original_Model, Original_Type, Original_Seats, Original_Weight, Original_Color, Original_RegistryDate, Original_OwnerLicenseNumber, Original_Id);
+                    string Original_SerialNumber, 
+                    string Original_Date, 
+                    string Original_Policeman, 
+                    string Original_DrivingLicenseNumber, 
+                    byte Original_Paid, 
+                    string Original_Reason, 
+                    global::System.Nullable<decimal> Original_Amount) {
+            return this.Update(Type, SerialNumber, Date, Policeman, DrivingLicenseNumber, Paid, Reason, Amount, Original_Id, Original_Type, Original_SerialNumber, Original_Date, Original_Policeman, Original_DrivingLicenseNumber, Original_Paid, Original_Reason, Original_Amount, Original_Id);
         }
     }
     
@@ -4152,42 +4085,43 @@ SELECT Id, RegistryNumber, FrameNumber, EngineNumber, Brand, Model, Type, Seats,
             tableMapping.ColumnMappings.Add("Id", "Id");
             tableMapping.ColumnMappings.Add("Username", "Username");
             tableMapping.ColumnMappings.Add("Password", "Password");
-            tableMapping.ColumnMappings.Add("DrivingLicenseN", "DrivingLicenseN");
+            tableMapping.ColumnMappings.Add("DrivingLicenseNumber", "DrivingLicenseNumber");
             tableMapping.ColumnMappings.Add("Role ", "Role ");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Users] WHERE (([Id] = @Original_Id) AND ([Username] = @Original_Username) AND ([Password] = @Original_Password) AND ([DrivingLicenseN] = @Original_DrivingLicenseN) AND ((@IsNull_Role_ = 1 AND [Role ] IS NULL) OR ([Role ] = @Original_Role_)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Users] WHERE (([Id] = @Original_Id) AND ([Username] = @Original_Username) AND ([Password] = @Original_Password) AND ([DrivingLicenseNumber] = @Original_DrivingLicenseNumber) AND ((@IsNull_Role_ = 1 AND [Role ] IS NULL) OR ([Role ] = @Original_Role_)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Username", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Username", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Password", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DrivingLicenseN", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DrivingLicenseN", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DrivingLicenseNumber", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DrivingLicenseNumber", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Role_", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Role ", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Role_", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Role ", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Users] ([Username], [Password], [DrivingLicenseN], [Role ]) VA" +
-                "LUES (@Username, @Password, @DrivingLicenseN, @Role_);\r\nSELECT Id, Username, Pas" +
-                "sword, DrivingLicenseN, [Role ] FROM Users WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Users] ([Username], [Password], [DrivingLicenseNumber], [Role " +
+                "]) VALUES (@Username, @Password, @DrivingLicenseNumber, @Role_);\r\nSELECT Id, Use" +
+                "rname, Password, DrivingLicenseNumber, [Role ] FROM Users WHERE (Id = SCOPE_IDEN" +
+                "TITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Username", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Username", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Password", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DrivingLicenseN", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DrivingLicenseN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DrivingLicenseNumber", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DrivingLicenseNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Role_", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Role ", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Users] SET [Username] = @Username, [Password] = @Password, [DrivingLicenseN] = @DrivingLicenseN, [Role ] = @Role_ WHERE (([Id] = @Original_Id) AND ([Username] = @Original_Username) AND ([Password] = @Original_Password) AND ([DrivingLicenseN] = @Original_DrivingLicenseN) AND ((@IsNull_Role_ = 1 AND [Role ] IS NULL) OR ([Role ] = @Original_Role_)));
-SELECT Id, Username, Password, DrivingLicenseN, [Role ] FROM Users WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Users] SET [Username] = @Username, [Password] = @Password, [DrivingLicenseNumber] = @DrivingLicenseNumber, [Role ] = @Role_ WHERE (([Id] = @Original_Id) AND ([Username] = @Original_Username) AND ([Password] = @Original_Password) AND ([DrivingLicenseNumber] = @Original_DrivingLicenseNumber) AND ((@IsNull_Role_ = 1 AND [Role ] IS NULL) OR ([Role ] = @Original_Role_)));
+SELECT Id, Username, Password, DrivingLicenseNumber, [Role ] FROM Users WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Username", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Username", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Password", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DrivingLicenseN", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DrivingLicenseN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DrivingLicenseNumber", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DrivingLicenseNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Role_", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Role ", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Username", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Username", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Password", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DrivingLicenseN", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DrivingLicenseN", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DrivingLicenseNumber", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DrivingLicenseNumber", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Role_", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Role ", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Role_", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Role ", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -4203,20 +4137,11 @@ SELECT Id, Username, Password, DrivingLicenseN, [Role ] FROM Users WHERE (Id = @
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, Username, Password, DrivingLicenseN, [Role ] FROM dbo.Users";
+            this._commandCollection[0].CommandText = "SELECT Id, Username, Password, DrivingLicenseNumber, [Role ] FROM dbo.Users";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "dbo.CreateUsernameAndPassword";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.StoredProcedure;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Username", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Password", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DrivingLicenseN", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Role", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 5, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4276,7 +4201,7 @@ SELECT Id, Username, Password, DrivingLicenseN, [Role ] FROM Users WHERE (Id = @
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id, string Original_Username, string Original_Password, string Original_DrivingLicenseN, global::System.Nullable<short> Original_Role_) {
+        public virtual int Delete(int Original_Id, string Original_Username, string Original_Password, string Original_DrivingLicenseNumber, global::System.Nullable<short> Original_Role_) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id));
             if ((Original_Username == null)) {
                 throw new global::System.ArgumentNullException("Original_Username");
@@ -4290,11 +4215,11 @@ SELECT Id, Username, Password, DrivingLicenseN, [Role ] FROM Users WHERE (Id = @
             else {
                 this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Password));
             }
-            if ((Original_DrivingLicenseN == null)) {
-                throw new global::System.ArgumentNullException("Original_DrivingLicenseN");
+            if ((Original_DrivingLicenseNumber == null)) {
+                throw new global::System.ArgumentNullException("Original_DrivingLicenseNumber");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_DrivingLicenseN));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_DrivingLicenseNumber));
             }
             if ((Original_Role_.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
@@ -4324,7 +4249,7 @@ SELECT Id, Username, Password, DrivingLicenseN, [Role ] FROM Users WHERE (Id = @
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Username, string Password, string DrivingLicenseN, global::System.Nullable<short> Role_) {
+        public virtual int Insert(string Username, string Password, string DrivingLicenseNumber, global::System.Nullable<short> Role_) {
             if ((Username == null)) {
                 throw new global::System.ArgumentNullException("Username");
             }
@@ -4337,11 +4262,11 @@ SELECT Id, Username, Password, DrivingLicenseN, [Role ] FROM Users WHERE (Id = @
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Password));
             }
-            if ((DrivingLicenseN == null)) {
-                throw new global::System.ArgumentNullException("DrivingLicenseN");
+            if ((DrivingLicenseNumber == null)) {
+                throw new global::System.ArgumentNullException("DrivingLicenseNumber");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(DrivingLicenseN));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(DrivingLicenseNumber));
             }
             if ((Role_.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[3].Value = ((short)(Role_.Value));
@@ -4369,7 +4294,7 @@ SELECT Id, Username, Password, DrivingLicenseN, [Role ] FROM Users WHERE (Id = @
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Username, string Password, string DrivingLicenseN, global::System.Nullable<short> Role_, int Original_Id, string Original_Username, string Original_Password, string Original_DrivingLicenseN, global::System.Nullable<short> Original_Role_, int Id) {
+        public virtual int Update(string Username, string Password, string DrivingLicenseNumber, global::System.Nullable<short> Role_, int Original_Id, string Original_Username, string Original_Password, string Original_DrivingLicenseNumber, global::System.Nullable<short> Original_Role_, int Id) {
             if ((Username == null)) {
                 throw new global::System.ArgumentNullException("Username");
             }
@@ -4382,11 +4307,11 @@ SELECT Id, Username, Password, DrivingLicenseN, [Role ] FROM Users WHERE (Id = @
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Password));
             }
-            if ((DrivingLicenseN == null)) {
-                throw new global::System.ArgumentNullException("DrivingLicenseN");
+            if ((DrivingLicenseNumber == null)) {
+                throw new global::System.ArgumentNullException("DrivingLicenseNumber");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(DrivingLicenseN));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(DrivingLicenseNumber));
             }
             if ((Role_.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((short)(Role_.Value));
@@ -4407,11 +4332,11 @@ SELECT Id, Username, Password, DrivingLicenseN, [Role ] FROM Users WHERE (Id = @
             else {
                 this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_Password));
             }
-            if ((Original_DrivingLicenseN == null)) {
-                throw new global::System.ArgumentNullException("Original_DrivingLicenseN");
+            if ((Original_DrivingLicenseNumber == null)) {
+                throw new global::System.ArgumentNullException("Original_DrivingLicenseNumber");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_DrivingLicenseN));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_DrivingLicenseNumber));
             }
             if ((Original_Role_.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
@@ -4442,54 +4367,8 @@ SELECT Id, Username, Password, DrivingLicenseN, [Role ] FROM Users WHERE (Id = @
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Username, string Password, string DrivingLicenseN, global::System.Nullable<short> Role_, int Original_Id, string Original_Username, string Original_Password, string Original_DrivingLicenseN, global::System.Nullable<short> Original_Role_) {
-            return this.Update(Username, Password, DrivingLicenseN, Role_, Original_Id, Original_Username, Original_Password, Original_DrivingLicenseN, Original_Role_, Original_Id);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int CreateUsernameAndPassword(string Username, string Password, string DrivingLicenseN, global::System.Nullable<short> Role) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
-            if ((Username == null)) {
-                command.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[1].Value = ((string)(Username));
-            }
-            if ((Password == null)) {
-                command.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[2].Value = ((string)(Password));
-            }
-            if ((DrivingLicenseN == null)) {
-                command.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[3].Value = ((string)(DrivingLicenseN));
-            }
-            if ((Role.HasValue == true)) {
-                command.Parameters[4].Value = ((short)(Role.Value));
-            }
-            else {
-                command.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            int returnValue;
-            try {
-                returnValue = command.ExecuteNonQuery();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            return returnValue;
+        public virtual int Update(string Username, string Password, string DrivingLicenseNumber, global::System.Nullable<short> Role_, int Original_Id, string Original_Username, string Original_Password, string Original_DrivingLicenseNumber, global::System.Nullable<short> Original_Role_) {
+            return this.Update(Username, Password, DrivingLicenseNumber, Role_, Original_Id, Original_Username, Original_Password, Original_DrivingLicenseNumber, Original_Role_, Original_Id);
         }
     }
     
@@ -4502,7 +4381,7 @@ SELECT Id, Username, Password, DrivingLicenseN, [Role ] FROM Users WHERE (Id = @
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class FinesTableAdapter : global::System.ComponentModel.Component {
+    public partial class VehicleTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -4516,7 +4395,7 @@ SELECT Id, Username, Password, DrivingLicenseN, [Role ] FROM Users WHERE (Id = @
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public FinesTableAdapter() {
+        public VehicleTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -4613,69 +4492,80 @@ SELECT Id, Username, Password, DrivingLicenseN, [Role ] FROM Users WHERE (Id = @
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Fines";
+            tableMapping.DataSetTable = "Vehicle";
             tableMapping.ColumnMappings.Add("Id", "Id");
+            tableMapping.ColumnMappings.Add("RegistryNumber", "RegistryNumber");
+            tableMapping.ColumnMappings.Add("FrameNumber", "FrameNumber");
+            tableMapping.ColumnMappings.Add("EngineNumber", "EngineNumber");
+            tableMapping.ColumnMappings.Add("Brand", "Brand");
+            tableMapping.ColumnMappings.Add("Model", "Model");
             tableMapping.ColumnMappings.Add("Type", "Type");
-            tableMapping.ColumnMappings.Add("SerialNumber", "SerialNumber");
-            tableMapping.ColumnMappings.Add("Date", "Date");
-            tableMapping.ColumnMappings.Add("Policeman", "Policeman");
-            tableMapping.ColumnMappings.Add("OffenderDLN", "OffenderDLN");
-            tableMapping.ColumnMappings.Add("Paid", "Paid");
-            tableMapping.ColumnMappings.Add("Reason", "Reason");
-            tableMapping.ColumnMappings.Add("Amount", "Amount");
+            tableMapping.ColumnMappings.Add("Seats", "Seats");
+            tableMapping.ColumnMappings.Add("Weight", "Weight");
+            tableMapping.ColumnMappings.Add("Color", "Color");
+            tableMapping.ColumnMappings.Add("RegistryDate", "RegistryDate");
+            tableMapping.ColumnMappings.Add("DrivingLicenseNumber", "DrivingLicenseNumber");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Fines] WHERE (([Id] = @Original_Id) AND ([Type] = @Original_Type) AND ([SerialNumber] = @Original_SerialNumber) AND ([Date] = @Original_Date) AND ([Policeman] = @Original_Policeman) AND ([OffenderDLN] = @Original_OffenderDLN) AND ([Paid] = @Original_Paid) AND ((@IsNull_Reason = 1 AND [Reason] IS NULL) OR ([Reason] = @Original_Reason)) AND ((@IsNull_Amount = 1 AND [Amount] IS NULL) OR ([Amount] = @Original_Amount)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Vehicle] WHERE (([Id] = @Original_Id) AND ([RegistryNumber] = @Original_RegistryNumber) AND ([FrameNumber] = @Original_FrameNumber) AND ([EngineNumber] = @Original_EngineNumber) AND ([Brand] = @Original_Brand) AND ([Model] = @Original_Model) AND ([Type] = @Original_Type) AND ([Seats] = @Original_Seats) AND ([Weight] = @Original_Weight) AND ([Color] = @Original_Color) AND ([RegistryDate] = @Original_RegistryDate) AND ([DrivingLicenseNumber] = @Original_DrivingLicenseNumber))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RegistryNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RegistryNumber", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FrameNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FrameNumber", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EngineNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EngineNumber", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Brand", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Model", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Model", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Type", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SerialNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SerialNumber", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Date", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Policeman", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Policeman", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OffenderDLN", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OffenderDLN", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Paid", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Paid", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Reason", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reason", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Reason", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reason", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Amount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Amount", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Seats", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Seats", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Weight", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Weight", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Color", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Color", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RegistryDate", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RegistryDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DrivingLicenseNumber", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DrivingLicenseNumber", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Fines] ([Type], [SerialNumber], [Date], [Policeman], [OffenderDLN], [Paid], [Reason], [Amount]) VALUES (@Type, @SerialNumber, @Date, @Policeman, @OffenderDLN, @Paid, @Reason, @Amount);
-SELECT Id, Type, SerialNumber, Date, Policeman, OffenderDLN, Paid, Reason, Amount FROM Fines WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Vehicle] ([RegistryNumber], [FrameNumber], [EngineNumber], [Brand], [Model], [Type], [Seats], [Weight], [Color], [RegistryDate], [DrivingLicenseNumber]) VALUES (@RegistryNumber, @FrameNumber, @EngineNumber, @Brand, @Model, @Type, @Seats, @Weight, @Color, @RegistryDate, @DrivingLicenseNumber);
+SELECT Id, RegistryNumber, FrameNumber, EngineNumber, Brand, Model, Type, Seats, Weight, Color, RegistryDate, DrivingLicenseNumber FROM Vehicle WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RegistryNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RegistryNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FrameNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FrameNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EngineNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EngineNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Brand", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Model", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Model", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Type", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SerialNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SerialNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Policeman", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Policeman", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OffenderDLN", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OffenderDLN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Paid", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Paid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reason", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reason", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Amount", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Seats", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Seats", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Weight", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Weight", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Color", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Color", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RegistryDate", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RegistryDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DrivingLicenseNumber", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DrivingLicenseNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Fines] SET [Type] = @Type, [SerialNumber] = @SerialNumber, [Date] = @Date, [Policeman] = @Policeman, [OffenderDLN] = @OffenderDLN, [Paid] = @Paid, [Reason] = @Reason, [Amount] = @Amount WHERE (([Id] = @Original_Id) AND ([Type] = @Original_Type) AND ([SerialNumber] = @Original_SerialNumber) AND ([Date] = @Original_Date) AND ([Policeman] = @Original_Policeman) AND ([OffenderDLN] = @Original_OffenderDLN) AND ([Paid] = @Original_Paid) AND ((@IsNull_Reason = 1 AND [Reason] IS NULL) OR ([Reason] = @Original_Reason)) AND ((@IsNull_Amount = 1 AND [Amount] IS NULL) OR ([Amount] = @Original_Amount)));
-SELECT Id, Type, SerialNumber, Date, Policeman, OffenderDLN, Paid, Reason, Amount FROM Fines WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Vehicle] SET [RegistryNumber] = @RegistryNumber, [FrameNumber] = @FrameNumber, [EngineNumber] = @EngineNumber, [Brand] = @Brand, [Model] = @Model, [Type] = @Type, [Seats] = @Seats, [Weight] = @Weight, [Color] = @Color, [RegistryDate] = @RegistryDate, [DrivingLicenseNumber] = @DrivingLicenseNumber WHERE (([Id] = @Original_Id) AND ([RegistryNumber] = @Original_RegistryNumber) AND ([FrameNumber] = @Original_FrameNumber) AND ([EngineNumber] = @Original_EngineNumber) AND ([Brand] = @Original_Brand) AND ([Model] = @Original_Model) AND ([Type] = @Original_Type) AND ([Seats] = @Original_Seats) AND ([Weight] = @Original_Weight) AND ([Color] = @Original_Color) AND ([RegistryDate] = @Original_RegistryDate) AND ([DrivingLicenseNumber] = @Original_DrivingLicenseNumber));
+SELECT Id, RegistryNumber, FrameNumber, EngineNumber, Brand, Model, Type, Seats, Weight, Color, RegistryDate, DrivingLicenseNumber FROM Vehicle WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RegistryNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RegistryNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FrameNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FrameNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EngineNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EngineNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Brand", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Model", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Model", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Type", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SerialNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SerialNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Policeman", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Policeman", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OffenderDLN", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OffenderDLN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Paid", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Paid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reason", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reason", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Amount", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Seats", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Seats", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Weight", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Weight", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Color", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Color", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RegistryDate", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RegistryDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DrivingLicenseNumber", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DrivingLicenseNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RegistryNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RegistryNumber", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FrameNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FrameNumber", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EngineNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EngineNumber", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Brand", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Model", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Model", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Type", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SerialNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SerialNumber", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Date", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Policeman", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Policeman", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OffenderDLN", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OffenderDLN", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Paid", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Paid", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Reason", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reason", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Reason", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reason", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Amount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Amount", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Seats", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Seats", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Weight", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Weight", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Color", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Color", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RegistryDate", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RegistryDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DrivingLicenseNumber", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DrivingLicenseNumber", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -4692,8 +4582,8 @@ SELECT Id, Type, SerialNumber, Date, Policeman, OffenderDLN, Paid, Reason, Amoun
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, Type, SerialNumber, Date, Policeman, OffenderDLN, Paid, Reason, Amount" +
-                " FROM dbo.Fines";
+            this._commandCollection[0].CommandText = "SELECT Id, RegistryNumber, FrameNumber, EngineNumber, Brand, Model, Type, Seats, " +
+                "Weight, Color, RegistryDate, DrivingLicenseNumber FROM dbo.Vehicle";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -4701,7 +4591,7 @@ SELECT Id, Type, SerialNumber, Date, Policeman, OffenderDLN, Paid, Reason, Amoun
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DatabaseDataSet.FinesDataTable dataTable) {
+        public virtual int Fill(DatabaseDataSet.VehicleDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -4714,9 +4604,9 @@ SELECT Id, Type, SerialNumber, Date, Policeman, OffenderDLN, Paid, Reason, Amoun
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DatabaseDataSet.FinesDataTable GetData() {
+        public virtual DatabaseDataSet.VehicleDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DatabaseDataSet.FinesDataTable dataTable = new DatabaseDataSet.FinesDataTable();
+            DatabaseDataSet.VehicleDataTable dataTable = new DatabaseDataSet.VehicleDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -4724,7 +4614,7 @@ SELECT Id, Type, SerialNumber, Date, Policeman, OffenderDLN, Paid, Reason, Amoun
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DatabaseDataSet.FinesDataTable dataTable) {
+        public virtual int Update(DatabaseDataSet.VehicleDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -4732,7 +4622,7 @@ SELECT Id, Type, SerialNumber, Date, Policeman, OffenderDLN, Paid, Reason, Amoun
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(DatabaseDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "Fines");
+            return this.Adapter.Update(dataSet, "Vehicle");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4754,54 +4644,63 @@ SELECT Id, Type, SerialNumber, Date, Policeman, OffenderDLN, Paid, Reason, Amoun
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id, string Original_Type, string Original_SerialNumber, string Original_Date, string Original_Policeman, string Original_OffenderDLN, byte Original_Paid, string Original_Reason, global::System.Nullable<decimal> Original_Amount) {
+        public virtual int Delete(int Original_Id, string Original_RegistryNumber, string Original_FrameNumber, string Original_EngineNumber, string Original_Brand, string Original_Model, string Original_Type, short Original_Seats, int Original_Weight, string Original_Color, string Original_RegistryDate, string Original_DrivingLicenseNumber) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id));
+            if ((Original_RegistryNumber == null)) {
+                throw new global::System.ArgumentNullException("Original_RegistryNumber");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_RegistryNumber));
+            }
+            if ((Original_FrameNumber == null)) {
+                throw new global::System.ArgumentNullException("Original_FrameNumber");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_FrameNumber));
+            }
+            if ((Original_EngineNumber == null)) {
+                throw new global::System.ArgumentNullException("Original_EngineNumber");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_EngineNumber));
+            }
+            if ((Original_Brand == null)) {
+                throw new global::System.ArgumentNullException("Original_Brand");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Brand));
+            }
+            if ((Original_Model == null)) {
+                throw new global::System.ArgumentNullException("Original_Model");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_Model));
+            }
             if ((Original_Type == null)) {
                 throw new global::System.ArgumentNullException("Original_Type");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Type));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_Type));
             }
-            if ((Original_SerialNumber == null)) {
-                throw new global::System.ArgumentNullException("Original_SerialNumber");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_SerialNumber));
-            }
-            if ((Original_Date == null)) {
-                throw new global::System.ArgumentNullException("Original_Date");
+            this.Adapter.DeleteCommand.Parameters[7].Value = ((short)(Original_Seats));
+            this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_Weight));
+            if ((Original_Color == null)) {
+                throw new global::System.ArgumentNullException("Original_Color");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_Date));
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((string)(Original_Color));
             }
-            if ((Original_Policeman == null)) {
-                throw new global::System.ArgumentNullException("Original_Policeman");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Policeman));
-            }
-            if ((Original_OffenderDLN == null)) {
-                throw new global::System.ArgumentNullException("Original_OffenderDLN");
+            if ((Original_RegistryDate == null)) {
+                throw new global::System.ArgumentNullException("Original_RegistryDate");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_OffenderDLN));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_RegistryDate));
             }
-            this.Adapter.DeleteCommand.Parameters[6].Value = ((byte)(Original_Paid));
-            if ((Original_Reason == null)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            if ((Original_DrivingLicenseNumber == null)) {
+                throw new global::System.ArgumentNullException("Original_DrivingLicenseNumber");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_Reason));
-            }
-            if ((Original_Amount.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((decimal)(Original_Amount.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((string)(Original_DrivingLicenseNumber));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4823,49 +4722,62 @@ SELECT Id, Type, SerialNumber, Date, Policeman, OffenderDLN, Paid, Reason, Amoun
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Type, string SerialNumber, string Date, string Policeman, string OffenderDLN, byte Paid, string Reason, global::System.Nullable<decimal> Amount) {
+        public virtual int Insert(string RegistryNumber, string FrameNumber, string EngineNumber, string Brand, string Model, string Type, short Seats, int Weight, string Color, string RegistryDate, string DrivingLicenseNumber) {
+            if ((RegistryNumber == null)) {
+                throw new global::System.ArgumentNullException("RegistryNumber");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(RegistryNumber));
+            }
+            if ((FrameNumber == null)) {
+                throw new global::System.ArgumentNullException("FrameNumber");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(FrameNumber));
+            }
+            if ((EngineNumber == null)) {
+                throw new global::System.ArgumentNullException("EngineNumber");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(EngineNumber));
+            }
+            if ((Brand == null)) {
+                throw new global::System.ArgumentNullException("Brand");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Brand));
+            }
+            if ((Model == null)) {
+                throw new global::System.ArgumentNullException("Model");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Model));
+            }
             if ((Type == null)) {
                 throw new global::System.ArgumentNullException("Type");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Type));
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Type));
             }
-            if ((SerialNumber == null)) {
-                throw new global::System.ArgumentNullException("SerialNumber");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(SerialNumber));
-            }
-            if ((Date == null)) {
-                throw new global::System.ArgumentNullException("Date");
+            this.Adapter.InsertCommand.Parameters[6].Value = ((short)(Seats));
+            this.Adapter.InsertCommand.Parameters[7].Value = ((int)(Weight));
+            if ((Color == null)) {
+                throw new global::System.ArgumentNullException("Color");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Date));
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(Color));
             }
-            if ((Policeman == null)) {
-                throw new global::System.ArgumentNullException("Policeman");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Policeman));
-            }
-            if ((OffenderDLN == null)) {
-                throw new global::System.ArgumentNullException("OffenderDLN");
+            if ((RegistryDate == null)) {
+                throw new global::System.ArgumentNullException("RegistryDate");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(OffenderDLN));
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(RegistryDate));
             }
-            this.Adapter.InsertCommand.Parameters[5].Value = ((byte)(Paid));
-            if ((Reason == null)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Reason));
-            }
-            if ((Amount.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((decimal)(Amount.Value));
+            if ((DrivingLicenseNumber == null)) {
+                throw new global::System.ArgumentNullException("DrivingLicenseNumber");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(DrivingLicenseNumber));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4888,116 +4800,144 @@ SELECT Id, Type, SerialNumber, Date, Policeman, OffenderDLN, Paid, Reason, Amoun
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
+                    string RegistryNumber, 
+                    string FrameNumber, 
+                    string EngineNumber, 
+                    string Brand, 
+                    string Model, 
                     string Type, 
-                    string SerialNumber, 
-                    string Date, 
-                    string Policeman, 
-                    string OffenderDLN, 
-                    byte Paid, 
-                    string Reason, 
-                    global::System.Nullable<decimal> Amount, 
+                    short Seats, 
+                    int Weight, 
+                    string Color, 
+                    string RegistryDate, 
+                    string DrivingLicenseNumber, 
                     int Original_Id, 
+                    string Original_RegistryNumber, 
+                    string Original_FrameNumber, 
+                    string Original_EngineNumber, 
+                    string Original_Brand, 
+                    string Original_Model, 
                     string Original_Type, 
-                    string Original_SerialNumber, 
-                    string Original_Date, 
-                    string Original_Policeman, 
-                    string Original_OffenderDLN, 
-                    byte Original_Paid, 
-                    string Original_Reason, 
-                    global::System.Nullable<decimal> Original_Amount, 
+                    short Original_Seats, 
+                    int Original_Weight, 
+                    string Original_Color, 
+                    string Original_RegistryDate, 
+                    string Original_DrivingLicenseNumber, 
                     int Id) {
+            if ((RegistryNumber == null)) {
+                throw new global::System.ArgumentNullException("RegistryNumber");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(RegistryNumber));
+            }
+            if ((FrameNumber == null)) {
+                throw new global::System.ArgumentNullException("FrameNumber");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(FrameNumber));
+            }
+            if ((EngineNumber == null)) {
+                throw new global::System.ArgumentNullException("EngineNumber");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(EngineNumber));
+            }
+            if ((Brand == null)) {
+                throw new global::System.ArgumentNullException("Brand");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Brand));
+            }
+            if ((Model == null)) {
+                throw new global::System.ArgumentNullException("Model");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Model));
+            }
             if ((Type == null)) {
                 throw new global::System.ArgumentNullException("Type");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Type));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Type));
             }
-            if ((SerialNumber == null)) {
-                throw new global::System.ArgumentNullException("SerialNumber");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(SerialNumber));
-            }
-            if ((Date == null)) {
-                throw new global::System.ArgumentNullException("Date");
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((short)(Seats));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Weight));
+            if ((Color == null)) {
+                throw new global::System.ArgumentNullException("Color");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Date));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Color));
             }
-            if ((Policeman == null)) {
-                throw new global::System.ArgumentNullException("Policeman");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Policeman));
-            }
-            if ((OffenderDLN == null)) {
-                throw new global::System.ArgumentNullException("OffenderDLN");
+            if ((RegistryDate == null)) {
+                throw new global::System.ArgumentNullException("RegistryDate");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(OffenderDLN));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(RegistryDate));
             }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((byte)(Paid));
-            if ((Reason == null)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Reason));
-            }
-            if ((Amount.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((decimal)(Amount.Value));
+            if ((DrivingLicenseNumber == null)) {
+                throw new global::System.ArgumentNullException("DrivingLicenseNumber");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(DrivingLicenseNumber));
             }
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_Id));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_Id));
+            if ((Original_RegistryNumber == null)) {
+                throw new global::System.ArgumentNullException("Original_RegistryNumber");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_RegistryNumber));
+            }
+            if ((Original_FrameNumber == null)) {
+                throw new global::System.ArgumentNullException("Original_FrameNumber");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_FrameNumber));
+            }
+            if ((Original_EngineNumber == null)) {
+                throw new global::System.ArgumentNullException("Original_EngineNumber");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_EngineNumber));
+            }
+            if ((Original_Brand == null)) {
+                throw new global::System.ArgumentNullException("Original_Brand");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_Brand));
+            }
+            if ((Original_Model == null)) {
+                throw new global::System.ArgumentNullException("Original_Model");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_Model));
+            }
             if ((Original_Type == null)) {
                 throw new global::System.ArgumentNullException("Original_Type");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_Type));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_Type));
             }
-            if ((Original_SerialNumber == null)) {
-                throw new global::System.ArgumentNullException("Original_SerialNumber");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_SerialNumber));
-            }
-            if ((Original_Date == null)) {
-                throw new global::System.ArgumentNullException("Original_Date");
+            this.Adapter.UpdateCommand.Parameters[18].Value = ((short)(Original_Seats));
+            this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(Original_Weight));
+            if ((Original_Color == null)) {
+                throw new global::System.ArgumentNullException("Original_Color");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_Date));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_Color));
             }
-            if ((Original_Policeman == null)) {
-                throw new global::System.ArgumentNullException("Original_Policeman");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_Policeman));
-            }
-            if ((Original_OffenderDLN == null)) {
-                throw new global::System.ArgumentNullException("Original_OffenderDLN");
+            if ((Original_RegistryDate == null)) {
+                throw new global::System.ArgumentNullException("Original_RegistryDate");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_OffenderDLN));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_RegistryDate));
             }
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((byte)(Original_Paid));
-            if ((Original_Reason == null)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+            if ((Original_DrivingLicenseNumber == null)) {
+                throw new global::System.ArgumentNullException("Original_DrivingLicenseNumber");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_Reason));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_DrivingLicenseNumber));
             }
-            if ((Original_Amount.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((decimal)(Original_Amount.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(Id));
+            this.Adapter.UpdateCommand.Parameters[23].Value = ((int)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -5019,24 +4959,30 @@ SELECT Id, Type, SerialNumber, Date, Policeman, OffenderDLN, Paid, Reason, Amoun
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
+                    string RegistryNumber, 
+                    string FrameNumber, 
+                    string EngineNumber, 
+                    string Brand, 
+                    string Model, 
                     string Type, 
-                    string SerialNumber, 
-                    string Date, 
-                    string Policeman, 
-                    string OffenderDLN, 
-                    byte Paid, 
-                    string Reason, 
-                    global::System.Nullable<decimal> Amount, 
+                    short Seats, 
+                    int Weight, 
+                    string Color, 
+                    string RegistryDate, 
+                    string DrivingLicenseNumber, 
                     int Original_Id, 
+                    string Original_RegistryNumber, 
+                    string Original_FrameNumber, 
+                    string Original_EngineNumber, 
+                    string Original_Brand, 
+                    string Original_Model, 
                     string Original_Type, 
-                    string Original_SerialNumber, 
-                    string Original_Date, 
-                    string Original_Policeman, 
-                    string Original_OffenderDLN, 
-                    byte Original_Paid, 
-                    string Original_Reason, 
-                    global::System.Nullable<decimal> Original_Amount) {
-            return this.Update(Type, SerialNumber, Date, Policeman, OffenderDLN, Paid, Reason, Amount, Original_Id, Original_Type, Original_SerialNumber, Original_Date, Original_Policeman, Original_OffenderDLN, Original_Paid, Original_Reason, Original_Amount, Original_Id);
+                    short Original_Seats, 
+                    int Original_Weight, 
+                    string Original_Color, 
+                    string Original_RegistryDate, 
+                    string Original_DrivingLicenseNumber) {
+            return this.Update(RegistryNumber, FrameNumber, EngineNumber, Brand, Model, Type, Seats, Weight, Color, RegistryDate, DrivingLicenseNumber, Original_Id, Original_RegistryNumber, Original_FrameNumber, Original_EngineNumber, Original_Brand, Original_Model, Original_Type, Original_Seats, Original_Weight, Original_Color, Original_RegistryDate, Original_DrivingLicenseNumber, Original_Id);
         }
     }
     
@@ -5054,11 +5000,11 @@ SELECT Id, Type, SerialNumber, Date, Policeman, OffenderDLN, Paid, Reason, Amoun
         
         private DriversTableAdapter _driversTableAdapter;
         
-        private VehicleTableAdapter _vehicleTableAdapter;
+        private FinesTableAdapter _finesTableAdapter;
         
         private UsersTableAdapter _usersTableAdapter;
         
-        private FinesTableAdapter _finesTableAdapter;
+        private VehicleTableAdapter _vehicleTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -5094,12 +5040,12 @@ SELECT Id, Type, SerialNumber, Date, Policeman, OffenderDLN, Paid, Reason, Amoun
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public VehicleTableAdapter VehicleTableAdapter {
+        public FinesTableAdapter FinesTableAdapter {
             get {
-                return this._vehicleTableAdapter;
+                return this._finesTableAdapter;
             }
             set {
-                this._vehicleTableAdapter = value;
+                this._finesTableAdapter = value;
             }
         }
         
@@ -5122,12 +5068,12 @@ SELECT Id, Type, SerialNumber, Date, Policeman, OffenderDLN, Paid, Reason, Amoun
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public FinesTableAdapter FinesTableAdapter {
+        public VehicleTableAdapter VehicleTableAdapter {
             get {
-                return this._finesTableAdapter;
+                return this._vehicleTableAdapter;
             }
             set {
-                this._finesTableAdapter = value;
+                this._vehicleTableAdapter = value;
             }
         }
         
@@ -5154,17 +5100,17 @@ SELECT Id, Type, SerialNumber, Date, Policeman, OffenderDLN, Paid, Reason, Amoun
                             && (this._driversTableAdapter.Connection != null))) {
                     return this._driversTableAdapter.Connection;
                 }
-                if (((this._vehicleTableAdapter != null) 
-                            && (this._vehicleTableAdapter.Connection != null))) {
-                    return this._vehicleTableAdapter.Connection;
+                if (((this._finesTableAdapter != null) 
+                            && (this._finesTableAdapter.Connection != null))) {
+                    return this._finesTableAdapter.Connection;
                 }
                 if (((this._usersTableAdapter != null) 
                             && (this._usersTableAdapter.Connection != null))) {
                     return this._usersTableAdapter.Connection;
                 }
-                if (((this._finesTableAdapter != null) 
-                            && (this._finesTableAdapter.Connection != null))) {
-                    return this._finesTableAdapter.Connection;
+                if (((this._vehicleTableAdapter != null) 
+                            && (this._vehicleTableAdapter.Connection != null))) {
+                    return this._vehicleTableAdapter.Connection;
                 }
                 return null;
             }
@@ -5182,13 +5128,13 @@ SELECT Id, Type, SerialNumber, Date, Policeman, OffenderDLN, Paid, Reason, Amoun
                 if ((this._driversTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._vehicleTableAdapter != null)) {
+                if ((this._finesTableAdapter != null)) {
                     count = (count + 1);
                 }
                 if ((this._usersTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._finesTableAdapter != null)) {
+                if ((this._vehicleTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -5211,12 +5157,12 @@ SELECT Id, Type, SerialNumber, Date, Policeman, OffenderDLN, Paid, Reason, Amoun
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._vehicleTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Vehicle.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._finesTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Fines.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._vehicleTableAdapter.Update(updatedRows));
+                    result = (result + this._finesTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -5229,12 +5175,12 @@ SELECT Id, Type, SerialNumber, Date, Policeman, OffenderDLN, Paid, Reason, Amoun
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._finesTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Fines.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._vehicleTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Vehicle.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._finesTableAdapter.Update(updatedRows));
+                    result = (result + this._vehicleTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -5256,11 +5202,11 @@ SELECT Id, Type, SerialNumber, Date, Policeman, OffenderDLN, Paid, Reason, Amoun
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._vehicleTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Vehicle.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._finesTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Fines.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._vehicleTableAdapter.Update(addedRows));
+                    result = (result + this._finesTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -5272,11 +5218,11 @@ SELECT Id, Type, SerialNumber, Date, Policeman, OffenderDLN, Paid, Reason, Amoun
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._finesTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Fines.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._vehicleTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Vehicle.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._finesTableAdapter.Update(addedRows));
+                    result = (result + this._vehicleTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -5290,11 +5236,11 @@ SELECT Id, Type, SerialNumber, Date, Policeman, OffenderDLN, Paid, Reason, Amoun
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateDeletedRows(DatabaseDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._finesTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Fines.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._vehicleTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Vehicle.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._finesTableAdapter.Update(deletedRows));
+                    result = (result + this._vehicleTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -5306,11 +5252,11 @@ SELECT Id, Type, SerialNumber, Date, Policeman, OffenderDLN, Paid, Reason, Amoun
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._vehicleTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Vehicle.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._finesTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Fines.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._vehicleTableAdapter.Update(deletedRows));
+                    result = (result + this._finesTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -5366,8 +5312,8 @@ SELECT Id, Type, SerialNumber, Date, Policeman, OffenderDLN, Paid, Reason, Amoun
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
-            if (((this._vehicleTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._vehicleTableAdapter.Connection) == false))) {
+            if (((this._finesTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._finesTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -5376,8 +5322,8 @@ SELECT Id, Type, SerialNumber, Date, Policeman, OffenderDLN, Paid, Reason, Amoun
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
-            if (((this._finesTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._finesTableAdapter.Connection) == false))) {
+            if (((this._vehicleTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._vehicleTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -5422,13 +5368,13 @@ SELECT Id, Type, SerialNumber, Date, Policeman, OffenderDLN, Paid, Reason, Amoun
                         adaptersWithAcceptChangesDuringUpdate.Add(this._driversTableAdapter.Adapter);
                     }
                 }
-                if ((this._vehicleTableAdapter != null)) {
-                    revertConnections.Add(this._vehicleTableAdapter, this._vehicleTableAdapter.Connection);
-                    this._vehicleTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._vehicleTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._vehicleTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._vehicleTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._vehicleTableAdapter.Adapter);
+                if ((this._finesTableAdapter != null)) {
+                    revertConnections.Add(this._finesTableAdapter, this._finesTableAdapter.Connection);
+                    this._finesTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._finesTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._finesTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._finesTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._finesTableAdapter.Adapter);
                     }
                 }
                 if ((this._usersTableAdapter != null)) {
@@ -5440,13 +5386,13 @@ SELECT Id, Type, SerialNumber, Date, Policeman, OffenderDLN, Paid, Reason, Amoun
                         adaptersWithAcceptChangesDuringUpdate.Add(this._usersTableAdapter.Adapter);
                     }
                 }
-                if ((this._finesTableAdapter != null)) {
-                    revertConnections.Add(this._finesTableAdapter, this._finesTableAdapter.Connection);
-                    this._finesTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._finesTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._finesTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._finesTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._finesTableAdapter.Adapter);
+                if ((this._vehicleTableAdapter != null)) {
+                    revertConnections.Add(this._vehicleTableAdapter, this._vehicleTableAdapter.Connection);
+                    this._vehicleTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._vehicleTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._vehicleTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._vehicleTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._vehicleTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -5511,17 +5457,17 @@ SELECT Id, Type, SerialNumber, Date, Policeman, OffenderDLN, Paid, Reason, Amoun
                     this._driversTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._driversTableAdapter]));
                     this._driversTableAdapter.Transaction = null;
                 }
-                if ((this._vehicleTableAdapter != null)) {
-                    this._vehicleTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._vehicleTableAdapter]));
-                    this._vehicleTableAdapter.Transaction = null;
+                if ((this._finesTableAdapter != null)) {
+                    this._finesTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._finesTableAdapter]));
+                    this._finesTableAdapter.Transaction = null;
                 }
                 if ((this._usersTableAdapter != null)) {
                     this._usersTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._usersTableAdapter]));
                     this._usersTableAdapter.Transaction = null;
                 }
-                if ((this._finesTableAdapter != null)) {
-                    this._finesTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._finesTableAdapter]));
-                    this._finesTableAdapter.Transaction = null;
+                if ((this._vehicleTableAdapter != null)) {
+                    this._vehicleTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._vehicleTableAdapter]));
+                    this._vehicleTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

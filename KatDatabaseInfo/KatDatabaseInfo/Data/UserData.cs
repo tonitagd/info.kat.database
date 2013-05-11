@@ -19,9 +19,9 @@ namespace KatDatabaseInfo.Data
         {
             UsersDataClassesDataContext userDataContext = new UsersDataClassesDataContext();
             User[] queryResult = (from users in userDataContext.GetTable<User>()
-                               where (users.Username == username) &&
-                               (users.Password == password)
-                               select users).ToArray<User>();
+                                  where (users.Username == username) &&
+                                  (users.Password == password)
+                                  select users).ToArray<User>();
             return _GetQueryResult(queryResult);
         }
 
@@ -51,7 +51,7 @@ namespace KatDatabaseInfo.Data
         {
             UsersDataClassesDataContext userDataContext = new UsersDataClassesDataContext();
             var queryResult = (from users in userDataContext.GetTable<User>()
-                               where (users.DrivingLicenseN == licenseID)
+                               where (users.DrivingLicenseNumber == licenseID)
                                select users).ToArray<User>();
             if (queryResult.Count<User>() > 0)
             {
@@ -60,46 +60,25 @@ namespace KatDatabaseInfo.Data
             return null;
         }
 
-      /*public static void addDriver(Driver driver)
+        public static void addDriver(Driver driver)
         {
-            SqlConnection conn = new SqlConnection(@"Data Source=.\SQLEXPRESS;AttachDbFilename=D:\repository\info.kat.database\KatDatabaseInfo\KatDatabaseInfo\Database.mdf;Integrated Security=True; User Instance=True");
-
-                conn.Open();
-                SqlCommand cmd = new SqlCommand("AddNewDriver", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add(new SqlParameter("@FirstName",
-                driver.FirstName));
-                cmd.Parameters.Add(new SqlParameter("@MiddleName",
-                driver.MiddleName));
-                cmd.Parameters.Add(new SqlParameter("@LastName",
-                driver.LastName));
-                cmd.Parameters.Add(new SqlParameter("@IdNumber",
-                driver.IdNumber));
-                cmd.Parameters.Add(new SqlParameter("@BirthDate", driver.BirthDate));
-                cmd.Parameters.Add(new SqlParameter("@Gender",
-                driver.Gender));
-                cmd.Parameters.Add(new SqlParameter("@Address", driver.Address));
-                cmd.Parameters.Add(new SqlParameter("@Country",
-                driver.Country));
-                cmd.Parameters.Add(new SqlParameter("@City",
-                driver.City));
-                cmd.Parameters.Add(new SqlParameter("@DrivingLicenseNumber", driver.DrivingLicenseNumber));
-                cmd.Parameters.Add(new SqlParameter("@DrivingCategories", driver.DrivingCategories));
-                cmd.Parameters.Add(new SqlParameter("@DrivingPointsLeft", driver.DrivingPointsLeft));
-                cmd.ExecuteNonQuery();
-
-        }*/
-     public static void addDriver(Driver driver)
-       {
-           DriversDataClassesDataContext dc = new DriversDataClassesDataContext();
-           dc.AddNewDriver(driver.FirstName,driver.MiddleName,driver.LastName,driver.IdNumber,driver.BirthDate,driver.Gender,driver.Address,driver.Country,driver.City,driver.DrivingLicenseNumber,driver.DrivingCategories,driver.DrivingPointsLeft);
-           dc.SubmitChanges();
+            DriversDataClassesDataContext dc = new DriversDataClassesDataContext();
+            dc.AddNewDriver(driver.FirstName, driver.MiddleName, driver.LastName, driver.IdNumber, driver.BirthDate, driver.Gender, driver.Address, driver.Country, driver.City, driver.DrivingLicenseNumber, driver.DrivingCategories, driver.DrivingPointsLeft);
+            dc.SubmitChanges();
         }
 
-     public static void CreateUsernameAndPassword(User user)
+        public static void CreateUsernameAndPassword(User user)
         {
             UsersDataClassesDataContext dc = new UsersDataClassesDataContext();
-            dc.CreateUsernameAndPassword(user.Username, user.Password, user.DrivingLicenseN, user.Role_);
+            dc.CreateUsernameAndPassword(user.Username, user.Password, user.DrivingLicenseNumber, user.Role_);
+            dc.SubmitChanges();
+        }
+        
+        public static void DeleteDriver(string drivingLicenseNumber)
+        {
+            DriversDataClassesDataContext dc = new DriversDataClassesDataContext();
+            Driver driver = dc.Drivers.Where<Driver>(annonymous => annonymous.DrivingLicenseNumber == drivingLicenseNumber).Single();
+            dc.Drivers.DeleteOnSubmit(driver);
             dc.SubmitChanges();
         }
     }

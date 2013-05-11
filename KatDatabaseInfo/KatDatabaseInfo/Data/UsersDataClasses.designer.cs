@@ -74,9 +74,9 @@ namespace KatDatabaseInfo.Data
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CreateUsernameAndPassword")]
-		public int CreateUsernameAndPassword([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Username", DbType="NVarChar(50)")] string username, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Password", DbType="NVarChar(50)")] string password, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DrivingLicenseN", DbType="NVarChar(50)")] string drivingLicenseN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Role", DbType="SmallInt")] System.Nullable<short> role)
+		public int CreateUsernameAndPassword([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Username", DbType="NVarChar(50)")] string username, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Password", DbType="NVarChar(50)")] string password, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DrivingLicenseNumber", DbType="NVarChar(50)")] string drivingLicenseNumber, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Role", DbType="SmallInt")] System.Nullable<short> role)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), username, password, drivingLicenseN, role);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), username, password, drivingLicenseNumber, role);
 			return ((int)(result.ReturnValue));
 		}
 	}
@@ -93,7 +93,7 @@ namespace KatDatabaseInfo.Data
 		
 		private string _Password;
 		
-		private string _DrivingLicenseN;
+		private string _DrivingLicenseNumber;
 		
 		private System.Nullable<short> _Role_;
 		
@@ -107,8 +107,8 @@ namespace KatDatabaseInfo.Data
     partial void OnUsernameChanged();
     partial void OnPasswordChanging(string value);
     partial void OnPasswordChanged();
-    partial void OnDrivingLicenseNChanging(string value);
-    partial void OnDrivingLicenseNChanged();
+    partial void OnDrivingLicenseNumberChanging(string value);
+    partial void OnDrivingLicenseNumberChanged();
     partial void OnRole_Changing(System.Nullable<short> value);
     partial void OnRole_Changed();
     #endregion
@@ -178,22 +178,22 @@ namespace KatDatabaseInfo.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DrivingLicenseN", DbType="NChar(10) NOT NULL", CanBeNull=false)]
-		public string DrivingLicenseN
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DrivingLicenseNumber", DbType="NChar(10) NOT NULL", CanBeNull=false)]
+		public string DrivingLicenseNumber
 		{
 			get
 			{
-				return this._DrivingLicenseN;
+				return this._DrivingLicenseNumber;
 			}
 			set
 			{
-				if ((this._DrivingLicenseN != value))
+				if ((this._DrivingLicenseNumber != value))
 				{
-					this.OnDrivingLicenseNChanging(value);
+					this.OnDrivingLicenseNumberChanging(value);
 					this.SendPropertyChanging();
-					this._DrivingLicenseN = value;
-					this.SendPropertyChanged("DrivingLicenseN");
-					this.OnDrivingLicenseNChanged();
+					this._DrivingLicenseNumber = value;
+					this.SendPropertyChanged("DrivingLicenseNumber");
+					this.OnDrivingLicenseNumberChanged();
 				}
 			}
 		}

@@ -90,7 +90,7 @@ namespace KatDatabaseInfo.Data
 		
 		private string _Policeman;
 		
-		private string _OffenderDLN;
+		private string _DrivingLicenseNumber;
 		
 		private byte _Paid;
 		
@@ -112,8 +112,8 @@ namespace KatDatabaseInfo.Data
     partial void OnDateChanged();
     partial void OnPolicemanChanging(string value);
     partial void OnPolicemanChanged();
-    partial void OnOffenderDLNChanging(string value);
-    partial void OnOffenderDLNChanged();
+    partial void OnDrivingLicenseNumberChanging(string value);
+    partial void OnDrivingLicenseNumberChanged();
     partial void OnPaidChanging(byte value);
     partial void OnPaidChanged();
     partial void OnReasonChanging(string value);
@@ -227,22 +227,22 @@ namespace KatDatabaseInfo.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OffenderDLN", DbType="NChar(10) NOT NULL", CanBeNull=false)]
-		public string OffenderDLN
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DrivingLicenseNumber", DbType="NChar(10) NOT NULL", CanBeNull=false)]
+		public string DrivingLicenseNumber
 		{
 			get
 			{
-				return this._OffenderDLN;
+				return this._DrivingLicenseNumber;
 			}
 			set
 			{
-				if ((this._OffenderDLN != value))
+				if ((this._DrivingLicenseNumber != value))
 				{
-					this.OnOffenderDLNChanging(value);
+					this.OnDrivingLicenseNumberChanging(value);
 					this.SendPropertyChanging();
-					this._OffenderDLN = value;
-					this.SendPropertyChanged("OffenderDLN");
-					this.OnOffenderDLNChanged();
+					this._DrivingLicenseNumber = value;
+					this.SendPropertyChanged("DrivingLicenseNumber");
+					this.OnDrivingLicenseNumberChanged();
 				}
 			}
 		}

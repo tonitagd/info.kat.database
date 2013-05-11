@@ -11,7 +11,6 @@ using KatDatabaseInfo.View;
 using KatDatabaseInfo.Data;
 using KatDatabaseInfo.Logic;
 
-// I love silly comments
  
 namespace KatDatabaseInfo
 {
@@ -26,6 +25,20 @@ namespace KatDatabaseInfo
             SetStatusToAllControls(false);
             SetVisibilityToAdminButtons(false);
             SetEditable(false);
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+            ReloadMainForm();
+
+        }
+
+        private void ReloadMainForm()
+        {
+            this.vehicleTableAdapter.Fill(this.databaseDataSet.Vehicle);
+            this.finesTableAdapter.Fill(this.databaseDataSet.Fines);
+            this.driversTableAdapter.Fill(this.databaseDataSet.Drivers);
         }
 
         private void SetUserStatus(short? role)
@@ -60,7 +73,7 @@ namespace KatDatabaseInfo
             {
                 SetUserStatus(logForm.user.Role_);
                 SetStatusToAllControls(true);
-                ShowUserInfo(UserData.GetDriverByLicenseID(logForm.user.DrivingLicenseN));
+                ShowUserInfo(UserData.GetDriverByLicenseID(logForm.user.DrivingLicenseNumber));
 
                 loginToolStripMenuItem.Text = "Logout";
             }
@@ -142,7 +155,7 @@ namespace KatDatabaseInfo
         {
             string[] categoriesList = categories.Split(',');
 
-            for (int i = 0; i < categoriesList.Length; i++)
+            for (int i = 0; i < categoriesList.Length - 1; i++)
             {
                 cbCategories.SetItemChecked(cbCategories.Items.IndexOf(categoriesList[i]), true);
             }
@@ -216,6 +229,7 @@ namespace KatDatabaseInfo
             btnUpdate.Visible = visible;
             lblRole.Visible = visible;
             cbRole.Visible = visible;
+            btnClear.Visible = visible;
         }
 
         private void showAdminInfo(Driver driver)
@@ -235,7 +249,7 @@ namespace KatDatabaseInfo
             txtBoxId.Text = "";
             txtBoxBirthDate.Text = "";
             //gender
-            cbGender.Text = "";
+            cbGender.SelectedIndex = -1;
 
 
             txtBoxCountry.Text = "";
@@ -243,18 +257,23 @@ namespace KatDatabaseInfo
             txtBoxAddress.Text = "";
 
             txtBoxLicenseId.Text = "";
-            cbPointsLeft.Text = "";
+            cbPointsLeft.SelectedIndex = -1;
 
-            cbCategories.SelectedValue = "";
+            for (int i = 0; i < 11; i++)
+            {
+                cbCategories.SetItemChecked(i, false);
+            }
+            
+            cbRole.SelectedIndex = -1;
 
             //Fines page
 
             //type
-            cbType.Text = "";
+            cbType.SelectedIndex = -1;
             txtBoxDate.Text = "";
             txtBoxPoliceman.Text = "";
             //paid
-            cbPaid.Text = "";
+            cbPaid.SelectedIndex = -1;
             txtBoxOffenderDLN.Text = "";
             txtBoxFineId.Text = "";
             txtBoxReason.Text = "";
@@ -304,6 +323,37 @@ namespace KatDatabaseInfo
 
         }
 
+        private void cbSearchDriver_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            object value = cbSearchDriver.SelectedValue;
+            if (value == null)
+            {
+                return;
+            }
+            string id = cbSearchDriver.SelectedValue.ToString();
+            Driver driver = UserData.GetDriverByLicenseID(id);
+            showDriverInfo(driver);
+            short? role = UserData.GetUserRoleByLicenseID(id);
+            if (role == null)
+            {
+                cbRole.SelectedIndex = 2;
+                return;
+            }
+            cbRole.SelectedIndex = (int)role-1;
+            ChangeToUpdateble();
+        }
+
+        private void ChangeToUpdateble()
+        {
+            SetEditable(false);
+            cbPointsLeft.Enabled = true;
+            cbRole.Enabled = true;
+            cbCategories.Enabled = true;
+            txtBoxAddress.ReadOnly = false;
+            txtBoxCity.ReadOnly = false;
+            txtBoxCountry.ReadOnly = false;
+        }
+
         private void btnAddDriver_Click(object sender, EventArgs e)
         {
             try
@@ -311,9 +361,10 @@ namespace KatDatabaseInfo
                 Driver driver = createDriver();
                 UserData.addDriver(driver);
                 UserData.CreateUsernameAndPassword(CreateUser());
+                ReloadMainForm();
                 MessageBox.Show("Adding driver " + driver.FirstName + " " + driver.LastName + " successful.");
             }
-            catch(Exception exc)
+            catch (Exception exc)
             {
                 MessageBox.Show("Failed adding driver." + exc.Message);
             }
@@ -355,37 +406,34 @@ namespace KatDatabaseInfo
             return categories;
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-            
-            this.vehicleTableAdapter.Fill(this.databaseDataSet.Vehicle);
-            this.finesTableAdapter.Fill(this.databaseDataSet.Fines);
-            this.driversTableAdapter.Fill(this.databaseDataSet.Drivers);
-
-        }
-
-        private void cbSearchDriver_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string id = cbSearchDriver.SelectedValue.ToString();
-            Driver driver = UserData.GetDriverByLicenseID(id);
-            showDriverInfo(driver);
-            short? role = UserData.GetUserRoleByLicenseID(id);
-            if (role == null)
-            {
-                cbRole.SelectedIndex = 2;
-                return;
-            }
-            cbRole.SelectedIndex = (int)role-1;
-        }
-
         private User CreateUser()
         {
             User user = new User();
             user.Username = txtBoxId.Text;
             user.Password = txtBoxLicenseId.Text;
-            user.DrivingLicenseN = txtBoxLicenseId.Text;
+            user.DrivingLicenseNumber = txtBoxLicenseId.Text;
             user.Role_ = Convert.ToInt16(cbRole.SelectedIndex + 1);
             return user;
+        }
+
+        private void btnDell_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                UserData.DeleteDriver(txtBoxLicenseId.Text);
+                MessageBox.Show("Deleting driver with license id:'" + txtBoxLicenseId.Text + "' completed successfully.");
+                ReloadMainForm();
+            }
+            catch (Exception exc)
+            {
+              MessageBox.Show("Failed deleting driver." + exc.Message);
+            }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            ClearAllControls();
+            SetEditable(true);
         }
     }
 }

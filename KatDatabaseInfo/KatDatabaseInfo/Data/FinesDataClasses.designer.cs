@@ -223,7 +223,7 @@ namespace KatDatabaseInfo.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OffenderDLN", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OffenderDLN", DbType="NChar(10) NOT NULL", CanBeNull=false)]
 		public string OffenderDLN
 		{
 			get

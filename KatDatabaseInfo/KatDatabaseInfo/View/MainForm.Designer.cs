@@ -32,6 +32,7 @@ namespace KatDatabaseInfo
             this.components = new System.ComponentModel.Container();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageDI = new System.Windows.Forms.TabPage();
+            this.cbCategories = new System.Windows.Forms.CheckedListBox();
             this.cbSearchDriver = new System.Windows.Forms.ComboBox();
             this.driversBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.databaseDataSet = new DatabaseDataSet();
@@ -40,13 +41,16 @@ namespace KatDatabaseInfo
             this.gbImage = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gbLicense = new System.Windows.Forms.GroupBox();
-            this.cbCategories = new System.Windows.Forms.CheckedListBox();
+            this.cbRole = new System.Windows.Forms.ComboBox();
             this.cbPointsLeft = new System.Windows.Forms.ComboBox();
             this.lblLicenseId = new System.Windows.Forms.Label();
             this.txtBoxLicenseId = new System.Windows.Forms.TextBox();
-            this.lblCatecories = new System.Windows.Forms.Label();
             this.lblPoints = new System.Windows.Forms.Label();
+            this.lblRole = new System.Windows.Forms.Label();
+            this.lblCatecories = new System.Windows.Forms.Label();
             this.gbPerfonalData = new System.Windows.Forms.GroupBox();
+            this.txtBoxBirthDate = new System.Windows.Forms.TextBox();
+            this.lblBirthDate = new System.Windows.Forms.Label();
             this.cbGender = new System.Windows.Forms.ComboBox();
             this.txtBoxAddress = new System.Windows.Forms.TextBox();
             this.blbAddress = new System.Windows.Forms.Label();
@@ -58,9 +62,7 @@ namespace KatDatabaseInfo
             this.txtBoxName = new System.Windows.Forms.TextBox();
             this.lblGender = new System.Windows.Forms.Label();
             this.lblMiddleName = new System.Windows.Forms.Label();
-            this.txtBoxBirthDate = new System.Windows.Forms.TextBox();
             this.txtBoxMiddleName = new System.Windows.Forms.TextBox();
-            this.lblBirthDate = new System.Windows.Forms.Label();
             this.lblLastName = new System.Windows.Forms.Label();
             this.txtBoxId = new System.Windows.Forms.TextBox();
             this.txtBoxLastName = new System.Windows.Forms.TextBox();
@@ -83,6 +85,7 @@ namespace KatDatabaseInfo
             this.cbType = new System.Windows.Forms.ComboBox();
             this.lblType = new System.Windows.Forms.Label();
             this.cbFineIds = new System.Windows.Forms.ComboBox();
+            this.finesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblFineId = new System.Windows.Forms.Label();
             this.tabPageV = new System.Windows.Forms.TabPage();
             this.gbCarData = new System.Windows.Forms.GroupBox();
@@ -110,13 +113,12 @@ namespace KatDatabaseInfo
             this.lblEngine = new System.Windows.Forms.Label();
             this.lblFrameNumber = new System.Windows.Forms.Label();
             this.cbRegistryNumber = new System.Windows.Forms.ComboBox();
+            this.vehicleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblRegNumber = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.driversTableAdapter = new DatabaseDataSetTableAdapters.DriversTableAdapter();
-            this.finesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.finesTableAdapter = new DatabaseDataSetTableAdapters.FinesTableAdapter();
-            this.vehicleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vehicleTableAdapter = new DatabaseDataSetTableAdapters.VehicleTableAdapter();
             this.tabControl.SuspendLayout();
             this.tabPageDI.SuspendLayout();
@@ -128,11 +130,11 @@ namespace KatDatabaseInfo
             this.gbPerfonalData.SuspendLayout();
             this.tabPageF.SuspendLayout();
             this.gbFine.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.finesBindingSource)).BeginInit();
             this.tabPageV.SuspendLayout();
             this.gbCarData.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.finesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vehicleBindingSource)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
@@ -148,6 +150,7 @@ namespace KatDatabaseInfo
             // 
             // tabPageDI
             // 
+            this.tabPageDI.Controls.Add(this.cbCategories);
             this.tabPageDI.Controls.Add(this.cbSearchDriver);
             this.tabPageDI.Controls.Add(this.lblSearchDriver);
             this.tabPageDI.Controls.Add(this.btnAddDriver);
@@ -161,6 +164,30 @@ namespace KatDatabaseInfo
             this.tabPageDI.TabIndex = 0;
             this.tabPageDI.Text = "Driver Info";
             this.tabPageDI.UseVisualStyleBackColor = true;
+            // 
+            // cbCategories
+            // 
+            this.cbCategories.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cbCategories.FormattingEnabled = true;
+            this.cbCategories.Items.AddRange(new object[] {
+            "A",
+            "B",
+            "C",
+            "D",
+            "BE",
+            "CE",
+            "DE",
+            "Ttb",
+            "Ttm",
+            "Tkt",
+            "M"});
+            this.cbCategories.Location = new System.Drawing.Point(516, 332);
+            this.cbCategories.MaximumSize = new System.Drawing.Size(400, 100);
+            this.cbCategories.MultiColumn = true;
+            this.cbCategories.Name = "cbCategories";
+            this.cbCategories.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.cbCategories.Size = new System.Drawing.Size(298, 90);
+            this.cbCategories.TabIndex = 12;
             // 
             // cbSearchDriver
             // 
@@ -224,12 +251,13 @@ namespace KatDatabaseInfo
             // 
             // gbLicense
             // 
-            this.gbLicense.Controls.Add(this.cbCategories);
+            this.gbLicense.Controls.Add(this.cbRole);
             this.gbLicense.Controls.Add(this.cbPointsLeft);
             this.gbLicense.Controls.Add(this.lblLicenseId);
             this.gbLicense.Controls.Add(this.txtBoxLicenseId);
-            this.gbLicense.Controls.Add(this.lblCatecories);
             this.gbLicense.Controls.Add(this.lblPoints);
+            this.gbLicense.Controls.Add(this.lblRole);
+            this.gbLicense.Controls.Add(this.lblCatecories);
             this.gbLicense.Location = new System.Drawing.Point(6, 332);
             this.gbLicense.Name = "gbLicense";
             this.gbLicense.Size = new System.Drawing.Size(814, 121);
@@ -237,29 +265,17 @@ namespace KatDatabaseInfo
             this.gbLicense.TabStop = false;
             this.gbLicense.Text = "License Data";
             // 
-            // cbCategories
+            // cbRole
             // 
-            this.cbCategories.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.cbCategories.FormattingEnabled = true;
-            this.cbCategories.Items.AddRange(new object[] {
-            "A",
-            "B",
-            "C",
-            "D",
-            "BE",
-            "CE",
-            "DE",
-            "Ttb",
-            "Ttm",
-            "Tkt",
-            "M"});
-            this.cbCategories.Location = new System.Drawing.Point(516, 19);
-            this.cbCategories.MaximumSize = new System.Drawing.Size(400, 100);
-            this.cbCategories.MultiColumn = true;
-            this.cbCategories.Name = "cbCategories";
-            this.cbCategories.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cbCategories.Size = new System.Drawing.Size(298, 90);
-            this.cbCategories.TabIndex = 12;
+            this.cbRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbRole.FormattingEnabled = true;
+            this.cbRole.Items.AddRange(new object[] {
+            "CITIZEN",
+            "ADMIN"});
+            this.cbRole.Location = new System.Drawing.Point(132, 87);
+            this.cbRole.Name = "cbRole";
+            this.cbRole.Size = new System.Drawing.Size(90, 21);
+            this.cbRole.TabIndex = 12;
             // 
             // cbPointsLeft
             // 
@@ -304,16 +320,16 @@ namespace KatDatabaseInfo
             "37",
             "38",
             "39"});
-            this.cbPointsLeft.Location = new System.Drawing.Point(131, 75);
+            this.cbPointsLeft.Location = new System.Drawing.Point(133, 59);
             this.cbPointsLeft.Name = "cbPointsLeft";
-            this.cbPointsLeft.Size = new System.Drawing.Size(82, 21);
+            this.cbPointsLeft.Size = new System.Drawing.Size(90, 21);
             this.cbPointsLeft.TabIndex = 11;
             // 
             // lblLicenseId
             // 
             this.lblLicenseId.AutoSize = true;
             this.lblLicenseId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLicenseId.Location = new System.Drawing.Point(26, 47);
+            this.lblLicenseId.Location = new System.Drawing.Point(28, 31);
             this.lblLicenseId.Name = "lblLicenseId";
             this.lblLicenseId.Size = new System.Drawing.Size(81, 16);
             this.lblLicenseId.TabIndex = 6;
@@ -321,34 +337,46 @@ namespace KatDatabaseInfo
             // 
             // txtBoxLicenseId
             // 
-            this.txtBoxLicenseId.Location = new System.Drawing.Point(131, 47);
+            this.txtBoxLicenseId.Location = new System.Drawing.Point(133, 31);
             this.txtBoxLicenseId.Name = "txtBoxLicenseId";
             this.txtBoxLicenseId.ReadOnly = true;
             this.txtBoxLicenseId.Size = new System.Drawing.Size(167, 20);
             this.txtBoxLicenseId.TabIndex = 7;
             // 
-            // lblCatecories
-            // 
-            this.lblCatecories.AutoSize = true;
-            this.lblCatecories.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCatecories.Location = new System.Drawing.Point(386, 19);
-            this.lblCatecories.Name = "lblCatecories";
-            this.lblCatecories.Size = new System.Drawing.Size(84, 16);
-            this.lblCatecories.TabIndex = 8;
-            this.lblCatecories.Text = "Categories";
-            // 
             // lblPoints
             // 
             this.lblPoints.AutoSize = true;
             this.lblPoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPoints.Location = new System.Drawing.Point(27, 75);
+            this.lblPoints.Location = new System.Drawing.Point(29, 59);
             this.lblPoints.Name = "lblPoints";
             this.lblPoints.Size = new System.Drawing.Size(80, 16);
             this.lblPoints.TabIndex = 10;
             this.lblPoints.Text = "Poinst Left";
             // 
+            // lblRole
+            // 
+            this.lblRole.AutoSize = true;
+            this.lblRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRole.Location = new System.Drawing.Point(28, 87);
+            this.lblRole.Name = "lblRole";
+            this.lblRole.Size = new System.Drawing.Size(41, 16);
+            this.lblRole.TabIndex = 8;
+            this.lblRole.Text = "Role";
+            // 
+            // lblCatecories
+            // 
+            this.lblCatecories.AutoSize = true;
+            this.lblCatecories.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCatecories.Location = new System.Drawing.Point(384, 0);
+            this.lblCatecories.Name = "lblCatecories";
+            this.lblCatecories.Size = new System.Drawing.Size(84, 16);
+            this.lblCatecories.TabIndex = 8;
+            this.lblCatecories.Text = "Categories";
+            // 
             // gbPerfonalData
             // 
+            this.gbPerfonalData.Controls.Add(this.txtBoxBirthDate);
+            this.gbPerfonalData.Controls.Add(this.lblBirthDate);
             this.gbPerfonalData.Controls.Add(this.cbGender);
             this.gbPerfonalData.Controls.Add(this.txtBoxAddress);
             this.gbPerfonalData.Controls.Add(this.blbAddress);
@@ -360,19 +388,35 @@ namespace KatDatabaseInfo
             this.gbPerfonalData.Controls.Add(this.txtBoxName);
             this.gbPerfonalData.Controls.Add(this.lblGender);
             this.gbPerfonalData.Controls.Add(this.lblMiddleName);
-            this.gbPerfonalData.Controls.Add(this.txtBoxBirthDate);
             this.gbPerfonalData.Controls.Add(this.txtBoxMiddleName);
-            this.gbPerfonalData.Controls.Add(this.lblBirthDate);
             this.gbPerfonalData.Controls.Add(this.lblLastName);
             this.gbPerfonalData.Controls.Add(this.txtBoxId);
             this.gbPerfonalData.Controls.Add(this.txtBoxLastName);
             this.gbPerfonalData.Controls.Add(this.lblIdentityNumber);
             this.gbPerfonalData.Location = new System.Drawing.Point(344, 29);
             this.gbPerfonalData.Name = "gbPerfonalData";
-            this.gbPerfonalData.Size = new System.Drawing.Size(497, 306);
+            this.gbPerfonalData.Size = new System.Drawing.Size(497, 288);
             this.gbPerfonalData.TabIndex = 12;
             this.gbPerfonalData.TabStop = false;
             this.gbPerfonalData.Text = "Personal Data";
+            // 
+            // txtBoxBirthDate
+            // 
+            this.txtBoxBirthDate.Location = new System.Drawing.Point(153, 136);
+            this.txtBoxBirthDate.Name = "txtBoxBirthDate";
+            this.txtBoxBirthDate.ReadOnly = true;
+            this.txtBoxBirthDate.Size = new System.Drawing.Size(197, 20);
+            this.txtBoxBirthDate.TabIndex = 20;
+            // 
+            // lblBirthDate
+            // 
+            this.lblBirthDate.AutoSize = true;
+            this.lblBirthDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBirthDate.Location = new System.Drawing.Point(48, 136);
+            this.lblBirthDate.Name = "lblBirthDate";
+            this.lblBirthDate.Size = new System.Drawing.Size(76, 16);
+            this.lblBirthDate.TabIndex = 19;
+            this.lblBirthDate.Text = "Birth Date";
             // 
             // cbGender
             // 
@@ -381,14 +425,14 @@ namespace KatDatabaseInfo
             this.cbGender.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.cbGender.Location = new System.Drawing.Point(153, 160);
+            this.cbGender.Location = new System.Drawing.Point(153, 161);
             this.cbGender.Name = "cbGender";
             this.cbGender.Size = new System.Drawing.Size(91, 21);
             this.cbGender.TabIndex = 18;
             // 
             // txtBoxAddress
             // 
-            this.txtBoxAddress.Location = new System.Drawing.Point(153, 258);
+            this.txtBoxAddress.Location = new System.Drawing.Point(153, 249);
             this.txtBoxAddress.Name = "txtBoxAddress";
             this.txtBoxAddress.ReadOnly = true;
             this.txtBoxAddress.Size = new System.Drawing.Size(329, 20);
@@ -398,7 +442,7 @@ namespace KatDatabaseInfo
             // 
             this.blbAddress.AutoSize = true;
             this.blbAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.blbAddress.Location = new System.Drawing.Point(48, 258);
+            this.blbAddress.Location = new System.Drawing.Point(48, 250);
             this.blbAddress.Name = "blbAddress";
             this.blbAddress.Size = new System.Drawing.Size(66, 16);
             this.blbAddress.TabIndex = 16;
@@ -406,7 +450,7 @@ namespace KatDatabaseInfo
             // 
             // txtBoxCity
             // 
-            this.txtBoxCity.Location = new System.Drawing.Point(153, 232);
+            this.txtBoxCity.Location = new System.Drawing.Point(153, 221);
             this.txtBoxCity.Name = "txtBoxCity";
             this.txtBoxCity.ReadOnly = true;
             this.txtBoxCity.Size = new System.Drawing.Size(329, 20);
@@ -416,7 +460,7 @@ namespace KatDatabaseInfo
             // 
             this.lblCity.AutoSize = true;
             this.lblCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCity.Location = new System.Drawing.Point(48, 232);
+            this.lblCity.Location = new System.Drawing.Point(48, 222);
             this.lblCity.Name = "lblCity";
             this.lblCity.Size = new System.Drawing.Size(34, 16);
             this.lblCity.TabIndex = 14;
@@ -424,7 +468,7 @@ namespace KatDatabaseInfo
             // 
             // txtBoxCountry
             // 
-            this.txtBoxCountry.Location = new System.Drawing.Point(153, 207);
+            this.txtBoxCountry.Location = new System.Drawing.Point(153, 194);
             this.txtBoxCountry.Name = "txtBoxCountry";
             this.txtBoxCountry.ReadOnly = true;
             this.txtBoxCountry.Size = new System.Drawing.Size(329, 20);
@@ -434,7 +478,7 @@ namespace KatDatabaseInfo
             // 
             this.lbCountry.AutoSize = true;
             this.lbCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCountry.Location = new System.Drawing.Point(48, 207);
+            this.lbCountry.Location = new System.Drawing.Point(48, 195);
             this.lbCountry.Name = "lbCountry";
             this.lbCountry.Size = new System.Drawing.Size(60, 16);
             this.lbCountry.TabIndex = 12;
@@ -463,7 +507,7 @@ namespace KatDatabaseInfo
             // 
             this.lblGender.AutoSize = true;
             this.lblGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGender.Location = new System.Drawing.Point(48, 161);
+            this.lblGender.Location = new System.Drawing.Point(48, 164);
             this.lblGender.Name = "lblGender";
             this.lblGender.Size = new System.Drawing.Size(59, 16);
             this.lblGender.TabIndex = 10;
@@ -479,14 +523,6 @@ namespace KatDatabaseInfo
             this.lblMiddleName.TabIndex = 2;
             this.lblMiddleName.Text = "Middle Name";
             // 
-            // txtBoxBirthDate
-            // 
-            this.txtBoxBirthDate.Location = new System.Drawing.Point(153, 136);
-            this.txtBoxBirthDate.Name = "txtBoxBirthDate";
-            this.txtBoxBirthDate.ReadOnly = true;
-            this.txtBoxBirthDate.Size = new System.Drawing.Size(197, 20);
-            this.txtBoxBirthDate.TabIndex = 9;
-            // 
             // txtBoxMiddleName
             // 
             this.txtBoxMiddleName.Location = new System.Drawing.Point(153, 61);
@@ -494,16 +530,6 @@ namespace KatDatabaseInfo
             this.txtBoxMiddleName.ReadOnly = true;
             this.txtBoxMiddleName.Size = new System.Drawing.Size(197, 20);
             this.txtBoxMiddleName.TabIndex = 3;
-            // 
-            // lblBirthDate
-            // 
-            this.lblBirthDate.AutoSize = true;
-            this.lblBirthDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBirthDate.Location = new System.Drawing.Point(48, 136);
-            this.lblBirthDate.Name = "lblBirthDate";
-            this.lblBirthDate.Size = new System.Drawing.Size(76, 16);
-            this.lblBirthDate.TabIndex = 8;
-            this.lblBirthDate.Text = "Birth Date";
             // 
             // lblLastName
             // 
@@ -737,6 +763,11 @@ namespace KatDatabaseInfo
             this.cbFineIds.Size = new System.Drawing.Size(121, 21);
             this.cbFineIds.TabIndex = 1;
             this.cbFineIds.ValueMember = "SerialNumber";
+            // 
+            // finesBindingSource
+            // 
+            this.finesBindingSource.DataMember = "Fines";
+            this.finesBindingSource.DataSource = this.databaseDataSet;
             // 
             // lblFineId
             // 
@@ -1009,6 +1040,11 @@ namespace KatDatabaseInfo
             this.cbRegistryNumber.TabIndex = 1;
             this.cbRegistryNumber.ValueMember = "RegistryNumber";
             // 
+            // vehicleBindingSource
+            // 
+            this.vehicleBindingSource.DataMember = "Vehicle";
+            this.vehicleBindingSource.DataSource = this.databaseDataSet;
+            // 
             // lblRegNumber
             // 
             this.lblRegNumber.AutoSize = true;
@@ -1040,19 +1076,9 @@ namespace KatDatabaseInfo
             // 
             this.driversTableAdapter.ClearBeforeFill = true;
             // 
-            // finesBindingSource
-            // 
-            this.finesBindingSource.DataMember = "Fines";
-            this.finesBindingSource.DataSource = this.databaseDataSet;
-            // 
             // finesTableAdapter
             // 
             this.finesTableAdapter.ClearBeforeFill = true;
-            // 
-            // vehicleBindingSource
-            // 
-            this.vehicleBindingSource.DataMember = "Vehicle";
-            this.vehicleBindingSource.DataSource = this.databaseDataSet;
             // 
             // vehicleTableAdapter
             // 
@@ -1083,14 +1109,14 @@ namespace KatDatabaseInfo
             this.tabPageF.PerformLayout();
             this.gbFine.ResumeLayout(false);
             this.gbFine.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.finesBindingSource)).EndInit();
             this.tabPageV.ResumeLayout(false);
             this.tabPageV.PerformLayout();
             this.gbCarData.ResumeLayout(false);
             this.gbCarData.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.vehicleBindingSource)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.finesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vehicleBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1106,8 +1132,7 @@ namespace KatDatabaseInfo
         private System.Windows.Forms.ToolStripMenuItem loginToolStripMenuItem;
         private System.Windows.Forms.GroupBox gbPerfonalData;
         public System.Windows.Forms.Label lblGender;
-        private System.Windows.Forms.TextBox txtBoxBirthDate;
-        public System.Windows.Forms.Label lblBirthDate;
+        public System.Windows.Forms.Label lblRole;
         private System.Windows.Forms.TextBox txtBoxId;
         public System.Windows.Forms.Label lblIdentityNumber;
         private System.Windows.Forms.TextBox txtBoxLastName;
@@ -1186,6 +1211,9 @@ namespace KatDatabaseInfo
         private DatabaseDataSetTableAdapters.FinesTableAdapter finesTableAdapter;
         private System.Windows.Forms.BindingSource vehicleBindingSource;
         private DatabaseDataSetTableAdapters.VehicleTableAdapter vehicleTableAdapter;
+        private System.Windows.Forms.ComboBox cbRole;
+        private System.Windows.Forms.TextBox txtBoxBirthDate;
+        public System.Windows.Forms.Label lblBirthDate;
        
     }
 }

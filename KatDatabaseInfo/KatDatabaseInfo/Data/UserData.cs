@@ -81,6 +81,11 @@ namespace KatDatabaseInfo.Data
            DriversDataClassesDataContext dc = new DriversDataClassesDataContext();
            dc.AddNewDriver(driver.FirstName,driver.MiddleName,driver.LastName,driver.IdNumber,driver.BirthDate,driver.Gender,driver.Address,driver.Country,driver.City,driver.DrivingLicenseNumber,driver.DrivingCategories,driver.DrivingPointsLeft);
            dc.SubmitChanges();
-        } 
+        }
+
+     public static void CreateUsernameAndPassword(Driver driver)
+        {
+         
+        }
     }
 }

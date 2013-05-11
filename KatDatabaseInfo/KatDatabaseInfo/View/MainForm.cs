@@ -300,7 +300,9 @@ namespace KatDatabaseInfo
         {
             try
             {
-                UserData.addDriver(createDriver());
+                Driver driver = createDriver();
+                UserData.addDriver(driver);
+                UserData.CreateUsernameAndPassword(driver);
             }
             catch(Exception exc)
             {
@@ -342,6 +344,8 @@ namespace KatDatabaseInfo
             this.driversTableAdapter.Fill(this.databaseDataSet.Drivers);
 
         }
+
+       
 
        
     }

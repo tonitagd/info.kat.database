@@ -682,6 +682,7 @@ namespace KatDatabaseInfo
             this.btnDeleteFine.TabIndex = 23;
             this.btnDeleteFine.Text = "Delete Fine";
             this.btnDeleteFine.UseVisualStyleBackColor = true;
+            this.btnDeleteFine.Click += new System.EventHandler(this.btnDeleteFine_Click);
             // 
             // btnAddFine
             // 

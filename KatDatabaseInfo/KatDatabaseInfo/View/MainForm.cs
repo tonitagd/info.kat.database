@@ -588,6 +588,21 @@ namespace KatDatabaseInfo
         private void btnClearVehicle_Click(object sender, EventArgs e)
         {
             ClearButton();
+        }
+
+        private void btnDeleteFine_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                UserData.DeleteFine(txtBoxFineId.Text);
+                MessageBox.Show("Deleting fine license id:'" + txtBoxFineId.Text + "' completed successfully.");
+                ClearAllControls();
+                ReloadMainForm();
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show("Failed deleting fine." + exc.Message);
+            }
         }  
     }
 }

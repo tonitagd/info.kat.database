@@ -86,6 +86,7 @@ namespace KatDatabaseInfo.Data
             return null;
         }
 
+        //ADDING 
         public static void addDriver(Driver driver)
         {
             DriversDataClassesDataContext dc = new DriversDataClassesDataContext();
@@ -107,6 +108,7 @@ namespace KatDatabaseInfo.Data
             dc.SubmitChanges();
         }
         
+        //DELETING
         public static void DeleteDriver(string drivingLicenseNumber)
         {
             DriversDataClassesDataContext dc = new DriversDataClassesDataContext();
@@ -120,6 +122,14 @@ namespace KatDatabaseInfo.Data
             UsersDataClassesDataContext dc = new UsersDataClassesDataContext();
             User user = dc.Users.Where<User>(anonymous => anonymous.DrivingLicenseNumber == drivingLicenseNumber).Single();
             dc.Users.DeleteOnSubmit(user);
+            dc.SubmitChanges();
+        }
+
+        internal static void DeleteFine(string fineID)
+        {
+            FinesDataClassesDataContext dc = new FinesDataClassesDataContext();
+            Fine fine = dc.Fines.Where<Fine>(anonymous => anonymous.SerialNumber == fineID).Single();
+            dc.Fines.DeleteOnSubmit(fine);
             dc.SubmitChanges();
         }
     }

@@ -16,4 +16,18 @@
       <Column Name="DrivingLicenseNumber" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
+  <Function Name="dbo.AddNewVehicle" Method="AddNewVehicle">
+    <Parameter Name="RegistryNumber" Parameter="registryNumber" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="FrameNumber" Parameter="frameNumber" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="EngineNumber" Parameter="engineNumber" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="Brand" Parameter="brand" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Model" Parameter="model" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Type" Parameter="type" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Seats" Parameter="seats" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="Weight" Parameter="weight" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Color" Parameter="color" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="RegistryDate" Parameter="registryDate" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DrivingLicenseNumber" Parameter="drivingLicenseNumber" Type="System.String" DbType="NChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>

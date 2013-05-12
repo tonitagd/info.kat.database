@@ -12,6 +12,11 @@ using KatDatabaseInfo.Data;
 using KatDatabaseInfo.Logic;
 
  
+////TODO
+// vehicle seats stoi sled iztrivane
+// owner license id ne se popylva 
+// fine amount stoi sled iztrivane
+ 
 namespace KatDatabaseInfo
 {
     public partial class MainForm : Form
@@ -541,6 +546,21 @@ namespace KatDatabaseInfo
             }
         }
 
+        private void btnDeleteFine_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                UserData.DeleteFine(txtBoxFineId.Text);
+                MessageBox.Show("Deleting fine with id:'" + txtBoxFineId.Text + "' completed successfully.");
+                ClearAllControls();
+                ReloadMainForm();
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show("Failed deleting fine." + exc.Message);
+            }
+        }
+
         private void btnClearFine_Click(object sender, EventArgs e)
         {
             ClearButton();
@@ -558,7 +578,7 @@ namespace KatDatabaseInfo
             string id = value.ToString();
             Vehicle vehicle = UserData.GetVehicleByRegNumber(id);
             showVehicleInfo(vehicle);
-            ChangeVehicleToUpdateble();
+            ChangeVehicleToUpdatable();
         }
 
         private void showVehicleInfo(Vehicle vehicle)
@@ -578,7 +598,7 @@ namespace KatDatabaseInfo
             txtBoxOwnerDLN.Text = vehicle.DrivingLicenseNumber;
         }
 
-        private void ChangeVehicleToUpdateble()
+        private void ChangeVehicleToUpdatable()
         {
             SetEditable(false);
             txtBoxColor.ReadOnly = false;
@@ -590,20 +610,53 @@ namespace KatDatabaseInfo
             ClearButton();
         }
 
-        private void btnDeleteFine_Click(object sender, EventArgs e)
+        private void btnAddVehicle_Click(object sender, EventArgs e)
         {
             try
             {
-                UserData.DeleteFine(txtBoxFineId.Text);
-                MessageBox.Show("Deleting fine license id:'" + txtBoxFineId.Text + "' completed successfully.");
+                Vehicle vehicle = CreateVehicle();
+                UserData.AddNewVehicle(vehicle);
+                ReloadMainForm();
+                MessageBox.Show("Adding vehicle with registry number:'" + vehicle.RegistryNumber + "' completed successfully."); 
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show("Failed adding vehicle fine." + exc.Message);
+            }
+        }
+
+        private Vehicle CreateVehicle()
+        {
+            Vehicle vehicle = new Vehicle();
+            vehicle.FrameNumber = txtBoxFrameNumber.Text;
+            vehicle.EngineNumber = txtBoxEngineNumber.Text;
+            vehicle.Brand = txtBoxBrand.Text;
+            vehicle.Model = txtBoxModel.Text;
+            vehicle.Type = txtBoxType.Text;
+            vehicle.Weight = int.Parse(txtBoxWeight.Text);
+            vehicle.Seats = short.Parse(txtBoxSeats.Text);
+            vehicle.Color = txtBoxColor.Text;
+            vehicle.RegistryDate = txtBoxRegDate.Text;
+            vehicle.RegistryNumber = txtBoxRegNumber.Text;
+            vehicle.DrivingLicenseNumber = txtBoxOffenderDLN.Text;
+            return vehicle;
+        }
+
+        private void btnDeleteVehicle_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string regNumber = txtBoxRegNumber.Text;
+                UserData.DeleteVehicle(regNumber);
+                MessageBox.Show("Deleting vehicle with registry number:'" + regNumber + "' completed successfully.");
                 ClearAllControls();
                 ReloadMainForm();
             }
             catch (Exception exc)
             {
-                MessageBox.Show("Failed deleting fine." + exc.Message);
+                MessageBox.Show("Failed deleting vehicle." + exc.Message);
             }
-        }  
+        }
     }
 }
 

@@ -955,6 +955,7 @@ namespace KatDatabaseInfo
             this.btnDeleteVehicle.TabIndex = 33;
             this.btnDeleteVehicle.Text = "Delete Vehicle";
             this.btnDeleteVehicle.UseVisualStyleBackColor = true;
+            this.btnDeleteVehicle.Click += new System.EventHandler(this.btnDeleteVehicle_Click);
             // 
             // btnAddVehicle
             // 
@@ -964,6 +965,7 @@ namespace KatDatabaseInfo
             this.btnAddVehicle.TabIndex = 32;
             this.btnAddVehicle.Text = "Add Vehicle";
             this.btnAddVehicle.UseVisualStyleBackColor = true;
+            this.btnAddVehicle.Click += new System.EventHandler(this.btnAddVehicle_Click);
             // 
             // txtBoxOwnerDLN
             // 

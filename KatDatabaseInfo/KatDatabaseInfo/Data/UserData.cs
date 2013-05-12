@@ -107,6 +107,13 @@ namespace KatDatabaseInfo.Data
             dc.AddNewFine(fine.Type, fine.SerialNumber, fine.Date, fine.Policeman, fine.DrivingLicenseNumber, fine.Paid, fine.Reason, fine.Amount);
             dc.SubmitChanges();
         }
+
+        public static void AddNewVehicle(Vehicle vehicle)
+        {
+            VehicleDataClassesDataContext dc = new VehicleDataClassesDataContext();
+            dc.AddNewVehicle(vehicle.RegistryNumber, vehicle.FrameNumber, vehicle.EngineNumber, vehicle.Brand, vehicle.Model, vehicle.Type, vehicle.Seats, vehicle.Weight, vehicle.Color, vehicle.RegistryDate, vehicle.DrivingLicenseNumber);
+            dc.SubmitChanges();
+        }
         
         //DELETING
         public static void DeleteDriver(string drivingLicenseNumber)
@@ -125,11 +132,19 @@ namespace KatDatabaseInfo.Data
             dc.SubmitChanges();
         }
 
-        internal static void DeleteFine(string fineID)
+        public static void DeleteFine(string fineID)
         {
             FinesDataClassesDataContext dc = new FinesDataClassesDataContext();
             Fine fine = dc.Fines.Where<Fine>(anonymous => anonymous.SerialNumber == fineID).Single();
             dc.Fines.DeleteOnSubmit(fine);
+            dc.SubmitChanges();
+        }
+
+        public static void DeleteVehicle(string regNumber)
+        {
+            VehicleDataClassesDataContext dc = new VehicleDataClassesDataContext();
+            Vehicle vehicle = dc.Vehicles.Where<Vehicle>(anonymous => anonymous.RegistryNumber == regNumber).Single();
+            dc.Vehicles.DeleteOnSubmit(vehicle);
             dc.SubmitChanges();
         }
     }

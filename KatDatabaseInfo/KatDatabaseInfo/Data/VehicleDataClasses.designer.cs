@@ -72,6 +72,13 @@ namespace KatDatabaseInfo.Data
 				return this.GetTable<Vehicle>();
 			}
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.AddNewVehicle")]
+		public int AddNewVehicle([global::System.Data.Linq.Mapping.ParameterAttribute(Name="RegistryNumber", DbType="NVarChar(10)")] string registryNumber, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FrameNumber", DbType="NVarChar(20)")] string frameNumber, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="EngineNumber", DbType="NVarChar(10)")] string engineNumber, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Brand", DbType="NVarChar(50)")] string brand, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Model", DbType="NVarChar(50)")] string model, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Type", DbType="NVarChar(50)")] string type, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Seats", DbType="SmallInt")] System.Nullable<short> seats, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Weight", DbType="Int")] System.Nullable<int> weight, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Color", DbType="NVarChar(50)")] string color, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="RegistryDate", DbType="NVarChar(50)")] string registryDate, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DrivingLicenseNumber", DbType="NChar(10)")] string drivingLicenseNumber)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), registryNumber, frameNumber, engineNumber, brand, model, type, seats, weight, color, registryDate, drivingLicenseNumber);
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Vehicle")]

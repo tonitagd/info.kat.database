@@ -72,6 +72,13 @@ namespace KatDatabaseInfo.Data
 				return this.GetTable<Fine>();
 			}
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.AddNewFine")]
+		public int AddNewFine([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Type", DbType="NVarChar(10)")] string type, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SerialNumber", DbType="NVarChar(50)")] string serialNumber, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Date", DbType="NVarChar(50)")] string date, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Policeman", DbType="NVarChar(50)")] string policeman, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DrivingLicenseNumber", DbType="NChar(10)")] string drivingLicenseNumber, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Paid", DbType="TinyInt")] System.Nullable<byte> paid, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Reason", DbType="NVarChar(100)")] string reason, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Amount", DbType="Money")] System.Nullable<decimal> amount)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), type, serialNumber, date, policeman, drivingLicenseNumber, paid, reason, amount);
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Fines")]
@@ -147,7 +154,7 @@ namespace KatDatabaseInfo.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
 		public string Type
 		{
 			get

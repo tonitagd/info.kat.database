@@ -47,6 +47,32 @@ namespace KatDatabaseInfo.Data
             return null;
         }
 
+        public static Vehicle GetVehicleByRegNumber(string regNumber)
+        {
+            VehicleDataClassesDataContext vehicleDataContext = new VehicleDataClassesDataContext();
+            var queryResult = (from vehicles in vehicleDataContext.GetTable<Vehicle>()
+                               where (vehicles.RegistryNumber == regNumber)
+                               select vehicles).ToArray<Vehicle>();
+            if (queryResult.Count<Vehicle>() > 0)
+            {
+                return queryResult.ElementAt<Vehicle>(0);
+            }
+            return null;
+        }
+
+        public static Fine GetFineBySerialNumber(string serialNumber)
+        {
+            FinesDataClassesDataContext fineDataContext = new FinesDataClassesDataContext();
+            var queryResult = (from fines in fineDataContext.GetTable<Fine>()
+                               where (fines.SerialNumber == serialNumber)
+                               select fines).ToArray<Fine>();
+            if (queryResult.Count<Fine>() > 0)
+            {
+                return queryResult.ElementAt<Fine>(0);
+            }
+            return null;
+        }
+
         public static short? GetUserRoleByLicenseID(string licenseID)
         {
             UsersDataClassesDataContext userDataContext = new UsersDataClassesDataContext();
@@ -73,12 +99,27 @@ namespace KatDatabaseInfo.Data
             dc.CreateUsernameAndPassword(user.Username, user.Password, user.DrivingLicenseNumber, user.Role_);
             dc.SubmitChanges();
         }
+
+        public static void AddNewFine(Fine fine)
+        {
+            FinesDataClassesDataContext dc = new FinesDataClassesDataContext();
+            dc.AddNewFine(fine.Type, fine.SerialNumber, fine.Date, fine.Policeman, fine.DrivingLicenseNumber, fine.Paid, fine.Reason, fine.Amount);
+            dc.SubmitChanges();
+        }
         
         public static void DeleteDriver(string drivingLicenseNumber)
         {
             DriversDataClassesDataContext dc = new DriversDataClassesDataContext();
-            Driver driver = dc.Drivers.Where<Driver>(annonymous => annonymous.DrivingLicenseNumber == drivingLicenseNumber).Single();
+            Driver driver = dc.Drivers.Where<Driver>(anonymous => anonymous.DrivingLicenseNumber == drivingLicenseNumber).Single();
             dc.Drivers.DeleteOnSubmit(driver);
+            dc.SubmitChanges();
+        }
+
+        public static void DeleteUser(string drivingLicenseNumber)
+        {
+            UsersDataClassesDataContext dc = new UsersDataClassesDataContext();
+            User user = dc.Users.Where<User>(anonymous => anonymous.DrivingLicenseNumber == drivingLicenseNumber).Single();
+            dc.Users.DeleteOnSubmit(user);
             dc.SubmitChanges();
         }
     }

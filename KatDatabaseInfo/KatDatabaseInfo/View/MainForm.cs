@@ -193,6 +193,7 @@ namespace KatDatabaseInfo
             txtBoxPoliceman.ReadOnly = !editable;
             //paid
             cbPaid.Enabled = editable;
+            txtBoxPrice.ReadOnly = !editable;
             txtBoxOffenderDLN.ReadOnly = !editable;
             txtBoxFineId.ReadOnly = !editable;
             txtBoxReason.ReadOnly = !editable;
@@ -212,6 +213,7 @@ namespace KatDatabaseInfo
             txtBoxRegNumber.ReadOnly = !editable;
 
             txtBoxOwnerDLN.ReadOnly = !editable;
+
         }
 
         private void SetVisibilityToAdminButtons(bool visible)
@@ -230,6 +232,10 @@ namespace KatDatabaseInfo
             lblRole.Visible = visible;
             cbRole.Visible = visible;
             btnClear.Visible = visible;
+            lblPrice.Visible = visible;
+            txtBoxPrice.Visible = visible;
+            label2.Visible = visible;
+            txtBoxFineId.Visible = visible;
         }
 
         private void showAdminInfo(Driver driver)
@@ -323,6 +329,8 @@ namespace KatDatabaseInfo
 
         }
 
+        // Diver Data Window
+
         private void cbSearchDriver_SelectedIndexChanged(object sender, EventArgs e)
         {
             object value = cbSearchDriver.SelectedValue;
@@ -340,10 +348,10 @@ namespace KatDatabaseInfo
                 return;
             }
             cbRole.SelectedIndex = (int)role-1;
-            ChangeToUpdateble();
+            ChangeDriverToUpdateble();
         }
 
-        private void ChangeToUpdateble()
+        private void ChangeDriverToUpdateble()
         {
             SetEditable(false);
             cbPointsLeft.Enabled = true;
@@ -422,6 +430,7 @@ namespace KatDatabaseInfo
             {
                 UserData.DeleteDriver(txtBoxLicenseId.Text);
                 MessageBox.Show("Deleting driver with license id:'" + txtBoxLicenseId.Text + "' completed successfully.");
+                ClearAllControls();
                 ReloadMainForm();
             }
             catch (Exception exc)
@@ -430,11 +439,156 @@ namespace KatDatabaseInfo
             }
         }
 
+        //END OF DRIVERS WINDOWS
+
         private void btnClear_Click(object sender, EventArgs e)
+        {
+            ClearButton();
+        }
+
+        private void ClearButton()
         {
             ClearAllControls();
             SetEditable(true);
         }
+
+        // Fine Data Window
+
+        private void cbFineIds_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            object value = cbFineIds.SelectedValue;
+            if (value == null)
+            {
+                return;
+            }
+            string id = value.ToString();
+            Fine fine = UserData.GetFineBySerialNumber(id);
+            showFineInfo(fine);
+            ChangeFineToUpdateble();
+        }
+
+        private void showFineInfo(Fine fine)
+        {
+            cbType.SelectedIndex = GetFineType(fine.Type);
+            txtBoxDate.Text = fine.Date;
+            txtBoxPoliceman.Text = fine.Policeman;
+            
+            cbPaid.SelectedIndex = fine.Paid;
+            txtBoxOffenderDLN.Text = fine.DrivingLicenseNumber;
+            txtBoxPrice.Text = fine.Amount.ToString();
+            txtBoxFineId.Text = fine.SerialNumber.ToString();
+            txtBoxReason.Text = fine.Reason;
+        }
+
+        private int GetFineType(string fineType)
+        {
+            switch (fineType)
+            {
+                case "Ticket":
+                    return 0;
+                case "Act":
+                    return 1;
+                default:
+                    return -1;
+            }
+        }
+
+        private void ChangeFineToUpdateble()
+        {
+            SetEditable(false);
+            cbPaid.Enabled = true;
+            txtBoxPrice.ReadOnly = false;
+        }
+
+        private void btnAddFine_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Fine fine = CreateFine();
+                UserData.AddNewFine(fine);
+                ReloadMainForm();
+                MessageBox.Show("Adding fine with ID: '" + fine.SerialNumber + "' successful.");
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show("Failed adding fine." + exc.Message);
+            }
+        }
+
+        private Fine CreateFine()
+        {
+            Fine fine = new Fine();
+            fine.SerialNumber = txtBoxFineId.Text;
+            string type = GetFineTypeName(cbType.SelectedIndex);  
+            fine.Type = type;
+            fine.Date = txtBoxDate.Text;
+            fine.Policeman = txtBoxPoliceman.Text;
+            fine.Paid = (byte)cbPaid.SelectedIndex;
+            fine.DrivingLicenseNumber = txtBoxOffenderDLN.Text;
+            fine.Reason = txtBoxReason.Text;
+            fine.Amount = Convert.ToDecimal(txtBoxPrice.Text);
+            return fine;
+        }
+
+        private string GetFineTypeName(int type)
+        {
+            switch (type)
+            {
+                case 0:
+                    return "Ticket";
+                default:
+                    return "Act";
+            }
+        }
+
+        private void btnClearFine_Click(object sender, EventArgs e)
+        {
+            ClearButton();
+        }
+
+        // Vehicles Data Window
+      
+        private void cbRegistryNumber_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            object value = cbRegistryNumber.SelectedValue;
+            if (value == null)
+            {
+                return;
+            }
+            string id = value.ToString();
+            Vehicle vehicle = UserData.GetVehicleByRegNumber(id);
+            showVehicleInfo(vehicle);
+            ChangeVehicleToUpdateble();
+        }
+
+        private void showVehicleInfo(Vehicle vehicle)
+        {
+            txtBoxFrameNumber.Text = vehicle.FrameNumber;
+            txtBoxEngineNumber.Text = vehicle.EngineNumber;
+            txtBoxBrand.Text = vehicle.Brand;
+            txtBoxModel.Text = vehicle.Model;
+            txtBoxType.Text = vehicle.Type;
+
+            txtBoxWeight.Text = vehicle.Weight.ToString();
+            txtBoxSeats.Text = vehicle.Seats.ToString();
+            txtBoxColor.Text = vehicle.Color;
+            txtBoxRegDate.Text = vehicle.RegistryDate;
+            txtBoxRegNumber.Text = vehicle.RegistryNumber;
+
+            txtBoxOwnerDLN.Text = vehicle.DrivingLicenseNumber;
+        }
+
+        private void ChangeVehicleToUpdateble()
+        {
+            SetEditable(false);
+            txtBoxColor.ReadOnly = false;
+            txtBoxRegNumber.ReadOnly = false;
+        }
+
+        private void btnClearVehicle_Click(object sender, EventArgs e)
+        {
+            ClearButton();
+        }  
     }
 }
 

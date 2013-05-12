@@ -72,13 +72,16 @@ namespace KatDatabaseInfo
             this.lblIdentityNumber = new System.Windows.Forms.Label();
             this.tabPageF = new System.Windows.Forms.TabPage();
             this.gbFine = new System.Windows.Forms.GroupBox();
+            this.btnClearFine = new System.Windows.Forms.Button();
+            this.btnUpdateFine = new System.Windows.Forms.Button();
+            this.btnDeleteFine = new System.Windows.Forms.Button();
+            this.btnAddFine = new System.Windows.Forms.Button();
             this.txtBoxPrice = new System.Windows.Forms.TextBox();
             this.lblPrice = new System.Windows.Forms.Label();
             this.txtBoxFineId = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtBoxOffenderDLN = new System.Windows.Forms.TextBox();
             this.lblOffenderDLN = new System.Windows.Forms.Label();
-            this.btnAddFine = new System.Windows.Forms.Button();
             this.txtBoxReason = new System.Windows.Forms.TextBox();
             this.txtBoxPoliceman = new System.Windows.Forms.TextBox();
             this.txtBoxDate = new System.Windows.Forms.TextBox();
@@ -94,6 +97,9 @@ namespace KatDatabaseInfo
             this.lblFineId = new System.Windows.Forms.Label();
             this.tabPageV = new System.Windows.Forms.TabPage();
             this.gbCarData = new System.Windows.Forms.GroupBox();
+            this.btnClearVehicle = new System.Windows.Forms.Button();
+            this.btnUpdateVehicle = new System.Windows.Forms.Button();
+            this.btnDeleteVehicle = new System.Windows.Forms.Button();
             this.btnAddVehicle = new System.Windows.Forms.Button();
             this.txtBoxOwnerDLN = new System.Windows.Forms.TextBox();
             this.txtBoxRegNumber = new System.Windows.Forms.TextBox();
@@ -622,13 +628,16 @@ namespace KatDatabaseInfo
             // 
             // gbFine
             // 
+            this.gbFine.Controls.Add(this.btnClearFine);
+            this.gbFine.Controls.Add(this.btnUpdateFine);
+            this.gbFine.Controls.Add(this.btnDeleteFine);
+            this.gbFine.Controls.Add(this.btnAddFine);
             this.gbFine.Controls.Add(this.txtBoxPrice);
             this.gbFine.Controls.Add(this.lblPrice);
             this.gbFine.Controls.Add(this.txtBoxFineId);
             this.gbFine.Controls.Add(this.label2);
             this.gbFine.Controls.Add(this.txtBoxOffenderDLN);
             this.gbFine.Controls.Add(this.lblOffenderDLN);
-            this.gbFine.Controls.Add(this.btnAddFine);
             this.gbFine.Controls.Add(this.txtBoxReason);
             this.gbFine.Controls.Add(this.txtBoxPoliceman);
             this.gbFine.Controls.Add(this.txtBoxDate);
@@ -645,6 +654,44 @@ namespace KatDatabaseInfo
             this.gbFine.TabIndex = 2;
             this.gbFine.TabStop = false;
             this.gbFine.Text = "Fine\'s Data";
+            // 
+            // btnClearFine
+            // 
+            this.btnClearFine.Location = new System.Drawing.Point(209, 383);
+            this.btnClearFine.Name = "btnClearFine";
+            this.btnClearFine.Size = new System.Drawing.Size(128, 23);
+            this.btnClearFine.TabIndex = 25;
+            this.btnClearFine.Text = "Clear";
+            this.btnClearFine.UseVisualStyleBackColor = true;
+            this.btnClearFine.Click += new System.EventHandler(this.btnClearFine_Click);
+            // 
+            // btnUpdateFine
+            // 
+            this.btnUpdateFine.Location = new System.Drawing.Point(509, 383);
+            this.btnUpdateFine.Name = "btnUpdateFine";
+            this.btnUpdateFine.Size = new System.Drawing.Size(128, 23);
+            this.btnUpdateFine.TabIndex = 24;
+            this.btnUpdateFine.Text = "Update";
+            this.btnUpdateFine.UseVisualStyleBackColor = true;
+            // 
+            // btnDeleteFine
+            // 
+            this.btnDeleteFine.Location = new System.Drawing.Point(359, 383);
+            this.btnDeleteFine.Name = "btnDeleteFine";
+            this.btnDeleteFine.Size = new System.Drawing.Size(128, 23);
+            this.btnDeleteFine.TabIndex = 23;
+            this.btnDeleteFine.Text = "Delete Fine";
+            this.btnDeleteFine.UseVisualStyleBackColor = true;
+            // 
+            // btnAddFine
+            // 
+            this.btnAddFine.Location = new System.Drawing.Point(659, 383);
+            this.btnAddFine.Name = "btnAddFine";
+            this.btnAddFine.Size = new System.Drawing.Size(128, 23);
+            this.btnAddFine.TabIndex = 22;
+            this.btnAddFine.Text = "Add Fine";
+            this.btnAddFine.UseVisualStyleBackColor = true;
+            this.btnAddFine.Click += new System.EventHandler(this.btnAddFine_Click);
             // 
             // txtBoxPrice
             // 
@@ -706,18 +753,9 @@ namespace KatDatabaseInfo
             this.lblOffenderDLN.Text = "Offender DLN";
             this.lblOffenderDLN.Visible = false;
             // 
-            // btnAddFine
-            // 
-            this.btnAddFine.Location = new System.Drawing.Point(609, 369);
-            this.btnAddFine.Name = "btnAddFine";
-            this.btnAddFine.Size = new System.Drawing.Size(184, 31);
-            this.btnAddFine.TabIndex = 15;
-            this.btnAddFine.Text = "Add Fine";
-            this.btnAddFine.UseVisualStyleBackColor = true;
-            // 
             // txtBoxReason
             // 
-            this.txtBoxReason.Location = new System.Drawing.Point(148, 231);
+            this.txtBoxReason.Location = new System.Drawing.Point(148, 215);
             this.txtBoxReason.Multiline = true;
             this.txtBoxReason.Name = "txtBoxReason";
             this.txtBoxReason.ReadOnly = true;
@@ -744,7 +782,7 @@ namespace KatDatabaseInfo
             // 
             this.lblReason.AutoSize = true;
             this.lblReason.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lblReason.Location = new System.Drawing.Point(32, 232);
+            this.lblReason.Location = new System.Drawing.Point(32, 216);
             this.lblReason.Name = "lblReason";
             this.lblReason.Size = new System.Drawing.Size(62, 16);
             this.lblReason.TabIndex = 10;
@@ -825,6 +863,7 @@ namespace KatDatabaseInfo
             this.cbFineIds.Size = new System.Drawing.Size(121, 21);
             this.cbFineIds.TabIndex = 1;
             this.cbFineIds.ValueMember = "SerialNumber";
+            this.cbFineIds.SelectedIndexChanged += new System.EventHandler(this.cbFineIds_SelectedIndexChanged);
             // 
             // finesBindingSource
             // 
@@ -855,6 +894,9 @@ namespace KatDatabaseInfo
             // 
             // gbCarData
             // 
+            this.gbCarData.Controls.Add(this.btnClearVehicle);
+            this.gbCarData.Controls.Add(this.btnUpdateVehicle);
+            this.gbCarData.Controls.Add(this.btnDeleteVehicle);
             this.gbCarData.Controls.Add(this.btnAddVehicle);
             this.gbCarData.Controls.Add(this.txtBoxOwnerDLN);
             this.gbCarData.Controls.Add(this.txtBoxRegNumber);
@@ -885,11 +927,39 @@ namespace KatDatabaseInfo
             this.gbCarData.TabStop = false;
             this.gbCarData.Text = "Vehicle\'s Data";
             // 
+            // btnClearVehicle
+            // 
+            this.btnClearVehicle.Location = new System.Drawing.Point(191, 380);
+            this.btnClearVehicle.Name = "btnClearVehicle";
+            this.btnClearVehicle.Size = new System.Drawing.Size(128, 23);
+            this.btnClearVehicle.TabIndex = 35;
+            this.btnClearVehicle.Text = "Clear";
+            this.btnClearVehicle.UseVisualStyleBackColor = true;
+            this.btnClearVehicle.Click += new System.EventHandler(this.btnClearVehicle_Click);
+            // 
+            // btnUpdateVehicle
+            // 
+            this.btnUpdateVehicle.Location = new System.Drawing.Point(491, 380);
+            this.btnUpdateVehicle.Name = "btnUpdateVehicle";
+            this.btnUpdateVehicle.Size = new System.Drawing.Size(128, 23);
+            this.btnUpdateVehicle.TabIndex = 34;
+            this.btnUpdateVehicle.Text = "Update";
+            this.btnUpdateVehicle.UseVisualStyleBackColor = true;
+            // 
+            // btnDeleteVehicle
+            // 
+            this.btnDeleteVehicle.Location = new System.Drawing.Point(341, 380);
+            this.btnDeleteVehicle.Name = "btnDeleteVehicle";
+            this.btnDeleteVehicle.Size = new System.Drawing.Size(128, 23);
+            this.btnDeleteVehicle.TabIndex = 33;
+            this.btnDeleteVehicle.Text = "Delete Vehicle";
+            this.btnDeleteVehicle.UseVisualStyleBackColor = true;
+            // 
             // btnAddVehicle
             // 
-            this.btnAddVehicle.Location = new System.Drawing.Point(556, 362);
+            this.btnAddVehicle.Location = new System.Drawing.Point(641, 380);
             this.btnAddVehicle.Name = "btnAddVehicle";
-            this.btnAddVehicle.Size = new System.Drawing.Size(184, 31);
+            this.btnAddVehicle.Size = new System.Drawing.Size(128, 23);
             this.btnAddVehicle.TabIndex = 32;
             this.btnAddVehicle.Text = "Add Vehicle";
             this.btnAddVehicle.UseVisualStyleBackColor = true;
@@ -1101,6 +1171,7 @@ namespace KatDatabaseInfo
             this.cbRegistryNumber.Size = new System.Drawing.Size(129, 21);
             this.cbRegistryNumber.TabIndex = 1;
             this.cbRegistryNumber.ValueMember = "RegistryNumber";
+            this.cbRegistryNumber.SelectedIndexChanged += new System.EventHandler(this.cbRegistryNumber_SelectedIndexChanged);
             // 
             // vehicleBindingSource
             // 
@@ -1234,7 +1305,6 @@ namespace KatDatabaseInfo
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtBoxOffenderDLN;
         private System.Windows.Forms.Label lblOffenderDLN;
-        private System.Windows.Forms.Button btnAddFine;
         private System.Windows.Forms.GroupBox gbCarData;
         private System.Windows.Forms.ComboBox cbRegistryNumber;
         private System.Windows.Forms.Label lblRegNumber;
@@ -1260,7 +1330,6 @@ namespace KatDatabaseInfo
         private System.Windows.Forms.Label lblBrand;
         private System.Windows.Forms.Label lblEngine;
         private System.Windows.Forms.Label lblFrameNumber;
-        private System.Windows.Forms.Button btnAddVehicle;
         private System.Windows.Forms.ComboBox cbGender;
         private System.Windows.Forms.Button btnAddDriver;
         private System.Windows.Forms.ComboBox cbFineIds;
@@ -1281,6 +1350,14 @@ namespace KatDatabaseInfo
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDell;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnClearFine;
+        private System.Windows.Forms.Button btnUpdateFine;
+        private System.Windows.Forms.Button btnDeleteFine;
+        private System.Windows.Forms.Button btnAddFine;
+        private System.Windows.Forms.Button btnClearVehicle;
+        private System.Windows.Forms.Button btnUpdateVehicle;
+        private System.Windows.Forms.Button btnDeleteVehicle;
+        private System.Windows.Forms.Button btnAddVehicle;
 
     }
 }

@@ -3,7 +3,7 @@
   <Table Name="dbo.Fines" Member="Fines">
     <Type Name="Fine">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Type" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="SerialNumber" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Date" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Policeman" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
@@ -13,4 +13,15 @@
       <Column Name="Amount" Type="System.Decimal" DbType="Money" CanBeNull="true" />
     </Type>
   </Table>
+  <Function Name="dbo.AddNewFine" Method="AddNewFine">
+    <Parameter Name="Type" Parameter="type" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="SerialNumber" Parameter="serialNumber" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Date" Parameter="date" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Policeman" Parameter="policeman" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DrivingLicenseNumber" Parameter="drivingLicenseNumber" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="Paid" Parameter="paid" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="Reason" Parameter="reason" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="Amount" Parameter="amount" Type="System.Decimal" DbType="Money" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>

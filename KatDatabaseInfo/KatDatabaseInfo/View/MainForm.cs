@@ -34,9 +34,7 @@ namespace KatDatabaseInfo
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-
             ReloadMainForm();
-
         }
 
         private void ReloadMainForm()
@@ -429,6 +427,22 @@ namespace KatDatabaseInfo
             return user;
         }
 
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Driver driver = createDriver();
+                User user = CreateUser();
+                UserData.UpdateDriver(driver.DrivingLicenseNumber, driver.Country, driver.City, driver.Address, driver.DrivingPointsLeft, driver.DrivingCategories, user.Role_);
+                MessageBox.Show("Update successful.");
+                ReloadMainForm();
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show("Update failed. " + exc.Message);
+            }
+        }
+
         private void btnDell_Click(object sender, EventArgs e)
         {
             try
@@ -444,7 +458,7 @@ namespace KatDatabaseInfo
             }
         }
 
-        //END OF DRIVERS WINDOWS
+        //------------END OF DRIVERS WINDOWS--------------
 
         private void btnClear_Click(object sender, EventArgs e)
         {
@@ -457,7 +471,7 @@ namespace KatDatabaseInfo
             SetEditable(true);
         }
 
-        // Fine Data Window
+        // --------Fine Data Window--------------
 
         private void cbFineIds_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -546,6 +560,21 @@ namespace KatDatabaseInfo
             }
         }
 
+        private void btnUpdateFine_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Fine fine = CreateFine();
+                UserData.UpdateFine(fine.SerialNumber, fine.Paid, fine.Amount);
+                MessageBox.Show("Update successful.");
+                ReloadMainForm();
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show("Update failed. " + exc.Message);
+            }
+        }
+
         private void btnDeleteFine_Click(object sender, EventArgs e)
         {
             try
@@ -587,7 +616,7 @@ namespace KatDatabaseInfo
             txtBoxEngineNumber.Text = vehicle.EngineNumber;
             txtBoxBrand.Text = vehicle.Brand;
             txtBoxModel.Text = vehicle.Model;
-            txtBoxType.Text = vehicle.Type;
+            txtBoxType.Text = GetVehicleType(vehicle.Type);
 
             txtBoxWeight.Text = vehicle.Weight.ToString();
             txtBoxSeats.Text = vehicle.Seats.ToString();
@@ -598,11 +627,26 @@ namespace KatDatabaseInfo
             txtBoxOwnerDLN.Text = vehicle.DrivingLicenseNumber;
         }
 
+        private string GetVehicleType(string type)
+        {
+            switch (type)
+            {
+                case "0":
+                    return "car";
+                case "1":
+                    return "van";
+  
+                default:
+                    return "truck";
+                    
+            }
+        }
         private void ChangeVehicleToUpdatable()
         {
             SetEditable(false);
             txtBoxColor.ReadOnly = false;
             txtBoxRegNumber.ReadOnly = false;
+            txtBoxOwnerDLN.ReadOnly = false;
         }
 
         private void btnClearVehicle_Click(object sender, EventArgs e)
@@ -638,8 +682,23 @@ namespace KatDatabaseInfo
             vehicle.Color = txtBoxColor.Text;
             vehicle.RegistryDate = txtBoxRegDate.Text;
             vehicle.RegistryNumber = txtBoxRegNumber.Text;
-            vehicle.DrivingLicenseNumber = txtBoxOffenderDLN.Text;
+            vehicle.DrivingLicenseNumber = txtBoxOwnerDLN.Text;
             return vehicle;
+        }
+
+        private void btnUpdateVehicle_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Vehicle vehicle = CreateVehicle();
+                UserData.UpdateVehicle(vehicle.FrameNumber, vehicle.RegistryNumber, vehicle.Color, vehicle.DrivingLicenseNumber);
+                MessageBox.Show("Update successful.");
+                ReloadMainForm();
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show("Update failed. " + exc.Message);
+            }
         }
 
         private void btnDeleteVehicle_Click(object sender, EventArgs e)
@@ -656,41 +715,6 @@ namespace KatDatabaseInfo
             {
                 MessageBox.Show("Failed deleting vehicle." + exc.Message);
             }
-  }
-// --------------------------------NEW CHANGES----------------------------------
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Driver driver = createDriver();
-                User user = CreateUser();
-                UserData.UpdateDriver(driver.DrivingLicenseNumber, driver.Country, driver.City, driver.Address, driver.DrivingPointsLeft, driver.DrivingCategories, user.Role_);
-                MessageBox.Show("Update successful.");
-                ReloadMainForm();
-            }
-            catch (Exception exc)
-            {
-                MessageBox.Show("Update failed." + exc.Message);
-            }
-        }
-
-        private void btnUpdateFine_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Fine fine = CreateFine();
-                UserData.UpdateFine(fine.SerialNumber, fine.Paid, fine.Amount);
-                MessageBox.Show("Update successful.");
-            }
-            catch (Exception exc)
-            {
-                MessageBox.Show("Update failed." + exc.Message);
-            }
-        }
-
-        private void btnUpdateVehicle_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

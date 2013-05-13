@@ -1231,6 +1231,7 @@ namespace KatDatabaseInfo
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.menuStrip1);
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.tabControl.ResumeLayout(false);

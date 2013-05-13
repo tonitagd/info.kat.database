@@ -166,5 +166,16 @@ namespace KatDatabaseInfo.Data
 
             fineDataContext.SubmitChanges();
         }
+
+        public static void UpdateVehicle(string frameNumber, string regNumber, string color, string drivingLicenseNumber)
+        {
+            Vehicle vehicle = vehicleDataContext.Vehicles.Where<Vehicle>(anonymous => anonymous.FrameNumber == frameNumber).Single();
+
+            vehicle.RegistryNumber = regNumber;
+            vehicle.Color = color;
+            vehicle.DrivingLicenseNumber = drivingLicenseNumber;
+
+            vehicleDataContext.SubmitChanges();
+        }
     }
 }

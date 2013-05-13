@@ -37,5 +37,6 @@ namespace KatDatabaseInfo.View
                 MessageBox.Show(loginValidation.errText);
             } 
         }
+       
     }
 }

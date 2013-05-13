@@ -197,6 +197,7 @@ namespace KatDatabaseInfo
             this.btnUpdate.TabIndex = 19;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDell
             // 
@@ -673,6 +674,7 @@ namespace KatDatabaseInfo
             this.btnUpdateFine.TabIndex = 24;
             this.btnUpdateFine.Text = "Update";
             this.btnUpdateFine.UseVisualStyleBackColor = true;
+            this.btnUpdateFine.Click += new System.EventHandler(this.btnUpdateFine_Click);
             // 
             // btnDeleteFine
             // 
@@ -946,6 +948,7 @@ namespace KatDatabaseInfo
             this.btnUpdateVehicle.TabIndex = 34;
             this.btnUpdateVehicle.Text = "Update";
             this.btnUpdateVehicle.UseVisualStyleBackColor = true;
+            this.btnUpdateVehicle.Click += new System.EventHandler(this.btnUpdateVehicle_Click);
             // 
             // btnDeleteVehicle
             // 

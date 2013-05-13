@@ -656,6 +656,41 @@ namespace KatDatabaseInfo
             {
                 MessageBox.Show("Failed deleting vehicle." + exc.Message);
             }
+  }
+// --------------------------------NEW CHANGES----------------------------------
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Driver driver = createDriver();
+                User user = CreateUser();
+                UserData.UpdateDriver(driver.DrivingLicenseNumber, driver.Country, driver.City, driver.Address, driver.DrivingPointsLeft, driver.DrivingCategories, user.Role_);
+                MessageBox.Show("Update successful.");
+                ReloadMainForm();
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show("Update failed." + exc.Message);
+            }
+        }
+
+        private void btnUpdateFine_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Fine fine = CreateFine();
+                UserData.UpdateFine(fine.SerialNumber, fine.Paid, fine.Amount);
+                MessageBox.Show("Update successful.");
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show("Update failed." + exc.Message);
+            }
+        }
+
+        private void btnUpdateVehicle_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

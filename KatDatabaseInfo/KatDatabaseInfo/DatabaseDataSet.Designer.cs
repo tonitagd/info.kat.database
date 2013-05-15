@@ -4635,12 +4635,17 @@ SELECT Id, Type, SerialNumber, Date, Policeman, DrivingLicenseNumber, Paid, Reas
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Id, Type, SerialNumber, Date, Policeman, DrivingLicenseNumber, Paid, Reaso" +
                 "n, Amount FROM dbo.Fines";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT SerialNumber FROM Fines WHERE SerialNumber = @fineId";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fineId", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "SerialNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4983,6 +4988,40 @@ SELECT Id, Type, SerialNumber, Date, Policeman, DrivingLicenseNumber, Paid, Reas
                     string Original_Reason, 
                     global::System.Nullable<decimal> Original_Amount) {
             return this.Update(Type, SerialNumber, Date, Policeman, DrivingLicenseNumber, Paid, Reason, Amount, Original_Id, Original_Type, Original_SerialNumber, Original_Date, Original_Policeman, Original_DrivingLicenseNumber, Original_Paid, Original_Reason, Original_Amount, Original_Id);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual string GetDriversFineId(string fineId) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            if ((fineId == null)) {
+                throw new global::System.ArgumentNullException("fineId");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(fineId));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return null;
+            }
+            else {
+                return ((string)(returnValue));
+            }
         }
     }
     

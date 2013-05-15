@@ -15,6 +15,8 @@ namespace KatDatabaseInfo.Data
         private static FinesDataClassesDataContext fineDataContext = new FinesDataClassesDataContext();
         private static VehicleDataClassesDataContext vehicleDataContext = new VehicleDataClassesDataContext();
 
+        // Log in queries
+
         public static User IsUserPassCorrect(string username, string password)
         {
             return UserData._IsUserPassCorrect(username, password);
@@ -37,6 +39,8 @@ namespace KatDatabaseInfo.Data
             }
             return null;
         }
+
+        //Get Fillind Data queries
 
         public static Driver GetDriverByLicenseID(string licenseID)
         {
@@ -86,7 +90,70 @@ namespace KatDatabaseInfo.Data
             return null;
         }
 
+        // Get Data Sources for fines
+
+        public static List<Fine> GetFineById(string id)
+        {
+            List<Fine> fineList = new List<Fine>();
+            var queryResult = (from fines in fineDataContext.GetTable<Fine>()
+                               where (fines.DrivingLicenseNumber == id)
+                               select fines).ToArray<Fine>();
+
+            for (int i = 0; i < queryResult.Count<Fine>(); i++)
+            {
+                fineList.Add(queryResult.ElementAt<Fine>(i));
+            }
+
+            return fineList;
+        }
+
+        public static List<Fine> GetAllFines()
+        {
+            List<Fine> fineList = new List<Fine>();
+            var queryResult = (from fines in fineDataContext.GetTable<Fine>()
+                               select fines).ToArray<Fine>();
+
+            for (int i = 0; i < queryResult.Count<Fine>(); i++)
+            {
+                fineList.Add(queryResult.ElementAt<Fine>(i));
+            }
+
+            return fineList;
+        }
+
+        // Get Data Sources for fines
+
+        public static List<Vehicle> GetVehicleById(string id)
+        {
+            List<Vehicle> vehicleList = new List<Vehicle>();
+            var queryResult = (from vehicles in vehicleDataContext.GetTable<Vehicle>()
+                               where (vehicles.DrivingLicenseNumber == id)
+                               select vehicles).ToArray<Vehicle>();
+
+            for (int i = 0; i < queryResult.Count<Vehicle>(); i++)
+            {
+                vehicleList.Add(queryResult.ElementAt<Vehicle>(i));
+            }
+
+            return vehicleList;
+        }
+
+        public static List<Vehicle> GetAllVehicles()
+        {
+            List<Vehicle> vechiclesList = new List<Vehicle>();
+            var queryResult = (from vechicles in vehicleDataContext.GetTable<Vehicle>()
+                               select vechicles).ToArray<Vehicle>();
+
+            for (int i = 0; i < queryResult.Count<Vehicle>(); i++)
+            {
+                vechiclesList.Add(queryResult.ElementAt<Vehicle>(i));
+            }
+
+            return vechiclesList;
+        }
+
         //ADDING 
+
         public static void addDriver(Driver driver)
         {
             driverDataContext.AddNewDriver(driver.FirstName, driver.MiddleName, driver.LastName, driver.IdNumber, driver.BirthDate, driver.Gender, driver.Address, driver.Country, driver.City, driver.DrivingLicenseNumber, driver.DrivingCategories, driver.DrivingPointsLeft);
@@ -177,5 +244,7 @@ namespace KatDatabaseInfo.Data
 
             vehicleDataContext.SubmitChanges();
         }
+
+       
     }
 }

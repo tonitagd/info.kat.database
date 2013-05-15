@@ -13,8 +13,6 @@ using KatDatabaseInfo.Logic;
 
 
 ////TODO
-// vehicle seats stoi sled iztrivane
-// owner license id ne se popylva 
 // fine amount stoi sled iztrivane
 
 namespace KatDatabaseInfo
@@ -66,6 +64,91 @@ namespace KatDatabaseInfo
             gbFine.Enabled = status;
             gbPerfonalData.Enabled = status;
             gbLicense.Enabled = status;
+            lblFineId.Enabled = status;
+            cbFineIds.Enabled = status;
+            lblRegNumber.Enabled = status;
+            cbRegistryNumber.Enabled = status;
+        }
+
+        private void SetVisibilityToAdminButtons(bool visible)
+        {
+            lblSearchDriver.Visible = visible;
+            cbSearchDriver.Visible = visible;
+            lblOwnerDLN.Visible = visible;
+            txtBoxOwnerDLN.Visible = visible;
+            lblRole.Visible = visible;
+            cbRole.Visible = visible;
+            btnDell.Visible = visible;
+            btnUpdate.Visible = visible;
+            lblRole.Visible = visible;
+            cbRole.Visible = visible;
+            btnClear.Visible = visible;
+            label2.Visible = visible;
+            txtBoxFineId.Visible = visible;
+
+            btnAddFine.Visible = visible;
+            btnAddVehicle.Visible = visible;
+            btnAddDriver.Visible = visible;
+
+            btnUpdate.Visible = visible;
+            btnUpdateFine.Visible = visible;
+            btnUpdateVehicle.Visible = visible; ;
+
+            btnClear.Visible = visible;
+            btnClearFine.Visible = visible;
+            btnClearVehicle.Visible = visible;
+
+            btnDell.Visible = visible;
+            btnDeleteFine.Visible = visible;
+            btnDeleteVehicle.Visible = visible;
+
+            btnShowAllFines.Visible = visible;
+            btnShowAllVehicles.Visible = visible;
+
+        }
+
+        private void SetEditable(bool editable)
+        {
+
+            //Info page
+            txtBoxName.ReadOnly = !editable;
+            txtBoxMiddleName.ReadOnly = !editable;
+            txtBoxLastName.ReadOnly = !editable;
+            txtBoxId.ReadOnly = !editable;
+            txtBoxBirthDate.ReadOnly = !editable;
+            cbGender.Enabled = editable;
+            txtBoxCountry.ReadOnly = !editable;
+            txtBoxCity.ReadOnly = !editable;
+            txtBoxAddress.ReadOnly = !editable;
+            txtBoxLicenseId.ReadOnly = !editable;
+            cbPointsLeft.Enabled = editable;
+            cbCategories.Enabled = editable; 
+
+            //Fines page
+
+            cbType.Enabled = editable;
+            txtBoxDate.ReadOnly = !editable;
+            txtBoxPoliceman.ReadOnly = !editable;
+            cbPaid.Enabled = editable;
+            txtBoxPrice.ReadOnly = !editable;
+            txtBoxOffenderDLN.ReadOnly = !editable;
+            txtBoxFineId.ReadOnly = !editable;
+            txtBoxReason.ReadOnly = !editable;
+
+            //Cars page
+
+            txtBoxFrameNumber.ReadOnly = !editable;
+            txtBoxEngineNumber.ReadOnly = !editable;
+            txtBoxBrand.ReadOnly = !editable;
+            txtBoxModel.ReadOnly = !editable;
+            txtBoxType.ReadOnly = !editable;
+            txtBoxSeats.ReadOnly = !editable;
+            txtBoxWeight.ReadOnly = !editable;
+            txtBoxColor.ReadOnly = !editable;
+            txtBoxRegDate.ReadOnly = !editable;
+            txtBoxRegNumber.ReadOnly = !editable;
+            txtBoxPrice.ReadOnly = !editable;
+            txtBoxOwnerDLN.ReadOnly = !editable;
         }
 
         private void Login()
@@ -77,17 +160,17 @@ namespace KatDatabaseInfo
                 SetUserStatus(logForm.user.Role_);
                 SetStatusToAllControls(true);
                 ShowUserInfo(UserData.GetDriverByLicenseID(logForm.user.DrivingLicenseNumber));
-
                 loginToolStripMenuItem.Text = "Logout";
             }
         }
 
         private void ShowUserInfo(Driver driver)
         {
-
             if (UserStatus.CITIZEN.Equals(userStatus))
             {
                 showDriverInfo(driver);
+                ClearFinePage();
+                ClearVehiclePage();
                 SetEditable(false);
                 SetVisibilityToAdminButtons(false);
             }
@@ -105,15 +188,14 @@ namespace KatDatabaseInfo
                 return;
             }
 
-            //Info page
-
+            ClearCategories();
+            
             txtBoxName.Text = driver.FirstName;
             txtBoxMiddleName.Text = driver.MiddleName; ;
             txtBoxLastName.Text = driver.LastName;
 
             txtBoxId.Text = driver.IdNumber;
             txtBoxBirthDate.Text = driver.BirthDate;
-            //gender
             cbGender.SelectedIndex = driver.Gender;
 
             txtBoxCountry.Text = driver.Country;
@@ -122,150 +204,79 @@ namespace KatDatabaseInfo
 
             txtBoxLicenseId.Text = driver.DrivingLicenseNumber;
             cbPointsLeft.SelectedIndex = (int)driver.DrivingPointsLeft;
-
             GetDriversCategories(driver.DrivingCategories);
 
-            //Fines page
+            List<Fine> fineList = UserData.GetFineById(driver.DrivingLicenseNumber);
+            cbFineIds.DataSource = fineList;
+            cbFineIds.SelectedIndex = -1;
 
-            //type
-            cbType.Text = "";
-            txtBoxDate.Text = "";
-            txtBoxPoliceman.Text = "";
-            //paid
-            cbPaid.Text = "";
-            txtBoxOffenderDLN.Text = "";
-            txtBoxFineId.Text = "";
-            txtBoxReason.Text = "";
+            List<Vehicle> carsList = UserData.GetVehicleById(driver.DrivingLicenseNumber);
+            cbRegistryNumber.DataSource = carsList;
+            cbRegistryNumber.SelectedIndex = -1;
+           
+        }
 
-            //Cars page
-
-            txtBoxFrameNumber.Text = "";
-            txtBoxEngineNumber.Text = "";
-            txtBoxBrand.Text = "";
-            txtBoxModel.Text = "";
-            txtBoxType.Text = "";
-
-            txtBoxWeight.Text = "";
-            txtBoxColor.Text = "";
-            txtBoxRegDate.Text = "";
-            txtBoxRegNumber.Text = "";
-
-            txtBoxOwnerDLN.Text = "";
-
+        private void ClearCategories()
+        {
+            for (int i = 0; i < 11; i++)
+            {
+                cbCategories.SetItemChecked(i, false);
+            }
         }
 
         private void GetDriversCategories(string categories)
         {
             string[] categoriesList = categories.Split(',');
 
-            for (int i = 0; i < 11; i++)
+            for (int i = 0; i < categoriesList.Length; i++)
             {
-                cbCategories.SetItemChecked(i, false);
+                string category = categoriesList[i].Trim();
+                if ("".Equals(category))
+                {
+                    continue;
+                }
+                cbCategories.SetItemChecked(cbCategories.Items.IndexOf(category), true);
             }
-            for (int i = 0; i < categoriesList.Length - 1; i++)
-            {
-                cbCategories.SetItemChecked(cbCategories.Items.IndexOf(categoriesList[i]), true);
-            }
-            
-           
-        }
-
-        private void SetEditable(bool editable)
-        {
-
-            //Info page
-            txtBoxName.ReadOnly = !editable;
-            txtBoxMiddleName.ReadOnly = !editable;
-            txtBoxLastName.ReadOnly = !editable;
-
-            txtBoxId.ReadOnly = !editable;
-            txtBoxBirthDate.ReadOnly = !editable;
-
-            //gender
-            cbGender.Enabled = editable;
-
-
-            txtBoxCountry.ReadOnly = !editable;
-            txtBoxCity.ReadOnly = !editable;
-            txtBoxAddress.ReadOnly = !editable;
-
-            txtBoxLicenseId.ReadOnly = !editable;
-            cbPointsLeft.Enabled = editable;
-
-            cbCategories.Enabled = editable; //Chech on click doesn't work
-
-            //Fines page
-
-            //type
-            cbType.Enabled = editable;
-            txtBoxDate.ReadOnly = !editable;
-            txtBoxPoliceman.ReadOnly = !editable;
-            //paid
-            cbPaid.Enabled = editable;
-            txtBoxPrice.ReadOnly = !editable;
-            txtBoxOffenderDLN.ReadOnly = !editable;
-            txtBoxFineId.ReadOnly = !editable;
-            txtBoxReason.ReadOnly = !editable;
-
-            //Cars page
-
-            txtBoxFrameNumber.ReadOnly = !editable;
-            txtBoxEngineNumber.ReadOnly = !editable;
-            txtBoxBrand.ReadOnly = !editable;
-            txtBoxModel.ReadOnly = !editable;
-            txtBoxType.ReadOnly = !editable;
-
-            txtBoxSeats.ReadOnly = !editable;
-            txtBoxWeight.ReadOnly = !editable;
-            txtBoxColor.ReadOnly = !editable;
-            txtBoxRegDate.ReadOnly = !editable;
-            txtBoxRegNumber.ReadOnly = !editable;
-
-            txtBoxOwnerDLN.ReadOnly = !editable;
-
-        }
-
-        private void SetVisibilityToAdminButtons(bool visible)
-        {
-            lblSearchDriver.Visible = visible;
-            cbSearchDriver.Visible = visible;
-            btnAddFine.Visible = visible;
-            btnAddVehicle.Visible = visible;
-            btnAddDriver.Visible = visible;
-            lblOwnerDLN.Visible = visible;
-            txtBoxOwnerDLN.Visible = visible;
-            lblRole.Visible = visible;
-            cbRole.Visible = visible;
-            btnDell.Visible = visible;
-            btnUpdate.Visible = visible;
-            lblRole.Visible = visible;
-            cbRole.Visible = visible;
-            btnClear.Visible = visible;
-            lblPrice.Visible = visible;
-            txtBoxPrice.Visible = visible;
-            label2.Visible = visible;
-            txtBoxFineId.Visible = visible;
         }
 
         private void showAdminInfo(Driver driver)
         {
             SetEditable(true);
+            ShowAllFines();
+            ShowAllVehicles();
             ClearAllControls();
+        }
+
+        private void ShowAllFines()
+        {
+            List<Fine> fineList = UserData.GetAllFines();
+            cbFineIds.DataSource = fineList;
+        }
+
+        private void ShowAllVehicles()
+        {
+            List<Vehicle> carsList = UserData.GetAllVehicles();
+            cbRegistryNumber.DataSource = carsList;
         }
 
         private void ClearAllControls()
         {
-            //Info page
+            ClearDriverInfoPage();
+            ClearFinePage();
+            ClearVehiclePage();
+            ClearCategories();
+        }
 
+        private void ClearDriverInfoPage()
+        {
+            cbSearchDriver.SelectedIndex = -1;
             txtBoxName.Text = "";
             txtBoxMiddleName.Text = ""; ;
             txtBoxLastName.Text = "";
 
             txtBoxId.Text = "";
             txtBoxBirthDate.Text = "";
-            //gender
             cbGender.SelectedIndex = -1;
-
 
             txtBoxCountry.Text = "";
             txtBoxCity.Text = "";
@@ -273,41 +284,35 @@ namespace KatDatabaseInfo
 
             txtBoxLicenseId.Text = "";
             cbPointsLeft.SelectedIndex = -1;
-
-            for (int i = 0; i < 11; i++)
-            {
-                cbCategories.SetItemChecked(i, false);
-            }
-
             cbRole.SelectedIndex = -1;
+        }
 
-            //Fines page
-
-            //type
+        private void ClearFinePage()
+        {
             cbFineIds.SelectedIndex = -1;
             cbType.SelectedIndex = -1;
             txtBoxDate.Text = "";
             txtBoxPoliceman.Text = "";
-            //paid
             cbPaid.SelectedIndex = -1;
             txtBoxOffenderDLN.Text = "";
             txtBoxFineId.Text = "";
             txtBoxReason.Text = "";
+            txtBoxPrice.Text = "";
+        }
 
-            //Cars page
-
+        private void ClearVehiclePage()
+        {
             cbRegistryNumber.SelectedIndex = -1;
             txtBoxFrameNumber.Text = "";
             txtBoxEngineNumber.Text = "";
             txtBoxBrand.Text = "";
             txtBoxModel.Text = "";
             txtBoxType.Text = "";
-
             txtBoxWeight.Text = "";
             txtBoxColor.Text = "";
             txtBoxRegDate.Text = "";
             txtBoxRegNumber.Text = "";
-
+            txtBoxSeats.Text = "";
             txtBoxOwnerDLN.Text = "";
         }
 
@@ -340,7 +345,7 @@ namespace KatDatabaseInfo
 
         }
 
-        // Diver Data Window
+        // Diver Data Window Buttons
 
         private void cbSearchDriver_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -360,18 +365,17 @@ namespace KatDatabaseInfo
             }
             cbRole.SelectedIndex = (int)role - 1;
             ChangeDriverToUpdateble();
-            //MessageBox.Show(cbCategories.SelectedItems[0].ToString());
         }
 
         private void ChangeDriverToUpdateble()
         {
-            SetEditable(false);
-            cbPointsLeft.Enabled = true;
-            cbRole.Enabled = true;
-            cbCategories.Enabled = true;
-            txtBoxAddress.ReadOnly = false;
-            txtBoxCity.ReadOnly = false;
-            txtBoxCountry.ReadOnly = false;
+                SetEditable(false);
+                cbPointsLeft.Enabled = true;
+                cbRole.Enabled = true;
+                cbCategories.Enabled = true;
+                txtBoxAddress.ReadOnly = false;
+                txtBoxCity.ReadOnly = false;
+                txtBoxCountry.ReadOnly = false;
         }
 
         private void btnAddDriver_Click(object sender, EventArgs e)
@@ -411,27 +415,53 @@ namespace KatDatabaseInfo
             driver.DrivingLicenseNumber = txtBoxLicenseId.Text;
             driver.DrivingPointsLeft = Convert.ToInt16(cbPointsLeft.SelectedIndex);
             driver.DrivingCategories = GetCategories();
+
             return driver;
         }
 
         private string GetCategories()
         {
             string categories = "";
-            ListBox.SelectedObjectCollection lb = cbCategories.SelectedItems;
 
             for (int i = 0; i < 11; i++)
             {
                 if (cbCategories.GetItemChecked(i))
                 {
-                    categories += cbCategories.GetItemText(i);
+                    categories += GetCategorieByNumber(i) + ", ";
                 }
             }
-
-            //for (int i = 0; i < lb.Count; i++)
-            //{
-            //    categories += lb[i];
-            //}
             return categories;
+        }
+
+        private string GetCategorieByNumber(int i)
+        {
+            switch (i)
+            {
+                case 0:
+                    return "A";
+                case 1:
+                    return "B";
+                case 2:
+                    return "C";
+                case 3:
+                    return "D";
+                case 4:
+                    return "BE";
+                case 5:
+                    return "CE";
+                case 6:
+                    return "DE";
+                case 7:
+                    return "Ttb";
+                case 8:
+                    return "Ttm";
+                case 9:
+                    return "Tkt";
+                case 10:
+                    return "M";
+                default:
+                    return "";
+            }
         }
 
         private User CreateUser()
@@ -531,9 +561,17 @@ namespace KatDatabaseInfo
 
         private void ChangeFineToUpdateble()
         {
-            SetEditable(false);
-            cbPaid.Enabled = true;
-            txtBoxPrice.ReadOnly = false;
+            if (UserStatus.ADMIN.Equals(userStatus))
+            {
+                SetEditable(false);
+                cbPaid.Enabled = true;
+                txtBoxPrice.ReadOnly = false;
+            }
+        }
+
+        private void btnShowAllFines_Click(object sender, EventArgs e)
+        {
+            ShowAllFines();
         }
 
         private void btnAddFine_Click(object sender, EventArgs e)
@@ -658,12 +696,21 @@ namespace KatDatabaseInfo
 
             }
         }
+
         private void ChangeVehicleToUpdatable()
         {
-            SetEditable(false);
-            txtBoxColor.ReadOnly = false;
-            txtBoxRegNumber.ReadOnly = false;
-            txtBoxOwnerDLN.ReadOnly = false;
+            if (UserStatus.ADMIN.Equals(userStatus))
+            {
+                SetEditable(false);
+                txtBoxColor.ReadOnly = false;
+                txtBoxRegNumber.ReadOnly = false;
+                txtBoxOwnerDLN.ReadOnly = false;
+            }
+        }
+
+        private void btnShowAllVehicles_Click(object sender, EventArgs e)
+        {
+            ShowAllVehicles();
         }
 
         private void btnClearVehicle_Click(object sender, EventArgs e)
@@ -733,6 +780,7 @@ namespace KatDatabaseInfo
                 MessageBox.Show("Failed deleting vehicle." + exc.Message);
             }
         }
+
     }
 }
 

@@ -96,6 +96,7 @@ namespace KatDatabaseInfo
             this.finesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblFineId = new System.Windows.Forms.Label();
             this.tabPageV = new System.Windows.Forms.TabPage();
+            this.btnShowAllVehicles = new System.Windows.Forms.Button();
             this.gbCarData = new System.Windows.Forms.GroupBox();
             this.btnClearVehicle = new System.Windows.Forms.Button();
             this.btnUpdateVehicle = new System.Windows.Forms.Button();
@@ -131,6 +132,7 @@ namespace KatDatabaseInfo
             this.driversTableAdapter = new DatabaseDataSetTableAdapters.DriversTableAdapter();
             this.finesTableAdapter = new DatabaseDataSetTableAdapters.FinesTableAdapter();
             this.vehicleTableAdapter = new DatabaseDataSetTableAdapters.VehicleTableAdapter();
+            this.btnShowAllFines = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabPageDI.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.driversBindingSource)).BeginInit();
@@ -236,9 +238,10 @@ namespace KatDatabaseInfo
             // 
             // cbSearchDriver
             // 
+            this.cbSearchDriver.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cbSearchDriver.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbSearchDriver.DataSource = this.driversBindingSource;
             this.cbSearchDriver.DisplayMember = "DrivingLicenseNumber";
-            this.cbSearchDriver.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSearchDriver.FormattingEnabled = true;
             this.cbSearchDriver.Location = new System.Drawing.Point(701, 6);
             this.cbSearchDriver.Name = "cbSearchDriver";
@@ -616,6 +619,7 @@ namespace KatDatabaseInfo
             // 
             // tabPageF
             // 
+            this.tabPageF.Controls.Add(this.btnShowAllFines);
             this.tabPageF.Controls.Add(this.gbFine);
             this.tabPageF.Controls.Add(this.cbFineIds);
             this.tabPageF.Controls.Add(this.lblFineId);
@@ -703,7 +707,6 @@ namespace KatDatabaseInfo
             this.txtBoxPrice.ReadOnly = true;
             this.txtBoxPrice.Size = new System.Drawing.Size(237, 20);
             this.txtBoxPrice.TabIndex = 21;
-            this.txtBoxPrice.Visible = false;
             // 
             // lblPrice
             // 
@@ -714,7 +717,6 @@ namespace KatDatabaseInfo
             this.lblPrice.Size = new System.Drawing.Size(59, 16);
             this.lblPrice.TabIndex = 20;
             this.lblPrice.Text = "Amount";
-            this.lblPrice.Visible = false;
             // 
             // txtBoxFineId
             // 
@@ -857,9 +859,10 @@ namespace KatDatabaseInfo
             // 
             // cbFineIds
             // 
+            this.cbFineIds.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cbFineIds.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbFineIds.DataSource = this.finesBindingSource;
             this.cbFineIds.DisplayMember = "SerialNumber";
-            this.cbFineIds.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFineIds.FormattingEnabled = true;
             this.cbFineIds.Location = new System.Drawing.Point(109, 22);
             this.cbFineIds.Name = "cbFineIds";
@@ -885,6 +888,7 @@ namespace KatDatabaseInfo
             // 
             // tabPageV
             // 
+            this.tabPageV.Controls.Add(this.btnShowAllVehicles);
             this.tabPageV.Controls.Add(this.gbCarData);
             this.tabPageV.Controls.Add(this.cbRegistryNumber);
             this.tabPageV.Controls.Add(this.lblRegNumber);
@@ -894,6 +898,16 @@ namespace KatDatabaseInfo
             this.tabPageV.TabIndex = 2;
             this.tabPageV.Text = "Vehicles";
             this.tabPageV.UseVisualStyleBackColor = true;
+            // 
+            // btnShowAllVehicles
+            // 
+            this.btnShowAllVehicles.Location = new System.Drawing.Point(337, 16);
+            this.btnShowAllVehicles.Name = "btnShowAllVehicles";
+            this.btnShowAllVehicles.Size = new System.Drawing.Size(107, 24);
+            this.btnShowAllVehicles.TabIndex = 3;
+            this.btnShowAllVehicles.Text = "Show All";
+            this.btnShowAllVehicles.UseVisualStyleBackColor = true;
+            this.btnShowAllVehicles.Click += new System.EventHandler(this.btnShowAllVehicles_Click);
             // 
             // gbCarData
             // 
@@ -1168,9 +1182,10 @@ namespace KatDatabaseInfo
             // 
             // cbRegistryNumber
             // 
+            this.cbRegistryNumber.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cbRegistryNumber.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbRegistryNumber.DataSource = this.vehicleBindingSource;
             this.cbRegistryNumber.DisplayMember = "RegistryNumber";
-            this.cbRegistryNumber.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbRegistryNumber.FormattingEnabled = true;
             this.cbRegistryNumber.Location = new System.Drawing.Point(179, 19);
             this.cbRegistryNumber.Name = "cbRegistryNumber";
@@ -1222,6 +1237,16 @@ namespace KatDatabaseInfo
             // vehicleTableAdapter
             // 
             this.vehicleTableAdapter.ClearBeforeFill = true;
+            // 
+            // btnShowAllFines
+            // 
+            this.btnShowAllFines.Location = new System.Drawing.Point(277, 19);
+            this.btnShowAllFines.Name = "btnShowAllFines";
+            this.btnShowAllFines.Size = new System.Drawing.Size(107, 24);
+            this.btnShowAllFines.TabIndex = 4;
+            this.btnShowAllFines.Text = "Show All";
+            this.btnShowAllFines.UseVisualStyleBackColor = true;
+            this.btnShowAllFines.Click += new System.EventHandler(this.btnShowAllFines_Click);
             // 
             // MainForm
             // 
@@ -1365,6 +1390,8 @@ namespace KatDatabaseInfo
         private System.Windows.Forms.Button btnUpdateVehicle;
         private System.Windows.Forms.Button btnDeleteVehicle;
         private System.Windows.Forms.Button btnAddVehicle;
+        private System.Windows.Forms.Button btnShowAllVehicles;
+        private System.Windows.Forms.Button btnShowAllFines;
 
     }
 }

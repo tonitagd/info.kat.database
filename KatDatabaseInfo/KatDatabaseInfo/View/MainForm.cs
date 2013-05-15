@@ -11,12 +11,12 @@ using KatDatabaseInfo.View;
 using KatDatabaseInfo.Data;
 using KatDatabaseInfo.Logic;
 
- 
+
 ////TODO
 // vehicle seats stoi sled iztrivane
 // owner license id ne se popylva 
 // fine amount stoi sled iztrivane
- 
+
 namespace KatDatabaseInfo
 {
     public partial class MainForm : Form
@@ -124,7 +124,7 @@ namespace KatDatabaseInfo
             cbPointsLeft.SelectedIndex = (int)driver.DrivingPointsLeft;
 
             GetDriversCategories(driver.DrivingCategories);
-         
+
             //Fines page
 
             //type
@@ -158,10 +158,16 @@ namespace KatDatabaseInfo
         {
             string[] categoriesList = categories.Split(',');
 
+            for (int i = 0; i < 11; i++)
+            {
+                cbCategories.SetItemChecked(i, false);
+            }
             for (int i = 0; i < categoriesList.Length - 1; i++)
             {
                 cbCategories.SetItemChecked(cbCategories.Items.IndexOf(categoriesList[i]), true);
             }
+            
+           
         }
 
         private void SetEditable(bool editable)
@@ -272,12 +278,13 @@ namespace KatDatabaseInfo
             {
                 cbCategories.SetItemChecked(i, false);
             }
-            
+
             cbRole.SelectedIndex = -1;
 
             //Fines page
 
             //type
+            cbFineIds.SelectedIndex = -1;
             cbType.SelectedIndex = -1;
             txtBoxDate.Text = "";
             txtBoxPoliceman.Text = "";
@@ -289,6 +296,7 @@ namespace KatDatabaseInfo
 
             //Cars page
 
+            cbRegistryNumber.SelectedIndex = -1;
             txtBoxFrameNumber.Text = "";
             txtBoxEngineNumber.Text = "";
             txtBoxBrand.Text = "";
@@ -350,8 +358,9 @@ namespace KatDatabaseInfo
                 cbRole.SelectedIndex = 2;
                 return;
             }
-            cbRole.SelectedIndex = (int)role-1;
+            cbRole.SelectedIndex = (int)role - 1;
             ChangeDriverToUpdateble();
+            //MessageBox.Show(cbCategories.SelectedItems[0].ToString());
         }
 
         private void ChangeDriverToUpdateble()
@@ -410,10 +419,18 @@ namespace KatDatabaseInfo
             string categories = "";
             ListBox.SelectedObjectCollection lb = cbCategories.SelectedItems;
 
-            for (int i = 0; i < lb.Count; i++)
+            for (int i = 0; i < 11; i++)
             {
-                categories += lb[i];
+                if (cbCategories.GetItemChecked(i))
+                {
+                    categories += cbCategories.GetItemText(i);
+                }
             }
+
+            //for (int i = 0; i < lb.Count; i++)
+            //{
+            //    categories += lb[i];
+            //}
             return categories;
         }
 
@@ -454,7 +471,7 @@ namespace KatDatabaseInfo
             }
             catch (Exception exc)
             {
-              MessageBox.Show("Failed deleting driver." + exc.Message);
+                MessageBox.Show("Failed deleting driver." + exc.Message);
             }
         }
 
@@ -491,7 +508,7 @@ namespace KatDatabaseInfo
             cbType.SelectedIndex = GetFineType(fine.Type);
             txtBoxDate.Text = fine.Date;
             txtBoxPoliceman.Text = fine.Policeman;
-            
+
             cbPaid.SelectedIndex = fine.Paid;
             txtBoxOffenderDLN.Text = fine.DrivingLicenseNumber;
             txtBoxPrice.Text = fine.Amount.ToString();
@@ -538,7 +555,7 @@ namespace KatDatabaseInfo
         {
             Fine fine = new Fine();
             fine.SerialNumber = txtBoxFineId.Text;
-            string type = GetFineTypeName(cbType.SelectedIndex);  
+            string type = GetFineTypeName(cbType.SelectedIndex);
             fine.Type = type;
             fine.Date = txtBoxDate.Text;
             fine.Policeman = txtBoxPoliceman.Text;
@@ -596,7 +613,7 @@ namespace KatDatabaseInfo
         }
 
         // Vehicles Data Window
-      
+
         private void cbRegistryNumber_SelectedIndexChanged(object sender, EventArgs e)
         {
             object value = cbRegistryNumber.SelectedValue;
@@ -635,10 +652,10 @@ namespace KatDatabaseInfo
                     return "car";
                 case "1":
                     return "van";
-  
+
                 default:
                     return "truck";
-                    
+
             }
         }
         private void ChangeVehicleToUpdatable()
@@ -661,7 +678,7 @@ namespace KatDatabaseInfo
                 Vehicle vehicle = CreateVehicle();
                 UserData.AddNewVehicle(vehicle);
                 ReloadMainForm();
-                MessageBox.Show("Adding vehicle with registry number:'" + vehicle.RegistryNumber + "' completed successfully."); 
+                MessageBox.Show("Adding vehicle with registry number:'" + vehicle.RegistryNumber + "' completed successfully.");
             }
             catch (Exception exc)
             {

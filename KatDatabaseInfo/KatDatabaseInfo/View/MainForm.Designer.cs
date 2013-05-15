@@ -1232,7 +1232,7 @@ namespace KatDatabaseInfo
             this.Controls.Add(this.menuStrip1);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MainForm";
+            this.Text = "KAT Database System";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.tabControl.ResumeLayout(false);
             this.tabPageDI.ResumeLayout(false);

@@ -37,6 +37,11 @@ namespace KatDatabaseInfo.View
                 MessageBox.Show(loginValidation.errText);
             } 
         }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
+        }
        
     }
 }

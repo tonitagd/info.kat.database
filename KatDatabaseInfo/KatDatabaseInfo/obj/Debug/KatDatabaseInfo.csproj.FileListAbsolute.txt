@@ -58,3 +58,15 @@ C:\Users\Tonita\Desktop\info.kat.database\KatDatabaseInfo\KatDatabaseInfo\obj\De
 C:\Users\Tonita\Desktop\info.kat.database\KatDatabaseInfo\KatDatabaseInfo\obj\Debug\KatDatabaseInfo.View.LoginForm.resources
 C:\Users\Tonita\Desktop\info.kat.database\KatDatabaseInfo\KatDatabaseInfo\obj\Debug\KatDatabaseInfo.MainForm.resources
 C:\Users\Tonita\Desktop\info.kat.database\KatDatabaseInfo\KatDatabaseInfo\obj\Debug\KatDatabaseInfo.csproj.GenerateResource.Cache
+C:\Users\Moshekov\Desktop\info.kat.database\KatDatabaseInfo\KatDatabaseInfo\bin\Debug\KatDatabaseInfo.exe.config
+C:\Users\Moshekov\Desktop\info.kat.database\KatDatabaseInfo\KatDatabaseInfo\obj\Debug\KatDatabaseInfo.exe
+C:\Users\Moshekov\Desktop\info.kat.database\KatDatabaseInfo\KatDatabaseInfo\obj\Debug\KatDatabaseInfo.pdb
+C:\Users\Moshekov\Desktop\info.kat.database\KatDatabaseInfo\KatDatabaseInfo\bin\Debug\Database.mdf
+C:\Users\Moshekov\Desktop\info.kat.database\KatDatabaseInfo\KatDatabaseInfo\bin\Debug\Database_log.ldf
+C:\Users\Moshekov\Desktop\info.kat.database\KatDatabaseInfo\KatDatabaseInfo\bin\Debug\KatDatabaseInfo.exe
+C:\Users\Moshekov\Desktop\info.kat.database\KatDatabaseInfo\KatDatabaseInfo\bin\Debug\KatDatabaseInfo.pdb
+C:\Users\Moshekov\Desktop\info.kat.database\KatDatabaseInfo\KatDatabaseInfo\obj\Debug\KatDatabaseInfo.csprojResolveAssemblyReference.cache
+C:\Users\Moshekov\Desktop\info.kat.database\KatDatabaseInfo\KatDatabaseInfo\obj\Debug\KatDatabaseInfo.Properties.Resources.resources
+C:\Users\Moshekov\Desktop\info.kat.database\KatDatabaseInfo\KatDatabaseInfo\obj\Debug\KatDatabaseInfo.View.LoginForm.resources
+C:\Users\Moshekov\Desktop\info.kat.database\KatDatabaseInfo\KatDatabaseInfo\obj\Debug\KatDatabaseInfo.MainForm.resources
+C:\Users\Moshekov\Desktop\info.kat.database\KatDatabaseInfo\KatDatabaseInfo\obj\Debug\KatDatabaseInfo.csproj.GenerateResource.Cache

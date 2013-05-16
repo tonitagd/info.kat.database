@@ -156,7 +156,7 @@ namespace KatDatabaseInfo.Data
 
         public static void addDriver(Driver driver)
         {
-            driverDataContext.AddNewDriver(driver.FirstName, driver.MiddleName, driver.LastName, driver.IdNumber, driver.BirthDate, driver.Gender, driver.Address, driver.Country, driver.City, driver.DrivingLicenseNumber, driver.DrivingCategories, driver.DrivingPointsLeft);
+            driverDataContext.AddNewDriver(driver.FirstName, driver.MiddleName, driver.LastName, driver.IdNumber, driver.BirthDate, driver.Gender, driver.Address, driver.Country, driver.City, driver.DrivingLicenseNumber, driver.DrivingCategories, driver.DrivingPointsLeft, driver.PictureLocation);
             driverDataContext.SubmitChanges();
         }
 

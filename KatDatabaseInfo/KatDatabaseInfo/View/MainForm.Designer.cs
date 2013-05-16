@@ -42,6 +42,7 @@ namespace KatDatabaseInfo
             this.lblSearchDriver = new System.Windows.Forms.Label();
             this.btnAddDriver = new System.Windows.Forms.Button();
             this.gbImage = new System.Windows.Forms.GroupBox();
+            this.btnUpload = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gbLicense = new System.Windows.Forms.GroupBox();
             this.cbRole = new System.Windows.Forms.ComboBox();
@@ -71,6 +72,7 @@ namespace KatDatabaseInfo
             this.txtBoxLastName = new System.Windows.Forms.TextBox();
             this.lblIdentityNumber = new System.Windows.Forms.Label();
             this.tabPageF = new System.Windows.Forms.TabPage();
+            this.btnShowAllFines = new System.Windows.Forms.Button();
             this.gbFine = new System.Windows.Forms.GroupBox();
             this.btnClearFine = new System.Windows.Forms.Button();
             this.btnUpdateFine = new System.Windows.Forms.Button();
@@ -132,7 +134,7 @@ namespace KatDatabaseInfo
             this.driversTableAdapter = new DatabaseDataSetTableAdapters.DriversTableAdapter();
             this.finesTableAdapter = new DatabaseDataSetTableAdapters.FinesTableAdapter();
             this.vehicleTableAdapter = new DatabaseDataSetTableAdapters.VehicleTableAdapter();
-            this.btnShowAllFines = new System.Windows.Forms.Button();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.tabControl.SuspendLayout();
             this.tabPageDI.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.driversBindingSource)).BeginInit();
@@ -282,6 +284,7 @@ namespace KatDatabaseInfo
             // 
             // gbImage
             // 
+            this.gbImage.Controls.Add(this.btnUpload);
             this.gbImage.Controls.Add(this.pictureBox1);
             this.gbImage.Location = new System.Drawing.Point(6, 17);
             this.gbImage.Name = "gbImage";
@@ -290,11 +293,21 @@ namespace KatDatabaseInfo
             this.gbImage.TabStop = false;
             this.gbImage.Text = "Image";
             // 
+            // btnUpload
+            // 
+            this.btnUpload.Location = new System.Drawing.Point(101, 279);
+            this.btnUpload.Name = "btnUpload";
+            this.btnUpload.Size = new System.Drawing.Size(106, 23);
+            this.btnUpload.TabIndex = 1;
+            this.btnUpload.Text = "Upload Picture";
+            this.btnUpload.UseVisualStyleBackColor = true;
+            this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(18, 19);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(248, 281);
+            this.pictureBox1.Size = new System.Drawing.Size(259, 259);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -630,6 +643,16 @@ namespace KatDatabaseInfo
             this.tabPageF.TabIndex = 1;
             this.tabPageF.Text = "Fines";
             this.tabPageF.UseVisualStyleBackColor = true;
+            // 
+            // btnShowAllFines
+            // 
+            this.btnShowAllFines.Location = new System.Drawing.Point(277, 19);
+            this.btnShowAllFines.Name = "btnShowAllFines";
+            this.btnShowAllFines.Size = new System.Drawing.Size(107, 24);
+            this.btnShowAllFines.TabIndex = 4;
+            this.btnShowAllFines.Text = "Show All";
+            this.btnShowAllFines.UseVisualStyleBackColor = true;
+            this.btnShowAllFines.Click += new System.EventHandler(this.btnShowAllFines_Click);
             // 
             // gbFine
             // 
@@ -1238,15 +1261,9 @@ namespace KatDatabaseInfo
             // 
             this.vehicleTableAdapter.ClearBeforeFill = true;
             // 
-            // btnShowAllFines
+            // openFileDialog
             // 
-            this.btnShowAllFines.Location = new System.Drawing.Point(277, 19);
-            this.btnShowAllFines.Name = "btnShowAllFines";
-            this.btnShowAllFines.Size = new System.Drawing.Size(107, 24);
-            this.btnShowAllFines.TabIndex = 4;
-            this.btnShowAllFines.Text = "Show All";
-            this.btnShowAllFines.UseVisualStyleBackColor = true;
-            this.btnShowAllFines.Click += new System.EventHandler(this.btnShowAllFines_Click);
+            this.openFileDialog.FileName = "openFileDialog";
             // 
             // MainForm
             // 
@@ -1392,6 +1409,8 @@ namespace KatDatabaseInfo
         private System.Windows.Forms.Button btnAddVehicle;
         private System.Windows.Forms.Button btnShowAllVehicles;
         private System.Windows.Forms.Button btnShowAllFines;
+        private System.Windows.Forms.Button btnUpload;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
 
     }
 }

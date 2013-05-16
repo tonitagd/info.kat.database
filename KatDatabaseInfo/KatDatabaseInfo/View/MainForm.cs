@@ -12,13 +12,11 @@ using KatDatabaseInfo.Data;
 using KatDatabaseInfo.Logic;
 
 
-////TODO
-// fine amount stoi sled iztrivane
-
 namespace KatDatabaseInfo
 {
     public partial class MainForm : Form
     {
+        private string pictureLocation = "";
         public UserStatus userStatus { get; private set; }
 
         public MainForm()
@@ -33,6 +31,7 @@ namespace KatDatabaseInfo
         private void MainForm_Load(object sender, EventArgs e)
         {
             ReloadMainForm();
+            ClearAllControls();
         }
 
         private void ReloadMainForm()
@@ -104,7 +103,7 @@ namespace KatDatabaseInfo
 
             btnShowAllFines.Visible = visible;
             btnShowAllVehicles.Visible = visible;
-
+            btnUpload.Visible = visible;
         }
 
         private void SetEditable(bool editable)
@@ -251,12 +250,14 @@ namespace KatDatabaseInfo
         {
             List<Fine> fineList = UserData.GetAllFines();
             cbFineIds.DataSource = fineList;
+            ClearAllControls();
         }
 
         private void ShowAllVehicles()
         {
             List<Vehicle> carsList = UserData.GetAllVehicles();
             cbRegistryNumber.DataSource = carsList;
+            ClearAllControls();
         }
 
         private void ClearAllControls()
@@ -415,6 +416,7 @@ namespace KatDatabaseInfo
             driver.DrivingLicenseNumber = txtBoxLicenseId.Text;
             driver.DrivingPointsLeft = Convert.ToInt16(cbPointsLeft.SelectedIndex);
             driver.DrivingCategories = GetCategories();
+            driver.PictureLocation = pictureLocation;
 
             return driver;
         }
@@ -756,8 +758,8 @@ namespace KatDatabaseInfo
             {
                 Vehicle vehicle = CreateVehicle();
                 UserData.UpdateVehicle(vehicle.FrameNumber, vehicle.RegistryNumber, vehicle.Color, vehicle.DrivingLicenseNumber);
+                ReloadMainForm(); 
                 MessageBox.Show("Update successful.");
-                ReloadMainForm();
             }
             catch (Exception exc)
             {
@@ -781,6 +783,24 @@ namespace KatDatabaseInfo
             }
         }
 
+        private void btnUpload_Click(object sender, EventArgs e)
+        {
+            this.pictureLocation = LoadPicture();
+        }
+
+        private string LoadPicture()
+        {
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string[] parsedLocation = openFileDialog.FileName.Split('.');
+                string availableFormats = "jpeg jpg bmp png";
+                string picFormat = parsedLocation[parsedLocation.Length - 1];
+                if(!availableFormats.Contains(picFormat)){
+                    MessageBox.Show("Not supportable format: '"+picFormat+"'\n File must be: " + availableFormats);
+                }
+            }
+            return "";
+        }
     }
 }
 

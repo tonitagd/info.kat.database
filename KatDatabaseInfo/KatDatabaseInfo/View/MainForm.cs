@@ -17,6 +17,9 @@ namespace KatDatabaseInfo
     public partial class MainForm : Form
     {
         private string pictureLocation = "";
+        private static string clearPage = "Clear Page";
+        private static string saveChanges = "Save Changes";
+
         public UserStatus userStatus { get; private set; }
 
         public MainForm()
@@ -67,6 +70,8 @@ namespace KatDatabaseInfo
             cbFineIds.Enabled = status;
             lblRegNumber.Enabled = status;
             cbRegistryNumber.Enabled = status;
+            gbImage.Enabled = status;
+
         }
 
         private void SetVisibilityToAdminButtons(bool visible)
@@ -121,7 +126,7 @@ namespace KatDatabaseInfo
             txtBoxAddress.ReadOnly = !editable;
             txtBoxLicenseId.ReadOnly = !editable;
             cbPointsLeft.Enabled = editable;
-            cbCategories.Enabled = editable; 
+            cbCategories.Enabled = editable;
 
             //Fines page
 
@@ -188,7 +193,7 @@ namespace KatDatabaseInfo
             }
 
             ClearCategories();
-            
+
             txtBoxName.Text = driver.FirstName;
             txtBoxMiddleName.Text = driver.MiddleName; ;
             txtBoxLastName.Text = driver.LastName;
@@ -212,7 +217,8 @@ namespace KatDatabaseInfo
             List<Vehicle> carsList = UserData.GetVehicleById(driver.DrivingLicenseNumber);
             cbRegistryNumber.DataSource = carsList;
             cbRegistryNumber.SelectedIndex = -1;
-           
+
+            LoadPicture(driver.PictureLocation);
         }
 
         private void ClearCategories()
@@ -240,10 +246,10 @@ namespace KatDatabaseInfo
 
         private void showAdminInfo(Driver driver)
         {
-            SetEditable(true);
             ShowAllFines();
             ShowAllVehicles();
             ClearAllControls();
+            SetEditable(true);
         }
 
         private void ShowAllFines()
@@ -286,6 +292,7 @@ namespace KatDatabaseInfo
             txtBoxLicenseId.Text = "";
             cbPointsLeft.SelectedIndex = -1;
             cbRole.SelectedIndex = -1;
+            pictureBox1.Image = null;
         }
 
         private void ClearFinePage()
@@ -366,17 +373,19 @@ namespace KatDatabaseInfo
             }
             cbRole.SelectedIndex = (int)role - 1;
             ChangeDriverToUpdateble();
+            ClearFinePage();
+            ClearVehiclePage();
         }
 
         private void ChangeDriverToUpdateble()
         {
-                SetEditable(false);
-                cbPointsLeft.Enabled = true;
-                cbRole.Enabled = true;
-                cbCategories.Enabled = true;
-                txtBoxAddress.ReadOnly = false;
-                txtBoxCity.ReadOnly = false;
-                txtBoxCountry.ReadOnly = false;
+            SetEditable(false);
+            cbPointsLeft.Enabled = true;
+            cbRole.Enabled = true;
+            cbCategories.Enabled = true;
+            txtBoxAddress.ReadOnly = false;
+            txtBoxCity.ReadOnly = false;
+            txtBoxCountry.ReadOnly = false;
         }
 
         private void btnAddDriver_Click(object sender, EventArgs e)
@@ -511,14 +520,10 @@ namespace KatDatabaseInfo
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            ClearButton();
-        }
-
-        private void ClearButton()
-        {
-            ClearAllControls();
+            ClearDriverInfoPage();
             SetEditable(true);
         }
+
 
         // --------Fine Data Window--------------
 
@@ -649,7 +654,8 @@ namespace KatDatabaseInfo
 
         private void btnClearFine_Click(object sender, EventArgs e)
         {
-            ClearButton();
+            ClearFinePage();
+            SetEditable(true);
         }
 
         // Vehicles Data Window
@@ -717,7 +723,8 @@ namespace KatDatabaseInfo
 
         private void btnClearVehicle_Click(object sender, EventArgs e)
         {
-            ClearButton();
+            ClearVehiclePage();
+            SetEditable(true);
         }
 
         private void btnAddVehicle_Click(object sender, EventArgs e)
@@ -758,7 +765,7 @@ namespace KatDatabaseInfo
             {
                 Vehicle vehicle = CreateVehicle();
                 UserData.UpdateVehicle(vehicle.FrameNumber, vehicle.RegistryNumber, vehicle.Color, vehicle.DrivingLicenseNumber);
-                ReloadMainForm(); 
+                ReloadMainForm();
                 MessageBox.Show("Update successful.");
             }
             catch (Exception exc)
@@ -785,21 +792,109 @@ namespace KatDatabaseInfo
 
         private void btnUpload_Click(object sender, EventArgs e)
         {
-            this.pictureLocation = LoadPicture();
+            this.pictureLocation = GetPictureLocation();
+            LoadPicture(pictureLocation);
         }
 
-        private string LoadPicture()
+        private void LoadPicture(string location)
+        {
+            try
+            {
+                pictureBox1.Load(location);
+                pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Failed loading picture '" + location +"'");
+            }
+        }
+
+        private string GetPictureLocation()
         {
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                string[] parsedLocation = openFileDialog.FileName.Split('.');
+                string location = openFileDialog.FileName;
+                string[] parsedLocation = location.Split('.');
                 string availableFormats = "jpeg jpg bmp png";
                 string picFormat = parsedLocation[parsedLocation.Length - 1];
-                if(!availableFormats.Contains(picFormat)){
-                    MessageBox.Show("Not supportable format: '"+picFormat+"'\n File must be: " + availableFormats);
+                if (!availableFormats.Contains(picFormat))
+                {
+                    MessageBox.Show("Not supportable format: '" + picFormat + "'\n File must be: " + availableFormats);
                 }
+                return location;
             }
-            return "";
+            return null;
+        }
+
+        private void tabControl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblTitle.Text = tabControl.SelectedTab.Text;
+        }
+
+        //Driver info page buttons tool tips
+
+        private void btnClear_MouseHover(object sender, EventArgs e)
+        {
+            ttClearDriver.Show(clearPage, btnClear);
+        }
+
+        private void btnAddDriver_MouseHover(object sender, EventArgs e)
+        {
+            ttAddDriver.Show("Add Driver", btnAddDriver);
+        }
+
+        private void btnDell_MouseHover(object sender, EventArgs e)
+        {
+            ttDeleteDriver.Show("Delete Driver", btnDell);
+        }
+
+        private void btnUpdate_MouseHover(object sender, EventArgs e)
+        {
+            ttSaveDriver.Show(saveChanges, btnUpdate);
+        }
+
+        //Fines page buttons tool tips
+
+        private void btnClearFine_MouseHover(object sender, EventArgs e)
+        {
+            ttClearFine.Show(clearPage, btnClearFine);
+        }
+
+        private void btnAddFine_MouseHover(object sender, EventArgs e)
+        {
+            ttAddFine.Show("Add Fine", btnAddFine);
+        }
+
+        private void btnDeleteFine_MouseHover(object sender, EventArgs e)
+        {
+            ttDeleteFine.Show("Delete Fine", btnDeleteFine);
+        }
+
+        private void btnUpdateFine_MouseHover(object sender, EventArgs e)
+        {
+            ttSaveFine.Show(saveChanges, btnUpdateFine);
+        }
+
+        //Vehicle page buttons tool tips
+
+        private void btnClearVehicle_MouseHover(object sender, EventArgs e)
+        {
+            ttClearVehicle.Show(clearPage, btnClearVehicle);
+        }
+
+        private void btnAddVehicle_MouseHover(object sender, EventArgs e)
+        {
+            ttAddVehicle.Show("Add Vehicle", btnAddVehicle);
+        }
+
+        private void btnDeleteVehicle_MouseHover(object sender, EventArgs e)
+        {
+            ttDeleteVehicle.Show("Delete Vehicle", btnDeleteVehicle);
+        }
+
+        private void btnUpdateVehicle_MouseHover(object sender, EventArgs e)
+        {
+            ttSaveVehicle.Show(saveChanges, btnUpdateVehicle);
         }
     }
 }

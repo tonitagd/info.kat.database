@@ -15,7 +15,7 @@
       <Column Name="DrivingLicenseNumber" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="DrivingCategories" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="DrivingPointsLeft" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
-      <Column Name="PictureLocation" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PictureLocation" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.AddNewDriver" Method="AddNewDriver">
@@ -31,7 +31,7 @@
     <Parameter Name="DrivingLicenseNumber" Parameter="drivingLicenseNumber" Type="System.String" DbType="NChar(10)" />
     <Parameter Name="DrivingCategories" Parameter="drivingCategories" Type="System.String" DbType="NVarChar(50)" />
     <Parameter Name="DrivingPointsLeft" Parameter="drivingPointsLeft" Type="System.Int16" DbType="SmallInt" />
-    <Parameter Name="PictureLocation" Parameter="pictureLocation" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="PictureLocation" Parameter="pictureLocation" Type="System.String" DbType="NVarChar(250)" />
     <Return Type="System.Int32" />
   </Function>
 </Database>

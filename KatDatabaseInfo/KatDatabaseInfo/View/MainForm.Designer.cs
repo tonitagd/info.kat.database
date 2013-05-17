@@ -1034,6 +1034,7 @@ namespace KatDatabaseInfo
             this.btnPrintVehicle.Size = new System.Drawing.Size(70, 70);
             this.btnPrintVehicle.TabIndex = 36;
             this.btnPrintVehicle.UseVisualStyleBackColor = true;
+            this.btnPrintVehicle.Click += new System.EventHandler(this.btnPrintVehicle_Click);
             this.btnPrintVehicle.MouseHover += new System.EventHandler(this.btnPrintVehicle_MouseHover);
             // 
             // btnClearVehicle

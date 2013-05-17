@@ -940,9 +940,26 @@ namespace KatDatabaseInfo
 
         private void btnPrintDriver_Click(object sender, EventArgs e)
         {
+            Driver driver = UserData.GetDriverByLicenseID(txtBoxLicenseId.Text);
+            if (driver == null)
+            {
+                MessageBox.Show("Моля, първо изберете шофьор");
+                return;
+            }
             string documentData = @"---Лични данни---
-Име: " + txtBoxName + @"
-Презиме: " + txtBoxMiddleName;
+
+Име: " + driver.FirstName + @"
+Презиме: " + driver.MiddleName + @"
+Фамилия: " + driver.LastName + @"
+ЕГН: " + driver.IdNumber + @"
+Държава: " + driver.Country + @"
+Град: " + driver.City + @"
+Адрес: " + driver.Address + @"
+
+---Шофьорски данни---
+Документ №: " + driver.DrivingLicenseNumber + @"
+Tочки: " + driver.DrivingPointsLeft + @"
+Категории: " + driver.DrivingCategories;
 
             saveFile(documentData, "Данните не могат да се разпечатат.");
         }
@@ -957,7 +974,7 @@ namespace KatDatabaseInfo
             }
             if (driver == null)
             {
-                MessageBox.Show("Моля, първо изберете глоба");
+                MessageBox.Show("Моля, първо изберете глоба.");
                 return;
             }
             string documentData = @"                                                №: " + txtBoxFineId.Text + @"
@@ -991,6 +1008,43 @@ namespace KatDatabaseInfo
             }
         }
 
+        private void btnPrintVehicle_Click(object sender, EventArgs e)
+        {
+            Driver driver = UserData.GetDriverByLicenseID(txtBoxOwnerDLN.Text);
+            if (driver == null)
+            {
+                MessageBox.Show("Моля, първо изберете МПС.");
+                return;
+            }
+
+            string documentData = @"
+РЕПУБЛИКА БЪЛГАРИЯ
+МИНИСТЕРСТВО НА ВЪТРЕШНИТЕ РАБОТИ
+REPUBLIC OF BULGARIA 
+MINISTRY OF INTERIOR
+
+               СВИДЕТЕЛСТВО ЗА 
+РЕГИСТРАЦИЯ НА МОТОРНО ПРЕВОЗНО СРЕДСТВО 
+
+---ДАННИ ЗА МПС---						
+А. Регистрационен №: " + txtBoxRegNumber.Text + @"
+E. Рама №: " + txtBoxFrameNumber.Text + @"			     
+     Двигател №: " + txtBoxEngineNumber.Text + @"  			     
+D. Марка: " + txtBoxBrand.Text + @"
+     Модел: " + txtBoxModel.Text + @"
+      Вид: " + txtBoxType.Text + @"
+F. Брой места: " + txtBoxSeats.Text + @"
+    Общо тегло: " + txtBoxWeight.Text + @"			
+B. Дата на регистрация: " + txtBoxRegDate.Text + @"
+
+---ДАННИ ЗА СОБСТВЕНИК---
+С. Собственик: " + driver.FirstName + " " + driver.LastName + @"
+   ЕГН: " + driver.IdNumber + @"
+   Aдрес: " + driver.City + ", " + driver.Address;
+
+            saveFile(documentData, "Данните не могат да се разпечатат.");
+        }
+
         private void saveFile(string documentData, string errMessage)
         {
             try
@@ -1015,6 +1069,8 @@ namespace KatDatabaseInfo
             }
             return null;
         }
+
+        
     }
 }
 

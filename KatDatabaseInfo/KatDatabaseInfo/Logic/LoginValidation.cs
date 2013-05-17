@@ -43,19 +43,19 @@ namespace KatDatabaseInfo.Logic
             user = null;
             if (isEmpty(_username))
             {
-                errText = "Invalid username! It cannot be an empty value.";
+                errText = "Невалидно потребителско име! Полето не може да е празно.";
                 return false;
             }
 
             if (isEmpty(_password))
             {
-                errText = "Invalid password! It cannot be an empty value.";
+                errText = "Невалидна парола! Полето не може да е празно.";
                 return false;
             }
 
             if (isShorterThan(_password, 6))
             {
-                errText = "Invalid password! It must be longer than 6 symbols";
+                errText = "Невалидна парола! Паролата трябва да е поне 6 символа дълга.";
                 return false;
             }
             
@@ -63,7 +63,7 @@ namespace KatDatabaseInfo.Logic
 
             if (queryResult == null)
             {
-                errText += "Wrong username or password! Try again";
+                errText += "Грешно потребителско име или парола! Опитайте пак.";
                 return false;
             }
             user = queryResult;

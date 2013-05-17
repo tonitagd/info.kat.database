@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using KatDatabaseInfo.View;
 using KatDatabaseInfo.Data;
 using KatDatabaseInfo.Logic;
+using System.IO;
 
 
 namespace KatDatabaseInfo
@@ -72,7 +73,9 @@ namespace KatDatabaseInfo
             lblRegNumber.Enabled = status;
             cbRegistryNumber.Enabled = status;
             gbImage.Enabled = status;
-
+            btnPrintDriver.Visible = status;
+            btnPrintFine.Visible = status;
+            btnPrintVehicle.Visible = status;
         }
 
         private void SetVisibilityToAdminButtons(bool visible)
@@ -90,6 +93,8 @@ namespace KatDatabaseInfo
             btnClear.Visible = visible;
             label2.Visible = visible;
             txtBoxFineId.Visible = visible;
+            lblOffenderDLN.Visible = visible;
+            txtBoxOffenderDLN.Visible = visible;
 
             btnAddFine.Visible = visible;
             btnAddVehicle.Visible = visible;
@@ -167,6 +172,7 @@ namespace KatDatabaseInfo
                 SetUserStatus(logForm.user.Role_);
                 SetStatusToAllControls(true);
                 ShowUserInfo(UserData.GetDriverByLicenseID(logForm.user.DrivingLicenseNumber));
+
                 loginToolStripMenuItem.Text = "Излез";
             }
         }
@@ -186,6 +192,7 @@ namespace KatDatabaseInfo
                 showAdminInfo(driver);
                 SetVisibilityToAdminButtons(true);
             }
+            
         }
 
         private void showDriverInfo(Driver driver)
@@ -401,11 +408,11 @@ namespace KatDatabaseInfo
                 UserData.addDriver(driver);
                 UserData.CreateUsernameAndPassword(CreateUser());
                 ReloadMainForm();
-                MessageBox.Show("Adding driver " + driver.FirstName + " " + driver.LastName + " successful.");
+                MessageBox.Show("Добавен шофьор: " + driver.FirstName + " " + driver.LastName + ".");
             }
             catch (Exception exc)
             {
-                MessageBox.Show("Failed adding driver." + exc.Message);
+                MessageBox.Show("Грешка при добавяне на шофьор." + exc.Message);
             }
         }
 
@@ -497,12 +504,12 @@ namespace KatDatabaseInfo
                 Driver driver = createDriver();
                 User user = CreateUser();
                 UserData.UpdateDriver(driver.DrivingLicenseNumber, driver.Country, driver.City, driver.Address, driver.DrivingPointsLeft, driver.DrivingCategories, user.Role_);
-                MessageBox.Show("Update successful.");
+                MessageBox.Show("Актуализацията е успешна.");
                 ReloadMainForm();
             }
             catch (Exception exc)
             {
-                MessageBox.Show("Update failed. " + exc.Message);
+                MessageBox.Show("Грешка при актуализация. " + exc.Message);
             }
         }
 
@@ -511,13 +518,13 @@ namespace KatDatabaseInfo
             try
             {
                 UserData.DeleteDriver(txtBoxLicenseId.Text);
-                MessageBox.Show("Deleting driver with license id:'" + txtBoxLicenseId.Text + "' completed successfully.");
+                MessageBox.Show("Шофьор с документ №:'" + txtBoxLicenseId.Text + "' е изтрит успешно.");
                 ClearAllControls();
                 ReloadMainForm();
             }
             catch (Exception exc)
             {
-                MessageBox.Show("Failed deleting driver." + exc.Message);
+                MessageBox.Show("Грешка при изтриването на шофьор." + exc.Message);
             }
         }
 
@@ -595,11 +602,11 @@ namespace KatDatabaseInfo
                 Fine fine = CreateFine();
                 UserData.AddNewFine(fine);
                 ReloadMainForm();
-                MessageBox.Show("Adding fine with ID: '" + fine.SerialNumber + "' successful.");
+                MessageBox.Show("Добавено нарушение №: '" + fine.SerialNumber + "'.");
             }
             catch (Exception exc)
             {
-                MessageBox.Show("Failed adding fine." + exc.Message);
+                MessageBox.Show("Грешка при добавяне на нарушение." + exc.Message);
             }
         }
 
@@ -637,12 +644,12 @@ namespace KatDatabaseInfo
             {
                 Fine fine = CreateFine();
                 UserData.UpdateFine(fine.SerialNumber, fine.Paid, fine.Amount);
-                MessageBox.Show("Update successful.");
+                MessageBox.Show("Актуализацията е успешна.");
                 ReloadMainForm();
             }
             catch (Exception exc)
             {
-                MessageBox.Show("Update failed. " + exc.Message);
+                MessageBox.Show("Грешка при актуализация. " + exc.Message);
             }
         }
 
@@ -651,13 +658,13 @@ namespace KatDatabaseInfo
             try
             {
                 UserData.DeleteFine(txtBoxFineId.Text);
-                MessageBox.Show("Deleting fine with id:'" + txtBoxFineId.Text + "' completed successfully.");
+                MessageBox.Show("Глоба №:'" + txtBoxFineId.Text + "' е  изтрита успешно.");
                 ClearAllControls();
                 ReloadMainForm();
             }
             catch (Exception exc)
             {
-                MessageBox.Show("Failed deleting fine." + exc.Message);
+                MessageBox.Show("Грешка при изтриване на глоба." + exc.Message);
             }
         }
 
@@ -704,12 +711,12 @@ namespace KatDatabaseInfo
             switch (type)
             {
                 case "0":
-                    return "car";
+                    return "лек";
                 case "1":
-                    return "van";
+                    return "леко-товарен";
 
                 default:
-                    return "truck";
+                    return "товарен";
 
             }
         }
@@ -743,11 +750,11 @@ namespace KatDatabaseInfo
                 Vehicle vehicle = CreateVehicle();
                 UserData.AddNewVehicle(vehicle);
                 ReloadMainForm();
-                MessageBox.Show("Adding vehicle with registry number:'" + vehicle.RegistryNumber + "' completed successfully.");
+                MessageBox.Show("Добавен МПС с регистрационен №:'" + vehicle.RegistryNumber + "'.");
             }
             catch (Exception exc)
             {
-                MessageBox.Show("Failed adding vehicle fine." + exc.Message);
+                MessageBox.Show("Грешка при добавяне на МПС." + exc.Message);
             }
         }
 
@@ -775,11 +782,11 @@ namespace KatDatabaseInfo
                 Vehicle vehicle = CreateVehicle();
                 UserData.UpdateVehicle(vehicle.FrameNumber, vehicle.RegistryNumber, vehicle.Color, vehicle.DrivingLicenseNumber);
                 ReloadMainForm();
-                MessageBox.Show("Update successful.");
+                MessageBox.Show("Актуализацията е успешна.");
             }
             catch (Exception exc)
             {
-                MessageBox.Show("Update failed. " + exc.Message);
+                MessageBox.Show("Грешка при актуализация. " + exc.Message);
             }
         }
 
@@ -789,13 +796,13 @@ namespace KatDatabaseInfo
             {
                 string regNumber = txtBoxRegNumber.Text;
                 UserData.DeleteVehicle(regNumber);
-                MessageBox.Show("Deleting vehicle with registry number:'" + regNumber + "' completed successfully.");
+                MessageBox.Show("Изтрит МПС с регистрационен №:'" + regNumber + "'.");
                 ClearAllControls();
                 ReloadMainForm();
             }
             catch (Exception exc)
             {
-                MessageBox.Show("Failed deleting vehicle." + exc.Message);
+                MessageBox.Show("Грешка при изтриване." + exc.Message);
             }
         }
 
@@ -814,7 +821,7 @@ namespace KatDatabaseInfo
             }
             catch (Exception)
             {
-                MessageBox.Show("Failed loading picture '" + location +"'");
+                MessageBox.Show("Грешка при отварянето на снимка.");
             }
         }
 
@@ -828,7 +835,7 @@ namespace KatDatabaseInfo
                 string picFormat = parsedLocation[parsedLocation.Length - 1];
                 if (!availableFormats.Contains(picFormat))
                 {
-                    MessageBox.Show("Not supportable format: '" + picFormat + "'\n File must be: " + availableFormats);
+                    MessageBox.Show("'" + picFormat + "' не се поддържа\n Формата трябва да е: " + availableFormats);
                 }
                 return location;
             }
@@ -904,6 +911,109 @@ namespace KatDatabaseInfo
         private void btnUpdateVehicle_MouseHover(object sender, EventArgs e)
         {
             ttSaveVehicle.Show(saveChanges, btnUpdateVehicle);
+        }
+
+        private void lblOffenderDLN_MouseHover(object sender, EventArgs e)
+        {
+            ttOffenderDLN.Show("Шофьорска книижка №", lblOffenderDLN);
+        }
+
+        private void lblOwnerDLN_MouseHover(object sender, EventArgs e)
+        {
+            ttOwnerDLN.Show("Шофьорска книижка №", lblOwnerDLN);
+        }
+
+        private void btnPrintDriver_MouseHover(object sender, EventArgs e)
+        {
+            ttPrintDriver.Show("Разпечатай лични данни", btnPrintDriver);
+        }
+
+        private void btnPrintFine_MouseHover(object sender, EventArgs e)
+        {
+            ttPrintFine.Show("Разпечатай нарушение", btnPrintFine);
+        }
+
+        private void btnPrintVehicle_MouseHover(object sender, EventArgs e)
+        {
+            ttPrintVehicle.Show("Разпечатай данни за МПС", btnPrintVehicle);
+        }
+
+        private void btnPrintDriver_Click(object sender, EventArgs e)
+        {
+            string documentData = @"---Лични данни---
+Име: " + txtBoxName + @"
+Презиме: " + txtBoxMiddleName;
+
+            saveFile(documentData, "Данните не могат да се разпечатат.");
+        }
+
+        private void btnPrintFine_Click(object sender, EventArgs e)
+        {
+            Driver driver = UserData.GetDriverByLicenseID(txtBoxOffenderDLN.Text);
+            string price = txtBoxPrice.Text;
+            if ("".Equals(price))
+            {
+                price = "платена";
+            }
+            if (driver == null)
+            {
+                MessageBox.Show("Моля, първо изберете глоба");
+                return;
+            }
+            string documentData = @"                                                №: " + txtBoxFineId.Text + @"
+РЕПУБЛИКА БЪЛГАРИЯ / REPUBLIC OF BULGARIA
+МИНИСТЕРСТРО НА ВЪТРЕШНИТЕ РАБОТИ/ MINISTRY OF INTERIOR
+ГЛОБА С " + GetTypeName(cbType.SelectedIndex) + @"/ TRAFFIC TICKET
+
+Днес/Today " + txtBoxDate.Text + @" подписаният/undersigned " + txtBoxPoliceman.Text + @"
+На длъжност/ official post полицай в " + txtBoxPlace.Text + @" установих, че/ascertain the fact that "
+                                       + driver.FirstName + " " + driver.MiddleName + " " + driver.LastName + @"
+Шофьорска книжка/Driving License №:" + txtBoxOffenderDLN.Text + @"
+Постоянен адрес/permanent address " + txtBoxAddress.Text + @"
+е извършил нарушение/commit a violation " + txtBoxReason.Text + @"
+поради което на основание чл. 186, налагам глоба/and upon article 186 set a fine " + price + @"
+лева/BG leva
+
+СЪСТАВИТЕЛ/COMPLIER: " + txtBoxPoliceman.Text + @"
+ПОДПИС/SIGNITURE:                       ";
+
+            saveFile(documentData, "Глобата не може да се разпечата.");
+        }
+
+        private string GetTypeName(int p)
+        {
+            switch (p)
+            {
+                case 0:
+                    return "Фиш";
+                default:
+                    return "Акт";
+            }
+        }
+
+        private void saveFile(string documentData, string errMessage)
+        {
+            try
+            {
+                FileStream stream = new FileStream(GetFileName(), FileMode.OpenOrCreate);
+                StreamWriter writer = new StreamWriter(stream, Encoding.UTF8);
+                writer.Write(documentData);
+                writer.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(errMessage);
+            }
+        }
+
+        private string GetFileName()
+        {
+            saveFileDialog.Filter = "DOC Files|*.doc";
+            if (saveFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK && (saveFileDialog.FileName.Length > 0))
+            {
+                return saveFileDialog.FileName;
+            }
+            return null;
         }
     }
 }

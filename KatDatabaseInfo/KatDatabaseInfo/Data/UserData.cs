@@ -168,7 +168,7 @@ namespace KatDatabaseInfo.Data
 
         public static void AddNewFine(Fine fine)
         {
-            fineDataContext.AddNewFine(fine.Type, fine.SerialNumber, fine.Date, fine.Policeman, fine.DrivingLicenseNumber, fine.Paid, fine.Reason, fine.Amount);
+            fineDataContext.AddNewFine(fine.Type, fine.SerialNumber, fine.Date, fine.Policeman, fine.DrivingLicenseNumber, fine.Paid, fine.Reason, fine.Amount, fine.Location, fine.Hour);
             fineDataContext.SubmitChanges();
         }
 

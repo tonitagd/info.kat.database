@@ -43,11 +43,11 @@
             this.lblUsername.BackColor = System.Drawing.Color.Transparent;
             this.lblUsername.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsername.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblUsername.Location = new System.Drawing.Point(32, 38);
+            this.lblUsername.Location = new System.Drawing.Point(19, 34);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(83, 19);
+            this.lblUsername.Size = new System.Drawing.Size(96, 19);
             this.lblUsername.TabIndex = 0;
-            this.lblUsername.Text = "Username:";
+            this.lblUsername.Text = "Потребител:";
             // 
             // lblPassword
             // 
@@ -55,11 +55,11 @@
             this.lblPassword.BackColor = System.Drawing.Color.Transparent;
             this.lblPassword.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPassword.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblPassword.Location = new System.Drawing.Point(32, 75);
+            this.lblPassword.Location = new System.Drawing.Point(48, 75);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(80, 19);
+            this.lblPassword.Size = new System.Drawing.Size(65, 19);
             this.lblPassword.TabIndex = 1;
-            this.lblPassword.Text = "Password:";
+            this.lblPassword.Text = "Парола:";
             // 
             // txtBoxUsername
             // 
@@ -84,7 +84,7 @@
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 30);
             this.btnCancel.TabIndex = 5;
-            this.btnCancel.Text = "Cancel";
+            this.btnCancel.Text = "Отказ";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // btnLogin
@@ -94,7 +94,7 @@
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 30);
             this.btnLogin.TabIndex = 6;
-            this.btnLogin.Text = "Login";
+            this.btnLogin.Text = "Влез";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
@@ -113,7 +113,7 @@
             this.Controls.Add(this.lblUsername);
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Login";
+            this.Text = "Влез";
             this.Load += new System.EventHandler(this.LoginForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

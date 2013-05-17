@@ -11,6 +11,8 @@
       <Column Name="Paid" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
       <Column Name="Reason" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="Amount" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Location" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Hour" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.AddNewFine" Method="AddNewFine">
@@ -22,6 +24,8 @@
     <Parameter Name="Paid" Parameter="paid" Type="System.Byte" DbType="TinyInt" />
     <Parameter Name="Reason" Parameter="reason" Type="System.String" DbType="NVarChar(100)" />
     <Parameter Name="Amount" Parameter="amount" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="Location" Parameter="location" Type="System.String" DbType="NVarChar(250)" />
+    <Parameter Name="Hour" Parameter="hour" Type="System.String" DbType="NVarChar(10)" />
     <Return Type="System.Int32" />
   </Function>
 </Database>

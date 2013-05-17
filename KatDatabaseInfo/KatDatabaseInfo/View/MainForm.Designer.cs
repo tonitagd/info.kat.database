@@ -74,6 +74,10 @@ namespace KatDatabaseInfo
             this.btnShowAllFines = new System.Windows.Forms.Button();
             this.btnUpdateFine = new System.Windows.Forms.Button();
             this.gbFine = new System.Windows.Forms.GroupBox();
+            this.txtBoxPlace = new System.Windows.Forms.TextBox();
+            this.lblPlace = new System.Windows.Forms.Label();
+            this.txtBoxTime = new System.Windows.Forms.TextBox();
+            this.lblHour = new System.Windows.Forms.Label();
             this.txtBoxPrice = new System.Windows.Forms.TextBox();
             this.lblPrice = new System.Windows.Forms.Label();
             this.txtBoxFineId = new System.Windows.Forms.TextBox();
@@ -198,7 +202,7 @@ namespace KatDatabaseInfo
             this.tabPageDI.Padding = new System.Windows.Forms.Padding(3);
             this.tabPageDI.Size = new System.Drawing.Size(822, 407);
             this.tabPageDI.TabIndex = 0;
-            this.tabPageDI.Text = "Driver Info";
+            this.tabPageDI.Text = "Лични данни";
             this.tabPageDI.UseVisualStyleBackColor = true;
             // 
             // btnClear
@@ -254,7 +258,7 @@ namespace KatDatabaseInfo
             this.gbImage.Size = new System.Drawing.Size(202, 264);
             this.gbImage.TabIndex = 14;
             this.gbImage.TabStop = false;
-            this.gbImage.Text = "Image";
+            this.gbImage.Text = "Снимка";
             // 
             // btnUpload
             // 
@@ -262,7 +266,7 @@ namespace KatDatabaseInfo
             this.btnUpload.Name = "btnUpload";
             this.btnUpload.Size = new System.Drawing.Size(106, 27);
             this.btnUpload.TabIndex = 1;
-            this.btnUpload.Text = "Upload Picture";
+            this.btnUpload.Text = "Качи снимка";
             this.btnUpload.UseVisualStyleBackColor = true;
             this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
             // 
@@ -290,7 +294,7 @@ namespace KatDatabaseInfo
             this.gbLicense.Size = new System.Drawing.Size(706, 130);
             this.gbLicense.TabIndex = 13;
             this.gbLicense.TabStop = false;
-            this.gbLicense.Text = "License Data";
+            this.gbLicense.Text = "Шофьорски данни";
             // 
             // cbRole
             // 
@@ -301,7 +305,7 @@ namespace KatDatabaseInfo
             "CITIZEN",
             "ADMIN",
             ""});
-            this.cbRole.Location = new System.Drawing.Point(119, 88);
+            this.cbRole.Location = new System.Drawing.Point(110, 91);
             this.cbRole.Name = "cbRole";
             this.cbRole.Size = new System.Drawing.Size(90, 24);
             this.cbRole.TabIndex = 12;
@@ -350,7 +354,7 @@ namespace KatDatabaseInfo
             "37",
             "38",
             "39"});
-            this.cbPointsLeft.Location = new System.Drawing.Point(120, 59);
+            this.cbPointsLeft.Location = new System.Drawing.Point(110, 61);
             this.cbPointsLeft.Name = "cbPointsLeft";
             this.cbPointsLeft.Size = new System.Drawing.Size(90, 24);
             this.cbPointsLeft.TabIndex = 11;
@@ -359,40 +363,40 @@ namespace KatDatabaseInfo
             // 
             this.lblLicenseId.AutoSize = true;
             this.lblLicenseId.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLicenseId.Location = new System.Drawing.Point(15, 31);
+            this.lblLicenseId.Location = new System.Drawing.Point(1, 31);
             this.lblLicenseId.Name = "lblLicenseId";
-            this.lblLicenseId.Size = new System.Drawing.Size(86, 16);
+            this.lblLicenseId.Size = new System.Drawing.Size(117, 16);
             this.lblLicenseId.TabIndex = 6;
-            this.lblLicenseId.Text = "License ID";
+            this.lblLicenseId.Text = "Документ №: ";
             // 
             // txtBoxLicenseId
             // 
             this.txtBoxLicenseId.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxLicenseId.Location = new System.Drawing.Point(120, 31);
+            this.txtBoxLicenseId.Location = new System.Drawing.Point(110, 28);
             this.txtBoxLicenseId.Name = "txtBoxLicenseId";
             this.txtBoxLicenseId.ReadOnly = true;
-            this.txtBoxLicenseId.Size = new System.Drawing.Size(167, 23);
+            this.txtBoxLicenseId.Size = new System.Drawing.Size(90, 23);
             this.txtBoxLicenseId.TabIndex = 7;
             // 
             // lblPoints
             // 
             this.lblPoints.AutoSize = true;
             this.lblPoints.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPoints.Location = new System.Drawing.Point(16, 59);
+            this.lblPoints.Location = new System.Drawing.Point(51, 65);
             this.lblPoints.Name = "lblPoints";
-            this.lblPoints.Size = new System.Drawing.Size(90, 16);
+            this.lblPoints.Size = new System.Drawing.Size(61, 16);
             this.lblPoints.TabIndex = 10;
-            this.lblPoints.Text = "Poinst Left";
+            this.lblPoints.Text = "Точки:";
             // 
             // lblRole
             // 
             this.lblRole.AutoSize = true;
             this.lblRole.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRole.Location = new System.Drawing.Point(16, 88);
+            this.lblRole.Location = new System.Drawing.Point(61, 94);
             this.lblRole.Name = "lblRole";
-            this.lblRole.Size = new System.Drawing.Size(39, 16);
+            this.lblRole.Size = new System.Drawing.Size(51, 16);
             this.lblRole.TabIndex = 8;
-            this.lblRole.Text = "Role";
+            this.lblRole.Text = "Роля:";
             // 
             // cbCategories
             // 
@@ -427,9 +431,9 @@ namespace KatDatabaseInfo
             this.lblCatecories.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCatecories.Location = new System.Drawing.Point(393, 11);
             this.lblCatecories.Name = "lblCatecories";
-            this.lblCatecories.Size = new System.Drawing.Size(88, 16);
+            this.lblCatecories.Size = new System.Drawing.Size(86, 16);
             this.lblCatecories.TabIndex = 8;
-            this.lblCatecories.Text = "Categories";
+            this.lblCatecories.Text = "Категории";
             // 
             // gbPerfonalData
             // 
@@ -456,7 +460,7 @@ namespace KatDatabaseInfo
             this.gbPerfonalData.Size = new System.Drawing.Size(463, 264);
             this.gbPerfonalData.TabIndex = 12;
             this.gbPerfonalData.TabStop = false;
-            this.gbPerfonalData.Text = "Personal Data";
+            this.gbPerfonalData.Text = "Лични данни";
             // 
             // txtBoxBirthDate
             // 
@@ -471,11 +475,11 @@ namespace KatDatabaseInfo
             // 
             this.lblBirthDate.AutoSize = true;
             this.lblBirthDate.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBirthDate.Location = new System.Drawing.Point(48, 136);
+            this.lblBirthDate.Location = new System.Drawing.Point(3, 138);
             this.lblBirthDate.Name = "lblBirthDate";
-            this.lblBirthDate.Size = new System.Drawing.Size(84, 16);
+            this.lblBirthDate.Size = new System.Drawing.Size(148, 16);
             this.lblBirthDate.TabIndex = 19;
-            this.lblBirthDate.Text = "Birth Date";
+            this.lblBirthDate.Text = "Дата на раждане:";
             // 
             // cbGender
             // 
@@ -503,11 +507,11 @@ namespace KatDatabaseInfo
             // 
             this.blbAddress.AutoSize = true;
             this.blbAddress.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.blbAddress.Location = new System.Drawing.Point(48, 223);
+            this.blbAddress.Location = new System.Drawing.Point(87, 222);
             this.blbAddress.Name = "blbAddress";
-            this.blbAddress.Size = new System.Drawing.Size(67, 16);
+            this.blbAddress.Size = new System.Drawing.Size(61, 16);
             this.blbAddress.TabIndex = 16;
-            this.blbAddress.Text = "Address";
+            this.blbAddress.Text = "Адрес:";
             // 
             // txtBoxCity
             // 
@@ -522,11 +526,11 @@ namespace KatDatabaseInfo
             // 
             this.lblCity.AutoSize = true;
             this.lblCity.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCity.Location = new System.Drawing.Point(48, 195);
+            this.lblCity.Location = new System.Drawing.Point(98, 194);
             this.lblCity.Name = "lblCity";
-            this.lblCity.Size = new System.Drawing.Size(38, 16);
+            this.lblCity.Size = new System.Drawing.Size(50, 16);
             this.lblCity.TabIndex = 14;
-            this.lblCity.Text = "City";
+            this.lblCity.Text = "Град:";
             // 
             // txtBoxCountry
             // 
@@ -541,21 +545,21 @@ namespace KatDatabaseInfo
             // 
             this.lbCountry.AutoSize = true;
             this.lbCountry.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCountry.Location = new System.Drawing.Point(48, 168);
+            this.lbCountry.Location = new System.Drawing.Point(67, 168);
             this.lbCountry.Name = "lbCountry";
-            this.lbCountry.Size = new System.Drawing.Size(67, 16);
+            this.lbCountry.Size = new System.Drawing.Size(83, 16);
             this.lbCountry.TabIndex = 12;
-            this.lbCountry.Text = "Country";
+            this.lbCountry.Text = "Държава:";
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(48, 36);
+            this.lblName.Location = new System.Drawing.Point(109, 39);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(88, 16);
+            this.lblName.Size = new System.Drawing.Size(44, 16);
             this.lblName.TabIndex = 0;
-            this.lblName.Text = "First Name";
+            this.lblName.Text = "Име:";
             this.lblName.UseWaitCursor = true;
             // 
             // txtBoxName
@@ -571,21 +575,21 @@ namespace KatDatabaseInfo
             // 
             this.lblGender.AutoSize = true;
             this.lblGender.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGender.Location = new System.Drawing.Point(266, 140);
+            this.lblGender.Location = new System.Drawing.Point(293, 141);
             this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(60, 16);
+            this.lblGender.Size = new System.Drawing.Size(43, 16);
             this.lblGender.TabIndex = 10;
-            this.lblGender.Text = "Gender";
+            this.lblGender.Text = "Пол:";
             // 
             // lblMiddleName
             // 
             this.lblMiddleName.AutoSize = true;
             this.lblMiddleName.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMiddleName.Location = new System.Drawing.Point(48, 61);
+            this.lblMiddleName.Location = new System.Drawing.Point(74, 61);
             this.lblMiddleName.Name = "lblMiddleName";
-            this.lblMiddleName.Size = new System.Drawing.Size(101, 16);
+            this.lblMiddleName.Size = new System.Drawing.Size(79, 16);
             this.lblMiddleName.TabIndex = 2;
-            this.lblMiddleName.Text = "Middle Name";
+            this.lblMiddleName.Text = "Презиме:";
             // 
             // txtBoxMiddleName
             // 
@@ -600,11 +604,11 @@ namespace KatDatabaseInfo
             // 
             this.lblLastName.AutoSize = true;
             this.lblLastName.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLastName.Location = new System.Drawing.Point(48, 86);
+            this.lblLastName.Location = new System.Drawing.Point(70, 86);
             this.lblLastName.Name = "lblLastName";
-            this.lblLastName.Size = new System.Drawing.Size(86, 16);
+            this.lblLastName.Size = new System.Drawing.Size(82, 16);
             this.lblLastName.TabIndex = 4;
-            this.lblLastName.Text = "Last Name";
+            this.lblLastName.Text = "Фамилия:";
             // 
             // txtBoxId
             // 
@@ -628,11 +632,11 @@ namespace KatDatabaseInfo
             // 
             this.lblIdentityNumber.AutoSize = true;
             this.lblIdentityNumber.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIdentityNumber.Location = new System.Drawing.Point(48, 111);
+            this.lblIdentityNumber.Location = new System.Drawing.Point(109, 111);
             this.lblIdentityNumber.Name = "lblIdentityNumber";
-            this.lblIdentityNumber.Size = new System.Drawing.Size(24, 16);
+            this.lblIdentityNumber.Size = new System.Drawing.Size(42, 16);
             this.lblIdentityNumber.TabIndex = 6;
-            this.lblIdentityNumber.Text = "ID";
+            this.lblIdentityNumber.Text = "ЕГН:";
             // 
             // tabPageF
             // 
@@ -649,7 +653,7 @@ namespace KatDatabaseInfo
             this.tabPageF.Padding = new System.Windows.Forms.Padding(3);
             this.tabPageF.Size = new System.Drawing.Size(822, 407);
             this.tabPageF.TabIndex = 1;
-            this.tabPageF.Text = "Fines";
+            this.tabPageF.Text = "Глоби";
             this.tabPageF.UseVisualStyleBackColor = true;
             // 
             // btnClearFine
@@ -686,6 +690,10 @@ namespace KatDatabaseInfo
             // 
             // gbFine
             // 
+            this.gbFine.Controls.Add(this.txtBoxPlace);
+            this.gbFine.Controls.Add(this.lblPlace);
+            this.gbFine.Controls.Add(this.txtBoxTime);
+            this.gbFine.Controls.Add(this.lblHour);
             this.gbFine.Controls.Add(this.txtBoxPrice);
             this.gbFine.Controls.Add(this.lblPrice);
             this.gbFine.Controls.Add(this.txtBoxFineId);
@@ -709,32 +717,70 @@ namespace KatDatabaseInfo
             this.gbFine.TabStop = false;
             this.gbFine.Text = "Fine\'s Data";
             // 
+            // txtBoxPlace
+            // 
+            this.txtBoxPlace.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F);
+            this.txtBoxPlace.Location = new System.Drawing.Point(441, 90);
+            this.txtBoxPlace.Name = "txtBoxPlace";
+            this.txtBoxPlace.ReadOnly = true;
+            this.txtBoxPlace.Size = new System.Drawing.Size(237, 23);
+            this.txtBoxPlace.TabIndex = 25;
+            // 
+            // lblPlace
+            // 
+            this.lblPlace.AutoSize = true;
+            this.lblPlace.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblPlace.Location = new System.Drawing.Point(354, 90);
+            this.lblPlace.Name = "lblPlace";
+            this.lblPlace.Size = new System.Drawing.Size(48, 16);
+            this.lblPlace.TabIndex = 24;
+            this.lblPlace.Text = "Place";
+            // 
+            // txtBoxTime
+            // 
+            this.txtBoxTime.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F);
+            this.txtBoxTime.Location = new System.Drawing.Point(441, 60);
+            this.txtBoxTime.Name = "txtBoxTime";
+            this.txtBoxTime.ReadOnly = true;
+            this.txtBoxTime.Size = new System.Drawing.Size(122, 23);
+            this.txtBoxTime.TabIndex = 23;
+            // 
+            // lblHour
+            // 
+            this.lblHour.AutoSize = true;
+            this.lblHour.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblHour.Location = new System.Drawing.Point(354, 60);
+            this.lblHour.Name = "lblHour";
+            this.lblHour.Size = new System.Drawing.Size(43, 16);
+            this.lblHour.TabIndex = 22;
+            this.lblHour.Text = "Time";
+            // 
             // txtBoxPrice
             // 
             this.txtBoxPrice.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F);
-            this.txtBoxPrice.Location = new System.Drawing.Point(515, 120);
+            this.txtBoxPrice.Location = new System.Drawing.Point(148, 90);
             this.txtBoxPrice.Name = "txtBoxPrice";
             this.txtBoxPrice.ReadOnly = true;
-            this.txtBoxPrice.Size = new System.Drawing.Size(122, 23);
+            this.txtBoxPrice.Size = new System.Drawing.Size(151, 23);
             this.txtBoxPrice.TabIndex = 21;
             // 
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
             this.lblPrice.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lblPrice.Location = new System.Drawing.Point(440, 120);
+            this.lblPrice.Location = new System.Drawing.Point(32, 90);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(64, 16);
+            this.lblPrice.Size = new System.Drawing.Size(127, 16);
             this.lblPrice.TabIndex = 20;
-            this.lblPrice.Text = "Amount";
+            this.lblPrice.Text = "Дължима сума:";
             // 
             // txtBoxFineId
             // 
             this.txtBoxFineId.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F);
-            this.txtBoxFineId.Location = new System.Drawing.Point(148, 30);
+            this.txtBoxFineId.Location = new System.Drawing.Point(148, 120);
             this.txtBoxFineId.Name = "txtBoxFineId";
             this.txtBoxFineId.ReadOnly = true;
-            this.txtBoxFineId.Size = new System.Drawing.Size(237, 23);
+            this.txtBoxFineId.Size = new System.Drawing.Size(151, 23);
             this.txtBoxFineId.TabIndex = 19;
             this.txtBoxFineId.Visible = false;
             // 
@@ -742,7 +788,7 @@ namespace KatDatabaseInfo
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(32, 30);
+            this.label2.Location = new System.Drawing.Point(35, 120);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 16);
             this.label2.TabIndex = 18;
@@ -755,7 +801,7 @@ namespace KatDatabaseInfo
             this.txtBoxOffenderDLN.Location = new System.Drawing.Point(148, 150);
             this.txtBoxOffenderDLN.Name = "txtBoxOffenderDLN";
             this.txtBoxOffenderDLN.ReadOnly = true;
-            this.txtBoxOffenderDLN.Size = new System.Drawing.Size(237, 23);
+            this.txtBoxOffenderDLN.Size = new System.Drawing.Size(151, 23);
             this.txtBoxOffenderDLN.TabIndex = 17;
             // 
             // lblOffenderDLN
@@ -781,7 +827,7 @@ namespace KatDatabaseInfo
             // txtBoxPoliceman
             // 
             this.txtBoxPoliceman.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F);
-            this.txtBoxPoliceman.Location = new System.Drawing.Point(148, 90);
+            this.txtBoxPoliceman.Location = new System.Drawing.Point(441, 120);
             this.txtBoxPoliceman.Name = "txtBoxPoliceman";
             this.txtBoxPoliceman.ReadOnly = true;
             this.txtBoxPoliceman.Size = new System.Drawing.Size(237, 23);
@@ -790,7 +836,7 @@ namespace KatDatabaseInfo
             // txtBoxDate
             // 
             this.txtBoxDate.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F);
-            this.txtBoxDate.Location = new System.Drawing.Point(515, 30);
+            this.txtBoxDate.Location = new System.Drawing.Point(441, 30);
             this.txtBoxDate.Name = "txtBoxDate";
             this.txtBoxDate.ReadOnly = true;
             this.txtBoxDate.Size = new System.Drawing.Size(122, 23);
@@ -812,28 +858,28 @@ namespace KatDatabaseInfo
             this.cbPaid.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F);
             this.cbPaid.FormattingEnabled = true;
             this.cbPaid.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
-            this.cbPaid.Location = new System.Drawing.Point(148, 120);
+            "Не",
+            "Да"});
+            this.cbPaid.Location = new System.Drawing.Point(148, 60);
             this.cbPaid.Name = "cbPaid";
-            this.cbPaid.Size = new System.Drawing.Size(121, 24);
+            this.cbPaid.Size = new System.Drawing.Size(65, 24);
             this.cbPaid.TabIndex = 9;
             // 
             // lblPaid
             // 
             this.lblPaid.AutoSize = true;
             this.lblPaid.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lblPaid.Location = new System.Drawing.Point(32, 120);
+            this.lblPaid.Location = new System.Drawing.Point(32, 60);
             this.lblPaid.Name = "lblPaid";
-            this.lblPaid.Size = new System.Drawing.Size(39, 16);
+            this.lblPaid.Size = new System.Drawing.Size(69, 16);
             this.lblPaid.TabIndex = 8;
-            this.lblPaid.Text = "Paid";
+            this.lblPaid.Text = "Платен:";
             // 
             // lblPoliceman
             // 
             this.lblPoliceman.AutoSize = true;
             this.lblPoliceman.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lblPoliceman.Location = new System.Drawing.Point(32, 90);
+            this.lblPoliceman.Location = new System.Drawing.Point(354, 120);
             this.lblPoliceman.Name = "lblPoliceman";
             this.lblPoliceman.Size = new System.Drawing.Size(82, 16);
             this.lblPoliceman.TabIndex = 6;
@@ -843,7 +889,7 @@ namespace KatDatabaseInfo
             // 
             this.lblDate.AutoSize = true;
             this.lblDate.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lblDate.Location = new System.Drawing.Point(440, 30);
+            this.lblDate.Location = new System.Drawing.Point(354, 30);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(43, 16);
             this.lblDate.TabIndex = 4;
@@ -855,22 +901,22 @@ namespace KatDatabaseInfo
             this.cbType.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F);
             this.cbType.FormattingEnabled = true;
             this.cbType.Items.AddRange(new object[] {
-            "Ticket",
-            "Act"});
-            this.cbType.Location = new System.Drawing.Point(148, 60);
+            "Фиш\t",
+            "Акт"});
+            this.cbType.Location = new System.Drawing.Point(148, 30);
             this.cbType.Name = "cbType";
-            this.cbType.Size = new System.Drawing.Size(121, 24);
+            this.cbType.Size = new System.Drawing.Size(65, 24);
             this.cbType.TabIndex = 3;
             // 
             // lblType
             // 
             this.lblType.AutoSize = true;
             this.lblType.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lblType.Location = new System.Drawing.Point(32, 60);
+            this.lblType.Location = new System.Drawing.Point(32, 30);
             this.lblType.Name = "lblType";
-            this.lblType.Size = new System.Drawing.Size(45, 16);
+            this.lblType.Size = new System.Drawing.Size(43, 16);
             this.lblType.TabIndex = 2;
-            this.lblType.Text = "Type";
+            this.lblType.Text = "Тип:";
             // 
             // btnDeleteFine
             // 
@@ -925,9 +971,9 @@ namespace KatDatabaseInfo
             this.lblFineId.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblFineId.Location = new System.Drawing.Point(36, 21);
             this.lblFineId.Name = "lblFineId";
-            this.lblFineId.Size = new System.Drawing.Size(61, 16);
+            this.lblFineId.Size = new System.Drawing.Size(81, 16);
             this.lblFineId.TabIndex = 0;
-            this.lblFineId.Text = "Fine ID";
+            this.lblFineId.Text = "Глоба №:";
             // 
             // tabPageV
             // 
@@ -943,7 +989,7 @@ namespace KatDatabaseInfo
             this.tabPageV.Name = "tabPageV";
             this.tabPageV.Size = new System.Drawing.Size(822, 407);
             this.tabPageV.TabIndex = 2;
-            this.tabPageV.Text = "Vehicles";
+            this.tabPageV.Text = "МПС";
             this.tabPageV.UseVisualStyleBackColor = true;
             // 
             // btnClearVehicle
@@ -1294,11 +1340,11 @@ namespace KatDatabaseInfo
             this.lblSearchDriver.BackColor = System.Drawing.Color.Transparent;
             this.lblSearchDriver.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblSearchDriver.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblSearchDriver.Location = new System.Drawing.Point(619, 41);
+            this.lblSearchDriver.Location = new System.Drawing.Point(606, 41);
             this.lblSearchDriver.Name = "lblSearchDriver";
-            this.lblSearchDriver.Size = new System.Drawing.Size(103, 16);
+            this.lblSearchDriver.Size = new System.Drawing.Size(119, 16);
             this.lblSearchDriver.TabIndex = 16;
-            this.lblSearchDriver.Text = "Search Driver";
+            this.lblSearchDriver.Text = "Търси шофьор:";
             // 
             // menuStrip1
             // 
@@ -1325,7 +1371,7 @@ namespace KatDatabaseInfo
             this.loginToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
             this.loginToolStripMenuItem.Size = new System.Drawing.Size(85, 22);
-            this.loginToolStripMenuItem.Text = "Login";
+            this.loginToolStripMenuItem.Text = "Влез";
             this.loginToolStripMenuItem.Click += new System.EventHandler(this.loginToolStripMenuItem_Click);
             // 
             // driversTableAdapter
@@ -1357,7 +1403,7 @@ namespace KatDatabaseInfo
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(822, 35);
             this.lblTitle.TabIndex = 18;
-            this.lblTitle.Text = "Driver Info";
+            this.lblTitle.Text = "Лични данни";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblTitle.UseCompatibleTextRendering = true;
             // 
@@ -1522,6 +1568,10 @@ namespace KatDatabaseInfo
         private System.Windows.Forms.ToolTip ttAddVehicle;
         private System.Windows.Forms.ToolTip ttDeleteVehicle;
         private System.Windows.Forms.ToolTip ttSaveVehicle;
+        private System.Windows.Forms.TextBox txtBoxPlace;
+        private System.Windows.Forms.Label lblPlace;
+        private System.Windows.Forms.TextBox txtBoxTime;
+        private System.Windows.Forms.Label lblHour;
 
     }
 }

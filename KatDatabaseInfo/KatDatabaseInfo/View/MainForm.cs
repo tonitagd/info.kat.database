@@ -14,11 +14,12 @@ using KatDatabaseInfo.Logic;
 
 namespace KatDatabaseInfo
 {
+    //TODO Kategoriite ne se zachistvat pri clear page
     public partial class MainForm : Form
     {
         private string pictureLocation = "";
-        private static string clearPage = "Clear Page";
-        private static string saveChanges = "Save Changes";
+        private static string clearPage = "Изчисти страницата";
+        private static string saveChanges = "Запази промените";
 
         public UserStatus userStatus { get; private set; }
 
@@ -138,6 +139,8 @@ namespace KatDatabaseInfo
             txtBoxOffenderDLN.ReadOnly = !editable;
             txtBoxFineId.ReadOnly = !editable;
             txtBoxReason.ReadOnly = !editable;
+            txtBoxTime.ReadOnly = !editable;
+            txtBoxPlace.ReadOnly = !editable;
 
             //Cars page
 
@@ -164,7 +167,7 @@ namespace KatDatabaseInfo
                 SetUserStatus(logForm.user.Role_);
                 SetStatusToAllControls(true);
                 ShowUserInfo(UserData.GetDriverByLicenseID(logForm.user.DrivingLicenseNumber));
-                loginToolStripMenuItem.Text = "Logout";
+                loginToolStripMenuItem.Text = "Излез";
             }
         }
 
@@ -306,6 +309,8 @@ namespace KatDatabaseInfo
             txtBoxFineId.Text = "";
             txtBoxReason.Text = "";
             txtBoxPrice.Text = "";
+            txtBoxTime.Text = "";
+            txtBoxPlace.Text = "";
         }
 
         private void ClearVehiclePage()
@@ -331,7 +336,7 @@ namespace KatDatabaseInfo
             SetVisibilityToAdminButtons(false);
             ClearAllControls();
             SetEditable(false);
-            loginToolStripMenuItem.Text = "Login";
+            loginToolStripMenuItem.Text = "Влез";
         }
 
         private void loginToolStripMenuItem_Click(object sender, EventArgs e)
@@ -551,6 +556,8 @@ namespace KatDatabaseInfo
             txtBoxPrice.Text = fine.Amount.ToString();
             txtBoxFineId.Text = fine.SerialNumber.ToString();
             txtBoxReason.Text = fine.Reason;
+            txtBoxPlace.Text = fine.Location;
+            txtBoxTime.Text = fine.Hour;
         }
 
         private int GetFineType(string fineType)
@@ -608,6 +615,8 @@ namespace KatDatabaseInfo
             fine.DrivingLicenseNumber = txtBoxOffenderDLN.Text;
             fine.Reason = txtBoxReason.Text;
             fine.Amount = Convert.ToDecimal(txtBoxPrice.Text);
+            fine.Hour = txtBoxTime.Text;
+            fine.Location = txtBoxPlace.Text;
             return fine;
         }
 
@@ -840,12 +849,12 @@ namespace KatDatabaseInfo
 
         private void btnAddDriver_MouseHover(object sender, EventArgs e)
         {
-            ttAddDriver.Show("Add Driver", btnAddDriver);
+            ttAddDriver.Show("Добави шофьор", btnAddDriver);
         }
 
         private void btnDell_MouseHover(object sender, EventArgs e)
         {
-            ttDeleteDriver.Show("Delete Driver", btnDell);
+            ttDeleteDriver.Show("Изтрий шофьор", btnDell);
         }
 
         private void btnUpdate_MouseHover(object sender, EventArgs e)
@@ -862,12 +871,12 @@ namespace KatDatabaseInfo
 
         private void btnAddFine_MouseHover(object sender, EventArgs e)
         {
-            ttAddFine.Show("Add Fine", btnAddFine);
+            ttAddFine.Show("Добави глоба", btnAddFine);
         }
 
         private void btnDeleteFine_MouseHover(object sender, EventArgs e)
         {
-            ttDeleteFine.Show("Delete Fine", btnDeleteFine);
+            ttDeleteFine.Show("Изтрий глоба", btnDeleteFine);
         }
 
         private void btnUpdateFine_MouseHover(object sender, EventArgs e)
@@ -884,12 +893,12 @@ namespace KatDatabaseInfo
 
         private void btnAddVehicle_MouseHover(object sender, EventArgs e)
         {
-            ttAddVehicle.Show("Add Vehicle", btnAddVehicle);
+            ttAddVehicle.Show("Добави МПС", btnAddVehicle);
         }
 
         private void btnDeleteVehicle_MouseHover(object sender, EventArgs e)
         {
-            ttDeleteVehicle.Show("Delete Vehicle", btnDeleteVehicle);
+            ttDeleteVehicle.Show("Изтрий МПС", btnDeleteVehicle);
         }
 
         private void btnUpdateVehicle_MouseHover(object sender, EventArgs e)

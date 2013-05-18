@@ -13,12 +13,10 @@ namespace KatDatabaseInfo.View
 {
     public partial class LoginForm : Form
     {
-        public Data.User user { get; private set; }
 
         public LoginForm()
         {
             InitializeComponent();
-            user = null;
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -28,20 +26,19 @@ namespace KatDatabaseInfo.View
 
             if (loginValidation.ValidateUserInput(out user))
             {
-                this.user = user;
-                this.DialogResult = DialogResult.OK;
-                this.Close();
+                MainForm mainForm = new MainForm(user);
+                mainForm.Visible = true;
+                this.Hide();
             }
             else
             {
                 MessageBox.Show(loginValidation.errText);
-            } 
+            }
         }
-
-        private void LoginForm_Load(object sender, EventArgs e)
+        
+        private void btnCancel_Click(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
-       
     }
 }

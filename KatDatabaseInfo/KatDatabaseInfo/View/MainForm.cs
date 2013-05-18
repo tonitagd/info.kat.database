@@ -24,13 +24,12 @@ namespace KatDatabaseInfo
 
         public UserStatus userStatus { get; private set; }
 
-        public MainForm()
+        public MainForm(User user)
         {
             InitializeComponent();
-            SetUserStatus(null);
-            SetStatusToAllControls(false);
-            SetVisibilityToAdminButtons(false);
-            SetEditable(false);
+            SetUserStatus(user.Role_);
+            SetStatusToAllControls(true);
+            ShowUserInfo(UserData.GetDriverByLicenseID(user.DrivingLicenseNumber));
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -163,20 +162,6 @@ namespace KatDatabaseInfo
             txtBoxOwnerDLN.ReadOnly = !editable;
         }
 
-        private void Login()
-        {
-            LoginForm logForm = new LoginForm();
-            logForm.ShowDialog();
-            if (logForm.DialogResult == DialogResult.OK)
-            {
-                SetUserStatus(logForm.user.Role_);
-                SetStatusToAllControls(true);
-                ShowUserInfo(UserData.GetDriverByLicenseID(logForm.user.DrivingLicenseNumber));
-
-                loginToolStripMenuItem.Text = "Излез";
-            }
-        }
-
         private void ShowUserInfo(Driver driver)
         {
             if (UserStatus.CITIZEN.Equals(userStatus))
@@ -228,7 +213,15 @@ namespace KatDatabaseInfo
             cbRegistryNumber.DataSource = carsList;
             cbRegistryNumber.SelectedIndex = -1;
 
-            LoadPicture(driver.PictureLocation);
+            LoadPicture(GetPictureLocation(driver.PictureLocation));
+        }
+
+        private string GetPictureLocation(string location)
+        {
+            string assemblyPath = System.IO.Directory.GetCurrentDirectory();
+            string projectPath = assemblyPath.Split(new string[] { "bin" }, StringSplitOptions.None)[0];
+            projectPath += "View\\Photos\\";
+            return projectPath + location;
         }
 
         private void ClearCategories()
@@ -303,6 +296,8 @@ namespace KatDatabaseInfo
             cbPointsLeft.SelectedIndex = -1;
             cbRole.SelectedIndex = -1;
             pictureBox1.Image = null;
+
+            ClearCategories();
         }
 
         private void ClearFinePage()
@@ -336,33 +331,17 @@ namespace KatDatabaseInfo
             txtBoxOwnerDLN.Text = "";
         }
 
-        private void Logout()
+        private void loginToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SetUserStatus(null);
             SetStatusToAllControls(false);
             SetVisibilityToAdminButtons(false);
             ClearAllControls();
             SetEditable(false);
-            loginToolStripMenuItem.Text = "Влез";
-        }
 
-        private void loginToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            switch (userStatus)
-            {
-                case UserStatus.ANONYMOUS:
-                    Login();
-                    break;
-                case UserStatus.CITIZEN:
-                    Logout();
-                    break;
-                case UserStatus.ADMIN:
-                    Logout();
-                    break;
-                default:
-                    break;
-            }
-
+            LoginForm logForm = new LoginForm();
+            logForm.Visible = true;
+            this.Close();
         }
 
         // Diver Data Window Buttons
@@ -821,15 +800,16 @@ namespace KatDatabaseInfo
             }
             catch (Exception)
             {
-                MessageBox.Show("Грешка при отварянето на снимка.");
+                MessageBox.Show("Грешка при отварянето на снимка. Снимка '" + location + "' не е намерена.");
             }
         }
 
         private string GetPictureLocation()
         {
+            string location = "";
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                string location = openFileDialog.FileName;
+                location = openFileDialog.FileName;
                 string[] parsedLocation = location.Split('.');
                 string availableFormats = "jpeg jpg bmp png";
                 string picFormat = parsedLocation[parsedLocation.Length - 1];
@@ -1069,8 +1049,7 @@ B. Дата на регистрация: " + txtBoxRegDate.Text + @"
             }
             return null;
         }
-
-        
+       
     }
 }
 

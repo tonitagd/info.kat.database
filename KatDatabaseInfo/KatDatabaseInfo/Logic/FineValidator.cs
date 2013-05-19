@@ -37,7 +37,7 @@ namespace KatDatabaseInfo.Logic
         {
             if (_fine.Paid == 0)
             {
-                return !isNullOrEmpty(_fine.Amount.ToString(), "Стойност");
+                return !isNullOrEmpty(_fine.Amount.ToString(), "дължима сума");
             }
             return true;
         }

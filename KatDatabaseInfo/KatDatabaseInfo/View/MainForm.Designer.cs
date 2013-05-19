@@ -900,6 +900,7 @@ namespace KatDatabaseInfo
             this.cbPaid.Name = "cbPaid";
             this.cbPaid.Size = new System.Drawing.Size(65, 24);
             this.cbPaid.TabIndex = 9;
+            this.cbPaid.SelectedIndexChanged += new System.EventHandler(this.cbPaid_SelectedIndexChanged);
             // 
             // lblPaid
             // 
@@ -1463,11 +1464,11 @@ namespace KatDatabaseInfo
             this.lblChangePassword.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblChangePassword.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblChangePassword.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblChangePassword.Location = new System.Drawing.Point(446, 544);
+            this.lblChangePassword.Location = new System.Drawing.Point(463, 544);
             this.lblChangePassword.Name = "lblChangePassword";
-            this.lblChangePassword.Size = new System.Drawing.Size(103, 15);
+            this.lblChangePassword.Size = new System.Drawing.Size(87, 15);
             this.lblChangePassword.TabIndex = 19;
-            this.lblChangePassword.Text = "Change password";
+            this.lblChangePassword.Text = "Смени парола";
             this.lblChangePassword.Click += new System.EventHandler(this.lblChangePassword_Click);
             // 
             // lblSupport
@@ -1479,9 +1480,10 @@ namespace KatDatabaseInfo
             this.lblSupport.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lblSupport.Location = new System.Drawing.Point(386, 544);
             this.lblSupport.Name = "lblSupport";
-            this.lblSupport.Size = new System.Drawing.Size(52, 15);
+            this.lblSupport.Size = new System.Drawing.Size(71, 15);
             this.lblSupport.TabIndex = 20;
-            this.lblSupport.Text = "Support";
+            this.lblSupport.Text = "Поддръжка";
+            this.lblSupport.Click += new System.EventHandler(this.lblSupport_Click);
             // 
             // lblHelp
             // 
@@ -1490,11 +1492,12 @@ namespace KatDatabaseInfo
             this.lblHelp.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblHelp.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHelp.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblHelp.Location = new System.Drawing.Point(342, 544);
+            this.lblHelp.Location = new System.Drawing.Point(330, 544);
             this.lblHelp.Name = "lblHelp";
-            this.lblHelp.Size = new System.Drawing.Size(32, 15);
+            this.lblHelp.Size = new System.Drawing.Size(48, 15);
             this.lblHelp.TabIndex = 21;
-            this.lblHelp.Text = "Help";
+            this.lblHelp.Text = "Помощ";
+            this.lblHelp.Click += new System.EventHandler(this.lblHelp_Click);
             // 
             // MainForm
             // 

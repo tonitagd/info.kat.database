@@ -1116,6 +1116,32 @@ B. Дата на регистрация: " + txtBoxRegDate.Text + @"
             ChangePasswordForm passForm = new ChangePasswordForm(user);
             passForm.Visible = true;
         }
+
+        private void cbPaid_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbPaid.SelectedIndex == 1)
+            {
+                txtBoxPrice.Text = "0.00";
+                txtBoxPrice.ReadOnly = true;
+            }
+            else
+            {
+                txtBoxPrice.Text = "";
+                txtBoxPrice.ReadOnly = false;
+            }
+        }
+
+        private void lblHelp_Click(object sender, EventArgs e)
+        {
+            HelpForm form = new HelpForm();
+            form.Visible = true;
+        }
+
+        private void lblSupport_Click(object sender, EventArgs e)
+        {
+            SupportForm form = new SupportForm();
+            form.Visible = true;
+        }
     }
 }
 

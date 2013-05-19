@@ -67,9 +67,9 @@ namespace KatDatabaseInfo.Logic
 
         protected override bool ValidateDynamic()
         {
-            bool isSerialValid = (UserData.GetFineBySerialNumber(_fine.SerialNumber) == null);
+            bool isSerialValid = (FineData.GetFineBySerialNumber(_fine.SerialNumber) == null);
             setErrMessage("Съществува глоба със сериен номер: " + _fine.SerialNumber + ".", isSerialValid);
-            bool isDriverValid = (UserData.GetDriverByLicenseID(_fine.DrivingLicenseNumber) != null);
+            bool isDriverValid = (DriverData.GetDriverByLicenseID(_fine.DrivingLicenseNumber) != null);
             setErrMessage("Не съществува шофьор с номер на книжка: " + _fine.DrivingLicenseNumber + ".", isDriverValid);
             return isDriverValid && isSerialValid;
         }

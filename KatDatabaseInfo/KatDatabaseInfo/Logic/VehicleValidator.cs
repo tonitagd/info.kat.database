@@ -61,13 +61,13 @@ namespace KatDatabaseInfo.Logic
 
         protected override bool ValidateDynamic()
         {
-            bool isRegValid = (UserData.GetVehicleByRegNumber(_vehicle.RegistryNumber) == null);
+            bool isRegValid = (VehicleData.GetVehicleByRegNumber(_vehicle.RegistryNumber) == null);
             setErrMessage("Съществува МПС с регистрационен номер: " + _vehicle.RegistryNumber + ".", isRegValid);
-            bool isFrameValid = (UserData.GetVehicleByFrameNumber(_vehicle.FrameNumber) == null);
+            bool isFrameValid = (VehicleData.GetVehicleByFrameNumber(_vehicle.FrameNumber) == null);
             setErrMessage("Съществува МПС с номер на рамата: " + _vehicle.FrameNumber + ".", isFrameValid);
-            bool isEngValid = (UserData.GetVehicleByEngineNumber(_vehicle.EngineNumber) == null);
+            bool isEngValid = (VehicleData.GetVehicleByEngineNumber(_vehicle.EngineNumber) == null);
             setErrMessage("Съществува МПС с номер на двигателя: " + _vehicle.EngineNumber + ".", isEngValid);
-            bool isDriverValid = (UserData.GetDriverByLicenseID(_vehicle.DrivingLicenseNumber) != null);
+            bool isDriverValid = (DriverData.GetDriverByLicenseID(_vehicle.DrivingLicenseNumber) != null);
             setErrMessage("Не съществува шофьор с номер на книжка: " + _vehicle.DrivingLicenseNumber + ".", isDriverValid);
             return isRegValid && isFrameValid && isEngValid && isDriverValid;
         }

@@ -68,11 +68,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DatabaseDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Data\DriverData.cs" />
     <Compile Include="Data\DriversDataClasses.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DriversDataClasses.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Data\FineData.cs" />
     <Compile Include="Data\FinesDataClasses.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -85,6 +87,7 @@
       <DependentUpon>UsersDataClasses.dbml</DependentUpon>
     </Compile>
     <Compile Include="Data\UserStatus.cs" />
+    <Compile Include="Data\VehicleData.cs" />
     <Compile Include="Data\VehicleDataClasses.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

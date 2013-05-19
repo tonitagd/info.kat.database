@@ -33,7 +33,7 @@ namespace KatDatabaseInfo
             this.user = user;
             SetUserStatus(user.Role_);
             SetStatusToAllControls(true);
-            ShowUserInfo(UserData.GetDriverByLicenseID(user.DrivingLicenseNumber));
+            ShowUserInfo(DriverData.GetDriverByLicenseID(user.DrivingLicenseNumber));
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -209,11 +209,11 @@ namespace KatDatabaseInfo
             cbPointsLeft.SelectedIndex = (int)driver.DrivingPointsLeft;
             GetDriversCategories(driver.DrivingCategories);
 
-            List<Fine> fineList = UserData.GetFineById(driver.DrivingLicenseNumber);
+            List<Fine> fineList = FineData.GetFineById(driver.DrivingLicenseNumber);
             cbFineIds.DataSource = fineList;
             cbFineIds.SelectedIndex = -1;
 
-            List<Vehicle> carsList = UserData.GetVehicleById(driver.DrivingLicenseNumber);
+            List<Vehicle> carsList = VehicleData.GetVehicleById(driver.DrivingLicenseNumber);
             cbRegistryNumber.DataSource = carsList;
             cbRegistryNumber.SelectedIndex = -1;
 
@@ -261,14 +261,14 @@ namespace KatDatabaseInfo
 
         private void ShowAllFines()
         {
-            List<Fine> fineList = UserData.GetAllFines();
+            List<Fine> fineList = FineData.GetAllFines();
             cbFineIds.DataSource = fineList;
             ClearAllControls();
         }
 
         private void ShowAllVehicles()
         {
-            List<Vehicle> carsList = UserData.GetAllVehicles();
+            List<Vehicle> carsList = VehicleData.GetAllVehicles();
             cbRegistryNumber.DataSource = carsList;
             ClearAllControls();
         }
@@ -358,7 +358,7 @@ namespace KatDatabaseInfo
                 return;
             }
             string id = cbSearchDriver.SelectedValue.ToString();
-            Driver driver = UserData.GetDriverByLicenseID(id);
+            Driver driver = DriverData.GetDriverByLicenseID(id);
             showDriverInfo(driver);
             short? role = UserData.GetUserRoleByLicenseID(id);
             if (role == null)
@@ -394,7 +394,7 @@ namespace KatDatabaseInfo
                     MessageBox.Show(DriverValidator.errText, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                UserData.addDriver(driver);
+                DriverData.addDriver(driver);
                 UserData.CreateUsernameAndPassword(CreateUser());
                 ReloadMainForm();
                 MessageBox.Show("Добавен шофьор: " + driver.FirstName + " " + driver.LastName + ".");
@@ -498,7 +498,7 @@ namespace KatDatabaseInfo
                     return;
                 }
                 User user = CreateUser();
-                UserData.UpdateDriver(driver.DrivingLicenseNumber, driver.Country, driver.City, driver.Address, driver.DrivingPointsLeft, driver.DrivingCategories, user.Role_);
+                DriverData.UpdateDriver(driver.DrivingLicenseNumber, driver.Country, driver.City, driver.Address, driver.DrivingPointsLeft, driver.DrivingCategories, user.Role_);
                 MessageBox.Show("Актуализацията е успешна.");
                 ReloadMainForm();
             }
@@ -512,7 +512,7 @@ namespace KatDatabaseInfo
         {
             try
             {
-                UserData.DeleteDriver(txtBoxLicenseId.Text);
+                DriverData.DeleteDriver(txtBoxLicenseId.Text);
                 MessageBox.Show("Шофьор с документ №:'" + txtBoxLicenseId.Text + "' е изтрит успешно.");
                 ClearAllControls();
                 ReloadMainForm();
@@ -542,7 +542,7 @@ namespace KatDatabaseInfo
                 return;
             }
             string id = value.ToString();
-            Fine fine = UserData.GetFineBySerialNumber(id);
+            Fine fine = FineData.GetFineBySerialNumber(id);
             showFineInfo(fine);
             ChangeFineToUpdateble();
         }
@@ -601,7 +601,7 @@ namespace KatDatabaseInfo
                     MessageBox.Show(FineValidator.errText, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                UserData.AddNewFine(fine);
+                FineData.AddNewFine(fine);
                 ReloadMainForm();
                 MessageBox.Show("Добавено нарушение №: '" + fine.SerialNumber + "'.");
             }
@@ -653,7 +653,7 @@ namespace KatDatabaseInfo
                     MessageBox.Show(FineValidator.errText, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                UserData.UpdateFine(fine.SerialNumber, fine.Paid, fine.Amount);
+                FineData.UpdateFine(fine.SerialNumber, fine.Paid, fine.Amount);
                 MessageBox.Show("Актуализацията е успешна.");
                 ReloadMainForm();
             }
@@ -667,7 +667,7 @@ namespace KatDatabaseInfo
         {
             try
             {
-                UserData.DeleteFine(txtBoxFineId.Text);
+                FineData.DeleteFine(txtBoxFineId.Text);
                 MessageBox.Show("Глоба №:'" + txtBoxFineId.Text + "' е  изтрита успешно.");
                 ClearAllControls();
                 ReloadMainForm();
@@ -694,7 +694,7 @@ namespace KatDatabaseInfo
                 return;
             }
             string id = value.ToString();
-            Vehicle vehicle = UserData.GetVehicleByRegNumber(id);
+            Vehicle vehicle = VehicleData.GetVehicleByRegNumber(id);
             showVehicleInfo(vehicle);
             ChangeVehicleToUpdatable();
         }
@@ -764,7 +764,7 @@ namespace KatDatabaseInfo
                     MessageBox.Show(VehicleValidator.errText, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                UserData.AddNewVehicle(vehicle);
+                VehicleData.AddNewVehicle(vehicle);
                 ReloadMainForm();
                 MessageBox.Show("Добавен МПС с регистрационен №:'" + vehicle.RegistryNumber + "'.");
             }
@@ -811,7 +811,7 @@ namespace KatDatabaseInfo
                     MessageBox.Show(VehicleValidator.errText, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                UserData.UpdateVehicle(vehicle.FrameNumber, vehicle.RegistryNumber, vehicle.Color, vehicle.DrivingLicenseNumber);
+                VehicleData.UpdateVehicle(vehicle.FrameNumber, vehicle.RegistryNumber, vehicle.Color, vehicle.DrivingLicenseNumber);
                 ReloadMainForm();
                 MessageBox.Show("Актуализацията е успешна.");
             }
@@ -826,7 +826,7 @@ namespace KatDatabaseInfo
             try
             {
                 string regNumber = txtBoxRegNumber.Text;
-                UserData.DeleteVehicle(regNumber);
+                VehicleData.DeleteVehicle(regNumber);
                 MessageBox.Show("Изтрит МПС с регистрационен №:'" + regNumber + "'.");
                 ClearAllControls();
                 ReloadMainForm();
@@ -972,7 +972,7 @@ namespace KatDatabaseInfo
 
         private void btnPrintDriver_Click(object sender, EventArgs e)
         {
-            Driver driver = UserData.GetDriverByLicenseID(txtBoxLicenseId.Text);
+            Driver driver = DriverData.GetDriverByLicenseID(txtBoxLicenseId.Text);
             if (driver == null)
             {
                 MessageBox.Show("Моля, първо изберете шофьор");
@@ -998,7 +998,7 @@ Tочки: " + driver.DrivingPointsLeft + @"
 
         private void btnPrintFine_Click(object sender, EventArgs e)
         {
-            Driver driver = UserData.GetDriverByLicenseID(txtBoxOffenderDLN.Text);
+            Driver driver = DriverData.GetDriverByLicenseID(txtBoxOffenderDLN.Text);
             string price = txtBoxPrice.Text;
             if ("".Equals(price))
             {
@@ -1042,7 +1042,7 @@ Tочки: " + driver.DrivingPointsLeft + @"
 
         private void btnPrintVehicle_Click(object sender, EventArgs e)
         {
-            Driver driver = UserData.GetDriverByLicenseID(txtBoxOwnerDLN.Text);
+            Driver driver = DriverData.GetDriverByLicenseID(txtBoxOwnerDLN.Text);
             if (driver == null)
             {
                 MessageBox.Show("Моля, първо изберете МПС.");

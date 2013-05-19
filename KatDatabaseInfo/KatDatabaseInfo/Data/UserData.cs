@@ -213,7 +213,7 @@ namespace KatDatabaseInfo.Data
             vehicleDataContext.AddNewVehicle(vehicle.RegistryNumber, vehicle.FrameNumber, vehicle.EngineNumber, vehicle.Brand, vehicle.Model, vehicle.Type, vehicle.Seats, vehicle.Weight, vehicle.Color, vehicle.RegistryDate, vehicle.DrivingLicenseNumber);
             vehicleDataContext.SubmitChanges();
         }
-        
+
         //DELETING
         public static void DeleteDriver(string drivingLicenseNumber)
         {
@@ -248,7 +248,7 @@ namespace KatDatabaseInfo.Data
         {
             Driver driver = driverDataContext.Drivers.Where<Driver>(anonymous => anonymous.DrivingLicenseNumber == drivingLicenseNumber).Single();
             User user = userDataContext.Users.Where<User>(anonymous => anonymous.DrivingLicenseNumber == drivingLicenseNumber).Single();
-            
+
             driver.Country = country;
             driver.City = city;
             driver.Address = address;
@@ -258,7 +258,7 @@ namespace KatDatabaseInfo.Data
 
             driverDataContext.SubmitChanges();
             userDataContext.SubmitChanges();
-       }
+        }
 
         public static void UpdateFine(string fineId, byte paid, decimal? amount)
         {
@@ -279,6 +279,15 @@ namespace KatDatabaseInfo.Data
             vehicle.DrivingLicenseNumber = drivingLicenseNumber;
 
             vehicleDataContext.SubmitChanges();
+        }
+
+        public static void UpdatePass(string licenseNumber, string newPass)
+        {
+            User user = userDataContext.Users.Where<User>(anonymous => anonymous.DrivingLicenseNumber == licenseNumber).Single();
+
+            user.Password = newPass;
+
+            userDataContext.SubmitChanges();
         }
     }
 }

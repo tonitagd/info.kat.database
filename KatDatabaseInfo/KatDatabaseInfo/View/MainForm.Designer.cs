@@ -163,6 +163,9 @@ namespace KatDatabaseInfo
             this.ttPrintFine = new System.Windows.Forms.ToolTip(this.components);
             this.ttPrintVehicle = new System.Windows.Forms.ToolTip(this.components);
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.lblChangePassword = new System.Windows.Forms.Label();
+            this.lblSupport = new System.Windows.Forms.Label();
+            this.lblHelp = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tabPageDI.SuspendLayout();
             this.gbImage.SuspendLayout();
@@ -1453,12 +1456,55 @@ namespace KatDatabaseInfo
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblTitle.UseCompatibleTextRendering = true;
             // 
+            // lblChangePassword
+            // 
+            this.lblChangePassword.AutoSize = true;
+            this.lblChangePassword.BackColor = System.Drawing.Color.Transparent;
+            this.lblChangePassword.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblChangePassword.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChangePassword.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblChangePassword.Location = new System.Drawing.Point(446, 544);
+            this.lblChangePassword.Name = "lblChangePassword";
+            this.lblChangePassword.Size = new System.Drawing.Size(103, 15);
+            this.lblChangePassword.TabIndex = 19;
+            this.lblChangePassword.Text = "Change password";
+            this.lblChangePassword.Click += new System.EventHandler(this.lblChangePassword_Click);
+            // 
+            // lblSupport
+            // 
+            this.lblSupport.AutoSize = true;
+            this.lblSupport.BackColor = System.Drawing.Color.Transparent;
+            this.lblSupport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblSupport.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSupport.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblSupport.Location = new System.Drawing.Point(386, 544);
+            this.lblSupport.Name = "lblSupport";
+            this.lblSupport.Size = new System.Drawing.Size(52, 15);
+            this.lblSupport.TabIndex = 20;
+            this.lblSupport.Text = "Support";
+            // 
+            // lblHelp
+            // 
+            this.lblHelp.AutoSize = true;
+            this.lblHelp.BackColor = System.Drawing.Color.Transparent;
+            this.lblHelp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblHelp.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHelp.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblHelp.Location = new System.Drawing.Point(342, 544);
+            this.lblHelp.Name = "lblHelp";
+            this.lblHelp.Size = new System.Drawing.Size(32, 15);
+            this.lblHelp.TabIndex = 21;
+            this.lblHelp.Text = "Help";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(884, 562);
+            this.Controls.Add(this.lblHelp);
+            this.Controls.Add(this.lblSupport);
+            this.Controls.Add(this.lblChangePassword);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.menuStrip1);
@@ -1627,6 +1673,9 @@ namespace KatDatabaseInfo
         private System.Windows.Forms.ToolTip ttPrintFine;
         private System.Windows.Forms.ToolTip ttPrintVehicle;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
+        private System.Windows.Forms.Label lblChangePassword;
+        private System.Windows.Forms.Label lblSupport;
+        private System.Windows.Forms.Label lblHelp;
 
     }
 }

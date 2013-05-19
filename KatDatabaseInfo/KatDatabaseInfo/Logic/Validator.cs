@@ -9,7 +9,7 @@ namespace KatDatabaseInfo.Logic
 {
     abstract class Validator
     {
-        public string errText { get; private set; }
+        public static string errText { get; private set; }
 
         public Validator()
         {
@@ -37,7 +37,7 @@ namespace KatDatabaseInfo.Logic
             return isValid;
         }
 
-        protected bool isNullOrEmpty(string value, string valuePlace)
+        public static bool isNullOrEmpty(string value, string valuePlace)
         {
             if (value == null || "".Equals(value))
             {
@@ -75,7 +75,7 @@ namespace KatDatabaseInfo.Logic
             return isValid;
         }
 
-        protected void setErrMessage(string message, bool isValid)
+        protected static void setErrMessage(string message, bool isValid)
         {
             if (!isValid)
             {

@@ -23,12 +23,14 @@ namespace KatDatabaseInfo
         private static string clearPage = "Изчисти страницата";
         private static string saveChanges = "Запази промените";
         LoginForm logForm;
+        User user = new User();
 
         public UserStatus userStatus { get; private set; }
 
         public MainForm(User user)
         {
             InitializeComponent();
+            this.user = user;
             SetUserStatus(user.Role_);
             SetStatusToAllControls(true);
             ShowUserInfo(UserData.GetDriverByLicenseID(user.DrivingLicenseNumber));
@@ -389,7 +391,7 @@ namespace KatDatabaseInfo
                 DriverValidator validator = new DriverValidator(driver, cbRole.SelectedIndex);
                 if (!validator.Validate())
                 {
-                    MessageBox.Show(validator.errText, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(DriverValidator.errText, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 UserData.addDriver(driver);
@@ -492,7 +494,7 @@ namespace KatDatabaseInfo
                 DriverValidator validator = new DriverValidator(driver, cbRole.SelectedIndex);
                 if (!validator.ValidateStatic())
                 {
-                    MessageBox.Show(validator.errText, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(DriverValidator.errText, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 User user = CreateUser();
@@ -596,7 +598,7 @@ namespace KatDatabaseInfo
                 FineValidator validator = new FineValidator(fine);
                 if (!validator.Validate())
                 {
-                    MessageBox.Show(validator.errText, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(FineValidator.errText, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 UserData.AddNewFine(fine);
@@ -648,7 +650,7 @@ namespace KatDatabaseInfo
                 FineValidator validator = new FineValidator(fine);
                 if (!validator.ValidateStatic())
                 {
-                    MessageBox.Show(validator.errText, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(FineValidator.errText, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 UserData.UpdateFine(fine.SerialNumber, fine.Paid, fine.Amount);
@@ -759,7 +761,7 @@ namespace KatDatabaseInfo
                 VehicleValidator validator = new VehicleValidator(vehicle);
                 if (!validator.Validate())
                 {
-                    MessageBox.Show(validator.errText, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(VehicleValidator.errText, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 UserData.AddNewVehicle(vehicle);
@@ -806,7 +808,7 @@ namespace KatDatabaseInfo
                 VehicleValidator validator = new VehicleValidator(vehicle);
                 if (!validator.ValidateStatic())
                 {
-                    MessageBox.Show(validator.errText, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(VehicleValidator.errText, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 UserData.UpdateVehicle(vehicle.FrameNumber, vehicle.RegistryNumber, vehicle.Color, vehicle.DrivingLicenseNumber);
@@ -1107,6 +1109,12 @@ B. Дата на регистрация: " + txtBoxRegDate.Text + @"
                 Application.Exit();
             }
             base.WndProc(ref msg);
+        }
+
+        private void lblChangePassword_Click(object sender, EventArgs e)
+        {
+            ChangePasswordForm passForm = new ChangePasswordForm(user);
+            passForm.Visible = true;
         }
     }
 }

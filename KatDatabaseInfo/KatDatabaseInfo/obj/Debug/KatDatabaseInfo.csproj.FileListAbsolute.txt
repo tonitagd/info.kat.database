@@ -70,3 +70,4 @@ C:\Users\Moshekov\Desktop\info.kat.database\KatDatabaseInfo\KatDatabaseInfo\obj\
 C:\Users\Moshekov\Desktop\info.kat.database\KatDatabaseInfo\KatDatabaseInfo\obj\Debug\KatDatabaseInfo.View.LoginForm.resources
 C:\Users\Moshekov\Desktop\info.kat.database\KatDatabaseInfo\KatDatabaseInfo\obj\Debug\KatDatabaseInfo.MainForm.resources
 C:\Users\Moshekov\Desktop\info.kat.database\KatDatabaseInfo\KatDatabaseInfo\obj\Debug\KatDatabaseInfo.csproj.GenerateResource.Cache
+D:\repository\info.kat.database\KatDatabaseInfo\KatDatabaseInfo\obj\Debug\KatDatabaseInfo.View.ChangePasswordForm.resources

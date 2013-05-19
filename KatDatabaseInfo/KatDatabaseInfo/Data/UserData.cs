@@ -54,10 +54,46 @@ namespace KatDatabaseInfo.Data
             return null;
         }
 
+        public static Driver GetDriverByIdNumber(string idNumber)
+        {
+            var queryResult = (from drivers in driverDataContext.GetTable<Driver>()
+                               where (drivers.IdNumber == idNumber)
+                               select drivers).ToArray<Driver>();
+            if (queryResult.Count<Driver>() > 0)
+            {
+                return queryResult.ElementAt<Driver>(0);
+            }
+            return null;
+        }
+
         public static Vehicle GetVehicleByRegNumber(string regNumber)
         {
             var queryResult = (from vehicles in vehicleDataContext.GetTable<Vehicle>()
                                where (vehicles.RegistryNumber == regNumber)
+                               select vehicles).ToArray<Vehicle>();
+            if (queryResult.Count<Vehicle>() > 0)
+            {
+                return queryResult.ElementAt<Vehicle>(0);
+            }
+            return null;
+        }
+
+        public static Vehicle GetVehicleByEngineNumber(string engineNumber)
+        {
+            var queryResult = (from vehicles in vehicleDataContext.GetTable<Vehicle>()
+                               where (vehicles.EngineNumber == engineNumber)
+                               select vehicles).ToArray<Vehicle>();
+            if (queryResult.Count<Vehicle>() > 0)
+            {
+                return queryResult.ElementAt<Vehicle>(0);
+            }
+            return null;
+        }
+
+        public static Vehicle GetVehicleByFrameNumber(string frameNumber)
+        {
+            var queryResult = (from vehicles in vehicleDataContext.GetTable<Vehicle>()
+                               where (vehicles.FrameNumber == frameNumber)
                                select vehicles).ToArray<Vehicle>();
             if (queryResult.Count<Vehicle>() > 0)
             {
@@ -244,7 +280,5 @@ namespace KatDatabaseInfo.Data
 
             vehicleDataContext.SubmitChanges();
         }
-
-       
     }
 }

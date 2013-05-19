@@ -21,7 +21,7 @@ namespace KatDatabaseInfo.View
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            LoginValidation loginValidation = new LoginValidation(txtBoxUsername.Text, txtBoxPassword.Text);
+            LoginValidator loginValidation = new LoginValidator(txtBoxUsername.Text, txtBoxPassword.Text);
             Data.User user;
 
             if (loginValidation.ValidateUserInput(out user))

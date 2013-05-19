@@ -91,7 +91,11 @@
       <DependentUpon>VehicleDataClasses.dbml</DependentUpon>
     </Compile>
     <Compile Include="KatDatabaseInfo.cs" />
-    <Compile Include="Logic\LoginValidation.cs" />
+    <Compile Include="Logic\DriverValidator.cs" />
+    <Compile Include="Logic\FineValidator.cs" />
+    <Compile Include="Logic\LoginValidator.cs" />
+    <Compile Include="Logic\Validator.cs" />
+    <Compile Include="Logic\VehicleValidator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>

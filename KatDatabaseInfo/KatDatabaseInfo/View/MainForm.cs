@@ -15,12 +15,14 @@ using System.IO;
 
 namespace KatDatabaseInfo
 {
-    //TODO Kategoriite ne se zachistvat pri clear page
+    //TODO na fines error msg izliza mesto
+    //TODO na kolite izliza poleto "12312312321" trqbva da ima 17 cifri, vmesto poleto "fine id"
     public partial class MainForm : Form
     {
         private string pictureLocation = "";
         private static string clearPage = "Изчисти страницата";
         private static string saveChanges = "Запази промените";
+        LoginForm logForm;
 
         public UserStatus userStatus { get; private set; }
 
@@ -339,7 +341,7 @@ namespace KatDatabaseInfo
             ClearAllControls();
             SetEditable(false);
 
-            LoginForm logForm = new LoginForm();
+            logForm = new LoginForm();
             logForm.Visible = true;
             this.Close();
         }
@@ -384,6 +386,12 @@ namespace KatDatabaseInfo
             try
             {
                 Driver driver = createDriver();
+                DriverValidator validator = new DriverValidator(driver, cbRole.SelectedIndex);
+                if (!validator.Validate())
+                {
+                    MessageBox.Show(validator.errText, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 UserData.addDriver(driver);
                 UserData.CreateUsernameAndPassword(CreateUser());
                 ReloadMainForm();
@@ -481,6 +489,12 @@ namespace KatDatabaseInfo
             try
             {
                 Driver driver = createDriver();
+                DriverValidator validator = new DriverValidator(driver, cbRole.SelectedIndex);
+                if (!validator.ValidateStatic())
+                {
+                    MessageBox.Show(validator.errText, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 User user = CreateUser();
                 UserData.UpdateDriver(driver.DrivingLicenseNumber, driver.Country, driver.City, driver.Address, driver.DrivingPointsLeft, driver.DrivingCategories, user.Role_);
                 MessageBox.Show("Актуализацията е успешна.");
@@ -579,6 +593,12 @@ namespace KatDatabaseInfo
             try
             {
                 Fine fine = CreateFine();
+                FineValidator validator = new FineValidator(fine);
+                if (!validator.Validate())
+                {
+                    MessageBox.Show(validator.errText, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 UserData.AddNewFine(fine);
                 ReloadMainForm();
                 MessageBox.Show("Добавено нарушение №: '" + fine.SerialNumber + "'.");
@@ -600,7 +620,10 @@ namespace KatDatabaseInfo
             fine.Paid = (byte)cbPaid.SelectedIndex;
             fine.DrivingLicenseNumber = txtBoxOffenderDLN.Text;
             fine.Reason = txtBoxReason.Text;
-            fine.Amount = Convert.ToDecimal(txtBoxPrice.Text);
+            if (!"".Equals(txtBoxPrice.Text))
+            {
+                fine.Amount = Convert.ToDecimal(txtBoxPrice.Text);
+            }
             fine.Hour = txtBoxTime.Text;
             fine.Location = txtBoxPlace.Text;
             return fine;
@@ -622,6 +645,12 @@ namespace KatDatabaseInfo
             try
             {
                 Fine fine = CreateFine();
+                FineValidator validator = new FineValidator(fine);
+                if (!validator.ValidateStatic())
+                {
+                    MessageBox.Show(validator.errText, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 UserData.UpdateFine(fine.SerialNumber, fine.Paid, fine.Amount);
                 MessageBox.Show("Актуализацията е успешна.");
                 ReloadMainForm();
@@ -727,6 +756,12 @@ namespace KatDatabaseInfo
             try
             {
                 Vehicle vehicle = CreateVehicle();
+                VehicleValidator validator = new VehicleValidator(vehicle);
+                if (!validator.Validate())
+                {
+                    MessageBox.Show(validator.errText, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 UserData.AddNewVehicle(vehicle);
                 ReloadMainForm();
                 MessageBox.Show("Добавен МПС с регистрационен №:'" + vehicle.RegistryNumber + "'.");
@@ -745,8 +780,17 @@ namespace KatDatabaseInfo
             vehicle.Brand = txtBoxBrand.Text;
             vehicle.Model = txtBoxModel.Text;
             vehicle.Type = txtBoxType.Text;
-            vehicle.Weight = int.Parse(txtBoxWeight.Text);
-            vehicle.Seats = short.Parse(txtBoxSeats.Text);
+            try
+            {
+                vehicle.Weight = int.Parse(txtBoxWeight.Text);
+                vehicle.Seats = short.Parse(txtBoxSeats.Text);
+            }
+            catch (Exception)
+            {
+             //   MessageBox.Show("Теглото и броя на седалките трябва да съдържат само цифри.");
+                vehicle.Weight = 0;
+                vehicle.Seats = 0;
+            }           
             vehicle.Color = txtBoxColor.Text;
             vehicle.RegistryDate = txtBoxRegDate.Text;
             vehicle.RegistryNumber = txtBoxRegNumber.Text;
@@ -759,6 +803,12 @@ namespace KatDatabaseInfo
             try
             {
                 Vehicle vehicle = CreateVehicle();
+                VehicleValidator validator = new VehicleValidator(vehicle);
+                if (!validator.ValidateStatic())
+                {
+                    MessageBox.Show(validator.errText, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 UserData.UpdateVehicle(vehicle.FrameNumber, vehicle.RegistryNumber, vehicle.Color, vehicle.DrivingLicenseNumber);
                 ReloadMainForm();
                 MessageBox.Show("Актуализацията е успешна.");
@@ -1049,7 +1099,15 @@ B. Дата на регистрация: " + txtBoxRegDate.Text + @"
             }
             return null;
         }
-       
+
+        protected override void WndProc(ref Message msg)
+        {
+            if (msg.Msg == 274 && msg.WParam.ToInt32() == 61536)
+            {
+                Application.Exit();
+            }
+            base.WndProc(ref msg);
+        }
     }
 }
 

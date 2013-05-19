@@ -7,13 +7,13 @@ using KatDatabaseInfo.Data;
 
 namespace KatDatabaseInfo.Logic
 {
-    class LoginValidation
+    class LoginValidator
     {
         private string _username;
         private string _password;
         public string errText { get; private set; } //поле за запаметяване на възникналите грешки.
 
-        public LoginValidation(string username, string password)
+        public LoginValidator(string username, string password)
         {
             _username = username;
             _password = password;  

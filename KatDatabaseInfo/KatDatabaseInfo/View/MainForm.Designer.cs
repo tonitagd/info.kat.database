@@ -1398,11 +1398,11 @@ namespace KatDatabaseInfo
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Right;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.loginToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(786, 0);
+            this.menuStrip1.Location = new System.Drawing.Point(793, 0);
             this.menuStrip1.MaximumSize = new System.Drawing.Size(0, 30);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuStrip1.Size = new System.Drawing.Size(98, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(91, 30);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 

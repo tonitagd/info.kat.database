@@ -50,7 +50,7 @@ namespace KatDatabaseInfo.Logic
 
         protected bool IsLettersOnly(string value, string valueForValidation) //City, Country, FirstName, MiddleName, LastName @"^[a-zA-Z]+$"
         {
-            Regex regex = new Regex(@"^[А-Я][а-яА-Я\s]{1,250}$");
+            Regex regex = new Regex(@"^[а-яА-Я\s]{1,250}$");
             bool isValid = true;
             isValid &= regex.IsMatch(value);
 

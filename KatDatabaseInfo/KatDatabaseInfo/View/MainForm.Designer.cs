@@ -396,6 +396,7 @@ namespace KatDatabaseInfo
             // 
             this.txtBoxLicenseId.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxLicenseId.Location = new System.Drawing.Point(121, 28);
+            this.txtBoxLicenseId.MaxLength = 9;
             this.txtBoxLicenseId.Name = "txtBoxLicenseId";
             this.txtBoxLicenseId.ReadOnly = true;
             this.txtBoxLicenseId.Size = new System.Drawing.Size(90, 23);
@@ -489,6 +490,7 @@ namespace KatDatabaseInfo
             // 
             this.txtBoxBirthDate.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxBirthDate.Location = new System.Drawing.Point(153, 136);
+            this.txtBoxBirthDate.MaxLength = 10;
             this.txtBoxBirthDate.Name = "txtBoxBirthDate";
             this.txtBoxBirthDate.ReadOnly = true;
             this.txtBoxBirthDate.Size = new System.Drawing.Size(91, 23);
@@ -637,6 +639,7 @@ namespace KatDatabaseInfo
             // 
             this.txtBoxId.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxId.Location = new System.Drawing.Point(153, 111);
+            this.txtBoxId.MaxLength = 10;
             this.txtBoxId.Name = "txtBoxId";
             this.txtBoxId.ReadOnly = true;
             this.txtBoxId.Size = new System.Drawing.Size(197, 23);
@@ -775,6 +778,7 @@ namespace KatDatabaseInfo
             // 
             this.txtBoxTime.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F);
             this.txtBoxTime.Location = new System.Drawing.Point(441, 60);
+            this.txtBoxTime.MaxLength = 5;
             this.txtBoxTime.Name = "txtBoxTime";
             this.txtBoxTime.ReadOnly = true;
             this.txtBoxTime.Size = new System.Drawing.Size(122, 23);
@@ -813,6 +817,7 @@ namespace KatDatabaseInfo
             // 
             this.txtBoxFineId.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F);
             this.txtBoxFineId.Location = new System.Drawing.Point(135, 120);
+            this.txtBoxFineId.MaxLength = 7;
             this.txtBoxFineId.Name = "txtBoxFineId";
             this.txtBoxFineId.ReadOnly = true;
             this.txtBoxFineId.Size = new System.Drawing.Size(151, 23);
@@ -834,6 +839,7 @@ namespace KatDatabaseInfo
             // 
             this.txtBoxOffenderDLN.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F);
             this.txtBoxOffenderDLN.Location = new System.Drawing.Point(135, 150);
+            this.txtBoxOffenderDLN.MaxLength = 9;
             this.txtBoxOffenderDLN.Name = "txtBoxOffenderDLN";
             this.txtBoxOffenderDLN.ReadOnly = true;
             this.txtBoxOffenderDLN.Size = new System.Drawing.Size(151, 23);
@@ -873,6 +879,7 @@ namespace KatDatabaseInfo
             // 
             this.txtBoxDate.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F);
             this.txtBoxDate.Location = new System.Drawing.Point(441, 30);
+            this.txtBoxDate.MaxLength = 10;
             this.txtBoxDate.Name = "txtBoxDate";
             this.txtBoxDate.ReadOnly = true;
             this.txtBoxDate.Size = new System.Drawing.Size(122, 23);
@@ -1119,6 +1126,7 @@ namespace KatDatabaseInfo
             // 
             this.txtBoxOwnerDLN.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F);
             this.txtBoxOwnerDLN.Location = new System.Drawing.Point(135, 233);
+            this.txtBoxOwnerDLN.MaxLength = 9;
             this.txtBoxOwnerDLN.Name = "txtBoxOwnerDLN";
             this.txtBoxOwnerDLN.Size = new System.Drawing.Size(161, 23);
             this.txtBoxOwnerDLN.TabIndex = 31;
@@ -1127,6 +1135,7 @@ namespace KatDatabaseInfo
             // 
             this.txtBoxRegNumber.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F);
             this.txtBoxRegNumber.Location = new System.Drawing.Point(506, 170);
+            this.txtBoxRegNumber.MaxLength = 10;
             this.txtBoxRegNumber.Name = "txtBoxRegNumber";
             this.txtBoxRegNumber.Size = new System.Drawing.Size(161, 23);
             this.txtBoxRegNumber.TabIndex = 30;
@@ -1135,6 +1144,7 @@ namespace KatDatabaseInfo
             // 
             this.txtBoxRegDate.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F);
             this.txtBoxRegDate.Location = new System.Drawing.Point(506, 140);
+            this.txtBoxRegDate.MaxLength = 10;
             this.txtBoxRegDate.Name = "txtBoxRegDate";
             this.txtBoxRegDate.ReadOnly = true;
             this.txtBoxRegDate.Size = new System.Drawing.Size(161, 23);
@@ -1153,6 +1163,7 @@ namespace KatDatabaseInfo
             // 
             this.txtBoxWeight.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F);
             this.txtBoxWeight.Location = new System.Drawing.Point(506, 80);
+            this.txtBoxWeight.MaxLength = 6;
             this.txtBoxWeight.Name = "txtBoxWeight";
             this.txtBoxWeight.ReadOnly = true;
             this.txtBoxWeight.Size = new System.Drawing.Size(161, 23);
@@ -1162,6 +1173,7 @@ namespace KatDatabaseInfo
             // 
             this.txtBoxSeats.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F);
             this.txtBoxSeats.Location = new System.Drawing.Point(506, 50);
+            this.txtBoxSeats.MaxLength = 2;
             this.txtBoxSeats.Name = "txtBoxSeats";
             this.txtBoxSeats.ReadOnly = true;
             this.txtBoxSeats.Size = new System.Drawing.Size(161, 23);
@@ -1198,6 +1210,7 @@ namespace KatDatabaseInfo
             // 
             this.txtBoxEngineNumber.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F);
             this.txtBoxEngineNumber.Location = new System.Drawing.Point(135, 80);
+            this.txtBoxEngineNumber.MaxLength = 9;
             this.txtBoxEngineNumber.Name = "txtBoxEngineNumber";
             this.txtBoxEngineNumber.ReadOnly = true;
             this.txtBoxEngineNumber.Size = new System.Drawing.Size(161, 23);
@@ -1207,6 +1220,7 @@ namespace KatDatabaseInfo
             // 
             this.txtBoxFrameNumber.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F);
             this.txtBoxFrameNumber.Location = new System.Drawing.Point(135, 50);
+            this.txtBoxFrameNumber.MaxLength = 17;
             this.txtBoxFrameNumber.Name = "txtBoxFrameNumber";
             this.txtBoxFrameNumber.ReadOnly = true;
             this.txtBoxFrameNumber.Size = new System.Drawing.Size(161, 23);

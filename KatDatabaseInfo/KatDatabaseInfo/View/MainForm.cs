@@ -15,8 +15,17 @@ using System.IO;
 
 namespace KatDatabaseInfo
 {
-    //TODO na fines error msg izliza mesto
-    //TODO na kolite izliza poleto "12312312321" trqbva da ima 17 cifri, vmesto poleto "fine id"
+//    //ПРИ ВЪВЕЖДАНЕ НА ДАТА 15.13.2013 ГЪРМИ, ЧЕ Е НЕВАЛИДНА
+//ПРАВИЛНИЯ ФОРМАТ СПОРЕД НЕГО Е 12 12 12.
+
+//МЯСТОТО ТРЯБВА ДА НЕ ГО БЪРКА С КАКВА БУКВА ПОЧВА.
+//ДА МОЖЕ ДА СЪДЪРЖА ',' И ЦИФРИ
+
+//ВИД МПС ТРЯБВА ДА Е COMBO BOX
+
+//ГРЕШКА ПРИ ЗАРЕЖДАНЕ НА СНИМКАТА
+
+//ПРИ СЪЗДАВАНЕ НА НОВ ПОТРЕБИТЕЛ И ПОСЛЕ ЛОГВАНЕ С НЕГО НЕ СЕ ЗАРЕЖДА ИНФОРМАЦИЯТА
     public partial class MainForm : Form
     {
         private string pictureLocation = "";
@@ -1142,6 +1151,8 @@ B. Дата на регистрация: " + txtBoxRegDate.Text + @"
             SupportForm form = new SupportForm();
             form.Visible = true;
         }
+
+        
     }
 }
 

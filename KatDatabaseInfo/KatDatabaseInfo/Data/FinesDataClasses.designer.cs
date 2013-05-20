@@ -74,7 +74,7 @@ namespace KatDatabaseInfo.Data
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.AddNewFine")]
-		public int AddNewFine([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Type", DbType="NVarChar(10)")] string type, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SerialNumber", DbType="NVarChar(50)")] string serialNumber, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Date", DbType="NVarChar(50)")] string date, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Policeman", DbType="NVarChar(50)")] string policeman, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DrivingLicenseNumber", DbType="NChar(10)")] string drivingLicenseNumber, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Paid", DbType="TinyInt")] System.Nullable<byte> paid, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Reason", DbType="NVarChar(100)")] string reason, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Amount", DbType="Money")] System.Nullable<decimal> amount, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Location", DbType="NVarChar(250)")] string location, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Hour", DbType="NVarChar(10)")] string hour)
+		public int AddNewFine([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Type", DbType="NVarChar(10)")] string type, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SerialNumber", DbType="NVarChar(7)")] string serialNumber, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Date", DbType="NVarChar(10)")] string date, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Policeman", DbType="NVarChar(50)")] string policeman, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DrivingLicenseNumber", DbType="NChar(9)")] string drivingLicenseNumber, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Paid", DbType="TinyInt")] System.Nullable<byte> paid, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Reason", DbType="NVarChar(100)")] string reason, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Amount", DbType="Money")] System.Nullable<decimal> amount, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Location", DbType="NVarChar(250)")] string location, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Hour", DbType="NVarChar(10)")] string hour)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), type, serialNumber, date, policeman, drivingLicenseNumber, paid, reason, amount, location, hour);
 			return ((int)(result.ReturnValue));
@@ -182,7 +182,7 @@ namespace KatDatabaseInfo.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SerialNumber", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SerialNumber", DbType="NVarChar(7) NOT NULL", CanBeNull=false)]
 		public string SerialNumber
 		{
 			get
@@ -202,7 +202,7 @@ namespace KatDatabaseInfo.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
 		public string Date
 		{
 			get
@@ -242,7 +242,7 @@ namespace KatDatabaseInfo.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DrivingLicenseNumber", DbType="NChar(10) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DrivingLicenseNumber", DbType="NChar(9) NOT NULL", CanBeNull=false)]
 		public string DrivingLicenseNumber
 		{
 			get
@@ -282,7 +282,7 @@ namespace KatDatabaseInfo.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Reason", DbType="NVarChar(100)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Reason", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
 		public string Reason
 		{
 			get
@@ -322,7 +322,7 @@ namespace KatDatabaseInfo.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Location", DbType="NVarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Location", DbType="NVarChar(250) NOT NULL", CanBeNull=false)]
 		public string Location
 		{
 			get
@@ -342,7 +342,7 @@ namespace KatDatabaseInfo.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Hour", DbType="NVarChar(10)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Hour", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
 		public string Hour
 		{
 			get

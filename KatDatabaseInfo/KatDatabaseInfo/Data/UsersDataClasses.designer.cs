@@ -74,7 +74,7 @@ namespace KatDatabaseInfo.Data
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CreateUsernameAndPassword")]
-		public int CreateUsernameAndPassword([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Username", DbType="NVarChar(50)")] string username, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Password", DbType="NVarChar(50)")] string password, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DrivingLicenseNumber", DbType="NVarChar(50)")] string drivingLicenseNumber, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Role", DbType="SmallInt")] System.Nullable<short> role)
+		public int CreateUsernameAndPassword([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Username", DbType="NVarChar(50)")] string username, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Password", DbType="NVarChar(50)")] string password, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DrivingLicenseNumber", DbType="NVarChar(9)")] string drivingLicenseNumber, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Role", DbType="SmallInt")] System.Nullable<short> role)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), username, password, drivingLicenseNumber, role);
 			return ((int)(result.ReturnValue));
@@ -178,7 +178,7 @@ namespace KatDatabaseInfo.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DrivingLicenseNumber", DbType="NChar(10) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DrivingLicenseNumber", DbType="NChar(9) NOT NULL", CanBeNull=false)]
 		public string DrivingLicenseNumber
 		{
 			get

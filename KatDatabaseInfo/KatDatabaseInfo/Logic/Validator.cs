@@ -29,7 +29,7 @@ namespace KatDatabaseInfo.Logic
         public abstract bool ValidateStatic();
         protected abstract bool ValidateDynamic();
 
-        protected bool isDataValid(string date, string message)
+        protected bool IsDataValid(string date, string message)
         {
             DateTime dt;
             bool isValid = DateTime.TryParse(date, out dt);
@@ -48,13 +48,24 @@ namespace KatDatabaseInfo.Logic
             return false;
         }
 
-        protected bool IsLettersOnly(string value, string valueForValidation) //City, Country, FirstName, MiddleName, LastName @"^[a-zA-Z]+$"
+        protected bool IsLettersOnly(string value, string valueForValidation)
         {
-            Regex regex = new Regex(@"^[а-яА-Я\s]{1,250}$");
+            Regex regex = new Regex(@"^[а-яА-Я \s*\S*]{1,250}$");
             bool isValid = true;
             isValid &= regex.IsMatch(value);
 
-            setErrMessage("Стойността на полето '" + valueForValidation + "' трябва да започва с главна буква и може да съдържа само букви на кирилица.", isValid); ;
+            setErrMessage("Стойността на полето '" + valueForValidation + "' трябва да съдържа само букви на кирилица.", isValid); ;
+
+            return isValid;
+        }
+
+        protected bool StartsWithCapital(string value, string valueForValidation)
+        {
+            Regex regex = new Regex(@"^([А-Я& ]\S*\s*)+$");
+            bool isValid = true;
+            isValid &= regex.IsMatch(value);
+
+            setErrMessage("Стойността на полето '" + valueForValidation + "' трябва да започва с главна буква на кирилица.", isValid); ;
 
             return isValid;
         }

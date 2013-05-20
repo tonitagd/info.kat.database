@@ -1182,7 +1182,7 @@ namespace KatDatabaseInfo
             // txtBoxType
             // 
             this.txtBoxType.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F);
-            this.txtBoxType.Location = new System.Drawing.Point(135, 170);
+            this.txtBoxType.Location = new System.Drawing.Point(135, 167);
             this.txtBoxType.Name = "txtBoxType";
             this.txtBoxType.ReadOnly = true;
             this.txtBoxType.Size = new System.Drawing.Size(161, 23);

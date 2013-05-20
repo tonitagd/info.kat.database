@@ -15,30 +15,24 @@ using System.IO;
 
 namespace KatDatabaseInfo
 {
-//    //ПРИ ВЪВЕЖДАНЕ НА ДАТА 15.13.2013 ГЪРМИ, ЧЕ Е НЕВАЛИДНА
-//ПРАВИЛНИЯ ФОРМАТ СПОРЕД НЕГО Е 12 12 12.
 
-//МЯСТОТО ТРЯБВА ДА НЕ ГО БЪРКА С КАКВА БУКВА ПОЧВА.
-//ДА МОЖЕ ДА СЪДЪРЖА ',' И ЦИФРИ
-
-//ВИД МПС ТРЯБВА ДА Е COMBO BOX
-
-//ГРЕШКА ПРИ ЗАРЕЖДАНЕ НА СНИМКАТА
-
-//ПРИ СЪЗДАВАНЕ НА НОВ ПОТРЕБИТЕЛ И ПОСЛЕ ЛОГВАНЕ С НЕГО НЕ СЕ ЗАРЕЖДА ИНФОРМАЦИЯТА
     public partial class MainForm : Form
     {
         private string pictureLocation = "";
         private static string clearPage = "Изчисти страницата";
         private static string saveChanges = "Запази промените";
         LoginForm logForm;
-        User user = new User();
+        User user;
 
         public UserStatus userStatus { get; private set; }
 
         public MainForm(User user)
         {
             InitializeComponent();
+        }
+
+        public void LoadForm(User user)
+        {
             this.user = user;
             SetUserStatus(user.Role_);
             SetStatusToAllControls(true);
@@ -179,9 +173,9 @@ namespace KatDatabaseInfo
         {
             if (UserStatus.CITIZEN.Equals(userStatus))
             {
-                showDriverInfo(driver);
                 ClearFinePage();
                 ClearVehiclePage();
+                showDriverInfo(driver);
                 SetEditable(false);
                 SetVisibilityToAdminButtons(false);
             }
@@ -435,7 +429,7 @@ namespace KatDatabaseInfo
             driver.DrivingLicenseNumber = txtBoxLicenseId.Text;
             driver.DrivingPointsLeft = Convert.ToInt16(cbPointsLeft.SelectedIndex);
             driver.DrivingCategories = GetCategories();
-            driver.PictureLocation = pictureLocation;
+            driver.PictureLocation = GetPictureName();//pictureLocation;
 
             return driver;
         }
@@ -484,6 +478,13 @@ namespace KatDatabaseInfo
                     return "";
             }
         }
+
+        private string GetPictureName()
+        {
+           string[] split = pictureLocation.Split('\\');
+           return split[split.Length - 1];
+        }
+
 
         private User CreateUser()
         {

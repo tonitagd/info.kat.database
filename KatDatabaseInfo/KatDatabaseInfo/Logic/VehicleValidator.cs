@@ -27,7 +27,7 @@ namespace KatDatabaseInfo.Logic
             isValid &= isSeatsValid();
             isValid &= isWeightValid();
             isValid &= IsLettersOnly(_vehicle.Color, "цвят");
-            isValid &= isDataValid(_vehicle.RegistryDate, "Невалидна дата на регистрация.");
+            isValid &= IsDataValid(_vehicle.RegistryDate, "Невалидна дата на регистрация. Формата трябва да е Месец.Ден.Година.");
             isValid &= !isNullOrEmpty(_vehicle.RegistryNumber, "регистрационен номер");
 
             return isValid;

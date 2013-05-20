@@ -25,13 +25,18 @@ namespace KatDatabaseInfo.Logic
 
             isValid &= !areParametersEmpty();
             isValid &= IsLettersOnly(_driver.FirstName, "име");
-            isValid &= IsLettersOnly(_driver.MiddleName, "бащино име");
+            isValid &= IsLettersOnly(_driver.MiddleName, "презиме");
             isValid &= IsLettersOnly(_driver.LastName, "фамилия");
-            isValid &= isDataValid(_driver.BirthDate, "Датата  на раждане не е въведена коректно");
+            isValid &= StartsWithCapital(_driver.FirstName, "име");
+            isValid &= StartsWithCapital(_driver.MiddleName, "презиме");
+            isValid &= StartsWithCapital(_driver.LastName, "фамилия");
+            isValid &= IsDataValid(_driver.BirthDate, "Датата  на раждане не е въведена коректно. Формата трябва да е Месец.Ден.Година.");
             isValid &= isDigitsOnly();
             isValid &= isGenderValid();
             isValid &= IsLettersOnly(_driver.City, "град");
             isValid &= IsLettersOnly(_driver.Country, "държава");
+            isValid &= StartsWithCapital(_driver.City, "град");
+            isValid &= StartsWithCapital(_driver.Country, "държава");
             isValid &= arePointsLeftValid();
             isValid &= isRoleValid();
 
@@ -42,6 +47,7 @@ namespace KatDatabaseInfo.Logic
         {
             bool isValid = true;
             isValid &= isNullOrEmpty(_driver.DrivingCategories, "категории");
+            isValid &= isNullOrEmpty(_driver.Address, "адрес");
             isValid &= isNullOrEmpty(_driver.PictureLocation, "местоположение на снимка");
             return isValid;
         }

@@ -24,8 +24,18 @@ namespace KatDatabaseInfo.View
             try
             {
                 SmtpClient client = new SmtpClient();
-                client.Port = 587; //456
+
                 string server = GetServerName();
+
+                if (server.Contains("gmail"))
+                {
+                    client.Port = 587;
+                }
+                else
+                {
+                    client.Port = 456;
+                }
+
                 client.Host = server;
                 client.EnableSsl = true;
                 client.Timeout = 10000;

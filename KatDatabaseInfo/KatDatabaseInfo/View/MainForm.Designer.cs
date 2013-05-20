@@ -512,8 +512,8 @@ namespace KatDatabaseInfo
             this.cbGender.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbGender.FormattingEnabled = true;
             this.cbGender.Items.AddRange(new object[] {
-            "Male",
-            "Female"});
+            "Мъж",
+            "Жена"});
             this.cbGender.Location = new System.Drawing.Point(342, 136);
             this.cbGender.Name = "cbGender";
             this.cbGender.Size = new System.Drawing.Size(91, 24);

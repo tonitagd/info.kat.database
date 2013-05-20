@@ -49,7 +49,7 @@ namespace KatDatabaseInfo.Data
             driverDataContext.SubmitChanges();
         }
 
-        public static void UpdateDriver(string drivingLicenseNumber, string country, string city, string address, short pointsLeft, string drivingCategories, short? role)
+        public static void UpdateDriver(string drivingLicenseNumber, string country, string city, string address, short pointsLeft, string drivingCategories, short? role, string pictureLocation)
         {
             UsersDataClassesDataContext userDataContext = new UsersDataClassesDataContext();
             Driver driver = driverDataContext.Drivers.Where<Driver>(anonymous => anonymous.DrivingLicenseNumber == drivingLicenseNumber).Single();
@@ -60,6 +60,7 @@ namespace KatDatabaseInfo.Data
             driver.Address = address;
             driver.DrivingPointsLeft = pointsLeft;
             driver.DrivingCategories = drivingCategories;
+            driver.PictureLocation = pictureLocation;
             user.Role_ = role;
 
             driverDataContext.SubmitChanges();

@@ -426,10 +426,10 @@ namespace KatDatabaseInfo
             driver.Address = txtBoxAddress.Text;
 
             //Driving license
-            driver.DrivingLicenseNumber = txtBoxLicenseId.Text;
+            driver.DrivingLicenseNumber = txtBoxLicenseId.Text.Trim(); ;
             driver.DrivingPointsLeft = Convert.ToInt16(cbPointsLeft.SelectedIndex);
             driver.DrivingCategories = GetCategories();
-            driver.PictureLocation = GetPictureName();//pictureLocation;
+            driver.PictureLocation = GetPictureName();
 
             return driver;
         }
@@ -508,7 +508,7 @@ namespace KatDatabaseInfo
                     return;
                 }
                 User user = CreateUser();
-                DriverData.UpdateDriver(driver.DrivingLicenseNumber, driver.Country, driver.City, driver.Address, driver.DrivingPointsLeft, driver.DrivingCategories, user.Role_);
+                DriverData.UpdateDriver(driver.DrivingLicenseNumber, driver.Country, driver.City, driver.Address, driver.DrivingPointsLeft, driver.DrivingCategories, user.Role_, driver.PictureLocation);
                 MessageBox.Show("Актуализацията е успешна.");
                 ReloadMainForm();
             }

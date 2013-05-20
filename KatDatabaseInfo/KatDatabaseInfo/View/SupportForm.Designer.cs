@@ -158,7 +158,7 @@
             this.Controls.Add(this.lblFrom);
             this.Name = "SupportForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Поддръжка";
+            this.Text = "KAT Database - Поддръжка";
             this.ResumeLayout(false);
             this.PerformLayout();
 

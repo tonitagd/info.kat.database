@@ -93,5 +93,10 @@ namespace KatDatabaseInfo.Logic
                 errText += ("\n" + message);
             }
         }
+
+        public static void Reset()
+        {
+            errText = "";
+        }
     }
 }

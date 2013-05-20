@@ -114,7 +114,7 @@
             this.Controls.Add(this.lblUsername);
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Влез";
+            this.Text = "KAT Database - Влез";
             this.ResumeLayout(false);
             this.PerformLayout();
 

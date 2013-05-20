@@ -55,7 +55,7 @@
             this.Controls.Add(this.textBox1);
             this.Name = "HelpForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Упътване";
+            this.Text = "KAT Database - Упътване";
             this.ResumeLayout(false);
             this.PerformLayout();
 

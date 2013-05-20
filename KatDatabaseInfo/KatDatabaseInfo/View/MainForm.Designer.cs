@@ -1529,6 +1529,7 @@ namespace KatDatabaseInfo
             this.Controls.Add(this.cbSearchDriver);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "KAT Database";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.tabControl.ResumeLayout(false);
             this.tabPageDI.ResumeLayout(false);

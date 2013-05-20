@@ -43,7 +43,7 @@ namespace KatDatabaseInfo.View
         private bool ValidatePasswords()
         {
             bool isValid = true;
-
+            Validator.Reset();
             isValid &= !Validator.isNullOrEmpty(txtBoxCurrentPass.Text, "текуща парола");
             isValid &= !Validator.isNullOrEmpty(txtBoxPass.Text, "нова парола");
             isValid &= !Validator.isNullOrEmpty(txtBoxConfirmedPass.Text, "потвърдена парола");

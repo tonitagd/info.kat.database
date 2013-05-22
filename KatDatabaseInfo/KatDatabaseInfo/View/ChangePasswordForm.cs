@@ -58,6 +58,7 @@ namespace KatDatabaseInfo.View
             if (UserData.IsUserPassCorrect(user.Username, txtBoxCurrentPass.Text) == null)
             {
                 errMessage += "\nНевалидна текуща парола";
+                isValid &= false;
             }
 
             this.errMessage += Validator.errText;

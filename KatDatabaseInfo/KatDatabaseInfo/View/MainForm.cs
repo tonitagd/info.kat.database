@@ -173,11 +173,11 @@ namespace KatDatabaseInfo
         {
             if (UserStatus.CITIZEN.Equals(userStatus))
             {
-                ClearFinePage();
-                ClearVehiclePage();
                 showDriverInfo(driver);
                 SetEditable(false);
                 SetVisibilityToAdminButtons(false);
+                ClearFinePage();
+                ClearVehiclePage();
             }
             else if (UserStatus.ADMIN.Equals(userStatus))
             {
@@ -612,7 +612,7 @@ namespace KatDatabaseInfo
                     return;
                 }
                 FineData.AddNewFine(fine);
-                ReloadMainForm();
+                ShowAllFines();
                 MessageBox.Show("Добавено нарушение №: '" + fine.SerialNumber + "'.");
             }
             catch (Exception exc)
@@ -665,7 +665,7 @@ namespace KatDatabaseInfo
                 }
                 FineData.UpdateFine(fine.SerialNumber, fine.Paid, fine.Amount);
                 MessageBox.Show("Актуализацията е успешна.");
-                ReloadMainForm();
+                ShowAllFines();
             }
             catch (Exception exc)
             {
@@ -680,7 +680,7 @@ namespace KatDatabaseInfo
                 FineData.DeleteFine(txtBoxFineId.Text);
                 MessageBox.Show("Глоба №:'" + txtBoxFineId.Text + "' е  изтрита успешно.");
                 ClearAllControls();
-                ReloadMainForm();
+                ShowAllFines();
             }
             catch (Exception exc)
             {
@@ -715,7 +715,7 @@ namespace KatDatabaseInfo
             txtBoxEngineNumber.Text = vehicle.EngineNumber;
             txtBoxBrand.Text = vehicle.Brand;
             txtBoxModel.Text = vehicle.Model;
-            txtBoxType.Text = GetVehicleType(vehicle.Type);
+            txtBoxType.Text = vehicle.Type;
 
             txtBoxWeight.Text = vehicle.Weight.ToString();
             txtBoxSeats.Text = vehicle.Seats.ToString();
@@ -724,21 +724,6 @@ namespace KatDatabaseInfo
             txtBoxRegNumber.Text = vehicle.RegistryNumber;
 
             txtBoxOwnerDLN.Text = vehicle.DrivingLicenseNumber;
-        }
-
-        private string GetVehicleType(string type)
-        {
-            switch (type)
-            {
-                case "0":
-                    return "лек";
-                case "1":
-                    return "леко-товарен";
-
-                default:
-                    return "товарен";
-
-            }
         }
 
         private void ChangeVehicleToUpdatable()
@@ -775,7 +760,7 @@ namespace KatDatabaseInfo
                     return;
                 }
                 VehicleData.AddNewVehicle(vehicle);
-                ReloadMainForm();
+                ShowAllVehicles();
                 MessageBox.Show("Добавен МПС с регистрационен №:'" + vehicle.RegistryNumber + "'.");
             }
             catch (Exception exc)
@@ -822,7 +807,7 @@ namespace KatDatabaseInfo
                     return;
                 }
                 VehicleData.UpdateVehicle(vehicle.FrameNumber, vehicle.RegistryNumber, vehicle.Color, vehicle.DrivingLicenseNumber);
-                ReloadMainForm();
+                ShowAllVehicles();
                 MessageBox.Show("Актуализацията е успешна.");
             }
             catch (Exception exc)
@@ -839,7 +824,7 @@ namespace KatDatabaseInfo
                 VehicleData.DeleteVehicle(regNumber);
                 MessageBox.Show("Изтрит МПС с регистрационен №:'" + regNumber + "'.");
                 ClearAllControls();
-                ReloadMainForm();
+                ShowAllVehicles();
             }
             catch (Exception exc)
             {

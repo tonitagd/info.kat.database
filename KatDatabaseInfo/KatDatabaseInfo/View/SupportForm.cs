@@ -58,6 +58,7 @@ namespace KatDatabaseInfo.View
 
         }
 
+
         private string GetServerName()
         {
             return "smtp." + txtBoxFrom.Text.Split('@')[1];
